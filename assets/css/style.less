@@ -1,0 +1,213 @@
+@import 'reset';
+@import 'semantic-grid/grid';
+@import 'typography';
+@import 'colors';
+@import 'mixins';
+@import 'css3-mixins';
+
+
+//////////
+// GRID //
+//////////
+
+
+// Specify the number of columns and set column and gutter widths
+@columns: 12;
+@column-width: 60;
+@gutter-width: 20;
+
+// Remove the definition below for a pixel-based layout
+@total-width: 100%;
+
+@import 'structure';
+
+
+////////////
+// LAYOUT //
+////////////
+
+
+body {
+  background: url(../images/footer-background.png) repeat;
+  color: @light_text;
+}
+
+a {
+  color: @darker_text;
+}
+
+
+header#main {
+  min-height: 430px;
+  background: @light_background;
+
+  hgroup {
+    background: url(../images/white-stripe-pattern.png) repeat;
+
+    &:before {
+      background: url(../images/logo-background-repeat.png) repeat-x right;
+    }
+    h1.logo {
+      .hide-text;
+      background: url(../images/logo-background.png) no-repeat left center;
+    }
+  }
+  nav {
+    background: rgba(0,0,0,0.6);
+    color: @light_background;
+    ol { 
+      text-align: right;
+      li { 
+        .size(4);
+      }
+    }
+  }
+  article {
+    color: @light_text;
+    padding: 3em 0;
+
+    h1 {
+      .light_header(@light_text);
+      .size(25);
+    }
+    h2 {
+      color: lighten(@light_text, 15%);
+      .size(3);
+      line-height: 1.4em;
+    }
+    .article-links {
+      position: relative;
+      left: -6px;
+    }
+  }
+  .nextprev {
+    margin: 0;
+
+    li {
+      opacity: 0.8;
+      text-align: center;
+      background: darken(@light_background, 5%);
+      border: 1px solid darken(@light_background, 10%);
+      color: darken(@light_background, 20%);
+      .border-radius(3px);
+      .text-shadow(0 -1px 1px darken(@light_background, 40%));
+      .size(8);
+      height: 3em;
+      line-height: 3em;
+    }
+  }
+  figure div {
+    margin-left: -200px;
+    background: url(../images/mobile-impact.png) 15px -14px no-repeat;
+  }
+}
+
+
+section.techtalks {
+  background: url(../images/leather.jpg) repeat-x;
+  color: @light_background;
+  h1 {
+    .size(15);
+    .light_header(@darker_text);
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  ul {
+    padding-bottom: 2em;
+    li { 
+      figcaption {
+        background: fadeout(black, 70%);
+        text-align: center;
+      }
+    }
+  }
+  img { 
+    border: 5px solid rgba(0,0,0,0.1);
+    .border-radius(3px);
+  }
+
+}
+
+section.latestnews {
+  background: @light_background;
+  .box-shadow(0 5px 10px black, 0 -1px 0 lighten(@light_background, 5%) inset);
+
+  & > h1 {
+    .light_header(@light_text);
+    .size(10);
+    text-align: center;
+    position: relative;
+    margin: 1.5em 0;
+  }
+  section {
+    & > h1 { 
+      .light_header(@nic_orange);
+    }
+  }
+  section.news {
+    article.blog {
+      clear: left;
+      img {
+        float: left;
+        margin-left: -13px;
+        margin-top: -6px;
+      }
+      h1 {
+        margin-bottom: 0.25em;
+      }
+      h2 {
+        .size(0);
+        margin-bottom: 0.25em;
+      }
+      p {
+        clear: right;
+      }
+    }
+  }
+  section.info {
+    text-align: center;
+    a { font-weight: bold; }
+    img {
+      width: 45%;
+      float: right;
+      border: 5px solid white;
+      margin: 5px;
+      .rotate(5deg);
+      .box-sizing;
+      .box-shadow;
+    }
+    h2 {
+      .size(4);
+    }
+    li {
+      color: lighten(@light_text, 10%);
+      .size(-1);
+      h3 {
+        .size(3);
+        color: @light_text;
+        margin-bottom: 0.25em;
+      }
+    }
+    & * { text-align: left; }
+  }
+  section {
+    h1 { .size(3); }
+    h2 { .size(2); }
+    h3 { .size(1); }
+  }
+}
+
+footer {
+  color: @light_background;
+
+  a {
+    color: inherit;
+  }
+
+  .copyright {
+    border-top: 1px solid #333;
+    color: darken(@light_background, 30%);
+    .font_size(-2);
+  }
+}
+

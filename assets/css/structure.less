@@ -1,0 +1,224 @@
+
+body > section {
+  .clearfix;
+}
+
+//
+// DEFAULT STYLING IS MOBILE
+//
+//  Media Queries add styling for larger displays 
+//
+
+header#main {
+  position: relative;
+  .clearfix;
+
+  h1.logo, nav, article { position: relative; z-index: 10; }
+
+  hgroup {
+    height: 74px;
+    position: relative;
+    .clearfix;
+
+    &:before {
+      z-index: 11;
+      position:absolute;
+      top: 0;
+      width: 9.5%;
+      left: 0;
+      height: 84px;
+    }
+    h1.logo {
+      .pad;
+      margin-left:9.5%;
+      position:absolute;
+      top: 0;
+      z-index:11;
+      height: 84px;
+    }
+  }
+  // Move Menu bar up if it can fit to right of logo
+  @media screen and (min-width:50em) {
+    hgroup { height: 35px; }
+  }
+
+  nav {
+    clear: left;
+    .clearfix;
+
+    ol { 
+      .column(11);
+      .pull(1);
+      li { 
+        .size(1);
+        margin-left: 1em;
+        padding: 0.5em 0;
+        display: inline-block;
+      }
+    }
+  }
+  article { 
+    .column(8);
+    .push(1);
+  }
+  ol.links {
+    clear:left;
+  }
+  .nextprev {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+
+    li {
+      width: 1.5em;
+      position: absolute;
+      &.previous {
+        left: 0;
+      }
+      &.next {
+        right: 0;
+      }
+    }
+  }
+  figure {
+    .column(3);
+    margin-right: 0;
+    position:absolute;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    div {
+      position:absolute;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      right: 0;
+    }
+  }
+  @media screen and (min-width: 40em) {
+    .nextprev li {
+      width: 2em;
+      .size(10);
+      height: 3em;
+      line-height: 3em;
+    }
+    article { .column(5); .push(1); }
+    figure { .column(6); margin-right: 0; }
+  }
+}
+
+section.techtalks {
+  h1 {
+    .pad;
+  }
+  ul {
+    .pad;
+    .clearfix;
+    white-space: nowrap;
+    li {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      display: inline-block;
+      .box-sizing;
+      figure { 
+        position: relative;
+        img { 
+          width: 100%;
+          .box-sizing;
+        }
+        figcaption {
+          position: absolute;
+          left: 10px;
+          top: 80%;
+          padding: 0.25em;
+          right: 10px;
+        }
+      }
+      &:nth-child(n+2) { display: none; }
+    }
+    @media screen and (min-width: 35em) {
+      li { 
+        width: 100 / 2%;
+        &:nth-child(n+2) { display: inline-block; }
+        &:nth-child(n+3) { display: none; }
+      }
+    }
+    @media screen and (min-width: 60em) {
+      li {
+        width: 100 / 4%;
+        &:nth-child(n) { display: inline-block; }
+        &:nth-child(n+5) { display: none; }
+      }
+    }
+  }
+}
+
+section.latestnews {
+  & > h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  section.news, section.info {
+    .pad;
+  }
+  article {
+    .margin_bottom(-5);
+  }
+
+  
+  @media screen and (min-width: 50em) {
+    section.news { 
+      .column((@columns - 2)  / 2);
+      .push(1);
+    }
+    section.info {
+      .column((@columns - 2)  / 2);
+    }
+  }
+}
+
+
+footer {
+  .pad;
+
+  section {
+    width: 100 / 2%;
+    float: left;
+    margin-top: 1em;
+    padding-right: 10px;
+    .box-sizing;
+    &:nth-child(2n+1) {
+      clear:left;
+    }
+  }
+
+  @media screen and (min-width: 42em) {
+    section {
+      width: 100 / 3%;
+      &:nth-child(n) {
+        clear:none;
+      }
+      &:nth-child(3n+1) {
+        clear: left;
+      }
+    }
+  }
+
+  @media screen and (min-width: 65em) {
+    section {
+      width: 100 / 6%;
+      &:nth-child(n) { 
+        clear: none;
+      }
+    }
+  }
+
+  .copyright {
+    clear:left;
+    padding-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+

@@ -1,0 +1,81 @@
+/* Settings */
+/* font sizes in pixels - only used for body; will be converted to ems */
+@body_font_size:13;
+@body_line_height:18;
+
+@factor_h1:8;
+@factor_h2:6;
+@factor_h3:4;
+@factor_h4:2;
+@factor_p:0;
+@factor_small:-2;
+
+.font_size (@size) {
+	font-size: 0em + (@body_font_size + @size) / @body_font_size;
+}
+.line_height (@size) {
+	line-height: 0em + @body_line_height / (@body_font_size + @size);
+}
+.size(@size) {
+  .font_size(@size);
+  .line_height(@size);
+}
+.margin_top () {
+	margin-top: 0;	
+}
+.margin_bottom (@size: 0) {
+	margin-bottom: 0em + @body_line_height / (@body_font_size + @size);
+}
+
+body {
+	font-size: 0px + @body_font_size;
+	.line_height (@factor_p);
+  font-family: "Lucida Grande", Arial, Helvetica, sans-serif
+}
+h1 {
+	.font_size(@factor_h1);
+	.line_height(@factor_h1);
+	margin-top: 0;	
+	.margin_bottom(@factor_h1);
+}
+h2 {
+	.font_size(@factor_h2);
+	.line_height(@factor_h2);
+	margin-top: 0;	
+	.margin_bottom(@factor_h2);
+}
+h3 {
+	.font_size(@factor_h3);
+	.line_height(@factor_h3);
+	margin-top: 0;	
+	.margin_bottom(@factor_h3);
+}
+h4 {
+	.font_size(@factor_h4);
+	.line_height(@factor_h4);
+	margin-top: 0;	
+	.margin_bottom(@factor_h4);
+}
+blockquote, h5, h6, iframe, label, p, pre, address, td, th, ul, ol, dl, dd, hr,
+table {
+	.font_size(@factor_p);
+	.line_height(@factor_p);
+	margin-top: 0;	
+	.margin_bottom(@factor_p);
+}
+small {
+	.font_size(@factor_small);
+	.line_height(@factor_small);
+	margin-top: 0;	
+	.margin_bottom(@factor_small);
+}
+
+.light_header(@color) {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: @color;
+  .text-shadow(
+    -1px 1px 0 fade(white, 50%),
+    -2px 3px 0 fade(darken(@color, 0%), 20%)
+  );
+}
