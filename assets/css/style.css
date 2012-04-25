@@ -130,6 +130,9 @@ table {
 .debug {
   background: rgba(0, 255, 0, 0.5);
 }
+.band-strip {
+  padding-top: 2em;
+}
 /* Settings */
 /* font sizes in pixels - only used for body; will be converted to ems */
 body {
@@ -138,26 +141,18 @@ body {
   font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
 }
 h1 {
-  font-size: 1.6153846153846154em;
-  line-height: 0.8571428571428571em;
   margin-top: 0;
   margin-bottom: 0.8571428571428571em;
 }
 h2 {
-  font-size: 1.4615384615384615em;
-  line-height: 0.9473684210526315em;
   margin-top: 0;
   margin-bottom: 0.9473684210526315em;
 }
 h3 {
-  font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
   margin-top: 0;
   margin-bottom: 1.0588235294117647em;
 }
 h4 {
-  font-size: 1.1538461538461537em;
-  line-height: 1.2em;
   margin-top: 0;
   margin-bottom: 1.2em;
 }
@@ -184,7 +179,7 @@ table {
 }
 small {
   font-size: 0.8461538461538461em;
-  line-height: 1.6363636363636365em;
+  line-height: 1.44em;
   margin-top: 0;
   margin-bottom: 1.6363636363636365em;
 }
@@ -243,7 +238,7 @@ header#main article {
   z-index: 10;
 }
 header#main hgroup {
-  height: 69px;
+  height: 102px;
   position: relative;
   *zoom: 1;
 }
@@ -255,14 +250,6 @@ header#main hgroup:after {
 header#main hgroup:after {
   clear: both;
 }
-header#main hgroup:before {
-  z-index: 11;
-  position: absolute;
-  top: 0;
-  width: 9.5%;
-  left: 0;
-  height: 84px;
-}
 header#main hgroup h1.logo {
   display: inline;
   float: left;
@@ -271,40 +258,46 @@ header#main hgroup h1.logo {
   margin-left: 9.374999999999998%;
   margin-left: 9.5%;
   position: absolute;
-  top: 0;
+  left: -2px;
   z-index: 11;
   height: 84px;
 }
-@media screen and (min-width: 48em) {
-  header#main hgroup {
-    height: 35px;
-  }
-}
-header#main nav {
+header#main hgroup nav {
   clear: left;
+  position: relative;
+  top: 69px;
   *zoom: 1;
 }
-header#main nav:before,
-header#main nav:after {
+header#main hgroup nav:before,
+header#main hgroup nav:after {
   content: "";
   display: table;
 }
-header#main nav:after {
+header#main hgroup nav:after {
   clear: both;
 }
-header#main nav ol {
+header#main hgroup nav ol {
   display: inline;
   float: left;
   width: 89.58333333333334%;
   margin: 0 1.0416666666666665%;
   margin-right: 9.374999999999998%;
 }
-header#main nav ol li {
+header#main hgroup nav ol li {
   font-size: 1.0769230769230769em;
-  line-height: 1.2857142857142858em;
+  line-height: 1.3584905660377358em;
   margin-left: 1em;
   padding: 0.5em 0;
   display: inline-block;
+}
+@media screen and (min-width: 48em) {
+  header#main hgroup {
+    height: 69px;
+  }
+  header#main hgroup nav {
+    top: 36px;
+    margin-left: 9.374999999999998%;
+  }
 }
 header#main article {
   display: inline;
@@ -353,7 +346,7 @@ header#main figure div {
   header#main .nextprev li {
     width: 2em;
     font-size: 1.7692307692307692em;
-    line-height: 0.782608695652174em;
+    line-height: 1.1612903225806452em;
     height: 3em;
     line-height: 3em;
   }
@@ -370,6 +363,39 @@ header#main figure div {
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
     margin-right: 0;
+  }
+}
+#aboutnic {
+  padding-top: 2em;
+}
+#aboutnic hgroup {
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
+}
+#aboutnic #news {
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
+}
+@media screen and (min-width: 50em) {
+  #aboutnic hgroup {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
+  }
+  #aboutnic #news {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
   }
 }
 section.techtalks h1 {
@@ -533,10 +559,12 @@ header#main {
 }
 header#main hgroup {
   background: url(../images/white-stripe-pattern.png) repeat;
-}
-header#main hgroup:before {
-  background: url(../images/white-stripe-pattern.png) repeat right;
-  height: 69px;
+  /*&:before {
+      background: url(../images/white-stripe-pattern.png) repeat right;
+      height: 69px;
+    }
+    */
+
 }
 header#main hgroup h1.logo {
   overflow: hidden;
@@ -554,7 +582,7 @@ header#main nav ol {
 }
 header#main nav ol li {
   font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
+  line-height: 1.2857142857142858em;
 }
 header#main hr {
   border: 1px solid #f9f9f9;
@@ -570,12 +598,12 @@ header#main article h1 {
   color: #606060;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
   font-size: 2.923076923076923em;
-  line-height: 0.47368421052631576em;
+  line-height: 0.935064935064935em;
 }
 header#main article h2 {
   color: #868686;
   font-size: 1.2307692307692308em;
-  line-height: 1.125em;
+  line-height: 1.309090909090909em;
   line-height: 1.4em;
 }
 header#main article .article-links {
@@ -598,7 +626,7 @@ header#main .nextprev li {
   border-radius: 3px;
   text-shadow: 0 -1px 1px #818181, 0 0 0 transparent;
   font-size: 1.6153846153846154em;
-  line-height: 0.8571428571428571em;
+  line-height: 1.2em;
   height: 3em;
   line-height: 3em;
 }
@@ -606,13 +634,46 @@ header#main figure div {
   margin-left: -200px;
   background: url(../images/mobile-impact.png) 15px -14px no-repeat;
 }
+#aboutnic {
+  background: url(../images/dark-texture.png) repeat;
+  color: #f2f2f2;
+  -webkit-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -moz-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -ms-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+  -o-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.5) inset;
+}
+#aboutnic hgroup h1 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  font-size: 2.5384615384615383em;
+  line-height: 1em;
+}
+#aboutnic hgroup p em {
+  color: #e97000;
+}
+#aboutnic #news h1 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #e97000;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
+  font-size: 2em;
+  line-height: 1.1076923076923078em;
+}
+#aboutnic #news article h2 {
+  font-size: 1.3076923076923077em;
+  line-height: 1.2857142857142858em;
+  margin-bottom: 0;
+}
 section.techtalks {
   background: url(../images/leather.jpg) repeat-x;
   color: #e7e7e7;
 }
 section.techtalks h1 {
   font-size: 2.1538461538461537em;
-  line-height: 0.6428571428571429em;
+  line-height: 1.0746268656716418em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #60574c;
@@ -649,7 +710,7 @@ section.latestnews  > h1 {
   color: #606060;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
   font-size: 1.7692307692307692em;
-  line-height: 0.782608695652174em;
+  line-height: 1.1612903225806452em;
   text-align: center;
   position: relative;
   margin: 1.5em 0;
@@ -710,16 +771,16 @@ section.latestnews section.info img {
 }
 section.latestnews section.info h2 {
   font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
+  line-height: 1.2857142857142858em;
 }
 section.latestnews section.info li {
   color: #7a7a7a;
   font-size: 0.9230769230769231em;
-  line-height: 1.5em;
+  line-height: 1.411764705882353em;
 }
 section.latestnews section.info li h3 {
   font-size: 1.2307692307692308em;
-  line-height: 1.125em;
+  line-height: 1.309090909090909em;
   color: #606060;
   margin-bottom: 0.25em;
 }
@@ -728,24 +789,23 @@ section.latestnews section.info * {
 }
 section.latestnews section h1 {
   font-size: 1.2307692307692308em;
-  line-height: 1.125em;
+  line-height: 1.309090909090909em;
 }
 section.latestnews section h2 {
   font-size: 1.1538461538461537em;
-  line-height: 1.2em;
+  line-height: 1.3333333333333333em;
 }
 section.latestnews section h3 {
   font-size: 1.0769230769230769em;
-  line-height: 1.2857142857142858em;
+  line-height: 1.3584905660377358em;
 }
 footer {
-  color: #e7e7e7;
+  color: black;
 }
 footer a {
   color: inherit;
 }
 footer .copyright {
-  border-top: 1px solid #333;
-  color: #9b9b9b;
+  color: #1a1a1a;
   font-size: 0.8461538461538461em;
 }

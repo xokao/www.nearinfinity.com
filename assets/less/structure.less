@@ -16,47 +16,49 @@ header#main {
   h1.logo, nav, article { position: relative; z-index: 10; }
 
   hgroup {
-    height: 69px;
+    height: 102px;
     position: relative;
     .clearfix;
 
-    &:before {
-      z-index: 11;
-      position:absolute;
-      top: 0;
-      width: 9.5%;
-      left: 0;
-      height: 84px;
-    }
     h1.logo {
       .pad;
       margin-left:9.5%;
       position:absolute;
-      top: 0;
+      left: -2px;
       z-index:11;
       height: 84px;
     }
+
+    nav {
+      clear: left;
+      position: relative;
+      top: 69px;
+      .clearfix;
+
+      ol { 
+        .column(11);
+        .pull(1);
+        li { 
+          .size(1);
+          margin-left: 1em;
+          padding: 0.5em 0;
+          display: inline-block;
+        }
+      }
+    }
+
   }
   // Move Menu bar up if it can fit to right of logo
   @media screen and (min-width:48em) {
-    hgroup { height: 35px; }
-  }
-
-  nav {
-    clear: left;
-    .clearfix;
-
-    ol { 
-      .column(11);
-      .pull(1);
-      li { 
-        .size(1);
-        margin-left: 1em;
-        padding: 0.5em 0;
-        display: inline-block;
+    hgroup { 
+      height: 69px;
+      nav { 
+        top: 36px;
+        .push(1);
       }
     }
   }
+
   article { 
     .column(8);
     .push(1);
@@ -104,6 +106,30 @@ header#main {
     }
     article { .column(5); .push(1); }
     figure { .column(6); margin-right: 0; }
+  }
+}
+
+
+#aboutnic {
+  .band-strip;
+
+  hgroup {
+    .pad;
+  }
+  #news {
+    .pad;
+  }
+
+  @media screen and (min-width: 50em) {
+
+    hgroup { 
+      .column(6);
+      .push(1);
+    }
+    #news {
+      .column(3);
+      .push(1);
+    }
   }
 }
 

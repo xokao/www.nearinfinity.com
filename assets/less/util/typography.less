@@ -14,7 +14,7 @@
 	font-size: 0em + (@body_font_size + @size) / @body_font_size;
 }
 .line_height (@size) {
-	line-height: 0em + @body_line_height / (@body_font_size + @size);
+	line-height: 0em + @body_line_height / (@body_font_size + @size/4);
 }
 .size(@size) {
   .font_size(@size);
@@ -33,26 +33,26 @@ body {
   font-family: "Lucida Grande", Arial, Helvetica, sans-serif
 }
 h1 {
-	.font_size(@factor_h1);
-	.line_height(@factor_h1);
+	//.font_size(@factor_h1);
+	//.line_height(@factor_h1);
 	margin-top: 0;	
 	.margin_bottom(@factor_h1);
 }
 h2 {
-	.font_size(@factor_h2);
-	.line_height(@factor_h2);
+	//.font_size(@factor_h2);
+	//.line_height(@factor_h2);
 	margin-top: 0;	
 	.margin_bottom(@factor_h2);
 }
 h3 {
-	.font_size(@factor_h3);
-	.line_height(@factor_h3);
+	//.font_size(@factor_h3);
+	//.line_height(@factor_h3);
 	margin-top: 0;	
 	.margin_bottom(@factor_h3);
 }
 h4 {
-	.font_size(@factor_h4);
-	.line_height(@factor_h4);
+	//.font_size(@factor_h4);
+	//.line_height(@factor_h4);
 	margin-top: 0;	
 	.margin_bottom(@factor_h4);
 }
