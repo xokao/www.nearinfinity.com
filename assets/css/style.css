@@ -243,7 +243,7 @@ header#main article {
   z-index: 10;
 }
 header#main hgroup {
-  height: 74px;
+  height: 69px;
   position: relative;
   *zoom: 1;
 }
@@ -275,7 +275,7 @@ header#main hgroup h1.logo {
   z-index: 11;
   height: 84px;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 48em) {
   header#main hgroup {
     height: 35px;
   }
@@ -547,7 +547,7 @@ header#main hgroup h1.logo {
 }
 header#main nav {
   background: rgba(0, 0, 0, 0.6);
-  color: #e7e7e7;
+  color: white;
 }
 header#main nav ol {
   text-align: right;
@@ -557,7 +557,7 @@ header#main nav ol li {
   line-height: 1.0588235294117647em;
 }
 header#main hr {
-  border: 1px solid white;
+  border: 1px solid #f9f9f9;
   height: 0px;
 }
 header#main article {
