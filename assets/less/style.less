@@ -35,28 +35,34 @@ a {
 
 header#main {
   min-height: 430px;
-  background: @light_background;
+  background: @impact_background;
 
   hgroup {
     background: url(../images/white-stripe-pattern.png) repeat;
 
     &:before {
-      background: url(../images/logo-background-repeat.png) repeat-x right;
+      background: url(../images/white-stripe-pattern.png) repeat right;
+      height: 69px;
     }
     h1.logo {
       .hide-text;
-      background: url(../images/logo-background.png) no-repeat left center;
+      background: url(../images/logo-background.png) no-repeat left top;
+      height: 69px;
     }
   }
   nav {
     background: rgba(0,0,0,0.6);
-    color: @light_background;
+    color: @impact_background;
     ol { 
       text-align: right;
       li { 
         .size(4);
       }
     }
+  }
+  hr {
+    border: 1px solid white;
+    height: 0px;
   }
   article {
     color: @light_text;
@@ -82,11 +88,11 @@ header#main {
     li {
       opacity: 0.8;
       text-align: center;
-      background: darken(@light_background, 5%);
-      border: 1px solid darken(@light_background, 10%);
-      color: darken(@light_background, 20%);
+      background: darken(@impact_background, 5%);
+      border: 1px solid darken(@impact_background, 10%);
+      color: darken(@impact_background, 20%);
       .border-radius(3px);
-      .text-shadow(0 -1px 1px darken(@light_background, 40%));
+      .text-shadow(0 -1px 1px darken(@impact_background, 40%));
       .size(8);
       height: 3em;
       line-height: 3em;
@@ -101,7 +107,7 @@ header#main {
 
 section.techtalks {
   background: url(../images/leather.jpg) repeat-x;
-  color: @light_background;
+  color: @impact_background;
   h1 {
     .size(15);
     .light_header(@darker_text);
@@ -125,8 +131,8 @@ section.techtalks {
 }
 
 section.latestnews {
-  background: @light_background;
-  .box-shadow(0 5px 10px black, 0 -1px 0 lighten(@light_background, 5%) inset);
+  background: @impact_background;
+  .box-shadow(0 5px 10px black, 0 -1px 0 lighten(@impact_background, 5%) inset);
 
   & > h1 {
     .light_header(@light_text);
@@ -194,7 +200,7 @@ section.latestnews {
 }
 
 footer {
-  color: @light_background;
+  color: @impact_background;
 
   a {
     color: inherit;
@@ -202,7 +208,7 @@ footer {
 
   .copyright {
     border-top: 1px solid #333;
-    color: darken(@light_background, 30%);
+    color: darken(@impact_background, 30%);
     .font_size(-2);
   }
 }

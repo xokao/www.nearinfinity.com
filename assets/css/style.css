@@ -535,13 +535,15 @@ header#main hgroup {
   background: url(../images/white-stripe-pattern.png) repeat;
 }
 header#main hgroup:before {
-  background: url(../images/logo-background-repeat.png) repeat-x right;
+  background: url(../images/white-stripe-pattern.png) repeat right;
+  height: 69px;
 }
 header#main hgroup h1.logo {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: url(../images/logo-background.png) no-repeat left center;
+  background: url(../images/logo-background.png) no-repeat left top;
+  height: 69px;
 }
 header#main nav {
   background: rgba(0, 0, 0, 0.6);
@@ -553,6 +555,10 @@ header#main nav ol {
 header#main nav ol li {
   font-size: 1.3076923076923077em;
   line-height: 1.0588235294117647em;
+}
+header#main hr {
+  border: 1px solid white;
+  height: 0px;
 }
 header#main article {
   color: #606060;
