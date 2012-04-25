@@ -40,14 +40,16 @@ max_news: 2
   </hgroup>
 
   <section id="news">
-    <h1>NEWS</h1>
     <!-- TODO: can we hide older than 2 months old news items??? -->
-    {% for news in site.categories.news limit:page.max_news %}
-      <article>
-        <h2>{{ news.title | upcase }}</h2>
-        <p>{{ news.snippet }}</p>
-      </article>
-    {% endfor %}
+    {% if site.categories.news.size > 0 %} 
+      <h1>NEWS</h1>
+      {% for news in site.categories.news limit:page.max_news %}
+        <article>
+          <h2>{{ news.title | upcase }}</h2>
+          <p>{{ news.snippet }}</p>
+        </article>
+      {% endfor %}
+    {% endif %}
   </section>
 </section>
 
