@@ -1,4 +1,5 @@
 source :rubygems
 
 gem 'jekyll'
-gem 'jekyll-less'
+gem 'less'
+gem 'therubyracer'
