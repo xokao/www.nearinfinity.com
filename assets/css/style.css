@@ -135,43 +135,30 @@ table {
 body {
   font-size: 13px;
   line-height: 1.3846153846153846em;
-  line-height: 1.3846153846153846em;
   font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
 }
 h1 {
   font-size: 1.6153846153846154em;
-  font-size: 1.6153846153846154em;
-  line-height: 0.8571428571428571em;
   line-height: 0.8571428571428571em;
   margin-top: 0;
-  margin-bottom: 0.8571428571428571em;
   margin-bottom: 0.8571428571428571em;
 }
 h2 {
   font-size: 1.4615384615384615em;
-  font-size: 1.4615384615384615em;
-  line-height: 0.9473684210526315em;
   line-height: 0.9473684210526315em;
   margin-top: 0;
-  margin-bottom: 0.9473684210526315em;
   margin-bottom: 0.9473684210526315em;
 }
 h3 {
   font-size: 1.3076923076923077em;
-  font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
   line-height: 1.0588235294117647em;
   margin-top: 0;
-  margin-bottom: 1.0588235294117647em;
   margin-bottom: 1.0588235294117647em;
 }
 h4 {
   font-size: 1.1538461538461537em;
-  font-size: 1.1538461538461537em;
-  line-height: 1.2em;
   line-height: 1.2em;
   margin-top: 0;
-  margin-bottom: 1.2em;
   margin-bottom: 1.2em;
 }
 blockquote,
@@ -191,30 +178,18 @@ dd,
 hr,
 table {
   font-size: 1em;
-  font-size: 1em;
-  line-height: 1.3846153846153846em;
   line-height: 1.3846153846153846em;
   margin-top: 0;
-  margin-bottom: 1.3846153846153846em;
   margin-bottom: 1.3846153846153846em;
 }
 small {
   font-size: 0.8461538461538461em;
-  font-size: 0.8461538461538461em;
-  line-height: 1.6363636363636365em;
   line-height: 1.6363636363636365em;
   margin-top: 0;
   margin-bottom: 1.6363636363636365em;
-  margin-bottom: 1.6363636363636365em;
 }
 .gridOverlay {
-  background-size: 80px;
-  background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -ms-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-size: 80px;
+  background-size: 8.333333333333332%;
   background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
   background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
   background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
@@ -229,7 +204,6 @@ small {
 body {
   width: 100%;
   *zoom: 1;
-  *zoom: 1;
 }
 body:before,
 body:after {
@@ -238,275 +212,9 @@ body:after {
 }
 body:after {
   clear: both;
-}
-body:before,
-body:after {
-  content: "";
-  display: table;
-}
-body:after {
-  clear: both;
-}
-.gridOverlay {
-  background-size: 80px;
-  background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -ms-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-size: 80px;
-  background-image: -moz-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -webkit-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -o-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: -ms-linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  background-image: linear-gradient(left, rgba(255, 0, 0, 0.05) 0%, rgba(255, 0, 0, 0.05) 12.5%, rgba(255, 0, 0, 0.1) 12.5%, rgba(255, 0, 0, 0.1) 87.5%, rgba(255, 0, 0, 0.05) 87.5%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-body {
-  width: 100%;
-  *zoom: 1;
-  *zoom: 1;
-}
-body:before,
-body:after {
-  content: "";
-  display: table;
-}
-body:after {
-  clear: both;
-}
-body:before,
-body:after {
-  content: "";
-  display: table;
-}
-body:after {
-  clear: both;
-}
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-.hide-text {
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-}
-.debug {
-  background: rgba(0, 255, 0, 0.5);
-}
-/* Settings */
-/* font sizes in pixels - only used for body; will be converted to ems */
-body {
-  font-size: 13px;
-  line-height: 1.3846153846153846em;
-  line-height: 1.3846153846153846em;
-  font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
-}
-h1 {
-  font-size: 1.6153846153846154em;
-  font-size: 1.6153846153846154em;
-  line-height: 0.8571428571428571em;
-  line-height: 0.8571428571428571em;
-  margin-top: 0;
-  margin-bottom: 0.8571428571428571em;
-  margin-bottom: 0.8571428571428571em;
-}
-h2 {
-  font-size: 1.4615384615384615em;
-  font-size: 1.4615384615384615em;
-  line-height: 0.9473684210526315em;
-  line-height: 0.9473684210526315em;
-  margin-top: 0;
-  margin-bottom: 0.9473684210526315em;
-  margin-bottom: 0.9473684210526315em;
-}
-h3 {
-  font-size: 1.3076923076923077em;
-  font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
-  line-height: 1.0588235294117647em;
-  margin-top: 0;
-  margin-bottom: 1.0588235294117647em;
-  margin-bottom: 1.0588235294117647em;
-}
-h4 {
-  font-size: 1.1538461538461537em;
-  font-size: 1.1538461538461537em;
-  line-height: 1.2em;
-  line-height: 1.2em;
-  margin-top: 0;
-  margin-bottom: 1.2em;
-  margin-bottom: 1.2em;
-}
-blockquote,
-h5,
-h6,
-iframe,
-label,
-p,
-pre,
-address,
-td,
-th,
-ul,
-ol,
-dl,
-dd,
-hr,
-table {
-  font-size: 1em;
-  font-size: 1em;
-  line-height: 1.3846153846153846em;
-  line-height: 1.3846153846153846em;
-  margin-top: 0;
-  margin-bottom: 1.3846153846153846em;
-  margin-bottom: 1.3846153846153846em;
-}
-small {
-  font-size: 0.8461538461538461em;
-  font-size: 0.8461538461538461em;
-  line-height: 1.6363636363636365em;
-  line-height: 1.6363636363636365em;
-  margin-top: 0;
-  margin-bottom: 1.6363636363636365em;
-  margin-bottom: 1.6363636363636365em;
 }
 body > section {
   *zoom: 1;
-  *zoom: 1;
-}
-body > section:before,
-body > section:after {
-  content: "";
-  display: table;
-}
-body > section:after {
-  clear: both;
 }
 body > section:before,
 body > section:after {
@@ -519,15 +227,6 @@ body > section:after {
 header#main {
   position: relative;
   *zoom: 1;
-  *zoom: 1;
-}
-header#main:before,
-header#main:after {
-  content: "";
-  display: table;
-}
-header#main:after {
-  clear: both;
 }
 header#main:before,
 header#main:after {
@@ -547,15 +246,6 @@ header#main hgroup {
   height: 74px;
   position: relative;
   *zoom: 1;
-  *zoom: 1;
-}
-header#main hgroup:before,
-header#main hgroup:after {
-  content: "";
-  display: table;
-}
-header#main hgroup:after {
-  clear: both;
 }
 header#main hgroup:before,
 header#main hgroup:after {
@@ -576,24 +266,9 @@ header#main hgroup:before {
 header#main hgroup h1.logo {
   display: inline;
   float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
   margin-left: 9.5%;
   position: absolute;
   top: 0;
@@ -608,15 +283,6 @@ header#main hgroup h1.logo {
 header#main nav {
   clear: left;
   *zoom: 1;
-  *zoom: 1;
-}
-header#main nav:before,
-header#main nav:after {
-  content: "";
-  display: table;
-}
-header#main nav:after {
-  clear: both;
 }
 header#main nav:before,
 header#main nav:after {
@@ -629,23 +295,12 @@ header#main nav:after {
 header#main nav ol {
   display: inline;
   float: left;
-  width: 860px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 860px;
-  margin: 0 10px;
-  margin-right: 90px;
-  margin-right: 90px;
+  width: 89.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  margin-right: 9.374999999999998%;
 }
 header#main nav ol li {
   font-size: 1.0769230769230769em;
-  font-size: 1.0769230769230769em;
-  line-height: 1.2857142857142858em;
-  line-height: 1.2857142857142858em;
-  font-size: 1.0769230769230769em;
-  font-size: 1.0769230769230769em;
-  line-height: 1.2857142857142858em;
   line-height: 1.2857142857142858em;
   margin-left: 1em;
   padding: 0.5em 0;
@@ -654,14 +309,9 @@ header#main nav ol li {
 header#main article {
   display: inline;
   float: left;
-  width: 620px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 620px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
+  width: 64.58333333333334%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
 }
 header#main ol.links {
   clear: left;
@@ -684,12 +334,8 @@ header#main .nextprev li.next {
 header#main figure {
   display: inline;
   float: left;
-  width: 220px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 220px;
-  margin: 0 10px;
+  width: 22.916666666666664%;
+  margin: 0 1.0416666666666665%;
   margin-right: 0;
   position: absolute;
   bottom: 0;
@@ -707,12 +353,6 @@ header#main figure div {
   header#main .nextprev li {
     width: 2em;
     font-size: 1.7692307692307692em;
-    font-size: 1.7692307692307692em;
-    line-height: 0.782608695652174em;
-    line-height: 0.782608695652174em;
-    font-size: 1.7692307692307692em;
-    font-size: 1.7692307692307692em;
-    line-height: 0.782608695652174em;
     line-height: 0.782608695652174em;
     height: 3em;
     line-height: 3em;
@@ -720,81 +360,33 @@ header#main figure div {
   header#main article {
     display: inline;
     float: left;
-    width: 380px;
-    margin: 0 10px;
-    display: inline;
-    float: left;
-    width: 380px;
-    margin: 0 10px;
-    margin-left: 90px;
-    margin-left: 90px;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
   }
   header#main figure {
     display: inline;
     float: left;
-    width: 460px;
-    margin: 0 10px;
-    display: inline;
-    float: left;
-    width: 460px;
-    margin: 0 10px;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
     margin-right: 0;
   }
 }
 section.techtalks h1 {
   display: inline;
   float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
 }
 section.techtalks ul {
   display: inline;
   float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
-  *zoom: 1;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
   *zoom: 1;
   white-space: nowrap;
-}
-section.techtalks ul:before,
-section.techtalks ul:after {
-  content: "";
-  display: table;
-}
-section.techtalks ul:after {
-  clear: both;
 }
 section.techtalks ul:before,
 section.techtalks ul:after {
@@ -813,18 +405,12 @@ section.techtalks ul li {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 section.techtalks ul li figure {
   position: relative;
 }
 section.techtalks ul li figure img {
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -869,83 +455,40 @@ section.latestnews section.news,
 section.latestnews section.info {
   display: inline;
   float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
 }
 section.latestnews article {
-  margin-bottom: 2.25em;
   margin-bottom: 2.25em;
 }
 @media screen and (min-width: 50em) {
   section.latestnews section.news {
     display: inline;
     float: left;
-    width: 380px;
-    margin: 0 10px;
-    display: inline;
-    float: left;
-    width: 380px;
-    margin: 0 10px;
-    margin-left: 90px;
-    margin-left: 90px;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
   }
   section.latestnews section.info {
     display: inline;
     float: left;
-    width: 380px;
-    margin: 0 10px;
-    display: inline;
-    float: left;
-    width: 380px;
-    margin: 0 10px;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
   }
 }
 footer {
   display: inline;
   float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  display: inline;
-  float: left;
-  width: 780px;
-  margin: 0 10px;
-  margin-left: 90px;
-  margin-left: 90px;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
 }
 footer section {
   width: 50%;
   float: left;
   margin-top: 1em;
   padding-right: 10px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -998,9 +541,6 @@ header#main hgroup h1.logo {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
   background: url(../images/logo-background.png) no-repeat left center;
 }
 header#main nav {
@@ -1012,12 +552,6 @@ header#main nav ol {
 }
 header#main nav ol li {
   font-size: 1.3076923076923077em;
-  font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
-  line-height: 1.0588235294117647em;
-  font-size: 1.3076923076923077em;
-  font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
   line-height: 1.0588235294117647em;
 }
 header#main article {
@@ -1029,30 +563,12 @@ header#main article h1 {
   letter-spacing: 2px;
   color: #606060;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #606060;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
   font-size: 2.923076923076923em;
-  font-size: 2.923076923076923em;
-  line-height: 0.47368421052631576em;
-  line-height: 0.47368421052631576em;
-  font-size: 2.923076923076923em;
-  font-size: 2.923076923076923em;
-  line-height: 0.47368421052631576em;
   line-height: 0.47368421052631576em;
 }
 header#main article h2 {
   color: #868686;
   font-size: 1.2307692307692308em;
-  font-size: 1.2307692307692308em;
-  line-height: 1.125em;
-  line-height: 1.125em;
-  font-size: 1.2307692307692308em;
-  font-size: 1.2307692307692308em;
-  line-height: 1.125em;
   line-height: 1.125em;
   line-height: 1.4em;
 }
@@ -1074,20 +590,8 @@ header#main .nextprev li {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-  text-shadow: 0 -1px 1px #818181, 0 0 0 transparent;
   text-shadow: 0 -1px 1px #818181, 0 0 0 transparent;
   font-size: 1.6153846153846154em;
-  font-size: 1.6153846153846154em;
-  line-height: 0.8571428571428571em;
-  line-height: 0.8571428571428571em;
-  font-size: 1.6153846153846154em;
-  font-size: 1.6153846153846154em;
-  line-height: 0.8571428571428571em;
   line-height: 0.8571428571428571em;
   height: 3em;
   line-height: 3em;
@@ -1102,22 +606,10 @@ section.techtalks {
 }
 section.techtalks h1 {
   font-size: 2.1538461538461537em;
-  font-size: 2.1538461538461537em;
-  line-height: 0.6428571428571429em;
-  line-height: 0.6428571428571429em;
-  font-size: 2.1538461538461537em;
-  font-size: 2.1538461538461537em;
-  line-height: 0.6428571428571429em;
   line-height: 0.6428571428571429em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #60574c;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 87, 76, 0.2);
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 87, 76, 0.2);
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #60574c;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 87, 76, 0.2);
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 87, 76, 0.2);
   margin-top: 1em;
   margin-bottom: 1em;
@@ -1136,19 +628,9 @@ section.techtalks img {
   -ms-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
 }
 section.latestnews {
   background: #e7e7e7;
-  -webkit-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  -moz-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  -ms-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  -o-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
   -webkit-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
   -moz-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
   -ms-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
@@ -1160,19 +642,7 @@ section.latestnews  > h1 {
   letter-spacing: 2px;
   color: #606060;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #606060;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
   font-size: 1.7692307692307692em;
-  font-size: 1.7692307692307692em;
-  line-height: 0.782608695652174em;
-  line-height: 0.782608695652174em;
-  font-size: 1.7692307692307692em;
-  font-size: 1.7692307692307692em;
-  line-height: 0.782608695652174em;
   line-height: 0.782608695652174em;
   text-align: center;
   position: relative;
@@ -1182,12 +652,6 @@ section.latestnews section  > h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #e97000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #e97000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
 }
 section.latestnews section.news article.blog {
@@ -1203,12 +667,6 @@ section.latestnews section.news article.blog h1 {
 }
 section.latestnews section.news article.blog h2 {
   font-size: 1em;
-  font-size: 1em;
-  line-height: 1.3846153846153846em;
-  line-height: 1.3846153846153846em;
-  font-size: 1em;
-  font-size: 1em;
-  line-height: 1.3846153846153846em;
   line-height: 1.3846153846153846em;
   margin-bottom: 0.25em;
 }
@@ -1235,26 +693,9 @@ section.latestnews section.info img {
   -moz-transform: rotate(5deg);
   -o-transform: rotate(5deg);
   transform: rotate(5deg);
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -ms-transform: rotate(5deg);
-  -webkit-transform: rotate(5deg);
-  -moz-transform: rotate(5deg);
-  -o-transform: rotate(5deg);
-  transform: rotate(5deg);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  -moz-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  -ms-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  -o-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
   -webkit-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
   -moz-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
   -ms-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
@@ -1263,33 +704,15 @@ section.latestnews section.info img {
 }
 section.latestnews section.info h2 {
   font-size: 1.3076923076923077em;
-  font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
-  line-height: 1.0588235294117647em;
-  font-size: 1.3076923076923077em;
-  font-size: 1.3076923076923077em;
-  line-height: 1.0588235294117647em;
   line-height: 1.0588235294117647em;
 }
 section.latestnews section.info li {
   color: #7a7a7a;
   font-size: 0.9230769230769231em;
-  font-size: 0.9230769230769231em;
-  line-height: 1.5em;
-  line-height: 1.5em;
-  font-size: 0.9230769230769231em;
-  font-size: 0.9230769230769231em;
-  line-height: 1.5em;
   line-height: 1.5em;
 }
 section.latestnews section.info li h3 {
   font-size: 1.2307692307692308em;
-  font-size: 1.2307692307692308em;
-  line-height: 1.125em;
-  line-height: 1.125em;
-  font-size: 1.2307692307692308em;
-  font-size: 1.2307692307692308em;
-  line-height: 1.125em;
   line-height: 1.125em;
   color: #606060;
   margin-bottom: 0.25em;
@@ -1299,32 +722,14 @@ section.latestnews section.info * {
 }
 section.latestnews section h1 {
   font-size: 1.2307692307692308em;
-  font-size: 1.2307692307692308em;
-  line-height: 1.125em;
-  line-height: 1.125em;
-  font-size: 1.2307692307692308em;
-  font-size: 1.2307692307692308em;
-  line-height: 1.125em;
   line-height: 1.125em;
 }
 section.latestnews section h2 {
   font-size: 1.1538461538461537em;
-  font-size: 1.1538461538461537em;
-  line-height: 1.2em;
-  line-height: 1.2em;
-  font-size: 1.1538461538461537em;
-  font-size: 1.1538461538461537em;
-  line-height: 1.2em;
   line-height: 1.2em;
 }
 section.latestnews section h3 {
   font-size: 1.0769230769230769em;
-  font-size: 1.0769230769230769em;
-  line-height: 1.2857142857142858em;
-  line-height: 1.2857142857142858em;
-  font-size: 1.0769230769230769em;
-  font-size: 1.0769230769230769em;
-  line-height: 1.2857142857142858em;
   line-height: 1.2857142857142858em;
 }
 footer {
@@ -1336,6 +741,5 @@ footer a {
 footer .copyright {
   border-top: 1px solid #333;
   color: #9b9b9b;
-  font-size: 0.8461538461538461em;
   font-size: 0.8461538461538461em;
 }
