@@ -61,6 +61,19 @@ news_expire_days: 30
     <h1>ABOUT NEAR INFINITY</h1>
     {% capture about_content %}{% include homepage/about_nearinfinity.md %}{% endcapture %}
     {{ about_content | unindent | markdownify }}
+
+    <section class="about-fast">
+      <h1>FAST</h1>
+      <p>Delivering great software, fast
+    </section> 
+    <section class="about-agile">
+      <h1>AGILE</h1>
+      <p>Using effective, customer-centric Agile development practices
+    </section> 
+    <section class="about-best">
+      <h1>BEST</h1>
+      <p>Hiring only the most qualified and passionate technologists
+    </section> 
   </hgroup>
 
   {% if has_news %}
@@ -68,8 +81,14 @@ news_expire_days: 30
     <h1>NEWS</h1>
     {% for news in site.categories.news limit:page.max_news %}
       <article>
-        <h2>{{ news.title | upcase }}</h2>
-        <p>{{ news.snippet }}</p>
+      <h2><a href="{{ news.url }}">{{ news.title | upcase }}</a></h2>
+        <p>
+          {% if news.excerpt %}
+            {{ news.excerpt }}
+          {% else %}
+            {{ news.content | truncatewords:25 }}
+          {% endif %}
+        </p>
       </article>
     {% endfor %}
   </section>

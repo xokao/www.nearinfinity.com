@@ -133,6 +133,10 @@ table {
 .band-strip {
   padding-top: 2em;
 }
+.plain-anchor a {
+  color: inherit;
+  text-decoration: none;
+}
 /* Settings */
 /* font sizes in pixels - only used for body; will be converted to ems */
 body {
@@ -374,6 +378,39 @@ header#main figure div {
   width: 81.25%;
   margin: 0 1.0416666666666665%;
   margin-left: 9.374999999999998%;
+}
+#aboutnic hgroup section {
+  float: left;
+  text-align: center;
+  width: 33.333333333333336%;
+}
+#aboutnic hgroup section h1 {
+  margin-bottom: 0;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #e97000;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
+  font-size: 1.7692307692307692em;
+  line-height: 1.1612903225806452em;
+}
+#aboutnic hgroup section h1:after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  margin: auto;
+  background: url(../images/icons/sprite.png);
+}
+#aboutnic hgroup section.about-agile h1:after {
+  background-position: -50px 0;
+}
+#aboutnic hgroup section.about-best h1:after {
+  background-position: -100px 0;
+}
+#aboutnic hgroup section  > * {
+  margin-left: 20px;
+  margin-right: 20px;
 }
 #aboutnic #news {
   display: inline;
@@ -666,6 +703,10 @@ header#main figure div {
   font-size: 1.3076923076923077em;
   line-height: 1.2857142857142858em;
   margin-bottom: 0;
+}
+#aboutnic #news article h2 a {
+  color: inherit;
+  text-decoration: none;
 }
 section.techtalks {
   background: url(../images/leather.jpg) repeat-x;
