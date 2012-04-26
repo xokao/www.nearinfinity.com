@@ -2,6 +2,7 @@
 layout: default
 title: near infinity
 max_news: 2
+news_expire_days: 30
 ---
 
 <header id="main">
@@ -32,25 +33,48 @@ max_news: 2
   </ol>
 </header>
 
-<section id="aboutnic">
+{% assign has_news = false %}
+{% if site.categories.news.size > 0 %}
+  {% comment %} 
+  Long way to find the age of the news item based on site build date
+
+  (siteYear - newsYear) * 365 + (siteDay - newsDay) = # of days posted from site build
+
+  Don't display any news it the first item (latest) is older than news_expire_days defined at top of page
+  {% endcomment %}
+  {% capture siteYear %}{{ site.time | date: "%Y" }}{% endcapture %}
+  {% capture siteDay %}{{ site.time | date: "%j" }}{% endcapture %}
+  {% capture newsYear %}{{ site.categories.news.first.date | date: "%Y" }}{% endcapture %}
+  {% capture newsDay %}{{ site.categories.news.first.date | date: "%j" }}{% endcapture %}
+  {% capture daysBetween %}{{ siteDay | minus:newsDay }}{% endcapture %}
+  {% capture daysBetweenWithYears %}{{ siteYear | minus:newsYear | times:365 | plus:daysBetween }}{% endcapture %}
+  {% capture difference %}{{ page.news_expire_days | minus:daysBetweenWithYears }}{% endcapture %}
+
+  {% comment %}If the difference is negative than don't show{% endcomment %}
+  {% unless difference contains '-' %} 
+    {% assign has_news = true %}
+  {% endunless %}
+{% endif %}
+
+<section id="aboutnic" class="{% if has_news %}has_news{% endif %}">
   <hgroup>
     <h1>ABOUT NEAR INFINITY</h1>
     {% capture about_content %}{% include homepage/about_nearinfinity.md %}{% endcapture %}
     {{ about_content | unindent | markdownify }}
   </hgroup>
 
+  {% if has_news %}
   <section id="news">
-    <!-- TODO: can we hide older than 2 months old news items??? -->
-    {% if site.categories.news.size > 0 %} 
-      <h1>NEWS</h1>
-      {% for news in site.categories.news limit:page.max_news %}
-        <article>
-          <h2>{{ news.title | upcase }}</h2>
-          <p>{{ news.snippet }}</p>
-        </article>
-      {% endfor %}
-    {% endif %}
+    <h1>NEWS</h1>
+    {% for news in site.categories.news limit:page.max_news %}
+      <article>
+        <h2>{{ news.title | upcase }}</h2>
+        <p>{{ news.snippet }}</p>
+      </article>
+    {% endfor %}
   </section>
+  {% endif %}
+
 </section>
 
 

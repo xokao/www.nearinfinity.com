@@ -122,13 +122,15 @@ header#main {
 
   @media screen and (min-width: 50em) {
 
-    hgroup { 
-      .column(6);
-      .push(1);
-    }
-    #news {
-      .column(3);
-      .push(1);
+    &.has_news { 
+      hgroup { 
+        .column(6);
+        .push(1);
+      }
+      #news {
+        .column(3);
+        .push(1);
+      }
     }
   }
 }

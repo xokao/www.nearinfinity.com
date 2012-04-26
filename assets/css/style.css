@@ -383,14 +383,14 @@ header#main figure div {
   margin-left: 9.374999999999998%;
 }
 @media screen and (min-width: 50em) {
-  #aboutnic hgroup {
+  #aboutnic.has_news hgroup {
     display: inline;
     float: left;
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
     margin-left: 9.374999999999998%;
   }
-  #aboutnic #news {
+  #aboutnic.has_news #news {
     display: inline;
     float: left;
     width: 22.916666666666664%;
