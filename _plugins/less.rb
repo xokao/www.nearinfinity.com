@@ -41,7 +41,7 @@ module Jekyll
     end
 
     class LessCssGenerator < Jekyll::Generator
-      safe true
+      safe false
 
       # Jekyll will have already added the *.less files as Jekyll::StaticFile
       # objects to the static_files array.  Here we replace those with a
