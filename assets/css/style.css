@@ -435,111 +435,118 @@ header#main figure div {
     margin-left: 9.374999999999998%;
   }
 }
-section.techtalks h1 {
+#techcommunity {
+  padding-top: 2em;
+}
+#techcommunity  > h1 {
   display: inline;
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
   margin-left: 9.374999999999998%;
 }
-section.techtalks ul {
-  display: inline;
-  float: left;
-  width: 81.25%;
-  margin: 0 1.0416666666666665%;
-  margin-left: 9.374999999999998%;
-  *zoom: 1;
-  white-space: nowrap;
-}
-section.techtalks ul:before,
-section.techtalks ul:after {
-  content: "";
-  display: table;
-}
-section.techtalks ul:after {
-  clear: both;
-}
-section.techtalks ul li {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  display: inline-block;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-section.techtalks ul li figure {
-  position: relative;
-}
-section.techtalks ul li figure img {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-section.techtalks ul li figure figcaption {
-  position: absolute;
-  left: 10px;
-  top: 80%;
-  padding: 0.25em;
-  right: 10px;
-}
-section.techtalks ul li:nth-child(n+2) {
-  display: none;
-}
-@media screen and (min-width: 35em) {
-  section.techtalks ul li {
-    width: 50%;
-  }
-  section.techtalks ul li:nth-child(n+2) {
-    display: inline-block;
-  }
-  section.techtalks ul li:nth-child(n+3) {
-    display: none;
-  }
-}
-@media screen and (min-width: 60em) {
-  section.techtalks ul li {
-    width: 25%;
-  }
-  section.techtalks ul li:nth-child(n) {
-    display: inline-block;
-  }
-  section.techtalks ul li:nth-child(n+5) {
-    display: none;
-  }
-}
-section.latestnews  > h1 {
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-section.latestnews section.news,
-section.latestnews section.info {
+#techcommunity  > section {
   display: inline;
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
   margin-left: 9.374999999999998%;
 }
-section.latestnews article {
-  margin-bottom: 2.25em;
-}
-@media screen and (min-width: 50em) {
-  section.latestnews section.news {
+@media screen and (min-width: 20em) {
+  #techcommunity .techtalks {
     display: inline;
     float: left;
-    width: 39.58333333333333%;
+    width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
     margin-left: 9.374999999999998%;
   }
-  section.latestnews section.info {
+  #techcommunity .blogs {
     display: inline;
     float: left;
-    width: 39.58333333333333%;
+    width: 31.25%;
     margin: 0 1.0416666666666665%;
   }
+  #techcommunity .speaking {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+    margin-right: 9.374999999999998%;
+  }
 }
+/*
+section.techtalks {
+  h1 {
+    .pad;
+  }
+  ul {
+    .pad;
+    .clearfix;
+    white-space: nowrap;
+    li {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      display: inline-block;
+      .box-sizing;
+      figure { 
+        position: relative;
+        img { 
+          width: 100%;
+          .box-sizing;
+        }
+        figcaption {
+          position: absolute;
+          left: 10px;
+          top: 80%;
+          padding: 0.25em;
+          right: 10px;
+        }
+      }
+      &:nth-child(n+2) { display: none; }
+    }
+    @media screen and (min-width: 35em) {
+      li { 
+        width: 100 / 2%;
+        &:nth-child(n+2) { display: inline-block; }
+        &:nth-child(n+3) { display: none; }
+      }
+    }
+    @media screen and (min-width: 60em) {
+      li {
+        width: 100 / 4%;
+        &:nth-child(n) { display: inline-block; }
+        &:nth-child(n+5) { display: none; }
+      }
+    }
+  }
+}
+
+section.latestnews {
+  & > h1 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  section.news, section.info {
+    .pad;
+  }
+  article {
+    .margin_bottom(-5);
+  }
+
+  
+  @media screen and (min-width: 50em) {
+    section.news { 
+      .column((@columns - 2)  / 2);
+      .push(1);
+    }
+    section.info {
+      .column((@columns - 2)  / 2);
+    }
+  }
+}
+*/
 footer {
   display: inline;
   float: left;
@@ -708,138 +715,130 @@ header#main figure div {
   color: inherit;
   text-decoration: none;
 }
-section.techtalks {
-  background: url(../images/leather.jpg) repeat-x;
+#techcommunity {
+  background: url(../images/leather.jpg) repeat;
   color: #e7e7e7;
 }
-section.techtalks h1 {
-  font-size: 2.1538461538461537em;
-  line-height: 1.0746268656716418em;
+#techcommunity  > h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
-  color: #60574c;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 87, 76, 0.2);
-  margin-top: 1em;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  font-size: 2.5384615384615383em;
+  line-height: 1em;
   margin-bottom: 1em;
 }
-section.techtalks ul {
-  padding-bottom: 2em;
+#techcommunity .techtalks img {
+  max-width: 100%;
 }
-section.techtalks ul li figcaption {
-  background: rgba(0, 0, 0, 0.30000000000000004);
-  text-align: center;
-}
-section.techtalks img {
-  border: 5px solid rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-  border-radius: 3px;
-}
-section.latestnews {
-  background: #e7e7e7;
-  -webkit-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  -moz-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  -ms-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  -o-box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-  box-shadow: 0 5px 10px #000000, 0 -1px 0 #f4f4f4 inset;
-}
-section.latestnews  > h1 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #606060;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 96, 96, 0.2);
-  font-size: 1.7692307692307692em;
-  line-height: 1.1612903225806452em;
-  text-align: center;
+#techcommunity .blogs article,
+#techcommunity .speaking article {
   position: relative;
-  margin: 1.5em 0;
+  min-height: 6em;
+  padding-left: 75px;
 }
-section.latestnews section  > h1 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #e97000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
+#techcommunity .blogs img,
+#techcommunity .speaking img {
+  max-width: 75px;
+  position: absolute;
+  left: 0;
+  top: -8px;
 }
-section.latestnews section.news article.blog {
-  clear: left;
+/*
+section.presentations {
+  background: url(../images/leather.jpg) repeat-x;
+  color: @impact_background;
+  h1 {
+    .size(15);
+    .light_header(@darker_text);
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  ul {
+    padding-bottom: 2em;
+    li { 
+      figcaption {
+        background: fadeout(black, 70%);
+        text-align: center;
+      }
+    }
+  }
+  img { 
+    border: 5px solid rgba(0,0,0,0.1);
+    .border-radius(3px);
+  }
+
 }
-section.latestnews section.news article.blog img {
-  float: left;
-  margin-left: -13px;
-  margin-top: -6px;
+
+section.latestnews {
+  background: @impact_background;
+  .box-shadow(0 5px 10px black, 0 -1px 0 lighten(@impact_background, 5%) inset);
+
+  & > h1 {
+    .light_header(@light_text);
+    .size(10);
+    text-align: center;
+    position: relative;
+    margin: 1.5em 0;
+  }
+  section {
+    & > h1 { 
+      .light_header(@nic_orange);
+    }
+  }
+  section.news {
+    article.blog {
+      clear: left;
+      img {
+        float: left;
+        margin-left: -13px;
+        margin-top: -6px;
+      }
+      h1 {
+        margin-bottom: 0.25em;
+      }
+      h2 {
+        .size(0);
+        margin-bottom: 0.25em;
+      }
+      p {
+        clear: right;
+      }
+    }
+  }
+  section.info {
+    text-align: center;
+    a { font-weight: bold; }
+    img {
+      width: 45%;
+      float: right;
+      border: 5px solid white;
+      margin: 5px;
+      .rotate(5deg);
+      .box-sizing;
+      .box-shadow;
+    }
+    h2 {
+      .size(4);
+    }
+    li {
+      color: lighten(@light_text, 10%);
+      .size(-1);
+      h3 {
+        .size(3);
+        color: @light_text;
+        margin-bottom: 0.25em;
+      }
+    }
+    & * { text-align: left; }
+  }
+  section {
+    h1 { .size(3); }
+    h2 { .size(2); }
+    h3 { .size(1); }
+  }
 }
-section.latestnews section.news article.blog h1 {
-  margin-bottom: 0.25em;
-}
-section.latestnews section.news article.blog h2 {
-  font-size: 1em;
-  line-height: 1.3846153846153846em;
-  margin-bottom: 0.25em;
-}
-section.latestnews section.news article.blog p {
-  clear: right;
-}
-section.latestnews section.info {
-  text-align: center;
-}
-section.latestnews section.info a {
-  font-weight: bold;
-}
-section.latestnews section.info img {
-  width: 45%;
-  float: right;
-  border: 5px solid white;
-  margin: 5px;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  -ms-transform-origin: 50% 50%;
-  transform-origin: 50% 50%;
-  -ms-transform: rotate(5deg);
-  -webkit-transform: rotate(5deg);
-  -moz-transform: rotate(5deg);
-  -o-transform: rotate(5deg);
-  transform: rotate(5deg);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  -moz-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  -ms-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  -o-box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.8), 0 0 0 transparent;
-}
-section.latestnews section.info h2 {
-  font-size: 1.3076923076923077em;
-  line-height: 1.2857142857142858em;
-}
-section.latestnews section.info li {
-  color: #7a7a7a;
-  font-size: 0.9230769230769231em;
-  line-height: 1.411764705882353em;
-}
-section.latestnews section.info li h3 {
-  font-size: 1.2307692307692308em;
-  line-height: 1.309090909090909em;
-  color: #606060;
-  margin-bottom: 0.25em;
-}
-section.latestnews section.info * {
-  text-align: left;
-}
-section.latestnews section h1 {
-  font-size: 1.2307692307692308em;
-  line-height: 1.309090909090909em;
-}
-section.latestnews section h2 {
-  font-size: 1.1538461538461537em;
-  line-height: 1.3333333333333333em;
-}
-section.latestnews section h3 {
-  font-size: 1.0769230769230769em;
-  line-height: 1.3584905660377358em;
-}
+*/
 footer {
   color: black;
 }

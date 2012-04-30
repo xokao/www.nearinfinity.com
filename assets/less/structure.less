@@ -167,6 +167,33 @@ header#main {
   }
 }
 
+
+#techcommunity {
+  .band-strip;
+
+  & > h1 {
+    .pad;
+  }
+  & > section {
+    .pad;
+  }
+
+  @media screen and (min-width:20em) {
+    .techtalks {
+      .column(3);
+      .push(1);
+    }
+    .blogs {
+      .column(4);
+    }
+    .speaking {
+      .column(3);
+      .pull(1);
+    }
+  }
+}
+
+/*
 section.techtalks {
   h1 {
     .pad;
@@ -238,6 +265,7 @@ section.latestnews {
     }
   }
 }
+*/
 
 
 footer {

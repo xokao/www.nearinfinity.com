@@ -2,9 +2,13 @@
 layout: default
 title: near infinity
 max_news: 2
+max_blogs: 2
+max_presentations: 2
 news_expire_days: 30
+presentation_expire_days: 0
 ---
-
+{% capture siteYear %}{{ site.time | date: "%Y" }}{% endcapture %}
+{% capture siteDay %}{{ site.time | date: "%j" }}{% endcapture %}
 <header id="main">
   <hgroup>
     <h1 class="logo">Near Infinity</h1>
@@ -42,8 +46,6 @@ news_expire_days: 30
 
   Don't display any news it the first item (latest) is older than news_expire_days defined at top of page
   {% endcomment %}
-  {% capture siteYear %}{{ site.time | date: "%Y" }}{% endcapture %}
-  {% capture siteDay %}{{ site.time | date: "%j" }}{% endcapture %}
   {% capture newsYear %}{{ site.categories.news.first.date | date: "%Y" }}{% endcapture %}
   {% capture newsDay %}{{ site.categories.news.first.date | date: "%j" }}{% endcapture %}
   {% capture daysBetween %}{{ siteDay | minus:newsDay }}{% endcapture %}
@@ -97,53 +99,54 @@ news_expire_days: 30
 </section>
 
 
-<!-- 
+{% assign has_presentations = false %}
+{% if site.categories.presentations.size > 0 %}
+  {% capture presentationsYear %}{{ site.categories.presentations.first.date | date: "%Y" }}{% endcapture %}
+  {% capture presentationsDay %}{{ site.categories.presentations.first.date | date: "%j" }}{% endcapture %}
+  {% capture daysBetween %}{{ presentationsDay | minus:siteDay }}{% endcapture %}
+  {% capture daysBetweenWithYears %}{{ presentationsYear | minus:siteYear | times:365 | plus:daysBetween }}{% endcapture %}
+  {% capture difference %}{{ page.presentations_expire_days | minus:daysBetweenWithYears }}{% endcapture %}
+  {% if difference contains '-' %} 
+    {% assign has_presentations = true %}
+  {% endif %}
+{% endif %}
 
-<section class='latestnews'>
-    <h1>WHAT WE'RE UP TO</h1>
+<section id="techcommunity" class="{% if has_presentations %}has_presentations{% endif %}">
+  <h1>TECHNICAL COMMUNITY</h1>
 
-    <section class="news">
-      <h1>NEWS</h1>
-      <article>
-        <h1>Near Infinity Named One of the Top 25 Best Small-Sized Companies to Work for in America</h1>
-        <p>Near Infinity Corporation was named one of this year's 50 Best Small and Medium Companies to Work For by the Great Place to Work Institute</p>
-      </article>
-      <article>
-        <h1>NIC adopts 138 kids for the holidays!</h1>
-        <p>Near Infinity this year adopted 138 children, seniors, and adults through Reston Interfaith's Gifts For Kids drive, a program which helps...</p>
-      </article>
+  <section class="techtalks">
+    <h1>TECH TALKS</h1>
+    <figure>
+      <img src="assets/images/techtalks/talk1.jpg"/>
+      <figcaption>Joe Demos Arduino</figcaption>
+    </figure>
+  </section>
 
-      <h1>BLOGS</h1>
-      <article class='blog'>
-        <img src="assets/images/users/jason.png"/>
-        <h1>Mock NSDate (or other) class methods</h1>
-        <h2>Jason Harwig on Apr 3, 2012</h1>
-        <p>Today I ran into an issue unit testing a method that called...</p>
-      </article>
-      <article class='blog'>
-        <img src="assets/images/users/jeff.png"/>
-        <h1>Automatic Code Coverage Switching for Vows.js</h1>
-        <h2>Jeff Kunkle on Mar 27, 2012</h1>
-        <p>If you've used Node.js lately you've likely run across...</p>
-      </article>
-    </section>
+  <section class="blogs">
+    <h1>BLOGS</h1>
+    {% for blog in site.categories.blogs limit:page.max_blogs %}
+    <article>
+      <img src="assets/images/users/jason.png"/>
+      <h1>{{ blog.title }}</h1>
+      <h2>{{ blog.categories[1] }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
+    </article>
+    {% endfor %}
+  </section>
 
-    <section class="info">
-      <h1>TRAINING FACILITY</h1>
-      <img src="assets/images/training_facility.jpg"/>
-      <p>Looking for a great place to hold a training event? 
-      <p><a href="#">Book it</a> for your event.
-
-      <h2>Upcoming Events</h2>
-      <ol>
-        <li>
-          <h3>Sencha Touch 2 Bootcamp</h3>
-          Apr 28-30, 2012 by Modus Create
-        </li>
-      </ol>
-    </section>
+  {% if has_presentations %}
+  <section class="speaking">
+    <h1>SPEAKING</h1>
+    {% for presentation in site.categories.presentations limit:page.max_presentations %}
+    <article>
+      <img src="assets/images/users/jason.png"/>
+      <h1>{{ presentation.title }}</h1>
+      <h2>{{ presentation.speaker }} at {{ presentation.event }} on {{ presentation.date | date:'%b %d, %Y' }}</h2>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
 </section>
--->
+
 
 <footer>
   <section>

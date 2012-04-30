@@ -136,7 +136,36 @@ header#main {
 
 }
 
-section.techtalks {
+#techcommunity {
+  background: url(../images/leather.jpg) repeat;
+  color: @impact_background;
+
+  & > h1 {
+    .light_header(white);
+    .size(20);
+    margin-bottom: 1em;
+  }
+
+  .techtalks {
+    img { max-width: 100%; }
+  }
+  .blogs,.speaking {
+    article { 
+      position: relative;
+      min-height: 6em;
+      padding-left:75px;
+    }
+    
+    img { 
+      max-width:75px;
+      position: absolute;
+      left: 0;
+      top: -8px; 
+    }
+  }
+}
+/*
+section.presentations {
   background: url(../images/leather.jpg) repeat-x;
   color: @impact_background;
   h1 {
@@ -229,6 +258,7 @@ section.latestnews {
     h3 { .size(1); }
   }
 }
+*/
 
 footer {
   color: black;
