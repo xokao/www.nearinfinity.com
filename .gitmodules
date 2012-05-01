@@ -1,3 +1,0 @@
-[submodule "blogs"]
-	path = blogs
-	url = git://github.com/nearinfinity/blogs.nearinfinity.com.git
