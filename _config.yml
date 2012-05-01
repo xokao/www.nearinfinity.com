@@ -1,3 +1,2 @@
 pygments: true
-markdown: kramdown
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md]
