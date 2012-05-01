@@ -9,6 +9,25 @@
 	<title>{{ page.title }}</title>
 </head>
 <body>
+  <header id="main" class="homepage">
+    {% include header.html %}
+    <article>
+      <h1>MOBILE</h1>
+      <h2>
+      {% capture impact_mobile %}{% include homepage/impact_mobile.md %}{% endcapture %}
+      {{ impact_mobile | unindent | markdownify }}
+      </h2>
+      <img class="article-links" src="assets/images/dots.png"/>
+    </article>
+    <figure><div></figure>
+    <ol class="nextprev">
+      <li class="previous">&lt;</li>
+      <li class="next">&gt;</li>
+    </ol>
+  </header>
+
   {{ content }}
+
+  {% include footer.html %}
 </body>
 </html>

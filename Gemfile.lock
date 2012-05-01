@@ -20,7 +20,7 @@ GEM
     less (2.2.1)
       commonjs (~> 0.2.6)
     libv8 (3.3.10.4)
-    liquid (2.3.0)
+    liquid (2.2.2)
     maruku (0.6.0)
       syntax (>= 1.0.0)
     posix-spawn (0.3.6)
@@ -35,4 +35,5 @@ DEPENDENCIES
   RedCloth
   jekyll (= 0.11.0)
   less
+  liquid (= 2.2.2)
   therubyracer

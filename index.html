@@ -9,33 +9,6 @@ presentation_expire_days: 0
 ---
 {% capture siteYear %}{{ site.time | date: "%Y" }}{% endcapture %}
 {% capture siteDay %}{{ site.time | date: "%j" }}{% endcapture %}
-<header id="main">
-  <hgroup>
-    <h1 class="logo">Near Infinity</h1>
-  <nav>
-    <ol>
-      <li>home</li>
-      <li>what we do</li>
-      <li>who we are</li>
-      <li>join us</li>
-    </ol>
-  </nav>
-  </hgroup>
-  <hr>
-  <article>
-    <h1>MOBILE</h1>
-    <h2>
-    {% capture impact_mobile %}{% include homepage/impact_mobile.md %}{% endcapture %}
-    {{ impact_mobile | unindent | markdownify }}
-    </h2>
-    <img class="article-links" src="assets/images/dots.png"/>
-  </article>
-  <figure><div></figure>
-  <ol class="nextprev">
-    <li class="previous">&lt;</li>
-    <li class="next">&gt;</li>
-  </ol>
-</header>
 
 {% assign has_news = false %}
 {% if site.categories.news.size > 0 %}
@@ -126,9 +99,9 @@ presentation_expire_days: 0
     <h1>BLOGS</h1>
     {% for blog in site.categories.blogs limit:page.max_blogs %}
     <article>
-      <img src="assets/images/users/jason.png"/>
-      <h1>{{ blog.title }}</h1>
-      <h2>{{ blog.categories[1] }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
+      <img src="assets/images/users/{{ blog.categories[1] }}.png"/>
+      <h1><a href="{{ blog.url }}">{{ blog.title }}</a></h1>
+      <h2>{{ blog.categories[1] | split:'_' | map:'capitalize' | join:' ' }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
     </article>
     {% endfor %}
   </section>
@@ -138,66 +111,24 @@ presentation_expire_days: 0
     <h1>SPEAKING</h1>
     {% for presentation in site.categories.presentations limit:page.max_presentations %}
     <article>
-      <img src="assets/images/users/jason.png"/>
+      <img src="assets/images/users/{{ presentation.categories[1] }}.png"/>
       <h1>{{ presentation.title }}</h1>
       <h2>{{ presentation.speaker }} at {{ presentation.event }} on {{ presentation.date | date:'%b %d, %Y' }}</h2>
     </article>
     {% endfor %}
   </section>
+  {% else %}
+    <section class="moreblogs">
+      <h1>&nbsp;</h1>
+      {% for blog in site.categories.blogs limit:page.max_blogs offset:page.max_blogs %}
+      <article>
+        <img src="assets/images/users/{{ blog.categories[1] }}.png"/>
+        <h1><a href="{{ blog.url }}">{{ blog.title }}</a></h1>
+        <h2>{{ blog.categories[1] | split:'_' | map:'capitalize' | join:' ' }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
+      </article>
+      {% endfor %}
+    </section>
   {% endif %}
 </section>
 
-
-<footer>
-  <section>
-    <h1>what we do</h1>
-    <ol>
-      <li>big data</li>
-      <li>mobile</li>
-      <li>trusted apps</li>
-    </ol>
-  </section>
-  <section>
-    <h1>products</h1>
-    <ol>
-      <li>Blur</li>
-      <li>Clearance Track</li>
-      <li>open source</li>
-    </ol>
-  </section>
-  <section>
-    <h1>who we are</h1>
-    <ol>
-      <li>our blog</li>
-      <li>NIC-U</li>
-    </ol>
-  </section>
-  <section>
-    <h1>join us</h1>
-    <ol>
-      <li>benefits</li>
-      <li>open positions</li>
-      <li>internship program</li>
-    </ol>
-  </section>
-  <section>
-    <h1>connect</h1>
-    <ol>
-      <li>twitter</li>
-      <li>youtube</li>
-      <li>github</li>
-    </ol>
-  </section>
-  <section>
-    <h1>contact</h1>
-    <ul>
-      <li class="addr">1881 Campus Commons Drive<br>Suite 205<br>Reston, VA 20191</li>
-      <li>703-904-7505 (phone)</li>
-      <li>703-904-3043 (fax)</li>
-      <li>info@nearinfinity.com</li>
-    </ul>
-      
-  </section>
-  <p class='copyright'>&copy; Near Infinity, {{ site.time | date: "%Y" }}</p>
-</footer>
 

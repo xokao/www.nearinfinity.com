@@ -1,3 +1,4 @@
+@import '../css/pygments-dark.css';
 html,
 body,
 div,
@@ -452,26 +453,44 @@ header#main figure div {
   margin: 0 1.0416666666666665%;
   margin-left: 9.374999999999998%;
 }
-@media screen and (min-width: 20em) {
+#techcommunity .moreblogs {
+  display: none;
+}
+@media screen and (min-width: 30em) {
   #techcommunity .techtalks {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
     margin-left: 9.374999999999998%;
+    margin-right: 9.374999999999998%;
   }
   #techcommunity .blogs {
     display: inline;
     float: left;
-    width: 31.25%;
+    width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
   }
-  #techcommunity .speaking {
+  #techcommunity.has_presentations .speaking {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
     margin-right: 9.374999999999998%;
+  }
+}
+@media screen and (min-width: 50em) {
+  #techcommunity .blogs {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity .moreblogs {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
   }
 }
 /*
@@ -598,17 +617,13 @@ a {
   color: #60574c;
 }
 header#main {
-  min-height: 430px;
   background: #e7e7e7;
+}
+header#main.homepage {
+  min-height: 430px;
 }
 header#main hgroup {
   background: url(../images/white-stripe-pattern.png) repeat;
-  /*&:before {
-      background: url(../images/white-stripe-pattern.png) repeat right;
-      height: 69px;
-    }
-    */
-
 }
 header#main hgroup h1.logo {
   overflow: hidden;
@@ -616,6 +631,14 @@ header#main hgroup h1.logo {
   white-space: nowrap;
   background: url(../images/logo-background.png) no-repeat left top;
   height: 69px;
+}
+header#main hgroup a {
+  position: absolute;
+  width: 252px;
+  display: block;
+  height: 70px;
+  z-index: 11;
+  left: 7%;
 }
 header#main nav {
   background: rgba(0, 0, 0, 0.6);
@@ -716,8 +739,11 @@ header#main figure div {
   text-decoration: none;
 }
 #techcommunity {
-  background: url(../images/leather.jpg) repeat;
   color: #e7e7e7;
+  padding-bottom: 1em;
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.1) , transparent 5% , transparent 95% , rgba(0, 0, 0, 0.1)), url(../images/leather.jpg);
+  background: -moz-linear-gradient(rgba(0, 0, 0, 0.1) , transparent 5% , transparent 95% , rgba(0, 0, 0, 0.1)), url(../images/leather.jpg);
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) , transparent 5% , transparent 95% , rgba(0, 0, 0, 0.1)), url(../images/leather.jpg);
 }
 #techcommunity  > h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -732,14 +758,35 @@ header#main figure div {
   max-width: 100%;
 }
 #techcommunity .blogs article,
-#techcommunity .speaking article {
+#techcommunity .speaking article,
+#techcommunity .moreblogs article {
   position: relative;
   min-height: 6em;
-  padding-left: 75px;
+  padding-left: 65px;
+}
+#techcommunity .blogs article h1,
+#techcommunity .speaking article h1,
+#techcommunity .moreblogs article h1 {
+  font-weight: bold;
+  margin-bottom: 0;
+  color: #474747;
+}
+#techcommunity .blogs article h1 a,
+#techcommunity .speaking article h1 a,
+#techcommunity .moreblogs article h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+#techcommunity .blogs article h2,
+#techcommunity .speaking article h2,
+#techcommunity .moreblogs article h2 {
+  font-size: 90%;
+  color: #535353;
 }
 #techcommunity .blogs img,
-#techcommunity .speaking img {
-  max-width: 75px;
+#techcommunity .speaking img,
+#techcommunity .moreblogs img {
+  max-width: 60px;
   position: absolute;
   left: 0;
   top: -8px;

@@ -55,6 +55,11 @@
   }
   
   #gradient {
+     .vertical-overlay(@img, @rest...) {
+       background: -webkit-linear-gradient(@rest), @img;
+       background: -moz-linear-gradient(@rest), @img;
+       background: -o-linear-gradient(top,  @rest), @img;
+     }
      .horizontal(@startColor: #555, @endColor: #333, @img: none) {
        /* Legacy browsers */
        background: @endColor @img;

@@ -177,19 +177,26 @@ header#main {
   & > section {
     .pad;
   }
+  .moreblogs { display:none; }
 
-  @media screen and (min-width:20em) {
+  @media screen and (min-width:30em) {
     .techtalks {
       .column(3);
       .push(1);
-    }
-    .blogs {
-      .column(4);
-    }
-    .speaking {
-      .column(3);
       .pull(1);
     }
+    .blogs { .column(6); }
+
+    &.has_presentations {
+      .speaking {
+        .column(3);
+        .pull(1);
+      }
+    }
+  }
+  @media screen and (min-width:50em) {
+    .blogs { .column(3); }
+    .moreblogs { .column(3); }
   }
 }
 

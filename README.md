@@ -6,6 +6,7 @@ QuickStart
 ----------
 
     > git clone --recursive git@github.com:nearinfinity/nearinfinity.github.com.git
+    > [sudo] easy_install Pygments
     > bundle install
     > bundle exec jekyll --server --auto
 
@@ -19,3 +20,15 @@ Git Submodule Stuff
     > git checkout master
     > git pull
 
+Syntax Highlighting
+-------------------
+
+    {% highlight <language> [linenos] %}
+    def to_s
+      "#{name}"
+    end
+    {% endhighlight %}
+
+View list of languages
+
+    > pygmentize -L

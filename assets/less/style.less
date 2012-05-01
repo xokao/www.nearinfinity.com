@@ -10,12 +10,12 @@
 @columns: 12;
 @column-width: 60;
 @gutter-width: 20;
-
-// Remove the definition below for a pixel-based layout
 @total-width: 100%;
 
 @import 'structure';
 
+// SYNTAX HIGHLIGHTING
+@import '../css/pygments-dark.css';
 
 
 ////////////
@@ -34,21 +34,26 @@ a {
 
 
 header#main {
-  min-height: 430px;
   background: @impact_background;
+  &.homepage {
+    min-height: 430px;
+  }
 
   hgroup {
     background: url(../images/white-stripe-pattern.png) repeat;
 
-    /*&:before {
-      background: url(../images/white-stripe-pattern.png) repeat right;
-      height: 69px;
-    }
-    */
     h1.logo {
       .hide-text;
       background: url(../images/logo-background.png) no-repeat left top;
       height: 69px;
+    }
+    a {
+      position: absolute;
+      width: 252px;
+      display: block;
+      height: 70px;
+      z-index: 11;
+      left: 7%;
     }
   }
   nav {
@@ -137,8 +142,9 @@ header#main {
 }
 
 #techcommunity {
-  background: url(../images/leather.jpg) repeat;
   color: @impact_background;
+  padding-bottom: 1em;
+  #gradient > .vertical-overlay(url(../images/leather.jpg), rgba(0,0,0,0.1) ~"," transparent 5% ~"," transparent 95% ~"," rgba(0,0,0,0.1));
 
   & > h1 {
     .light_header(white);
@@ -149,15 +155,25 @@ header#main {
   .techtalks {
     img { max-width: 100%; }
   }
-  .blogs,.speaking {
+  .blogs, .speaking, .moreblogs {
     article { 
       position: relative;
       min-height: 6em;
-      padding-left:75px;
+      padding-left:65px;
+      h1 {
+        font-weight: bold;
+        margin-bottom:0;
+        color: darken(@light_text, 10%);
+        .plain-anchor;
+      }
+      h2 {
+        font-size: 90%;
+        color: darken(@light_text, 5%);
+      }
     }
     
     img { 
-      max-width:75px;
+      max-width:60px;
       position: absolute;
       left: 0;
       top: -8px; 

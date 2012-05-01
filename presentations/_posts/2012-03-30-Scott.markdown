@@ -1,0 +1,7 @@
+---
+layout: presentations
+title: Introducing CoffeeScript
+speaker: Scott Leberknight
+event: DevIgnition
+---
+
