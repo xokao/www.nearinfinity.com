@@ -5,19 +5,16 @@ NIC Website
 QuickStart
 ----------
 
-This will run a server on locahost that regenerates any changes.
-
+    > git clone --recursive git@github.com:nearinfinity/nearinfinity.github.com.git
     > bundle install
     > bundle exec jekyll --server --auto
 
-Server starts on <http://localhost:4000>
+This will run a server on <http://localhost:4000> that regenerates any changes
 
 
 Git Submodule Stuff
 -------------------
 
-    > git submodule init
-    > git submodule update
     > cd blogs
     > git checkout master
     > git pull
