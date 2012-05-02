@@ -152,8 +152,32 @@ header#main {
     margin-bottom: 1em;
   }
 
+  & > section > a {
+    float: right;
+    text-decoration: none;
+    color: darken(white, 10%);
+  }
+
   .techtalks {
-    img { max-width: 100%; }
+    figure {
+      .plain-anchor;
+      max-width: 320px;
+    }
+    figcaption {
+      background: fadeout(black, 70%);
+      text-align: center;
+      margin: 0 2em;
+      padding: 5px;
+      position: relative;
+      top: -32px;
+      word-break: break-word;
+    }
+    img { 
+      width: 100%;
+      border: 5px solid rgba(0,0,0,0.1);
+      .border-radius(3px);
+      .box-sizing;
+    }
   }
   .blogs, .speaking, .moreblogs {
     article { 
@@ -180,101 +204,27 @@ header#main {
     }
   }
 }
+
+
 /*
-section.presentations {
-  background: url(../images/leather.jpg) repeat-x;
-  color: @impact_background;
-  h1 {
-    .size(15);
-    .light_header(@darker_text);
-    margin-top: 1em;
-    margin-bottom: 1em;
-  }
-  ul {
-    padding-bottom: 2em;
-    li { 
-      figcaption {
-        background: fadeout(black, 70%);
-        text-align: center;
-      }
-    }
-  }
-  img { 
-    border: 5px solid rgba(0,0,0,0.1);
-    .border-radius(3px);
-  }
-
-}
-
-section.latestnews {
-  background: @impact_background;
-  .box-shadow(0 5px 10px black, 0 -1px 0 lighten(@impact_background, 5%) inset);
-
-  & > h1 {
-    .light_header(@light_text);
-    .size(10);
-    text-align: center;
-    position: relative;
-    margin: 1.5em 0;
-  }
-  section {
-    & > h1 { 
-      .light_header(@nic_orange);
-    }
-  }
-  section.news {
-    article.blog {
-      clear: left;
-      img {
-        float: left;
-        margin-left: -13px;
-        margin-top: -6px;
-      }
-      h1 {
-        margin-bottom: 0.25em;
-      }
-      h2 {
-        .size(0);
-        margin-bottom: 0.25em;
-      }
-      p {
-        clear: right;
-      }
-    }
-  }
-  section.info {
-    text-align: center;
-    a { font-weight: bold; }
-    img {
-      width: 45%;
-      float: right;
-      border: 5px solid white;
-      margin: 5px;
-      .rotate(5deg);
-      .box-sizing;
-      .box-shadow;
-    }
-    h2 {
-      .size(4);
-    }
-    li {
-      color: lighten(@light_text, 10%);
-      .size(-1);
-      h3 {
-        .size(3);
-        color: @light_text;
-        margin-bottom: 0.25em;
-      }
-    }
-    & * { text-align: left; }
-  }
-  section {
-    h1 { .size(3); }
-    h2 { .size(2); }
-    h3 { .size(1); }
+.video {
+  position: relative;
+  display: inline-block;
+  &:after {
+    content: "";
+    background: url(../images/play-button.png) no-repeat;
+    display: block;
+    position: absolute;
+    width: 103px;
+    height: 103px;
+    margin-left: -51px;
+    margin-top: -51px;
+    left: 50%;
+    top: 50%;
   }
 }
 */
+
 
 footer {
   color: black;
@@ -283,8 +233,95 @@ footer {
     color: inherit;
   }
 
+  section {
+    h1 {
+      font-weight: bold;
+    }
+  }
+
+  aside {
+    clear: left;
+    color: #777;
+    p { 
+      font-size: 90%;
+      margin-bottom: 0.5em;
+    }
+    a {
+      text-decoration: none;
+    }
+
+    h1 {
+      .size(3); 
+      display: inline-block;
+      padding: 1em;
+      padding: 0.5em 20px;
+      margin-left: -20px;
+      position: relative;
+      #gradient > .vertical(white, #ccc);
+      .box-shadow(1px 1px 8px rgba(0,0,0,0.1));
+      border: 1px solid #CCC;
+      border-bottom: 1px solid #AAA;
+      em {
+        color: @nic_orange;
+      }
+
+      &:before, &:after {
+        content: ' ';
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      &:before {
+        width: 200px;
+        left: -200px;
+        top: 17px;
+        z-index: -1;
+        height: 30px;
+        margin-left:20px;
+        #gradient > .vertical(white, #ccc);
+        opacity: 0.5;
+      }
+      &:after {
+        left: 0px;
+        top: 100%;
+        border-width: 5px 10px;
+        border-style: solid;
+        border-color: #CCC #CCC transparent transparent;
+        z-index: -1;
+      }
+
+    
+
+      /*
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 2em;
+        left: 0;
+        width: 10%;
+        margin-top: 1em;
+        z-index: -1;
+        background: red;
+
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 0;
+        width: 0;
+        margin-top: 1em;
+        margin-left: 0;
+        border: 10px solid transparent;
+        border-right-color: green;
+      }
+      */
+    }
+  }
   .copyright {
-    color: lighten(black, 10%);
+    float: right;
+    color: lighten(black, 30%);
     .font_size(-2);
   }
 }

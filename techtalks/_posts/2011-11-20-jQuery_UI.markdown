@@ -1,0 +1,15 @@
+---
+layout: techtalks
+title: "jQuery UI"
+player_url: http://www.youtube.com/watch?v=leRPsdDnOa0&feature=youtube_gdata_player
+thumbnail_320: http://i.ytimg.com/vi/leRPsdDnOa0/mqdefault.jpg
+thumbnail_480: http://i.ytimg.com/vi/leRPsdDnOa0/hqdefault.jpg
+thumbnails_120: 
+  - http://i.ytimg.com/vi/leRPsdDnOa0/default.jpg
+  - http://i.ytimg.com/vi/leRPsdDnOa0/1.jpg
+  - http://i.ytimg.com/vi/leRPsdDnOa0/2.jpg
+  - http://i.ytimg.com/vi/leRPsdDnOa0/3.jpg
+---
+Jennifer Newman presents a lightning talk on jQuery UI.
+
+Abstract: jQuery UI is the official user interface library for jQuery, the most popular JavaScript library today. As a packaged set of widgets, animations, and other effects, it provides an easy way to clean up and spice up your UI, all while maintaining your current branding via themeable.  This presentation demos a few of the features of jQuery UI, from complex widgets such as date pickers and accordions to effects such as color animation. A few themes are also demonstrated to show the ease of integrating these tools into web sites with already-existing colors and styles.

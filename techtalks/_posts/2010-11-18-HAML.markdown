@@ -1,0 +1,15 @@
+---
+layout: techtalks
+title: "HAML"
+player_url: http://www.youtube.com/watch?v=zpDiOQZm9cg&feature=youtube_gdata_player
+thumbnail_320: http://i.ytimg.com/vi/zpDiOQZm9cg/mqdefault.jpg
+thumbnail_480: http://i.ytimg.com/vi/zpDiOQZm9cg/hqdefault.jpg
+thumbnails_120: 
+  - http://i.ytimg.com/vi/zpDiOQZm9cg/default.jpg
+  - http://i.ytimg.com/vi/zpDiOQZm9cg/1.jpg
+  - http://i.ytimg.com/vi/zpDiOQZm9cg/2.jpg
+  - http://i.ytimg.com/vi/zpDiOQZm9cg/3.jpg
+---
+Chris Rohr presents HAML
+
+Chris Rohr explains how to beautify your Rails views with HAML, replacing your cluttered ERB code with clean, easy-to-read HAML markup.

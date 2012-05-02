@@ -1,0 +1,16 @@
+---
+layout: techtalks
+title: Tech Talks
+max_techtalks: 10
+---
+
+{% for talk in site.categories.techtalks limit:page.max_techtalks %}
+    <figure class="video">
+      <a href="{{ talk.url }}">
+        <img src="{{ talk.thumbnail_320 }}"/>
+        <figcaption>{{ talk.title }}</figcaption>
+      </a>
+    </figure>
+
+{% endfor %}
+

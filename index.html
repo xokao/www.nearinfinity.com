@@ -1,11 +1,12 @@
 ---
-layout: default
+layout: homepage
 title: near infinity
 max_news: 2
 max_blogs: 2
-max_presentations: 2
+max_speaking: 2
+max_techtalks: 1
 news_expire_days: 30
-presentation_expire_days: 0
+speaking_expire_days: 0
 ---
 {% capture siteYear %}{{ site.time | date: "%Y" }}{% endcapture %}
 {% capture siteDay %}{{ site.time | date: "%j" }}{% endcapture %}
@@ -72,27 +73,32 @@ presentation_expire_days: 0
 </section>
 
 
-{% assign has_presentations = false %}
-{% if site.categories.presentations.size > 0 %}
-  {% capture presentationsYear %}{{ site.categories.presentations.first.date | date: "%Y" }}{% endcapture %}
-  {% capture presentationsDay %}{{ site.categories.presentations.first.date | date: "%j" }}{% endcapture %}
-  {% capture daysBetween %}{{ presentationsDay | minus:siteDay }}{% endcapture %}
-  {% capture daysBetweenWithYears %}{{ presentationsYear | minus:siteYear | times:365 | plus:daysBetween }}{% endcapture %}
-  {% capture difference %}{{ page.presentations_expire_days | minus:daysBetweenWithYears }}{% endcapture %}
+{% assign has_speaking = false %}
+{% if site.categories.speaking.size > 0 %}
+  {% capture speaking %}{{ site.categories.speaking.first.date | date: "%Y" }}{% endcapture %}
+  {% capture speakingDay %}{{ site.categories.speaking.first.date | date: "%j" }}{% endcapture %}
+  {% capture daysBetween %}{{ speakingDay | minus:siteDay }}{% endcapture %}
+  {% capture daysBetweenWithYears %}{{ speakingYear | minus:siteYear | times:365 | plus:daysBetween }}{% endcapture %}
+  {% capture difference %}{{ page.speaking_expire_days | minus:daysBetweenWithYears }}{% endcapture %}
   {% if difference contains '-' %} 
-    {% assign has_presentations = true %}
+    {% assign has_speaking = true %}
   {% endif %}
 {% endif %}
 
-<section id="techcommunity" class="{% if has_presentations %}has_presentations{% endif %}">
+<section id="techcommunity" class="{% if has_speaking %}has_speaking{% endif %}">
   <h1>TECHNICAL COMMUNITY</h1>
 
   <section class="techtalks">
     <h1>TECH TALKS</h1>
+    {% for talk in site.categories.techtalks limit:page.max_techtalks %}
     <figure>
-      <img src="assets/images/techtalks/talk1.jpg"/>
-      <figcaption>Joe Demos Arduino</figcaption>
+      <a href="{{ talk.url }}">
+        <img src="{{ talk.thumbnail_320 }}"/>
+        <figcaption>{{ talk.title }}</figcaption>
+      </a>
     </figure>
+    {% endfor %}
+    <a href="/techtalks">more tech talks</a>
   </section>
 
   <section class="blogs">
@@ -104,18 +110,21 @@ presentation_expire_days: 0
       <h2>{{ blog.categories[1] | split:'_' | map:'capitalize' | join:' ' }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
     </article>
     {% endfor %}
+
+    <a href="/blogs">more blogs</a>
   </section>
 
-  {% if has_presentations %}
+  {% if has_speaking %}
   <section class="speaking">
     <h1>SPEAKING</h1>
-    {% for presentation in site.categories.presentations limit:page.max_presentations %}
+    {% for engagement in site.categories.speaking limit:page.max_speaking %}
     <article>
-      <img src="assets/images/users/{{ presentation.categories[1] }}.png"/>
-      <h1>{{ presentation.title }}</h1>
-      <h2>{{ presentation.speaker }} at {{ presentation.event }} on {{ presentation.date | date:'%b %d, %Y' }}</h2>
+      <img src="assets/images/users/{{ engagement.categories[1] }}.png"/>
+      <h1>{{ engagement.title }}</h1>
+      <h2>{{ engagement.speaker }} at {{ engagement.event }} on {{ engagement.date | date:'%b %d, %Y' }}</h2>
     </article>
     {% endfor %}
+    <a href="/speaking">more speaking engagements</a>
   </section>
   {% else %}
     <section class="moreblogs">

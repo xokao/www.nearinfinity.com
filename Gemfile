@@ -6,3 +6,8 @@ gem 'less'
 gem 'therubyracer'
 gem 'RedCloth'
 gem 'albino'
+
+group :tasks do
+  gem "rake"
+  gem "youtube_it"
+end

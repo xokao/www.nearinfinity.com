@@ -1,0 +1,15 @@
+---
+layout: techtalks
+title: "Hadoop"
+player_url: http://www.youtube.com/watch?v=EIS-CcdmLe0&feature=youtube_gdata_player
+thumbnail_320: http://i.ytimg.com/vi/EIS-CcdmLe0/mqdefault.jpg
+thumbnail_480: http://i.ytimg.com/vi/EIS-CcdmLe0/hqdefault.jpg
+thumbnails_120: 
+  - http://i.ytimg.com/vi/EIS-CcdmLe0/default.jpg
+  - http://i.ytimg.com/vi/EIS-CcdmLe0/1.jpg
+  - http://i.ytimg.com/vi/EIS-CcdmLe0/2.jpg
+  - http://i.ytimg.com/vi/EIS-CcdmLe0/3.jpg
+---
+Scott Leberknight presents on Hadoop.
+
+Hadoop is an open source framework maintained by the Apache Software Foundation for creating fault-tolerant, distributed applications that process vast amounts of data in parallel across a cluster of commodity servers. Hadoop consists of two primary components: the Hadoop Distributed Filesystem (HDFS) and a MapReduce framework. HDFS is a distributed filesystem which efficiently stores very large files across a cluster in a fault-tolerant manner. MapReduce is a framework for dividing data processing into two distinct phases, mapping and reducing, in order to deconstruct a problem so it can be run in parallel across many machines in order to speed data transformation and aggregation. In this talk we'll look at both HDFS and the MapReduce framework. We'll also look at one specific Hadoop subproject, Hive, which provides a data warehousing capability on top of Hadoop and allows developers and analysts to query their data stored in HDFS using SQL queries.
