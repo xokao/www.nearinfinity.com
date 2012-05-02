@@ -33,6 +33,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  albino
   jekyll (= 0.11.0)
   less
   liquid (= 2.2.2)
