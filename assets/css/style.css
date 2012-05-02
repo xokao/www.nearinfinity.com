@@ -534,13 +534,13 @@ section.blog_content article {
   margin: 0 1.0416666666666665%;
   margin-left: 9.374999999999998%;
 }
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 60em) {
   section.blog_content article {
     display: inline;
     float: left;
-    width: 47.91666666666667%;
+    width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
-    margin-left: 26.041666666666668%;
+    margin-left: 17.708333333333332%;
   }
 }
 footer {
@@ -865,6 +865,9 @@ section.blog_content article h5 {
 }
 section.blog_content article img {
   max-width: 100%;
+}
+section.blog_content article pre {
+  overflow-x: auto;
 }
 footer {
   color: black;
