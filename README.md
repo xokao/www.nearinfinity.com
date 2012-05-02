@@ -2,23 +2,38 @@ NIC Website
 ===========
 
 
-QuickStart
-----------
+Setup Repository
+----------------
 
-    > git clone --recursive git@github.com:nearinfinity/nearinfinity.github.com.git
-    > [sudo] easy_install Pygments
-    > bundle install
-    > bundle exec jekyll --server --auto
+```
+# Clone repo and blogs submodule
+git clone --recursive git@github.com:nearinfinity/nearinfinity.github.com.git
+cd nearinfinity.github.com/blogs    
+git checkout master
+
+# Change the remote URL to read/write. gh-pages requires the submodule to be read-only
+git remote set-url origin git@github.com:nearinfinity/blogs.nearinfinity.com.git
+```
+
+Prequisites 
+-----------
+
+* ruby 1.9 (jekyll preview)
+* python (syntax highlighter)
+
+```
+[sudo] gem install bundler
+[sudo] easy_install Pygments
+bundle install
+```
+
+Server
+------
+
+    bundle exec jekyll --server --auto
 
 This will run a server on <http://localhost:4000> that regenerates any changes
 
-
-Git Submodule Stuff
--------------------
-
-    > cd blogs
-    > git checkout master
-    > git pull
 
 Syntax Highlighting
 -------------------
