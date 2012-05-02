@@ -43,11 +43,18 @@ header#main {
           margin-left: 1em;
           padding: 0.5em 0;
           display: inline-block;
+          &:first-child { display: none; }
         }
       }
     }
-
   }
+
+  @media screen and (min-width:24em) {
+    hgroup nav ol li:first-child { 
+      display:inline-block;
+    }
+  }
+
   // Move Menu bar up if it can fit to right of logo
   @media screen and (min-width:48em) {
     hgroup { 

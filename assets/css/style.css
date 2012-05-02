@@ -295,6 +295,14 @@ header#main hgroup nav ol li {
   padding: 0.5em 0;
   display: inline-block;
 }
+header#main hgroup nav ol li:first-child {
+  display: none;
+}
+@media screen and (min-width: 24em) {
+  header#main hgroup nav ol li:first-child {
+    display: inline-block;
+  }
+}
 @media screen and (min-width: 48em) {
   header#main hgroup {
     height: 69px;
