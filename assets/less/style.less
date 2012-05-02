@@ -46,8 +46,9 @@ header#main {
       .hide-text;
       background: url(../images/logo-background.png) no-repeat left top;
       height: 69px;
+      width: 260px;
     }
-    a {
+    & > a {
       position: absolute;
       width: 252px;
       display: block;
@@ -63,6 +64,7 @@ header#main {
       text-align: right;
       li { 
         .size(4);
+        .plain-anchor;
       }
     }
   }
@@ -147,15 +149,24 @@ header#main {
   #gradient > .vertical-overlay(url(../images/leather.jpg), rgba(0,0,0,0.1) ~"," transparent 5% ~"," transparent 95% ~"," rgba(0,0,0,0.1));
 
   & > h1 {
-    .light_header(white);
+    //.light_header(white);
+    color: white;
+    .text-shadow(-3px 2px 2px fade(black, 30%));
     .size(20);
     margin-bottom: 1em;
   }
 
-  & > section > a {
-    float: right;
-    text-decoration: none;
-    color: darken(white, 10%);
+  & > section {
+    & > h1 {
+      .size(8);
+      color: @nic_orange;
+      .text-shadow(-3px 2px 2px fade(black, 30%));
+    }
+    & > a {
+      float: right;
+      text-decoration: none;
+      color: darken(white, 10%);
+    }
   }
 
   .techtalks {
@@ -225,6 +236,24 @@ header#main {
 }
 */
 
+section.blog_content {
+  article {
+    header h1 {
+      color: @darker_text;
+      .size(10);
+    }
+    h1 {
+      .size(8);
+      color: @nic_orange;
+    }
+    h2 { .size(4); }
+    h3 { .size(3); }
+    h4 { .size(2); }
+    h5 { .size(1); }
+    img { max-width:100%; }
+  }
+}
+
 
 footer {
   color: black;
@@ -241,7 +270,9 @@ footer {
 
   aside {
     clear: left;
+    padding-top: 1em;
     color: #777;
+    position: relative;
     p { 
       font-size: 90%;
       margin-bottom: 0.5em;
@@ -249,7 +280,6 @@ footer {
     a {
       text-decoration: none;
     }
-
     h1 {
       .size(3); 
       display: inline-block;
@@ -289,34 +319,6 @@ footer {
         border-color: #CCC #CCC transparent transparent;
         z-index: -1;
       }
-
-    
-
-      /*
-      &:before {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 2em;
-        left: 0;
-        width: 10%;
-        margin-top: 1em;
-        z-index: -1;
-        background: red;
-
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 0;
-        width: 0;
-        margin-top: 1em;
-        margin-left: 0;
-        border: 10px solid transparent;
-        border-right-color: green;
-      }
-      */
     }
   }
   .copyright {

@@ -291,12 +291,17 @@ header#main hgroup nav ol {
 header#main hgroup nav ol li {
   font-size: 1.0769230769230769em;
   line-height: 1.3584905660377358em;
-  margin-left: 1em;
   padding: 0.5em 0;
   display: inline-block;
 }
 header#main hgroup nav ol li:first-child {
   display: none;
+}
+header#main hgroup nav ol li a {
+  padding: 0.5em;
+}
+header#main hgroup nav ol li:last-child a {
+  padding-right: 0;
 }
 @media screen and (min-width: 24em) {
   header#main hgroup nav ol li:first-child {
@@ -397,8 +402,8 @@ header#main figure div {
   margin-bottom: 0;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
-  color: #e97000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
+  color: #f68640;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(246, 134, 64, 0.2);
   font-size: 1.7692307692307692em;
   line-height: 1.1612903225806452em;
 }
@@ -506,6 +511,38 @@ header#main figure div {
     margin: 0 1.0416666666666665%;
   }
 }
+section.blog_content {
+  /* Legacy browsers */
+
+  background: #ffffff 300px none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
+  background: none, -webkit-linear-gradient(#e7e7e7, #ffffff 300px);
+  background: none, -moz-linear-gradient(#e7e7e7, #ffffff 300px);
+  background: none, -o-linear-gradient(top, #e7e7e7, #ffffff 300px);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
+}
+section.blog_content article {
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
+}
+@media screen and (min-width: 50em) {
+  section.blog_content article {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 26.041666666666668%;
+  }
+}
 footer {
   display: inline;
   float: left;
@@ -525,7 +562,7 @@ footer section {
 footer section:nth-child(2n+1) {
   clear: left;
 }
-@media screen and (min-width: 42em) {
+@media screen and (min-width: 30em) {
   footer section {
     width: 33.333333333333336%;
   }
@@ -536,12 +573,24 @@ footer section:nth-child(2n+1) {
     clear: left;
   }
 }
-@media screen and (min-width: 65em) {
+@media screen and (min-width: 40em) {
+  footer section {
+    width: 25%;
+  }
+  footer section:nth-child(n) {
+    clear: none;
+  }
+  footer section:nth-child(6) {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 55em) {
   footer section {
     width: 16.666666666666668%;
   }
   footer section:nth-child(n) {
     clear: none;
+    width: 16.666666666666668%;
   }
 }
 footer .copyright {
@@ -571,8 +620,9 @@ header#main hgroup h1.logo {
   white-space: nowrap;
   background: url(../images/logo-background.png) no-repeat left top;
   height: 69px;
+  width: 260px;
 }
-header#main hgroup a {
+header#main hgroup  > a {
   position: absolute;
   width: 252px;
   display: block;
@@ -590,6 +640,10 @@ header#main nav ol {
 header#main nav ol li {
   font-size: 1.3076923076923077em;
   line-height: 1.2857142857142858em;
+}
+header#main nav ol li a {
+  color: inherit;
+  text-decoration: none;
 }
 header#main hr {
   border: 1px solid #f9f9f9;
@@ -659,13 +713,13 @@ header#main figure div {
   line-height: 1em;
 }
 #aboutnic hgroup p em {
-  color: #e97000;
+  color: #f68640;
 }
 #aboutnic #news h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
-  color: #e97000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(233, 112, 0, 0.2);
+  color: #f68640;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(246, 134, 64, 0.2);
   font-size: 2em;
   line-height: 1.1076923076923078em;
 }
@@ -686,15 +740,19 @@ header#main figure div {
   background: -o-linear-gradient(top, rgba(0, 0, 0, 0.1) , transparent 5% , transparent 95% , rgba(0, 0, 0, 0.1)), url(../images/leather.jpg);
 }
 #techcommunity  > h1 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  color: white;
+  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
   font-size: 2.5384615384615383em;
   line-height: 1em;
   margin-bottom: 1em;
 }
-#techcommunity  > section > a {
+#techcommunity  > section  > h1 {
+  font-size: 1.6153846153846154em;
+  line-height: 1.2em;
+  color: #f68640;
+  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
+}
+#techcommunity  > section  > a {
   float: right;
   text-decoration: none;
   color: #e6e6e6;
@@ -779,6 +837,35 @@ header#main figure div {
   }
 }
 */
+section.blog_content article header h1 {
+  color: #60574c;
+  font-size: 1.7692307692307692em;
+  line-height: 1.1612903225806452em;
+}
+section.blog_content article h1 {
+  font-size: 1.6153846153846154em;
+  line-height: 1.2em;
+  color: #f68640;
+}
+section.blog_content article h2 {
+  font-size: 1.3076923076923077em;
+  line-height: 1.2857142857142858em;
+}
+section.blog_content article h3 {
+  font-size: 1.2307692307692308em;
+  line-height: 1.309090909090909em;
+}
+section.blog_content article h4 {
+  font-size: 1.1538461538461537em;
+  line-height: 1.3333333333333333em;
+}
+section.blog_content article h5 {
+  font-size: 1.0769230769230769em;
+  line-height: 1.3584905660377358em;
+}
+section.blog_content article img {
+  max-width: 100%;
+}
 footer {
   color: black;
 }
@@ -790,7 +877,9 @@ footer section h1 {
 }
 footer aside {
   clear: left;
+  padding-top: 1em;
   color: #777;
+  position: relative;
 }
 footer aside p {
   font-size: 90%;
@@ -828,35 +917,9 @@ footer aside h1 {
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1), 0 0 0 transparent;
   border: 1px solid #CCC;
   border-bottom: 1px solid #AAA;
-  /*
-      &:before {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 2em;
-        left: 0;
-        width: 10%;
-        margin-top: 1em;
-        z-index: -1;
-        background: red;
-
-      }
-      &:after {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 0;
-        width: 0;
-        margin-top: 1em;
-        margin-left: 0;
-        border: 10px solid transparent;
-        border-right-color: green;
-      }
-      */
-
 }
 footer aside h1 em {
-  color: #e97000;
+  color: #f68640;
 }
 footer aside h1:before,
 footer aside h1:after {
