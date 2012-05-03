@@ -1,4 +1,4 @@
-@import '../css/pygments-dark.css';
+@import '../css/pygments-light.css';
 html,
 body,
 div,
@@ -602,13 +602,20 @@ footer .copyright {
   margin-bottom: 1em;
 }
 .highlight {
-  background: #dde1e2;
+  background: #f9f9f9;
   -webkit-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   -ms-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   -o-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 1.3846153846153846em;
+}
+.highlight .n,
+.highlight .nl {
+  color: #425358;
+}
+.highlight .c1 {
+  color: #586E75;
 }
 body {
   background: url(../images/footer-background.png) repeat;

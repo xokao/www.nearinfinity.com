@@ -1,3 +1,8 @@
+task :default => [:jekyll]
+
+task :jekyll do
+  `bundle exec jekyll --no-pygments`
+end
 
 desc "Generate posts for tech talks on youtube"
 task :generate_tech_talks do
