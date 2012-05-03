@@ -1,0 +1,12 @@
+<h1>Recent Blogs</h1>
+<ul>
+  {% assign count = '' %}
+  {% for post in site.posts %}	
+  {% if post.categories[1] == page.categories[1] and post.id != page.id and count.size < 5 %}
+  <li>
+    {% include blogs/list-item.html %}
+  </li>
+  {% capture count %}{{ count }}*{% endcapture %}
+  {% endif %}
+  {% endfor %}			
+</ul>

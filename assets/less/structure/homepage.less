@@ -1,0 +1,91 @@
+
+#aboutnic {
+  .band-strip;
+
+  hgroup {
+    .pad;
+    section {
+      float: left;
+      text-align: center;
+      width: 100% / 3;
+      h1 {
+        margin-bottom: 0;
+        .light_header(@nic_orange);
+        .size(10);
+      }
+      h1:after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 50px;
+        border: 0;
+        margin: auto;
+        background: url(../images/icons/sprite.png);
+      }
+      &.about-fast h1:after {
+      }
+      &.about-agile h1:after {
+        background-position: -50px 0;
+      }
+      &.about-best h1:after {
+        background-position: -100px 0;
+      }
+
+      & > * {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+  #news {
+    .pad;
+  }
+
+  @media screen and (min-width: 50em) {
+
+    &.has_news { 
+      hgroup { 
+        .column(6);
+        .push(1);
+      }
+      #news {
+        .column(3);
+        .push(1);
+      }
+    }
+  }
+}
+
+
+#techcommunity {
+  .band-strip;
+
+  & > h1 {
+    .pad;
+  }
+  & > section {
+    .pad;
+  }
+  .techtalks figure { margin: auto; }
+  .moreblogs { display:none; }
+
+  @media screen and (min-width:33em) {
+    .techtalks {
+      .column(4);
+      .push(1);
+      figure { margin: 0; }
+    }
+    .blogs { .column(6); }
+
+    &.has_speaking {
+      .speaking {
+        .column(3);
+        .pull(1);
+      }
+    }
+  }
+  @media screen and (min-width:50em) {
+    .blogs { .column(3); }
+    .moreblogs { .column(3); }
+  }
+}

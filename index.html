@@ -107,7 +107,7 @@ speaking_expire_days: 0
     <article>
       <img src="assets/images/users/{{ blog.categories[1] }}.png"/>
       <h1><a href="{{ blog.url }}">{{ blog.title }}</a></h1>
-      <h2>{{ blog.categories[1] | split:'_' | map:'capitalize' | join:' ' }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
+      <h2>{{ blog.categories[1] | replace:'_',' ' }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
     </article>
     {% endfor %}
 

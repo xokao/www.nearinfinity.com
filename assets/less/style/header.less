@@ -1,0 +1,81 @@
+
+
+header#main {
+  background: @impact_background;
+  &.homepage {
+    min-height: 430px;
+  }
+
+  hgroup {
+    background: url(../images/white-stripe-pattern.png) repeat;
+
+    h1.logo {
+      .hide-text;
+      background: url(../images/logo-background.png) no-repeat left top;
+      height: 69px;
+      width: 260px;
+    }
+    & > a {
+      position: absolute;
+      width: 252px;
+      display: block;
+      height: 70px;
+      z-index: 11;
+      left: 7%;
+    }
+  }
+  nav {
+    background: rgba(0,0,0,0.6);
+    color: white;
+    ol { 
+      text-align: right;
+      li { 
+        .size(4);
+        .plain-anchor;
+      }
+    }
+  }
+  hr {
+    border: 1px solid lighten(@impact_background, 7%);
+    height: 0px;
+  }
+  article {
+    color: @light_text;
+    padding: 3em 0;
+
+    h1 {
+      .light_header(@light_text);
+      .size(25);
+    }
+    h2 {
+      color: lighten(@light_text, 15%);
+      .size(3);
+      line-height: 1.4em;
+    }
+    .article-links {
+      position: relative;
+      left: -6px;
+    }
+  }
+  .nextprev {
+    margin: 0;
+
+    li {
+      opacity: 0.8;
+      text-align: center;
+      background: darken(@impact_background, 5%);
+      border: 1px solid darken(@impact_background, 10%);
+      color: darken(@impact_background, 20%);
+      .border-radius(3px);
+      .text-shadow(0 -1px 1px darken(@impact_background, 40%));
+      .size(8);
+      height: 3em;
+      line-height: 3em;
+    }
+  }
+  figure div {
+    margin-left: -200px;
+    background: url(../images/mobile-impact.png) 15px -14px no-repeat;
+  }
+}
+
