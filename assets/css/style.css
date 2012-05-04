@@ -806,8 +806,61 @@ footer {
 footer a {
   color: inherit;
 }
+footer section a {
+  color: inherit;
+  text-decoration: none;
+}
+footer section a:hover {
+  text-decoration: underline;
+}
 footer section h1 {
   font-weight: bold;
+}
+footer section.contactus li,
+footer section.social li {
+  position: relative;
+  margin-bottom: 0.25em;
+  padding-left: 25px;
+}
+footer section.contactus li:before,
+footer section.social li:before {
+  opacity: 0.6;
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../images/icons/glyphicon-sprite.png) no-repeat;
+  width: 20px;
+  height: 20px;
+}
+footer section.contactus li.addr:before,
+footer section.social li.addr:before {
+  background-position: -60px 0;
+}
+footer section.contactus li.phone:before,
+footer section.social li.phone:before {
+  background-position: -40px 0;
+}
+footer section.contactus li.fax:before,
+footer section.social li.fax:before {
+  background-position: -20px 0;
+}
+footer section.contactus li.email:before,
+footer section.social li.email:before {
+  background-position: 0px 0;
+}
+footer section.contactus li.twitter:before,
+footer section.social li.twitter:before {
+  background-position: -80px 0;
+}
+footer section.contactus li.github:before,
+footer section.social li.github:before {
+  background-position: -100px 0;
+}
+footer section.contactus li.you-tube:before,
+footer section.social li.you-tube:before {
+  background-position: -120px 0;
 }
 footer aside {
   clear: left;
