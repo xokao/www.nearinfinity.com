@@ -1,0 +1,39 @@
+/*
+display: block;
+width: 20px;
+height: 20px;
+background: url(/assets/images/icons/glyphicon-sprite.png);
+background-position: -100px 0;
+opacity: 0.3;
+*/
+
+
+.sharing-links {
+  .plain-anchor; 
+  li { display: inline; }
+  a, .icon { 
+    @sprite-dim: 16px + (2px * 2); //padding
+    position: relative; 
+    padding-left: 25px; 
+    &:before {
+      opacity: 0.6;
+      content: '';
+      display: block;
+      position:absolute;
+      left: 0;
+      top: 0;
+      background: url(../images/icons/glyphicon-sprite.png) no-repeat;
+      width: @sprite-dim;
+      height: @sprite-dim;
+    }
+    &.addr:before { background-position: (@sprite-dim*-3px) 0; }
+    &.phone:before { background-position: (@sprite-dim*-2px) 0; }
+    &.fax:before { background-position: (@sprite-dim*-1px) 0; }
+    &.email:before { background-position: (@sprite-dim*-0px) 0; }
+
+    &.facebook:before { background-position: (@sprite-dim*-4px) 0; }
+    &.twitter:before { background-position: (@sprite-dim*-5px) 0; }
+    &.github:before { background-position: (@sprite-dim*-6px) 0; }
+    &.you-tube:before { background-position: (@sprite-dim*-7px) 0; }
+  } 
+}

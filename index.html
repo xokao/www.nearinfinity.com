@@ -90,13 +90,14 @@ speaking_expire_days: 0
 
   <section class="techtalks">
     <h1>TECH TALKS</h1>
-    {% for talk in site.categories.techtalks limit:page.max_techtalks %}
+    {% for post in site.categories.techtalks limit:page.max_techtalks %}
     <figure>
-      <a href="{{ talk.url }}">
-        <img src="{{ talk.thumbnail_320 }}"/>
-        <figcaption>{{ talk.title }}</figcaption>
+      <a href="{{ post.url }}">
+        <img src="{{ post.thumbnail_320 }}"/>
+        <figcaption>{{ post.title }}</figcaption>
       </a>
     </figure>
+    {% include sharing-inline.html %}
     {% endfor %}
     <a class="morelink" href="/techtalks">more tech talks</a>
   </section>

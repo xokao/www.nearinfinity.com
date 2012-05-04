@@ -15,28 +15,13 @@ footer {
     }
 
     &.contactus, &.social {
-      li { position: relative; margin-bottom: 0.25em; padding-left: 25px; }
-
-      @sprite-dim: 16px + (2px * 2);
-      li:before {
-          opacity: 0.6;
-          content: '';
+      .sharing-links;
+      li { 
+        display: block;
+        a {
           display: block;
-          position:absolute;
-          left: 0; //-@sprite-dim - 5px;
-          top: 0;
-          background: url(../images/icons/glyphicon-sprite.png) no-repeat;
-          width: @sprite-dim;
-          height: @sprite-dim;
+        }
       }
-      li.addr:before { background-position: (@sprite-dim*-3px) 0; }
-      li.phone:before { background-position: (@sprite-dim*-2px) 0; }
-      li.fax:before { background-position: (@sprite-dim*-1px) 0; }
-      li.email:before { background-position: (@sprite-dim*-0px) 0; }
-
-      li.twitter:before { background-position: (@sprite-dim*-4px) 0; }
-      li.github:before { background-position: (@sprite-dim*-5px) 0; }
-      li.you-tube:before { background-position: (@sprite-dim*-6px) 0; }
     }
   }
 

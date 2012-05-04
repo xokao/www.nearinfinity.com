@@ -61,7 +61,38 @@ section.blog_content {
       .light_header(@darker_text);
       margin-top: 2em;
     }
+
+    ul.sharing {
+      @sprite-dim: 16px + (2px * 2);
+      li { 
+        margin: 0;
+        position: relative; 
+        .plain-anchor; 
+        a { 
+          padding-left: 25px; 
+        } 
+        &:before {
+          opacity: 0.6;
+          content: '';
+          display: block;
+          position:absolute;
+          left: 0;
+          top: 0;
+          background: url(../images/icons/glyphicon-sprite.png) no-repeat;
+          width: @sprite-dim;
+          height: @sprite-dim;
+        }
+        &.twitter:before { background-position: (@sprite-dim*-4px) 0; }
+        &.facebook:before { background-position: (@sprite-dim*-5px) 0; }
+      }
+    }
+
+    ul li .sharing-links {
+      display: none;
+    }
+
     ul li {
+      margin-top: 1.5em;
       h1 {
         .size(0);
         margin-bottom: 0;

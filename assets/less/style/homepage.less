@@ -58,11 +58,35 @@
       .plain-anchor;
     }
   }
+  .morelink { margin-top: 1em; }
+
+  section article:hover, .techtalks:hover {
+    .sharing-links li a {
+      opacity: 0.6;
+      .transition;
+    }
+  }
+  .sharing-links li a {
+    float: right;
+    display: block;
+    width: 20px;
+    height: 20px;
+    opacity: 0.3;
+    padding: 0;
+    .transition;
+  }
 
   .techtalks {
+    .sharing-links {
+      max-width: 320px;
+      margin: auto;
+    }
+    .morelink { clear: both; }
     figure {
       .plain-anchor;
       max-width: 320px;
+      // move bottom up (since caption is moved up)
+      margin-bottom: -1.5em;
     }
     figcaption {
       background: fadeout(black, 70%);
@@ -70,7 +94,7 @@
       margin: 0 2em;
       padding: 5px;
       position: relative;
-      top: -32px;
+      top: -2.5em;
       word-break: break-word;
     }
     img { 
