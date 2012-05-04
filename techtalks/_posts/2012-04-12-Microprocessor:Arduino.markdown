@@ -2,6 +2,7 @@
 layout: techtalks
 title: "Microprocessor: Arduino"
 player_url: http://www.youtube.com/watch?v=u0Znbyr7ijk&feature=youtube_gdata_player
+unique_id: u0Znbyr7ijk 
 thumbnail_320: http://i.ytimg.com/vi/u0Znbyr7ijk/mqdefault.jpg
 thumbnail_480: http://i.ytimg.com/vi/u0Znbyr7ijk/hqdefault.jpg
 thumbnails_120: 

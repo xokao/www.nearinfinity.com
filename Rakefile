@@ -4,6 +4,10 @@ task :jekyll do
   `bundle exec jekyll --no-pygments`
 end
 
+task :server do
+  `bundle exec jekyll --no-pygments --server --auto --limit_posts 10`
+end
+
 desc "Generate posts for tech talks on youtube"
 task :generate_tech_talks do
   require 'youtube_it'
@@ -12,7 +16,7 @@ task :generate_tech_talks do
 
   search = client.videos_by(:user => 'nearinfinity')
   search.videos.each do |video|
-
+    puts video.embed_html_with_width
     print "Should I Transform: \n\t#{video.title}\n? (y/N) "
     answer = STDIN.gets.chomp
 
@@ -28,6 +32,7 @@ task :generate_tech_talks do
         layout: techtalks
         title: "#{video.title}"
         player_url: #{video.player_url}
+        unique_id: #{video.unique_id} 
         thumbnail_320: #{video.thumbnails.find { |t| t.width == 320 }.url}
         thumbnail_480: #{video.thumbnails.find { |t| t.width == 480 }.url}
         thumbnails_120: 

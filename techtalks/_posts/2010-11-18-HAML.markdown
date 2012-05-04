@@ -2,6 +2,7 @@
 layout: techtalks
 title: "HAML"
 player_url: http://www.youtube.com/watch?v=zpDiOQZm9cg&feature=youtube_gdata_player
+unique_id: zpDiOQZm9cg 
 thumbnail_320: http://i.ytimg.com/vi/zpDiOQZm9cg/mqdefault.jpg
 thumbnail_480: http://i.ytimg.com/vi/zpDiOQZm9cg/hqdefault.jpg
 thumbnails_120: 
