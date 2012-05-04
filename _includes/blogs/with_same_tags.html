@@ -6,7 +6,7 @@
   {% for page_tag in page.tags %}
   {% if tag == page_tag and post.id != page.id and count.size < 6 and post.categories[0] == 'blogs' %}
   <li>
-    {% include blogs/list-item.html %}
+    {% include post-list-item.html %}
   </li>
   {% capture count %}{{ count }}*{% endcapture %}
   {% endif %}

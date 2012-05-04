@@ -60,32 +60,72 @@
 #techcommunity {
   .band-strip;
 
-  & > h1 {
-    .pad;
-  }
-  & > section {
-    .pad;
-  }
+  & > h1 { .pad; }
+  & > section { .pad; }
+
+  // Center image on small screens
   .techtalks figure { margin: auto; }
-  .moreblogs { display:none; }
 
-  @media screen and (min-width:33em) {
-    .techtalks {
-      .column(4);
-      .push(1);
-      figure { margin: 0; }
+  // Hide speaking section if no engagements
+  .speaking { display: none; }
+  &.has_speaking .speaking { display:block; }
+
+  // Hide extra blogs, bottom row links
+  .moreblogs, .morelinks { display:none; }
+
+  // Add ellipsis after more links
+  .plain-anchor;
+  .morelink, .morelinks a {
+    float: right;
+    &:after { content:'...' }
+  }
+
+  @media screen and (min-width:43em) {
+    .blogs { .column(5); .push(1); }
+    .moreblogs { .column(5); }
+    .blogs, .moreblogs, .speaking {
+      .morelink { display: none; }
     }
-    .blogs { .column(6); }
+    &.has_speaking { 
+      .moreblogs { display:none; } 
+      .speaking { .column(5); }
+      .morelinks li {
+        &.morelinks-blogs { .column(5); .push(1); }
+        &.morelinks-speaking { .column(5); }
+      }
+    }
 
-    &.has_speaking {
-      .speaking {
-        .column(3);
-        .pull(1);
+    // Bottom row of more links
+    .morelinks {
+      clear: left;
+      display: block;
+      li {
+        &.morelinks-talks { display: none; }
+        &.morelinks-blogs { .column(10); .push(1); }
+        &.morelinks-speaking { display: none; }
       }
     }
   }
+
   @media screen and (min-width:50em) {
-    .blogs { .column(3); }
+    .techtalks { 
+      .column(3); 
+      .push(1); 
+      .morelink { display:none;} 
+    } 
+    .blogs { .column(4); }
     .moreblogs { .column(3); }
+    &.has_speaking {
+      .speaking { .column(3); }
+      .morelinks li {
+        &.morelinks-blogs { .column(4); }
+        &.morelinks-speaking { .column(3); }
+      }
+    }
+
+    .morelinks li {
+      &.morelinks-talks { .column(3); .push(1); }
+      &.morelinks-blogs { .column(7); }
+    }
   }
 }

@@ -75,7 +75,7 @@ speaking_expire_days: 0
 
 {% assign has_speaking = false %}
 {% if site.categories.speaking.size > 0 %}
-  {% capture speaking %}{{ site.categories.speaking.first.date | date: "%Y" }}{% endcapture %}
+  {% capture speakingYear %}{{ site.categories.speaking.first.date | date: "%Y" }}{% endcapture %}
   {% capture speakingDay %}{{ site.categories.speaking.first.date | date: "%j" }}{% endcapture %}
   {% capture daysBetween %}{{ speakingDay | minus:siteDay }}{% endcapture %}
   {% capture daysBetweenWithYears %}{{ speakingYear | minus:siteYear | times:365 | plus:daysBetween }}{% endcapture %}
@@ -98,46 +98,49 @@ speaking_expire_days: 0
       </a>
     </figure>
     {% endfor %}
-    <a href="/techtalks">more tech talks</a>
+    <a class="morelink" href="/techtalks">more tech talks</a>
   </section>
 
   <section class="blogs">
     <h1>BLOGS</h1>
-    {% for blog in site.categories.blogs limit:page.max_blogs %}
+    {% for post in site.categories.blogs limit:page.max_blogs %}
     <article>
-      <img src="assets/images/users/{{ blog.categories[1] }}.png"/>
-      <h1><a href="{{ blog.url }}">{{ blog.title }}</a></h1>
-      <h2>{{ blog.categories[1] | replace:'_',' ' }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
+      <img src="assets/images/users/{{ post.categories[1] }}.png"/>
+      {% include post-list-item.html %}
     </article>
     {% endfor %}
-
-    <a href="/blogs">more blogs</a>
+    <a class="morelink" href="/blogs">more blogs</a>
   </section>
 
   {% if has_speaking %}
   <section class="speaking">
     <h1>SPEAKING</h1>
-    {% for engagement in site.categories.speaking limit:page.max_speaking %}
+    {% for post in site.categories.speaking limit:page.max_speaking %}
     <article>
-      <img src="assets/images/users/{{ engagement.categories[1] }}.png"/>
-      <h1>{{ engagement.title }}</h1>
-      <h2>{{ engagement.speaker }} at {{ engagement.event }} on {{ engagement.date | date:'%b %d, %Y' }}</h2>
+      <img src="assets/images/users/{{ post.speaker | downcase | replace:' ','_' }}.png"/>
+      {% include speaking-list-item.html %}
     </article>
     {% endfor %}
-    <a href="/speaking">more speaking engagements</a>
+    <a class="morelink" href="/speaking">more speaking engagements</a>
   </section>
   {% else %}
     <section class="moreblogs">
       <h1>&nbsp;</h1>
-      {% for blog in site.categories.blogs limit:page.max_blogs offset:page.max_blogs %}
+      {% for post in site.categories.blogs limit:page.max_blogs offset:page.max_blogs %}
       <article>
-        <img src="assets/images/users/{{ blog.categories[1] }}.png"/>
-        <h1><a href="{{ blog.url }}">{{ blog.title }}</a></h1>
-        <h2>{{ blog.categories[1] | split:'_' | map:'capitalize' | join:' ' }} on {{ blog.date | date:'%b %d, %Y' }}</h2>
+        <img src="assets/images/users/{{ post.categories[1] }}.png"/>
+        {% include post-list-item.html %}
       </article>
       {% endfor %}
+      <a class="morelink" href="/blogs">more blogs</a>
     </section>
   {% endif %}
+
+  <ul class="morelinks">
+    <li class="morelinks-talks"><a href="/techtalks">more tech talks</a></li>
+    <li class="morelinks-blogs"><a href="/blogs">more blogs</a></li>
+    <li class="morelinks-speaking"><a href="/speaking">more speaking engagements</a></li>
+  </ul>
 </section>
 
 

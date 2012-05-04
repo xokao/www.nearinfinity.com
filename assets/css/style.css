@@ -537,24 +537,111 @@ footer .copyright {
 #techcommunity .techtalks figure {
   margin: auto;
 }
-#techcommunity .moreblogs {
+#techcommunity .speaking {
   display: none;
 }
-@media screen and (min-width: 33em) {
-  #techcommunity .techtalks {
+#techcommunity.has_speaking .speaking {
+  display: block;
+}
+#techcommunity .moreblogs,
+#techcommunity .morelinks {
+  display: none;
+}
+#techcommunity a {
+  color: inherit;
+  text-decoration: none;
+}
+#techcommunity a:hover {
+  text-decoration: underline;
+}
+#techcommunity .morelink,
+#techcommunity .morelinks a {
+  float: right;
+}
+#techcommunity .morelink:after,
+#techcommunity .morelinks a:after {
+  content: '...';
+}
+@media screen and (min-width: 43em) {
+  #techcommunity .blogs {
     display: inline;
     float: left;
-    width: 31.25%;
+    width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
     margin-left: 9.374999999999998%;
   }
-  #techcommunity .techtalks figure {
-    margin: 0;
+  #techcommunity .moreblogs {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity .blogs .morelink,
+  #techcommunity .moreblogs .morelink,
+  #techcommunity .speaking .morelink {
+    display: none;
+  }
+  #techcommunity.has_speaking .moreblogs {
+    display: none;
+  }
+  #techcommunity.has_speaking .speaking {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity.has_speaking .morelinks li.morelinks-blogs {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
+  }
+  #techcommunity.has_speaking .morelinks li.morelinks-speaking {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity .morelinks {
+    clear: left;
+    display: block;
+  }
+  #techcommunity .morelinks li.morelinks-talks {
+    display: none;
+  }
+  #techcommunity .morelinks li.morelinks-blogs {
+    display: inline;
+    float: left;
+    width: 81.25%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
+  }
+  #techcommunity .morelinks li.morelinks-speaking {
+    display: none;
+  }
+}
+@media screen and (min-width: 50em) {
+  #techcommunity .techtalks {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
+  }
+  #techcommunity .techtalks .morelink {
+    display: none;
   }
   #techcommunity .blogs {
     display: inline;
     float: left;
-    width: 47.91666666666667%;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity .moreblogs {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
   }
   #techcommunity.has_speaking .speaking {
@@ -562,20 +649,30 @@ footer .copyright {
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
-    margin-right: 9.374999999999998%;
   }
-}
-@media screen and (min-width: 50em) {
-  #techcommunity .blogs {
+  #techcommunity.has_speaking .morelinks li.morelinks-blogs {
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity.has_speaking .morelinks li.morelinks-speaking {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
   }
-  #techcommunity .moreblogs {
+  #techcommunity .morelinks li.morelinks-talks {
     display: inline;
     float: left;
     width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
+  }
+  #techcommunity .morelinks li.morelinks-blogs {
+    display: inline;
+    float: left;
+    width: 56.25%;
     margin: 0 1.0416666666666665%;
   }
 }
@@ -877,10 +974,16 @@ footer .copyright {
   color: #f68640;
   text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
 }
-#techcommunity  > section  > a {
-  float: right;
-  text-decoration: none;
+#techcommunity .morelinks li {
+  text-align: right;
   color: #e6e6e6;
+}
+#techcommunity .morelinks li a {
+  color: inherit;
+  text-decoration: none;
+}
+#techcommunity .morelinks li a:hover {
+  text-decoration: underline;
 }
 #techcommunity .techtalks figure {
   max-width: 320px;
