@@ -1,10 +1,22 @@
+{% assign count = '' %}
+{% for post in site.posts %}	
+{% for tag in post.tags %}
+{% for page_tag in page.tags %}
+{% if tag == page_tag and post.id != page.id and count.size < 5 and post.categories[0] == 'blogs' %}
+{% capture count %}{{ count }}*{% endcapture %}
+{% endif %}
+{% endfor %}			
+{% endfor %}			
+{% endfor %}			
+
+{% if count.size > 0 %}
 <h1>Related Blogs</h1>
 <ul>
   {% assign count = '*' %}
   {% for post in site.posts %}	
   {% for tag in post.tags %}
   {% for page_tag in page.tags %}
-  {% if tag == page_tag and post.id != page.id and count.size < 6 and post.categories[0] == 'blogs' %}
+  {% if tag == page_tag and post.id != page.id and count.size < 5 and post.categories[0] == 'blogs' %}
   <li>
     {% include post-list-item.html %}
   </li>
@@ -14,3 +26,4 @@
   {% endfor %}			
   {% endfor %}			
 </ul>
+{% endif %}
