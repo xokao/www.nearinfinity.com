@@ -912,6 +912,12 @@ footer section.contactus li a,
 footer section.social li a {
   display: block;
 }
+footer section.contactus .phone,
+footer section.social .phone,
+footer section.contactus .fax,
+footer section.social .fax {
+  white-space: nowrap;
+}
 footer aside {
   clear: left;
   padding-top: 1em;
