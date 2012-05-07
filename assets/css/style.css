@@ -1470,6 +1470,9 @@ section.dynamic_content .video-container {
   box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 2em;
 }
+section.dynamic_content aside {
+  margin-bottom: 2em;
+}
 section.dynamic_content aside img {
   float: right;
   width: 75px;
