@@ -7,7 +7,7 @@
 {% endfor %}
 
 {% if count.size > 0 %}
-<h1>Recent Blogs</h1>
+<h1>Blogs by {{ page.categories[1] | replace:'_',' ' | downcase }} </h1>
 <ul>
   {% assign count = '' %}
   {% for post in site.posts %}	

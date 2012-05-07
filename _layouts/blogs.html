@@ -24,7 +24,10 @@
         <h1>{{ page.categories[1] | replace:'_',' ' }}</h1>
       </hgroup>
 
+      {% assign type = 'blog' %}
       {% include sharing.html %}
+      {% assign type = '' %}
+
       {% include blogs/recent.html %}
       {% include blogs/with_same_tags.html %}
     </aside>

@@ -12,7 +12,7 @@ thumbnails_120:
   - http://i.ytimg.com/vi/u0Znbyr7ijk/3.jpg
 ---
 Joe Ferner presents on Arduino.
-https://github.com/joeferner/arduinoPresentation
+[github.com/joeferner/arduinoPresentation](https://github.com/joeferner/arduinoPresentation)
 
 Arduino is an open-source electronics prototyping platform based on flexible, easy-to-use hardware and software. It's intended for artists, designers, hobbyists, and anyone interested in creating interactive objects or environments.
 

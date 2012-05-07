@@ -1,4 +1,4 @@
-<h1>Share</h1>
+<h1>Share this{% if type %} {{ type }}{% endif %}</h1>
 <ul class="sharing">
   <li class="twitter"><a rel="nofollow" target="_blank" onclick="return shareLink(this, event)" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.host | cgi_escape }}{{ page.url | cgi_escape }}">twitter</a></li>
 

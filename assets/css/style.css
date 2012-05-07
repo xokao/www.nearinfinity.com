@@ -1011,6 +1011,9 @@ footer section a:hover {
 footer section h1 {
   font-weight: bold;
 }
+footer section li {
+  margin-bottom: 0.25em;
+}
 footer section.contactus a,
 footer section.social a {
   color: inherit;
@@ -1412,9 +1415,12 @@ section.dynamic_content {
   background: none, -o-linear-gradient(top, #e7e7e7, #ffffff 300px);
   background: none, -khtml-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
 }
+section.dynamic_content article {
+  padding-bottom: 2em;
+}
 section.dynamic_content article header h1 {
-  font-size: 1.7692307692307692em;
-  line-height: 1.1612903225806452em;
+  font-size: 2.076923076923077em;
+  line-height: 1.0909090909090908em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #60574c;
@@ -1462,13 +1468,14 @@ section.dynamic_content .video-container {
   -ms-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   -o-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
   box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.2857142857142858em;
+  margin-bottom: 2em;
 }
 section.dynamic_content aside img {
   float: right;
   width: 75px;
 }
 section.dynamic_content aside hgroup.blogger {
+  margin-left: -0.5em;
   border-radius: 8px;
   background: #D8D8D8;
   border-style: 1px solid rgba(150, 150, 150, 0.36);
