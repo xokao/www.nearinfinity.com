@@ -494,6 +494,9 @@ footer .copyright {
   margin-left: 20px;
   margin-right: 20px;
 }
+#aboutnic hgroup:after {
+  display: none;
+}
 #aboutnic #news {
   display: inline;
   float: left;
@@ -508,6 +511,9 @@ footer .copyright {
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
     margin-left: 9.374999999999998%;
+  }
+  #aboutnic.has_news hgroup:after {
+    display: block;
   }
   #aboutnic.has_news #news {
     display: inline;
@@ -1020,6 +1026,9 @@ footer .copyright {
   -o-box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.5) inset;
   box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.5) inset, 0 1px 2px rgba(0, 0, 0, 0.5) inset;
 }
+#aboutnic hgroup {
+  position: relative;
+}
 #aboutnic hgroup h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
@@ -1030,6 +1039,17 @@ footer .copyright {
 }
 #aboutnic hgroup p em {
   color: #f68640;
+}
+#aboutnic hgroup:after {
+  content: '';
+  width: 0;
+  background: red;
+  height: 90%;
+  position: absolute;
+  top: 0;
+  left: 110%;
+  border-left: 1px solid #555;
+  border-right: 1px solid black;
 }
 #aboutnic #news h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
