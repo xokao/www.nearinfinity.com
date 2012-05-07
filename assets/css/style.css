@@ -396,6 +396,36 @@ header#main figure div {
     margin-right: 0;
   }
 }
+@media screen and (min-width: 90em) {
+  header#main hgroup h1.logo {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  header#main hgroup nav {
+    margin-left: 17.708333333333332%;
+  }
+  header#main hgroup nav ol {
+    margin: 0;
+    width: 78%;
+  }
+  header#main article {
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  header#main figure {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    margin-right: 0;
+  }
+}
 footer {
   display: inline;
   float: left;
@@ -450,6 +480,19 @@ footer .copyright {
   clear: left;
   padding-top: 1em;
   margin-bottom: 1em;
+}
+@media screen and (min-width: 90em) {
+  body footer {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  body footer aside h1:before {
+    width: 500px;
+    left: -500px;
+  }
 }
 #aboutnic {
   padding-top: 2em;
@@ -519,6 +562,39 @@ footer .copyright {
     display: inline;
     float: left;
     width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
+  }
+}
+@media screen and (min-width: 90em) {
+  #aboutnic #news {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  #aboutnic hgroup {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  #aboutnic.has_news hgroup {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  #aboutnic.has_news hgroup:after {
+    display: block;
+  }
+  #aboutnic.has_news #news {
+    display: inline;
+    float: left;
+    width: 14.583333333333334%;
     margin: 0 1.0416666666666665%;
     margin-left: 9.374999999999998%;
   }
@@ -682,6 +758,75 @@ footer .copyright {
     margin: 0 1.0416666666666665%;
   }
 }
+@media screen and (min-width: 90em) {
+  #techcommunity  > h1 {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  #techcommunity  > section {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  #techcommunity .techtalks {
+    display: inline;
+    float: left;
+    width: 14.583333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  #techcommunity .techtalks .morelink {
+    display: none;
+  }
+  #techcommunity .blogs {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity .moreblogs {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity.has_speaking .speaking {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity.has_speaking .morelinks li.morelinks-blogs {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity.has_speaking .morelinks li.morelinks-speaking {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+  #techcommunity .morelinks li.morelinks-talks {
+    display: inline;
+    float: left;
+    width: 14.583333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  #techcommunity .morelinks li.morelinks-blogs {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+  }
+}
 section.blog_content article {
   display: inline;
   float: left;
@@ -713,6 +858,22 @@ section.blog_content aside {
     margin: 0 1.0416666666666665%;
   }
 }
+@media screen and (min-width: 90em) {
+  section.blog_content article {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  section.blog_content aside {
+    clear: none;
+    display: inline;
+    float: left;
+    width: 14.583333333333334%;
+    margin: 0 1.0416666666666665%;
+  }
+}
 header#main {
   background: #e7e7e7;
 }
@@ -737,6 +898,11 @@ header#main hgroup  > a {
   height: 70px;
   z-index: 11;
   left: 7%;
+}
+@media screen and (min-width: 90em) {
+  header#main hgroup  > a {
+    left: 17%;
+  }
 }
 header#main nav {
   background: rgba(0, 0, 0, 0.6);

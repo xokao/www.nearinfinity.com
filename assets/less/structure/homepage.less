@@ -56,6 +56,21 @@
       }
     }
   }
+  @media screen and (min-width:90em) {
+    #news { .pad(2); }
+    hgroup { .pad(2); }
+    &.has_news { 
+      hgroup { 
+        .column(5);
+        .push(2);
+        &:after { display: block; }
+      }
+      #news {
+        .column(2);
+        .push(1);
+      }
+    }
+  }
 }
 
 
@@ -129,5 +144,31 @@
       &.morelinks-talks { .column(3); .push(1); }
       &.morelinks-blogs { .column(7); }
     }
+  }
+  @media screen and (min-width:90em) {
+
+    & > h1 { .pad(2); }
+    & > section { .pad(2); }
+
+    .techtalks { 
+      .column(2); 
+      .push(2); 
+      .morelink { display:none;} 
+    } 
+    .blogs { .column(3); }
+    .moreblogs { .column(3); }
+    &.has_speaking {
+      .speaking { .column(3); }
+      .morelinks li {
+        &.morelinks-blogs { .column(3); }
+        &.morelinks-speaking { .column(3); }
+      }
+    }
+
+    .morelinks li {
+      &.morelinks-talks { .column(2); .push(2); }
+      &.morelinks-blogs { .column(6); }
+    }
+
   }
 }
