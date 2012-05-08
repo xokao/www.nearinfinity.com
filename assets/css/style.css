@@ -389,6 +389,10 @@ header#main figure div {
   bottom: 0;
   top: 0;
   right: 0;
+  margin-left: -1.5em;
+}
+header#main.mobile figure div {
+  margin-left: -12em;
 }
 @media screen and (min-width: 40em) {
   header#main .nextprev li {
@@ -398,6 +402,8 @@ header#main figure div {
     height: 3em;
     line-height: 3em;
   }
+}
+@media screen and (min-width: 43em) {
   header#main article {
     display: inline;
     float: left;
@@ -411,6 +417,9 @@ header#main figure div {
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
     margin-right: 0;
+  }
+  header#main figure div {
+    margin-left: -8em;
   }
 }
 @media screen and (min-width: 90em) {
@@ -431,7 +440,7 @@ header#main figure div {
   header#main article {
     display: inline;
     float: left;
-    width: 31.25%;
+    width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
     margin-left: 17.708333333333332%;
   }
@@ -1134,9 +1143,6 @@ header#main .nextprev li a {
   line-height: 3em;
   text-decoration: none;
 }
-header#main figure div {
-  margin-left: -200px;
-}
 footer {
   color: black;
 }
@@ -1448,6 +1454,9 @@ footer .copyright {
 #techcommunity section article:hover .sharing-links li a,
 #techcommunity .techtalks:hover .sharing-links li a {
   opacity: 0.6;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
 }
 #techcommunity .sharing-links li a {
   float: right;
@@ -1456,6 +1465,9 @@ footer .copyright {
   height: 20px;
   opacity: 0.3;
   padding: 0;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
 }
 #techcommunity .techtalks .sharing-links {
   max-width: 320px;
@@ -1862,6 +1874,9 @@ section.all_content .blogs article .sharing-links li a {
   opacity: 0.8;
   margin-right: 5px;
   padding: 0;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
 }
 section.all_content aside  > h1 {
   font-size: 1.1538461538461537em;

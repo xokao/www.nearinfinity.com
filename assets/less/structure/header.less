@@ -40,7 +40,6 @@ header#main {
         .pull(1);
         li { 
           .size(1);
-          //margin-left: 1em;
           padding: 0.5em 0;
           display: inline-block;
           &:first-child { display: none; }
@@ -116,7 +115,11 @@ header#main {
       bottom: 0;
       top: 0;
       right: 0;
+      margin-left: -1.5em;
     }
+  }
+  &.mobile figure div {
+    margin-left: -12em;
   }
   @media screen and (min-width: 40em) {
     .nextprev li {
@@ -125,8 +128,10 @@ header#main {
       height: 3em;
       line-height: 3em;
     }
+  }
+  @media screen and (min-width: 43em) {
     article { .column(4); .push(1); }
-    figure { .column(6); margin-right: 0; }
+    figure { .column(6); margin-right: 0; div { margin-left: -8em; } }
   }
 
   @media screen and (min-width:90em) {
@@ -142,7 +147,7 @@ header#main {
         }
       }
     }
-    article { .column(4); .push(2); }
+    article { .column(3); .push(2); }
     figure { .column(6); margin-right: 0; }
     .article-links { .pad(2); }
   }
