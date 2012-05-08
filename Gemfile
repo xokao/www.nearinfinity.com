@@ -11,4 +11,5 @@ gem 'albino'
 group :tasks do
   gem "rake"
   gem "youtube_it"
+  gem "rack"
 end
