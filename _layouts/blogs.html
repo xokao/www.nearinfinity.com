@@ -13,18 +13,23 @@
     {% include header.html %}
   </header>
 
-  <section class="blog_content">
+  <section class="dynamic_content">
     <article>
     <header><h1>{{ page.title }}</h1></header>
     {{ content }}
     </article>
     <aside>
-      <img src="/assets/images/users/{{ page.categories[1] }}.png"/>
-      <hgroup class="blogger">
+      <a class="user-page-link" href="/blogs/{{ page.categories[1] }}">
+        <img src="/assets/images/users/{{ page.categories[1] }}.png"/>
+        <hgroup class="blogger">
         <h1>{{ page.categories[1] | replace:'_',' ' }}</h1>
-      </hgroup>
+        </hgroup>
+      </a>
 
+      {% assign type = 'blog' %}
       {% include sharing.html %}
+      {% assign type = '' %}
+
       {% include blogs/recent.html %}
       {% include blogs/with_same_tags.html %}
     </aside>

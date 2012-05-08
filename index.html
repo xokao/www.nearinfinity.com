@@ -118,7 +118,7 @@ speaking_expire_days: 0
     <h1>SPEAKING</h1>
     {% for post in site.categories.speaking limit:page.max_speaking %}
     <article>
-      <img src="assets/images/users/{{ post.speaker | downcase | replace:' ','_' }}.png"/>
+      <img src="assets/images/users/{{ post.categories[1] }}.png"/>
       {% include speaking-list-item.html %}
     </article>
     {% endfor %}

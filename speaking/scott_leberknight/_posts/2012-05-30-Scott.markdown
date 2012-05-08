@@ -1,7 +1,6 @@
 ---
-layout: presentations
+layout: speaking
 title: Introducing CoffeeScript
-speaker: Scott Leberknight
 event: DevIgnition
 ---
-
+about this talk
