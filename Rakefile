@@ -1,13 +1,14 @@
 task :default => [:jekyll]
 
+desc "Run jekyll and create the _site dir"
 task :jekyll do
   `bundle exec jekyll --no-pygments`
 end
 
+desc "Run the jekyll server"
 task :server do
   `bundle exec jekyll --no-pygments --server --auto --limit_posts 10`
 end
-
 
 
 namespace :assets do
