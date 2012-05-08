@@ -8,7 +8,39 @@ task :server do
   `bundle exec jekyll --no-pygments --server --auto --limit_posts 10`
 end
 
-desc "Generate posts for tech talks on youtube"
+
+
+namespace :assets do
+
+  desc "Crush png images"
+  task :crush_pngs do
+    Dir['assets/images/**/*.png'].each do |file|
+      `pngcrush -rem alla -reduce -brute "#{file}" "#{file}.crushing"`
+      `mv "#{file}.crushing" "#{file}"`
+    end
+  end
+
+  desc "Crush jp(e)g images"
+  task :crush_jpgs do
+    ( Dir['assets/images/**/*.jpg'] + Dir['assets/images/**/*.jpeg'] ).each do |file|
+      `jpegtran -copy none -optimize -perfect -outfile "#{file}.crushing" "#{file}"`
+      `mv "#{file}.crushing" "#{file}"`
+    end
+  end
+
+  desc "Crush images"
+  task :crush_images do
+    %w( assets:crush_pngs assets:crush_jpgs ).each do |task|
+      Rake::Task[task].invoke
+    end
+  end
+
+end
+
+
+
+
+#desc "Generate posts for tech talks on youtube"
 task :generate_tech_talks do
   require 'youtube_it'
 
@@ -24,7 +56,7 @@ task :generate_tech_talks do
       date = video.published_at.strftime("%Y-%m-%d")
       name = video.title.gsub(/\s*:\s*/, ':').gsub(/\s+/,'_')
       filename = "#{date}-#{name}.markdown"
-      path = File.join 'techtalks','_posts', filename
+      path = File.join 'techtalks', filename
 
       File.open(path, 'w') do |f|
         f.puts <<-EOL.gsub /^\s{8}/, ''
@@ -43,4 +75,6 @@ task :generate_tech_talks do
       end
     end
   end
+
+  puts "Now place the output into their user folder"
 end
