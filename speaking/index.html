@@ -1,10 +1,13 @@
 ---
-layout: blank
-title: Speaking Engagements
+layout: allblogs
+title: Recent Speaking Engagements
 max_engagements: 10
 ---
 
-{% for talk in site.categories.speaking limit:page.max_engagements %}
-  <p><a href="{{ talk.url }}">{{ talk.title }}</a>
+{% for post in site.categories.speaking limit:page.max_engagements %}
+  <article>
+  <img class='blog-img' src="/assets/images/users/{{ post.categories[1] }}.png"/>
+  <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
+  </article>
 {% endfor %}
-
+<a href='/speaking/all/index.html' class='more'>View all Speaking Engagements...</a>

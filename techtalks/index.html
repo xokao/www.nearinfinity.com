@@ -1,16 +1,18 @@
 ---
-layout: blank
+layout: allblogs
 title: Tech Talks
 max_techtalks: 10
 ---
 
-{% for talk in site.categories.techtalks limit:page.max_techtalks %}
+{% for post in site.categories.techtalks limit:page.max_techtalks %}
+  <article>
+    <img class='blog-img' src="/assets/images/users/{{ post.categories[1] }}.png"/>
+    <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
     <figure class="video">
-      <a href="{{ talk.url }}">
-        <img src="{{ talk.thumbnail_320 }}"/>
-        <figcaption>{{ talk.title }}</figcaption>
-      </a>
+        <img src="{{ post.thumbnail_320 }}"/>
     </figure>
+  </article>
 
 {% endfor %}
+<a href='/techtalks/all/index.html' class='more'>View all Tech Talks...</a>
 
