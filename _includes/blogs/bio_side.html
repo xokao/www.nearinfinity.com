@@ -1,0 +1,63 @@
+<h1>Blogs by {{page.name}}</h1>
+<ul>
+  {% assign blog_count = '' %}
+  {% for post in site.posts %}  
+    {% if post.categories[0] == 'blogs' and post.categories[1] == page.user and blog_count.size < 5 %}
+      <li>
+        {% include post-list-item.html %}
+      </li>
+      {% capture blog_count %}{{ blog_count }}*{% endcapture %}
+    {% endif %}
+  {% endfor %}
+  {% if blog_count.size == 0 %}
+    <li>No Blogs</li>
+  {% endif %}      
+</ul>
+<h1>Tech Talks</h1>
+<ul>
+  {% assign talk_count = '' %}
+  {% for post in site.posts %}
+    {% if post.categories[0] == 'techtalks' and post.categories[1] == page.user and talk_count.size < 3 %}
+      <li>
+        {% include post-list-item.html %}
+      </li>
+      {% capture talk_count %}{{ talk_count }}*{% endcapture %}
+    {% endif %}
+  {% endfor %}
+  {% if talk_count.size == 0 %}
+    <li>No Techtalks</li>
+  {% endif %}
+</ul>
+<h1>Speaking Engagements</h1>
+<ul>
+  {% assign speak_count = '' %}
+  {% for post in site.posts %}
+    {% if post.categories[0] == 'speaking' and post.categories[1] == page.user and speak_count.size < 2 %}
+      <li>
+        {% include post-list-item.html %}
+      </li>
+      {% capture speak_count %}{{ speak_count }}*{% endcapture %}
+    {% endif %}
+  {% endfor %}
+  {% if speak_count.size == 0 %}
+    <li>No Speaking Engagements</li>
+  {% endif %}
+</ul>
+<h1>Stay Connected</h1>
+<ul>
+  {% if page.social %}
+    {% for media in page.social %}
+      <li>
+        Follow <a href="{{media[1]}}">{{page.name}}</a> on {{media[0]}}
+      </li>
+    {% endfor %}
+  {% else %}
+    <li>
+      Follow <a href="www.twitter.com/nearinfinity">Near Infinity</a> on Twitter
+    </li>
+  {% endif %}
+</ul>
+
+
+
+

@@ -15,45 +15,48 @@ section.all_content {
       height:75px;
       width:75px;
     }
+    .no-articles{display:none;}
     article { 
+      &.hidden{
+        display:none;
+      }
       &.condensed{
-        height:50px;
-        padding-bottom:0;
-        margin-bottom:0;
+        min-height:50px;
         .blog-info{
           padding-top:0;
         }
-        .sharing-links li a{
-          float:left;
+        h1{
+          .size(2);
         }
       }
-      height:75px;
+      min-height:75px;
       position: relative;
       border-radius: 8px;
-      min-height: 100px;
       padding-left:15px;
-      margin-bottom:0;
+      margin-bottom:25px;
       clear:both;
       .blog-info{
-        padding-top:15px;
+        padding-top:10px;
       }
       h1 {
         font-weight: bold;
-        font-size:175%;
+        .size(6);
         margin-bottom:0;
         color: darken(@light_text, 10%);
         .plain-anchor;
       }
       h2 {
-        font-size: 90%;
+        .size(.2);
         color: darken(@light_text, 5%);
         margin-bottom:0;
+        //display:inline;
       }
       .sharing-links{ 
         margin-bottom:0;
+        display:inline;
         li a{
         float: right;
-        display: block;
+        display: inline;
         width: 20px;
         height: 20px;
         opacity: 0.8;
@@ -69,11 +72,15 @@ section.all_content {
     & > h1 {
       .size(2);
       .light_header(@darker_text);
-      margin-top: 2em;
-    }
-
-    ul li {
       margin-top: 1.5em;
+    }
+    .filter-title{
+    .size(3);
+      color: @nic_orange;
+      margin:0;
+    }
+    ul li {
+      margin-top: .5em;
       h1 {
         .size(0);
         margin-bottom: 0;
@@ -82,6 +89,9 @@ section.all_content {
       h2 {
         color: lighten(@light_text, 20%);
         .size(-2);
+      }
+      a.selected{
+        color: @nic_orange;
       }
     }
   }

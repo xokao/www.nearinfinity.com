@@ -1796,32 +1796,37 @@ section.all_content .blogs img {
   height: 75px;
   width: 75px;
 }
+section.all_content .blogs .no-articles {
+  display: none;
+}
 section.all_content .blogs article {
-  height: 75px;
+  min-height: 75px;
   position: relative;
   border-radius: 8px;
-  min-height: 100px;
   padding-left: 15px;
-  margin-bottom: 0;
+  margin-bottom: 25px;
   clear: both;
 }
+section.all_content .blogs article.hidden {
+  display: none;
+}
 section.all_content .blogs article.condensed {
-  height: 50px;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  min-height: 50px;
 }
 section.all_content .blogs article.condensed .blog-info {
   padding-top: 0;
 }
-section.all_content .blogs article.condensed .sharing-links li a {
-  float: left;
+section.all_content .blogs article.condensed h1 {
+  font-size: 1.1538461538461537em;
+  line-height: 1.3333333333333333em;
 }
 section.all_content .blogs article .blog-info {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 section.all_content .blogs article h1 {
   font-weight: bold;
-  font-size: 175%;
+  font-size: 1.4615384615384615em;
+  line-height: 1.2413793103448276em;
   margin-bottom: 0;
   color: #474747;
 }
@@ -1833,16 +1838,18 @@ section.all_content .blogs article h1 a:hover {
   text-decoration: underline;
 }
 section.all_content .blogs article h2 {
-  font-size: 90%;
+  font-size: 1.0153846153846153em;
+  line-height: 1.379310344827586em;
   color: #535353;
   margin-bottom: 0;
 }
 section.all_content .blogs article .sharing-links {
   margin-bottom: 0;
+  display: inline;
 }
 section.all_content .blogs article .sharing-links li a {
   float: right;
-  display: block;
+  display: inline;
   width: 20px;
   height: 20px;
   opacity: 0.8;
@@ -1856,10 +1863,16 @@ section.all_content aside  > h1 {
   letter-spacing: 2px;
   color: #60574c;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(96, 87, 76, 0.2);
-  margin-top: 2em;
+  margin-top: 1.5em;
+}
+section.all_content aside .filter-title {
+  font-size: 1.2307692307692308em;
+  line-height: 1.309090909090909em;
+  color: #f68640;
+  margin: 0;
 }
 section.all_content aside ul li {
-  margin-top: 1.5em;
+  margin-top: .5em;
 }
 section.all_content aside ul li h1 {
   font-size: 1em;
@@ -1877,6 +1890,9 @@ section.all_content aside ul li h2 {
   color: #939393;
   font-size: 0.8461538461538461em;
   line-height: 1.44em;
+}
+section.all_content aside ul li a.selected {
+  color: #f68640;
 }
 /*
 .video {

@@ -16,15 +16,82 @@
   <section class="all_content">
     <div class="blogs">
     <header><h1>{{ page.title }}</h1></header>
+    <h1 class='no-articles'>No Results Found</h1>
     {{ content }}
     </div>
     <aside>
-      <h1>{{page.title}} by Bloggers</h1>
-      
-      <h1>{{page.title}} by Tag</h1>
+      <h1 class='filter-title' > Filters</h1>
+      <a href='#' class='clear-filters' >Clear Filters</a>
+      <h1>{{page.title}} by Author</h1>
+      <ul class='filter-list'>
+      {%for cat in site.categories %}
+        {% case cat[0] %}
+          {% when 'blogs' or 'techtalks' or 'news' or 'speaking' %}
+             
+          {% else %}
+          <li><a href='#' class='author-filter'>{{cat[0]| replace:'_',' '}}</a></li>
+        {% endcase %}
+        {%endfor%}
+      </ul>
+      <h1>{{page.title}} by Tags</h1>
+      <ul class='filter-list'>
+      {%for tag in site.tags %}
+        <li><a href='#' class='tag-filter'>{{tag[0]}}</a></li>
+      {%endfor%}
+      </ul>
+
     </aside>
   </section>
 
   {% include footer.html %}
-</body>
-</html>
+  <script>
+    $('.clear-filters').on('click',function(){
+      $('article').removeClass('hidden');
+      $('.no-articles').hide();
+      $('.author-filter,.tag-filter').removeClass('selected');
+    });
+
+    $('.author-filter').on('click',function(){
+      $('.author-filter,.tag-filter').removeClass('selected');
+      $(this).addClass('selected');
+      var author = $(this).html();
+      $('article').removeClass('hidden');
+      var num_articles = $('article').size();
+      $('article').each(function(idx,elm){
+        var elm_author = $(elm).find('.author').html();
+        if(elm_author != author){
+          $(elm).addClass('hidden');
+        }
+        if(idx = num_articles -1){
+          if($('article.hidden').size() == num_articles){
+            $('.no-articles').show();
+          }else{
+            $('.no-articles').hide();
+          }
+        }
+      });
+    });
+
+    $('.tag-filter').on('click',function(){
+      $('.author-filter,.tag-filter').removeClass('selected');
+      $(this).addClass('selected');
+      var tag = $(this).html();
+      $('article').removeClass('hidden');
+      var num_articles = $('article').size();
+      $('article').each(function(idx,elm){
+        var elm_tags = $(elm).find('.tags').html();
+        if(elm_tags.indexOf(tag) == -1){
+          $(elm).addClass('hidden');
+        }
+        if(idx = num_articles -1){
+          if($('article.hidden').size() == num_articles){
+            $('.no-articles').show();
+          }else{
+            $('.no-articles').hide();
+          }
+        }
+      });
+    });
+
+
+  </script>
