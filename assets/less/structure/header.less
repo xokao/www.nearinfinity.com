@@ -78,6 +78,12 @@ header#main {
     .column(8);
     .push(1);
   }
+  .article-links {
+    position: absolute;
+    bottom: 1em;
+    z-index: 10;
+    .pad;
+  }
   ol.links {
     clear:left;
   }
@@ -138,5 +144,6 @@ header#main {
     }
     article { .column(4); .push(2); }
     figure { .column(6); margin-right: 0; }
+    .article-links { .pad(2); }
   }
 }

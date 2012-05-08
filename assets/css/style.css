@@ -344,6 +344,16 @@ header#main article {
   margin: 0 1.0416666666666665%;
   margin-left: 9.374999999999998%;
 }
+header#main .article-links {
+  position: absolute;
+  bottom: 1em;
+  z-index: 10;
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
+}
 header#main ol.links {
   clear: left;
 }
@@ -431,6 +441,13 @@ header#main figure div {
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
     margin-right: 0;
+  }
+  header#main .article-links {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
   }
 }
 footer {
@@ -532,7 +549,7 @@ footer .copyright {
   height: 50px;
   border: 0;
   margin: auto;
-  background: url(../images/icons/sprite.png);
+  background: url(../images/icons/homepage-sprite.png);
 }
 #aboutnic hgroup section.about-agile h1:after {
   background-position: -50px 0;
@@ -944,6 +961,14 @@ section.dynamic_content .video-container embed {
     margin: 0 1.0416666666666665%;
   }
 }
+.selected-impact {
+  opacity: 1;
+  height: auto;
+  position: relative;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
+}
 header#main {
   background: #e7e7e7;
 }
@@ -999,6 +1024,12 @@ header#main hr {
 header#main article {
   color: #606060;
   padding: 2em 0;
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
 }
 header#main article h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -1014,9 +1045,70 @@ header#main article h2 {
   line-height: 1.309090909090909em;
   line-height: 1.4em;
 }
-header#main article .article-links {
+header#main.bigdata figure div {
+  background: url(../images/impact/big-data.png) 15px 0px no-repeat;
+}
+header#main.bigdata article.bigdata {
+  opacity: 1;
+  height: auto;
   position: relative;
-  left: -6px;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
+}
+header#main.bigdata .article-links a.bigdata {
+  background-position: -150px -24px;
+}
+header#main.mobile figure div {
+  background: url(../images/impact/mobile.png) 15px 0px no-repeat;
+}
+header#main.mobile article.mobile {
+  opacity: 1;
+  height: auto;
+  position: relative;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
+}
+header#main.mobile .article-links a.mobile {
+  background-position: -150px -24px;
+}
+header#main.trustedapps figure div {
+  background: url(../images/impact/trusted-apps.png) 15px 0px no-repeat;
+}
+header#main.trustedapps article.trustedapps {
+  opacity: 1;
+  height: auto;
+  position: relative;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
+}
+header#main.trustedapps .article-links a.trustedapps {
+  background-position: -150px -24px;
+}
+header#main.joinus figure div {
+  background: url(../images/impact/join-us.png) 15px 0px no-repeat;
+}
+header#main.joinus article.joinus {
+  opacity: 1;
+  height: auto;
+  position: relative;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
+}
+header#main.joinus .article-links a.joinus {
+  background-position: -150px -24px;
+}
+header#main .article-links a {
+  text-decoration: none;
+  color: transparent;
+  background: url(../images/icons/homepage-sprite.png) -150px 0 no-repeat;
+  width: 25px;
+  height: 25px;
+  display: block;
+  float: left;
 }
 header#main .nextprev {
   margin: 0;
@@ -1035,12 +1127,15 @@ header#main .nextprev li {
   text-shadow: 0 -1px 1px #818181, 0 0 0 transparent;
   font-size: 1.6153846153846154em;
   line-height: 1.2em;
+}
+header#main .nextprev li a {
   height: 3em;
+  display: block;
   line-height: 3em;
+  text-decoration: none;
 }
 header#main figure div {
   margin-left: -200px;
-  background: url(../images/impact/mobile.png) 15px 0px no-repeat;
 }
 footer {
   color: black;
@@ -1353,9 +1448,6 @@ footer .copyright {
 #techcommunity section article:hover .sharing-links li a,
 #techcommunity .techtalks:hover .sharing-links li a {
   opacity: 0.6;
-  -webkit-transition: all linear 0.2s;
-  -moz-transition: all linear 0.2s;
-  transition: all linear 0.2s;
 }
 #techcommunity .sharing-links li a {
   float: right;
@@ -1364,9 +1456,6 @@ footer .copyright {
   height: 20px;
   opacity: 0.3;
   padding: 0;
-  -webkit-transition: all linear 0.2s;
-  -moz-transition: all linear 0.2s;
-  transition: all linear 0.2s;
 }
 #techcommunity .techtalks .sharing-links {
   max-width: 320px;
@@ -1773,9 +1862,6 @@ section.all_content .blogs article .sharing-links li a {
   opacity: 0.8;
   margin-right: 5px;
   padding: 0;
-  -webkit-transition: all linear 0.2s;
-  -moz-transition: all linear 0.2s;
-  transition: all linear 0.2s;
 }
 section.all_content aside  > h1 {
   font-size: 1.1538461538461537em;

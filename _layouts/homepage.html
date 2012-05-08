@@ -17,7 +17,6 @@
       {% capture impact_bigdata %}{% include homepage/impact_bigdata.md %}{% endcapture %}
       {{ impact_bigdata | unindent | markdownify }}
       </h2>
-      <img class="article-links" src="assets/images/dots.png"/>
     </article>
     <article class="mobile">
       <h1>MOBILE</h1>
@@ -25,7 +24,6 @@
       {% capture impact_mobile %}{% include homepage/impact_mobile.md %}{% endcapture %}
       {{ impact_mobile | unindent | markdownify }}
       </h2>
-      <img class="article-links" src="assets/images/dots.png"/>
     </article>
     <article class="trustedapps">
       <h1>TRUSTED APPS</h1>
@@ -33,7 +31,6 @@
       {% capture impact_trustedapps %}{% include homepage/impact_trustedapps.md %}{% endcapture %}
       {{ impact_trustedapps | unindent | markdownify }}
       </h2>
-      <img class="article-links" src="assets/images/dots.png"/>
     </article>
     <article class="joinus">
       <h1>JOIN US</h1>
@@ -41,9 +38,14 @@
       {% capture impact_joinus %}{% include homepage/impact_joinus.md %}{% endcapture %}
       {{ impact_joinus | unindent | markdownify }}
       </h2>
-      <img class="article-links" src="assets/images/dots.png"/>
     </article>
     <figure><div></figure>
+    <section class="article-links">
+      <a class="bigdata" href="#">Big Data</a>
+      <a class="mobile" href="#">Mobile</a>
+      <a class="trustedapps" href="#">Trusted Apps</a>
+      <a class="joinus" href="#">Join Us</a>
+    </section>
     <ol class="nextprev">
       <li class="previous"><a href="#">&lt;</a></li>
       <li class="next"><a href="#">&gt;</a></li>
@@ -55,31 +57,53 @@
   {% include footer.html %}
   <script>
     (function() {
-      var classes = [
-        'bigdata',
-        'mobile',
-        'trustedapps',
-        'joinus'
-        ], index = 0;
+      var classes = [ 'bigdata', 'mobile', 'trustedapps', 'joinus' ], 
+          index = 0;
 
+      // Move forward "1" or backward "-1" one place
       function move(direction) {
         index += direction
 
         // Wrap around if negative
-        if (index < 0) 
-          index = classes.length - 1
+        if (index < 0) index = classes.length - 1
 
         var newClass = classes[index % classes.length]
         $('#main').removeClass(classes.join(' ')).addClass(newClass)
       }
-
-      $('.nextprev').on('click', 'a', function(e) {
-        var className = $(this).parent()[0].className;
-        if (className == 'next')
-          move(1)
-        else
-          move(-1)
+      // Show specific impact item
+      function show(impactItem) {
+        index = classes.indexOf(impactItem);
+        $('#main').removeClass(classes.join(' ')).addClass(impactItem)
+      }
+      // User events for changing impact item
+      $('#main').on('click', '.article-links a, .nextprev a', function(e) {
+        clearInterval(timer);
+        if (classes.indexOf(this.className) > -1) {
+          show(this.className);
+        } else {
+          var className = $(this).parent()[0].className;
+          if (className == 'next')
+            move(1)
+          else
+            move(-1)
+        }
       });
+      // Cycle through the impact items
+      var timer;
+      function startSlideshow() {
+        clearInterval(timer);
+        timer = window.setInterval(function() {
+          if (document.body.scrollTop < 200)
+            move(1);
+          }, {{ page.impact_duration_seconds }} * 1000);
+      }
+      $(window).on('blur', function() {
+        clearInterval(timer);
+      }).on('focus', function() {
+        startSlideshow();
+      });
+      startSlideshow();
+
     })();
   </script>
 </body>
