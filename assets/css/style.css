@@ -834,6 +834,53 @@ footer .copyright {
     margin: 0 1.0416666666666665%;
   }
 }
+section.all_content .blogs {
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
+}
+section.all_content aside {
+  clear: left;
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
+}
+@media screen and (min-width: 45em) {
+  section.all_content .blogs {
+    display: inline;
+    float: left;
+    width: 56.25%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 9.374999999999998%;
+  }
+  section.all_content aside {
+    clear: none;
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+}
+@media screen and (min-width: 90em) {
+  section.all_content .blogs {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
+  }
+  section.all_content aside {
+    clear: none;
+    display: inline;
+    float: left;
+    width: 14.583333333333334%;
+    margin: 0 1.0416666666666665%;
+  }
+}
 section.dynamic_content article {
   display: inline;
   float: left;
@@ -890,53 +937,6 @@ section.dynamic_content .video-container embed {
     margin-left: 17.708333333333332%;
   }
   section.dynamic_content aside {
-    clear: none;
-    display: inline;
-    float: left;
-    width: 14.583333333333334%;
-    margin: 0 1.0416666666666665%;
-  }
-}
-section.all_content .blogs {
-  display: inline;
-  float: left;
-  width: 81.25%;
-  margin: 0 1.0416666666666665%;
-  margin-left: 9.374999999999998%;
-}
-section.all_content aside {
-  clear: left;
-  display: inline;
-  float: left;
-  width: 81.25%;
-  margin: 0 1.0416666666666665%;
-  margin-left: 9.374999999999998%;
-}
-@media screen and (min-width: 45em) {
-  section.all_content .blogs {
-    display: inline;
-    float: left;
-    width: 56.25%;
-    margin: 0 1.0416666666666665%;
-    margin-left: 9.374999999999998%;
-  }
-  section.all_content aside {
-    clear: none;
-    display: inline;
-    float: left;
-    width: 22.916666666666664%;
-    margin: 0 1.0416666666666665%;
-  }
-}
-@media screen and (min-width: 90em) {
-  section.all_content .blogs {
-    display: inline;
-    float: left;
-    width: 47.91666666666667%;
-    margin: 0 1.0416666666666665%;
-    margin-left: 17.708333333333332%;
-  }
-  section.all_content aside {
     clear: none;
     display: inline;
     float: left;

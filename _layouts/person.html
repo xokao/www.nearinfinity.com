@@ -21,14 +21,9 @@
     </header>
     {{ content }}
     </article>
-    <section class="links">
-      <h1>Blogs</h1>
-      <h1>Tech Talks</h1>
-      <h1>Speaking Engagements</h1>
-      {% for x in page.social %}
-        Follow {{ x[1] }} on {{ x[0] }} 
-      {% endfor %}
-    </section>
+    <aside class="links">
+      {% include blogs/bio_side.html %}
+    </aside>
   </section>
 
 
