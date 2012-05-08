@@ -1782,6 +1782,22 @@ opacity: 0.3;
 .sharing-links .icon.you-tube:before {
   background-position: -140px 0;
 }
+section.all_content {
+  /* Legacy browsers */
+
+  background: #ffffff 300px none;
+  /* Recent browsers */
+
+  -o-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -webkit-background-size: auto auto !important;
+  background-size: 100% 100%;
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
+  background: none, -webkit-linear-gradient(#e7e7e7, #ffffff 300px);
+  background: none, -moz-linear-gradient(#e7e7e7, #ffffff 300px);
+  background: none, -o-linear-gradient(top, #e7e7e7, #ffffff 300px);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
+}
 section.all_content header h1 {
   font-size: 1.7692307692307692em;
   line-height: 1.1612903225806452em;
