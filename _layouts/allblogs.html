@@ -62,7 +62,7 @@
         if(elm_author != author){
           $(elm).addClass('hidden');
         }
-        if(idx = num_articles -1){
+        if(idx == num_articles -1){
           if($('article.hidden').size() == num_articles){
             $('.no-articles').show();
           }else{
@@ -83,7 +83,7 @@
         if(elm_tags.indexOf(tag) == -1){
           $(elm).addClass('hidden');
         }
-        if(idx = num_articles -1){
+        if(idx == num_articles - 1){
           if($('article.hidden').size() == num_articles){
             $('.no-articles').show();
           }else{
