@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+	
+	<title>{{ page.name }}</title>
+</head>
+<body>
+  <header id="main">
+    {% include header.html %}
+  </header>
+
+  <section class="dynamic_content">
+    <article>
+    <header>
+      <img src="/assets/images/users/{{ page.user }}.png"/>
+      <h1>{{ page.name }}</h1>
+    </header>
+    {{ content }}
+    </article>
+    <section class="links">
+      <h1>Blogs</h1>
+      <h1>Tech Talks</h1>
+      <h1>Speaking Engagements</h1>
+      {% for x in page.social %}
+        Follow {{ x[1] }} on {{ x[0] }} 
+      {% endfor %}
+    </section>
+  </section>
+
+
+  {% include footer.html %}
+
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

@@ -901,7 +901,7 @@ header#main {
   background: #e7e7e7;
 }
 header#main.homepage {
-  min-height: 430px;
+  height: 403px;
 }
 header#main hgroup {
   background: url(../images/white-stripe-pattern.png) repeat;
@@ -993,7 +993,7 @@ header#main .nextprev li {
 }
 header#main figure div {
   margin-left: -200px;
-  background: url(../images/mobile-impact.png) 15px -14px no-repeat;
+  background: url(../images/impact/mobile.png) 15px -14px no-repeat;
 }
 footer {
   color: black;
@@ -1472,6 +1472,9 @@ section.dynamic_content .video-container {
 }
 section.dynamic_content aside {
   margin-bottom: 2em;
+}
+section.dynamic_content aside a.user-page-link {
+  text-decoration: none;
 }
 section.dynamic_content aside img {
   float: right;
