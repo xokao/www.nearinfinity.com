@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: news
 title: NIC Adopts 138 Kids for the Holidays
 excerpt: Near Infinity this year adopted 138 children, seniors, and adults through Reston Interfaith's Gifts For Kids drive, a program which helps...
 ---
