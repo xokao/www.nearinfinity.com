@@ -57,27 +57,24 @@
   {% include footer.html %}
   <script>
     (function() {
-      var classes = [
-        'bigdata',
-        'mobile',
-        'trustedapps',
-        'joinus'
-        ], index = 0;
+      var classes = [ 'bigdata', 'mobile', 'trustedapps', 'joinus' ], 
+          index = 0;
 
+      // Move forward "1" or backward "-1" one place
       function move(direction) {
         index += direction
 
         // Wrap around if negative
-        if (index < 0) 
-          index = classes.length - 1
+        if (index < 0) index = classes.length - 1
 
         var newClass = classes[index % classes.length]
         $('#main').removeClass(classes.join(' ')).addClass(newClass)
       }
+      // Show specific impact item
       function show(impactItem) {
+        index = classes.indexOf(impactItem);
         $('#main').removeClass(classes.join(' ')).addClass(impactItem)
       }
-
       // User events for changing impact item
       $('#main').on('click', '.article-links a, .nextprev a', function(e) {
         clearInterval(timer);
@@ -91,8 +88,6 @@
             move(-1)
         }
       });
-
-
       // Cycle through the impact items
       var timer;
       function startSlideshow() {
@@ -108,6 +103,7 @@
         startSlideshow();
       });
       startSlideshow();
+
     })();
   </script>
 </body>

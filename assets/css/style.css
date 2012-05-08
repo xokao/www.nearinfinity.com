@@ -344,6 +344,16 @@ header#main article {
   margin: 0 1.0416666666666665%;
   margin-left: 9.374999999999998%;
 }
+header#main .article-links {
+  position: absolute;
+  bottom: 1em;
+  z-index: 10;
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  margin-left: 9.374999999999998%;
+}
 header#main ol.links {
   clear: left;
 }
@@ -431,6 +441,13 @@ header#main figure div {
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
     margin-right: 0;
+  }
+  header#main .article-links {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    margin-left: 17.708333333333332%;
   }
 }
 footer {
@@ -1083,16 +1100,6 @@ header#main.joinus article.joinus {
 }
 header#main.joinus .article-links a.joinus {
   background-position: -150px -24px;
-}
-header#main .article-links {
-  position: absolute;
-  bottom: 1em;
-  z-index: 10;
-  display: inline;
-  float: left;
-  width: 81.25%;
-  margin: 0 1.0416666666666665%;
-  margin-left: 9.374999999999998%;
 }
 header#main .article-links a {
   text-decoration: none;
