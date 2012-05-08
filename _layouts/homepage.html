@@ -9,9 +9,17 @@
 	<title>{{ page.title }}</title>
 </head>
 <body>
-  <header id="main" class="homepage">
+  <header id="main" class="homepage bigdata">
     {% include header.html %}
-    <article>
+    <article class="bigdata">
+      <h1>BIG DATA</h1>
+      <h2>
+      {% capture impact_bigdata %}{% include homepage/impact_bigdata.md %}{% endcapture %}
+      {{ impact_bigdata | unindent | markdownify }}
+      </h2>
+      <img class="article-links" src="assets/images/dots.png"/>
+    </article>
+    <article class="mobile">
       <h1>MOBILE</h1>
       <h2>
       {% capture impact_mobile %}{% include homepage/impact_mobile.md %}{% endcapture %}
@@ -19,16 +27,60 @@
       </h2>
       <img class="article-links" src="assets/images/dots.png"/>
     </article>
+    <article class="trustedapps">
+      <h1>TRUSTED APPS</h1>
+      <h2>
+      {% capture impact_trustedapps %}{% include homepage/impact_trustedapps.md %}{% endcapture %}
+      {{ impact_trustedapps | unindent | markdownify }}
+      </h2>
+      <img class="article-links" src="assets/images/dots.png"/>
+    </article>
+    <article class="joinus">
+      <h1>JOIN US</h1>
+      <h2>
+      {% capture impact_joinus %}{% include homepage/impact_joinus.md %}{% endcapture %}
+      {{ impact_joinus | unindent | markdownify }}
+      </h2>
+      <img class="article-links" src="assets/images/dots.png"/>
+    </article>
     <figure><div></figure>
     <ol class="nextprev">
-      <li class="previous">&lt;</li>
-      <li class="next">&gt;</li>
+      <li class="previous"><a href="#">&lt;</a></li>
+      <li class="next"><a href="#">&gt;</a></li>
     </ol>
   </header>
 
   {{ content }}
 
   {% include footer.html %}
-  <script src="/assets/js/app.js"></script>
+  <script>
+    (function() {
+      var classes = [
+        'bigdata',
+        'mobile',
+        'trustedapps',
+        'joinus'
+        ], index = 0;
+
+      function move(direction) {
+        index += direction
+
+        // Wrap around if negative
+        if (index < 0) 
+          index = classes.length - 1
+
+        var newClass = classes[index % classes.length]
+        $('#main').removeClass(classes.join(' ')).addClass(newClass)
+      }
+
+      $('.nextprev').on('click', 'a', function(e) {
+        var className = $(this).parent()[0].className;
+        if (className == 'next')
+          move(1)
+        else
+          move(-1)
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -59,3 +59,10 @@
     </aside>
     <p class='copyright'>&copy; Near Infinity, {{ site.time | date: "%Y" }}</p>
   </footer>
+
+  <script>
+    document.write('<script src=/assets/js/' +
+      ('__proto__' in {} ? 'zepto' : 'jquery') +
+      '.js><\/script>')
+    </script>
+  <script src="/assets/js/app.js"></script>
