@@ -13,6 +13,24 @@ end
 
 namespace :assets do
 
+  task :list_data_uris do
+    require 'rack'
+    require 'base64'
+
+    Dir['assets/images/**/*.png'].each do |file|
+      if File.size(file) < 30000
+        base64 = Base64.encode64(File.read file)
+        puts "#{File.basename file}\n\tdata:image/png;base64,#{Rack::Utils.escape(base64)}\n\n"
+      end
+    end
+    Dir['assets/images/**/*.jpg'].each do |file|
+      if File.size(file) < 30000
+        base64 = Base64.encode64(File.read file)
+        puts "#{File.basename file}\n\tdata:image/jpg;base64,#{Rack::Utils.escape(base64)}\n\n"
+      end
+    end
+  end
+
   desc "Crush png images"
   task :crush_pngs do
     Dir['assets/images/**/*.png'].each do |file|
