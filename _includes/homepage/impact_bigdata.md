@@ -1,0 +1,1 @@
+Near Infinity’s open source search engine, Blur, is capable of searching massive amount os data at incredible speeds. Currently in production in the U.S. Intelligence community, it helps solve some of the country’s hardest mission problems. 

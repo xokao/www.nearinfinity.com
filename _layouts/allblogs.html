@@ -19,13 +19,28 @@
     {{ content }}
     </div>
     <aside>
-      <h1>{{page.title}} by Bloggers</h1>
-      
-      <h1>{{page.title}} by Tag</h1>
+      <h1 class='filter-title' > Filters</h1>
+      <a href='#' class='clear-filters' >Clear Filters</a>
+      <h1>{{page.title}} by Author</h1>
+      <ul class='filter-list'>
+      {%for cat in site.categories %}
+        {% case cat[0] %}
+          {% when 'blogs' or 'techtalks' or 'news' or 'speaking' %}
+             
+          {% else %}
+          <li><a href='#' class='author-filter'>{{cat[0]}}</a></li>
+        {% endcase %}
+        {%endfor%}
+      </ul>
+      <h1>{{page.title}} by Tags</h1>
+      <ul class='filter-list'>
+      {%for tag in site.tags %}
+        <li><a href='#' class='tag-filter'>{{tag[0]}}</a></li>
+      {%endfor%}
+      </ul>
     </aside>
   </section>
 
   {% include footer.html %}
-  <script src="/assets/js/app.js"></script>
 </body>
 </html>
