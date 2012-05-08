@@ -48,10 +48,11 @@
     transform: scale(@scale) rotate(@rotate) translateX(@translateX) translateY(@translateY) skewX(@skewX) skewY(@skewY);
   }
 
-  .transition(@trans: all linear 0.2s) {
-    -webkit-transition: @trans;
-    -moz-transition: @trans;
-    transition: @trans;
+  .transition(...) {
+    @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+    -webkit-transition: @props;
+    -moz-transition: @props;
+    transition: @props;
   }
   
   #gradient {
