@@ -20,4 +20,20 @@ if (window.addEventListener) {
             }
         }
     }, false);
+
+    window.addEventListener('DOMContentLoaded', function() {
+        var images = [
+            'big-data-trans',
+            'mobile',
+            'trusted-apps',
+            'join-us'
+        ];
+        var index = 1;
+        document.getElementById('main').addEventListener('click', function() {
+            var div = this.getElementsByTagName('figure')[0].childNodes[0]
+            div.style.background = 'url(assets/images/impact/' + images[(++index % images.length)] + '.png) 15px 0px no-repeat'
+        }, false);
+    }, false);
 }
+
+
