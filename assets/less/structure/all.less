@@ -1,0 +1,33 @@
+section.all_content {
+  .blogs {
+    .pad;
+  }
+  aside {
+    clear: left;
+    .pad;
+  }
+
+  @media screen and (min-width:45em) {
+    .blogs{
+      .column(7);
+      .push(1);
+    }
+    aside {
+      clear: none;
+      .column(3);
+    }
+  }
+
+  @media screen and (min-width:90em) {
+    .blogs {
+      .column(6);
+      .push(2);
+    }
+    aside {
+      clear: none;
+      .column(2);
+    }
+  }
+}
+
+
