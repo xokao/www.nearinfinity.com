@@ -7,6 +7,7 @@ gem 'less'
 gem 'therubyracer'
 gem 'RedCloth'
 gem 'albino'
+gem 'jekyll-tagging'
 
 group :tasks do
   gem "rake"
