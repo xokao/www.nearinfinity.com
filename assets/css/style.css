@@ -280,6 +280,8 @@ header#main hgroup h1.logo {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
   margin-left: 9.5%;
   position: absolute;
@@ -306,6 +308,8 @@ header#main hgroup nav ol {
   float: left;
   width: 89.58333333333334%;
   margin: 0 1.0416666666666665%;
+  *width: 89.53125000000001%;
+  *margin: 0 0.9895833333333331%;
   margin-right: 9.374999999999998%;
 }
 header#main hgroup nav ol li {
@@ -342,6 +346,8 @@ header#main article {
   float: left;
   width: 64.58333333333334%;
   margin: 0 1.0416666666666665%;
+  *width: 64.53125000000001%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 header#main .article-links {
@@ -352,6 +358,8 @@ header#main .article-links {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 header#main ol.links {
@@ -377,6 +385,8 @@ header#main figure {
   float: left;
   width: 22.916666666666664%;
   margin: 0 1.0416666666666665%;
+  *width: 22.864583333333332%;
+  *margin: 0 0.9895833333333331%;
   margin-right: 0;
   position: absolute;
   bottom: 0;
@@ -409,6 +419,8 @@ header#main.mobile figure div {
     float: left;
     width: 31.25%;
     margin: 0 1.0416666666666665%;
+    *width: 31.197916666666668%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   header#main figure {
@@ -416,6 +428,8 @@ header#main.mobile figure div {
     float: left;
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
     margin-right: 0;
   }
   header#main figure div {
@@ -428,6 +442,8 @@ header#main.mobile figure div {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   header#main hgroup nav {
@@ -442,6 +458,8 @@ header#main.mobile figure div {
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   header#main figure {
@@ -449,6 +467,8 @@ header#main.mobile figure div {
     float: left;
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
     margin-right: 0;
   }
   header#main .article-links {
@@ -456,6 +476,8 @@ header#main.mobile figure div {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
 }
@@ -464,6 +486,8 @@ footer {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 footer section {
@@ -520,6 +544,8 @@ footer .copyright {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   body footer aside h1:before {
@@ -535,6 +561,8 @@ footer .copyright {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 #aboutnic hgroup section {
@@ -578,6 +606,8 @@ footer .copyright {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 @media screen and (min-width: 50em) {
@@ -586,6 +616,8 @@ footer .copyright {
     float: left;
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   #aboutnic.has_news hgroup:after {
@@ -596,6 +628,8 @@ footer .copyright {
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
 }
@@ -605,6 +639,8 @@ footer .copyright {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   #aboutnic hgroup {
@@ -612,6 +648,8 @@ footer .copyright {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   #aboutnic.has_news hgroup {
@@ -619,6 +657,8 @@ footer .copyright {
     float: left;
     width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   #aboutnic.has_news hgroup:after {
@@ -629,6 +669,8 @@ footer .copyright {
     float: left;
     width: 14.583333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 14.53125%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
 }
@@ -640,6 +682,8 @@ footer .copyright {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 #techcommunity  > section {
@@ -647,6 +691,8 @@ footer .copyright {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 #techcommunity .techtalks figure {
@@ -683,6 +729,8 @@ footer .copyright {
     float: left;
     width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   #techcommunity .moreblogs {
@@ -690,6 +738,8 @@ footer .copyright {
     float: left;
     width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity .blogs .morelink,
   #techcommunity .moreblogs .morelink,
@@ -704,12 +754,16 @@ footer .copyright {
     float: left;
     width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity.has_speaking .morelinks li.morelinks-blogs {
     display: inline;
     float: left;
     width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   #techcommunity.has_speaking .morelinks li.morelinks-speaking {
@@ -717,6 +771,8 @@ footer .copyright {
     float: left;
     width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity .morelinks {
     clear: left;
@@ -730,6 +786,8 @@ footer .copyright {
     float: left;
     width: 81.25%;
     margin: 0 1.0416666666666665%;
+    *width: 81.19791666666667%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   #techcommunity .morelinks li.morelinks-speaking {
@@ -742,6 +800,8 @@ footer .copyright {
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   #techcommunity .techtalks .morelink {
@@ -752,36 +812,48 @@ footer .copyright {
     float: left;
     width: 31.25%;
     margin: 0 1.0416666666666665%;
+    *width: 31.197916666666668%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity .moreblogs {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity.has_speaking .speaking {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity.has_speaking .morelinks li.morelinks-blogs {
     display: inline;
     float: left;
     width: 31.25%;
     margin: 0 1.0416666666666665%;
+    *width: 31.197916666666668%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity.has_speaking .morelinks li.morelinks-speaking {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity .morelinks li.morelinks-talks {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   #techcommunity .morelinks li.morelinks-blogs {
@@ -789,6 +861,8 @@ footer .copyright {
     float: left;
     width: 56.25%;
     margin: 0 1.0416666666666665%;
+    *width: 56.197916666666664%;
+    *margin: 0 0.9895833333333331%;
   }
 }
 @media screen and (min-width: 90em) {
@@ -797,6 +871,8 @@ footer .copyright {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   #techcommunity  > section {
@@ -804,6 +880,8 @@ footer .copyright {
     float: left;
     width: 64.58333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   #techcommunity .techtalks {
@@ -811,6 +889,8 @@ footer .copyright {
     float: left;
     width: 14.583333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 14.53125%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   #techcommunity .techtalks .morelink {
@@ -821,36 +901,48 @@ footer .copyright {
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity .moreblogs {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity.has_speaking .speaking {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity.has_speaking .morelinks li.morelinks-blogs {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity.has_speaking .morelinks li.morelinks-speaking {
     display: inline;
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
   #techcommunity .morelinks li.morelinks-talks {
     display: inline;
     float: left;
     width: 14.583333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 14.53125%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   #techcommunity .morelinks li.morelinks-blogs {
@@ -858,6 +950,8 @@ footer .copyright {
     float: left;
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
   }
 }
 section.all_content .blogs {
@@ -865,6 +959,8 @@ section.all_content .blogs {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 section.all_content aside {
@@ -873,6 +969,8 @@ section.all_content aside {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 @media screen and (min-width: 45em) {
@@ -881,6 +979,8 @@ section.all_content aside {
     float: left;
     width: 56.25%;
     margin: 0 1.0416666666666665%;
+    *width: 56.197916666666664%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   section.all_content aside {
@@ -889,6 +989,8 @@ section.all_content aside {
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
 }
 @media screen and (min-width: 90em) {
@@ -897,6 +999,8 @@ section.all_content aside {
     float: left;
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   section.all_content aside {
@@ -905,6 +1009,8 @@ section.all_content aside {
     float: left;
     width: 14.583333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 14.53125%;
+    *margin: 0 0.9895833333333331%;
   }
 }
 section.dynamic_content article {
@@ -912,6 +1018,8 @@ section.dynamic_content article {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 section.dynamic_content aside {
@@ -920,6 +1028,8 @@ section.dynamic_content aside {
   float: left;
   width: 81.25%;
   margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
 section.dynamic_content .video-container {
@@ -944,6 +1054,8 @@ section.dynamic_content .video-container embed {
     float: left;
     width: 56.25%;
     margin: 0 1.0416666666666665%;
+    *width: 56.197916666666664%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
   section.dynamic_content aside {
@@ -952,6 +1064,8 @@ section.dynamic_content .video-container embed {
     float: left;
     width: 22.916666666666664%;
     margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
   }
 }
 @media screen and (min-width: 90em) {
@@ -960,6 +1074,8 @@ section.dynamic_content .video-container embed {
     float: left;
     width: 47.91666666666667%;
     margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
   section.dynamic_content aside {
@@ -968,6 +1084,8 @@ section.dynamic_content .video-container embed {
     float: left;
     width: 14.583333333333334%;
     margin: 0 1.0416666666666665%;
+    *width: 14.53125%;
+    *margin: 0 0.9895833333333331%;
   }
 }
 .selected-impact {
