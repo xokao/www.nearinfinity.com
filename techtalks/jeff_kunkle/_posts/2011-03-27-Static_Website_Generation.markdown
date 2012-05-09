@@ -1,6 +1,7 @@
 ---
 layout: techtalks
 title: "Static Website Generation"
+tags: Ruby Web
 player_url: http://www.youtube.com/watch?v=pIzpBgu_bNM&feature=youtube_gdata_player
 unique_id: pIzpBgu_bNM 
 thumbnail_320: http://i.ytimg.com/vi/pIzpBgu_bNM/mqdefault.jpg
