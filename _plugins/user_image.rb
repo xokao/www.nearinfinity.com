@@ -1,7 +1,9 @@
 module Jekyll
-  module AssetFilter
-    def user_image(input)      
-      "http://www.nearinfinity.com/assets/users/#{input}.png"
+  module AssetFilters
+    def user_image(input)  
+      "/assets/images/users/#{input}.png"
     end
   end
 end
+
+Liquid::Template.register_filter(Jekyll::AssetFilters)
