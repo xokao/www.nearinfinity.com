@@ -1,7 +1,7 @@
 source :rubygems
 
-gem 'jekyll', '=0.11.0'
-gem 'liquid', '=2.2.2'
+gem 'jekyll', '=0.11.2'
+gem 'liquid', '=2.3.0'
 gem 'rdiscount'
 gem 'less'
 gem 'therubyracer'
