@@ -61,8 +61,9 @@
   </footer>
 
   <script>
-    document.write('<script src=/assets/js/' +
-      ('__proto__' in {} ? 'zepto' : 'jquery') +
-      '.js><\/script>')
-    </script>
+    if ('__proto__' in {}) {
+      document.write("<script src=/assets/js/zepto.js" + "></script" + ">");
+    }
+  </script>
   <script src="/assets/js/app.js"></script>
+

@@ -2,11 +2,7 @@
 
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-  <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-	
-	<title>{{ page.title }}</title>
+  {% include head-tag.html %}
 </head>
 <body>
   <header id="main" class="homepage bigdata">
@@ -39,7 +35,7 @@
       {{ impact_joinus | unindent | markdownify }}
       </h2>
     </article>
-    <figure><div></figure>
+    <figure><div></div></figure>
     <section class="article-links">
       <a class="bigdata" href="#">Big Data</a>
       <a class="mobile" href="#">Mobile</a>

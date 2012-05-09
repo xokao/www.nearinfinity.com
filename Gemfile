@@ -3,8 +3,8 @@ source :rubygems
 gem 'jekyll', '=0.11.2'
 gem 'liquid', '=2.3.0'
 gem 'rdiscount'
-gem 'less'
-gem 'therubyracer'
+gem 'less', :platform => :ruby
+gem 'therubyracer', :platform => :ruby
 gem 'RedCloth'
 gem 'albino'
 
