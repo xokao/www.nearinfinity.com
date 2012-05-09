@@ -19,12 +19,7 @@
     {{ content }}
     </article>
     <aside>
-      <a class="user-page-link" href="/blogs/{{ page.categories[1] }}">
-        <img src="/assets/images/users/{{ page.categories[1] }}.png"/>
-        <hgroup class="blogger">
-        <h1>{{ page.categories[1] | replace:'_',' ' }}</h1>
-        </hgroup>
-      </a>
+      {% include users/sidebar-link.html %}
 
       {% assign type = 'blog' %}
       {% include sharing.html %}

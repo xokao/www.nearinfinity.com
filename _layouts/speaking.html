@@ -19,10 +19,7 @@
     {{ content }}
     </article>
     <aside>
-      <img src="/assets/images/users/{{ page.categories[1] }}.png"/>
-      <hgroup class="blogger">
-        <h1>{{ page.categories[1] | replace:'_',' ' }}</h1>
-      </hgroup>
+      {% include users/sidebar-link.html %}
 
       {% include sharing.html %}
       {% include blogs/recent.html %}
