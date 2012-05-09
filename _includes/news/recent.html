@@ -1,0 +1,22 @@
+
+{% assign count = '' %}
+{% for post in site.posts %}	
+{% if post.categories[0] == page.categories[0] and post.id != page.id and count.size < 5 %}
+{% capture count %}{{ count }}*{% endcapture %}
+{% endif %}
+{% endfor %}
+
+{% if count.size > 0 %}
+<h1>More News</h1>
+<ul>
+  {% assign count = '' %}
+  {% for post in site.posts %}	
+  {% if post.categories[0] == page.categories[0] and post.id != page.id and count.size < 5 %}
+  <li>
+    {% include post-list-item.html %}
+  </li>
+  {% capture count %}{{ count }}*{% endcapture %}
+  {% endif %}
+  {% endfor %}			
+</ul>
+{% endif %}

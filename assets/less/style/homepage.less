@@ -1,6 +1,6 @@
 
 #aboutnic {
-  background: url(../images/dark-texture.png) repeat;
+  background: @dark-data-url repeat;
   color: darken(white, 5%);
   .box-shadow(0 -5px 5px fadeout(black, 50%) inset, 0 1px 2px fadeout(black, 50%) inset);
 
@@ -45,7 +45,7 @@
 #techcommunity {
   color: @impact_background;
   padding-bottom: 1em;
-  #gradient > .vertical-overlay(url(../images/leather.jpg), rgba(0,0,0,0.1) ~"," transparent 5% ~"," transparent 95% ~"," rgba(0,0,0,0.1));
+  #gradient > .vertical-overlay(@leather-data-url, rgba(0,0,0,0.1) ~"," transparent 5% ~"," transparent 95% ~"," rgba(0,0,0,0.1));
 
   & > h1 {
     //.light_header(white);

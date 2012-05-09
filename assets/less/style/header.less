@@ -13,11 +13,13 @@ header#main {
   }
 
   hgroup {
-    background: url(../images/white-stripe-pattern.png) repeat;
+    background: @white-stripe-data-url repeat;
+    //#data-uris > .white-stripe;
+
 
     h1.logo {
       .hide-text;
-      background: url(../images/logo-background.png) no-repeat left top;
+      background: @logo-data-url no-repeat left top;
       height: 69px;
       width: 260px;
     }
