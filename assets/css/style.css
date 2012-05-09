@@ -1810,10 +1810,20 @@ section.all_content h5 {
   font-size: 1.0769230769230769em;
   line-height: 1.3584905660377358em;
 }
+section.all_content .hidden {
+  display: none;
+}
 section.all_content .blogs .blog-img {
   float: left;
   height: 75px;
   width: 75px;
+}
+section.all_content .blogs .pagination-controls li {
+  margin-left: 15px;
+  display: inline-block;
+}
+section.all_content .blogs .pagination-controls li.selected a {
+  color: #f68640;
 }
 section.all_content .blogs .no-articles {
   display: none;
@@ -1825,9 +1835,6 @@ section.all_content .blogs article {
   padding-left: 15px;
   margin-bottom: 25px;
   clear: both;
-}
-section.all_content .blogs article.hidden {
-  display: none;
 }
 section.all_content .blogs article.condensed {
   min-height: 50px;
