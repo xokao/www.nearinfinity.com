@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
   
-  <title>{{ page.title }} - {{ page.categories[1] | replace:'_',' ' }}</title>
+  <title>{{ page.title }}</title>
 </head>
 <body>
   <header id="main">
@@ -116,7 +116,6 @@
       var count = articles.size();
       if(count > pageSize){
       pageSize = size;
-      console.log(count);
       $('.pagination-link').remove()
       for(var i = 1; i < (count/pageSize) + 1;i++){
         var markup = '<li class="pagination-link"><a href="#">' + i + '</a></li>';
@@ -149,14 +148,12 @@
       });
     }
     $('.pagination-forward').on('click',function(){
-      console.log('test');
       var nextLink = $('.pagination-link.selected').next();
       if(!nextLink.hasClass('pagination-forward')){
         nextLink.trigger('click');
       }
     });
     $('.pagination-back').on('click',function(){
-      console.log('test');
       var nextLink = $('.pagination-link.selected').prev();
       if(!nextLink.hasClass('pagination-back')){
         nextLink.trigger('click');
