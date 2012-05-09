@@ -2,6 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     RedCloth (4.2.9)
+    RedCloth (4.2.9-x86-mingw32)
     addressable (2.2.8)
     albino (1.3.3)
       posix-spawn (>= 0.3.6)
@@ -29,7 +30,7 @@ GEM
       rake
       rdoc
     json (1.7.1)
-    kramdown (0.13.5)
+    kramdown (0.13.6)
     less (2.2.1)
       commonjs (~> 0.2.6)
     libv8 (3.3.10.4)
@@ -48,7 +49,8 @@ GEM
     rdiscount (1.6.8)
     rdoc (3.12)
       json (~> 1.4)
-    simple_oauth (0.1.7)
+    ruby-nuggets (0.8.7)
+    simple_oauth (0.1.8)
     syntax (1.0.0)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
@@ -62,15 +64,17 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   RedCloth
   albino
-  jekyll (= 0.11.2)
+  jekyll
   less
-  liquid (= 2.3.0)
+  liquid
   rack
   rake
   rdiscount
+  ruby-nuggets
   therubyracer
   youtube_it

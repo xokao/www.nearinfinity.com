@@ -3,16 +3,16 @@ layout: allblogs
 title: Tech Talks
 max_techtalks: 10
 ---
-
+<h1 class='no-articles hidden'>No Tech Talks Found</h1>
 {% for post in site.categories.techtalks limit:page.max_techtalks %}
   <article>
-    <img class='blog-img' src="/assets/images/users/{{ post.categories[1] }}.png"/>
+    <a href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="/assets/images/users/{{ post.categories[1] }}.png"/></a>
     <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
     <figure class="video">
-        <img src="{{ post.thumbnail_320 }}"/>
+        <a href="{{post.url}}"><img src="{{ post.thumbnail_320 }}"/></a>
     </figure>
   </article>
 
 {% endfor %}
-<a href='/techtalks/all/index.html' class='more'>View all Tech Talks...</a>
+
 

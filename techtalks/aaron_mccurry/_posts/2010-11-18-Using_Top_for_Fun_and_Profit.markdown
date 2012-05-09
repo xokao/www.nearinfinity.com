@@ -1,6 +1,7 @@
 ---
 layout: techtalks
 title: "Using Top for Fun and Profit"
+tags: Unix
 player_url: http://www.youtube.com/watch?v=wAcEfdR4lD8&feature=youtube_gdata_player
 unique_id: wAcEfdR4lD8 
 thumbnail_320: http://i.ytimg.com/vi/wAcEfdR4lD8/mqdefault.jpg

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
   
-  <title>{{ page.title }} - {{ page.categories[1] | replace:'_',' ' }}</title>
+  <title>{{ page.title }}</title>
 </head>
 <body>
   <header id="main">
@@ -20,7 +20,6 @@
       <li class="pagination-back"><a href='#'>&lt;</a></li>
       <li class="pagination-forward"><a href='#'>&gt;</a></li>
     </ul>
-    <h1 class='no-articles'>No Results Found</h1>
     {{ content }}
     <ul class="pagination-controls hidden">
       <li class="pagination-back"><a href='#'>&lt;</a></li>
@@ -28,8 +27,7 @@
     </ul>
     </div>
     <aside>
-      <h1 class='filter-title' > Filters</h1>
-      <a href='#' class='clear-filters' >Clear Filters</a>
+      <a href='#' class='clear-filters hidden' >Clear Filters</a>
       <h1>{{page.title}} by Author</h1>
       <ul class='filter-list'>
       {%for cat in site.categories %}
@@ -42,129 +40,13 @@
         {%endfor%}
       </ul>
       <h1>{{page.title}} by Tags</h1>
-      <ul class='filter-list'>
-      {%for tag in site.tags %}
-        <li><a href='#' class='tag-filter'>{{tag[0]}}</a></li>
-      {%endfor%}
+      <ul>
+        {{site | tags_list}}
       </ul>
 
     </aside>
   </section>
 
   {% include footer.html %}
-  <script>
-  /*
-    Filter Code
-  */
-    $('.clear-filters').on('click',function(){
-      $('article').removeClass('hidden').removeClass('filtered-out');
-      $('.no-articles').hide();
-      $('.author-filter,.tag-filter').removeClass('selected');
-      paginationSetup(pageSize);
-    });
-
-    $('.author-filter').on('click',function(){
-      $('.author-filter,.tag-filter').removeClass('selected');
-      $(this).addClass('selected');
-      var author = $(this).html();
-      $('article').removeClass('hidden').removeClass('filtered-out');
-      var num_articles = $('article').size();
-      $('article').each(function(idx,elm){
-        var elm_author = $(elm).find('.author').html();
-        if(elm_author != author){
-          $(elm).addClass('hidden').addClass('filtered-out');
-        }
-        if(idx == num_articles -1){
-          if($('article.hidden').size() == num_articles){
-            $('.no-articles').show();
-          }else{
-            $('.no-articles').hide();
-            paginationSetup(pageSize);
-          }
-        }
-      });
-    });
-
-    $('.tag-filter').on('click',function(){
-      $('.author-filter,.tag-filter').removeClass('selected');
-      $(this).addClass('selected');
-      var tag = $(this).html();
-      $('article').removeClass('hidden').removeClass('filtered-out');
-      var num_articles = $('article').size();
-      $('article').each(function(idx,elm){
-        var elm_tags = $(elm).find('.tags').html();
-        if(elm_tags.indexOf(tag) == -1){
-          $(elm).addClass('hidden').addClass('filtered-out');
-        }
-        if(idx == num_articles - 1){
-          if($('article.hidden').size() == num_articles){
-            $('.no-articles').show();
-          }else{
-            $('.no-articles').hide();
-            paginationSetup(pageSize);
-          }
-        }
-      });
-    });
-
-  /*
-    Pagination Code
-  */
-    var paginationSetup = function(size){
-      var articles = $('article').not('.filtered-out');
-      var count = articles.size();
-      if(count > pageSize){
-      pageSize = size;
-      console.log(count);
-      $('.pagination-link').remove()
-      for(var i = 1; i < (count/pageSize) + 1;i++){
-        var markup = '<li class="pagination-link"><a href="#">' + i + '</a></li>';
-        $('.pagination-controls').children('.pagination-forward').before(markup);
-      }
-      $('.pagination-controls').removeClass('hidden');
-      $('.pagination-link').on('click',function(){
-        showPaginatedArticles(parseInt($(this).children().html()));
-      });
-      showPaginatedArticles(1);
-      }else{
-        $('.pagination-controls').addClass('hidden');
-      }
-    }
-    var showPaginatedArticles = function(pageNum){
-      $('.pagination-link').removeClass('selected');
-      var numPages = $('.pagination-link').size() / 2;
-      $('.pagination-link').each(function(idx,link){
-        if((idx + 1) == pageNum || (idx - numPages + 1) == pageNum){
-          $(link).addClass('selected');
-        }
-      });
-      var articles = $('article').not('.filtered-out');
-      articles.each(function(idx,article){
-          if(idx < (((pageNum-1) * pageSize)) || idx > ((pageNum * pageSize) - 1)){
-            $(article).addClass('hidden');
-          }else{
-            $(article).removeClass('hidden');
-          }
-      });
-    }
-    $('.pagination-forward').on('click',function(){
-      console.log('test');
-      var nextLink = $('.pagination-link.selected').next();
-      if(!nextLink.hasClass('pagination-forward')){
-        nextLink.trigger('click');
-      }
-    });
-    $('.pagination-back').on('click',function(){
-      console.log('test');
-      var nextLink = $('.pagination-link.selected').prev();
-      if(!nextLink.hasClass('pagination-back')){
-        nextLink.trigger('click');
-      }
-    });
-    if(typeof(pageSize) == 'undefined' || pageSize == undefined){
-      pageSize = 25;
-    }
-    paginationSetup(pageSize);
-
-
-  </script>
+  </body>
+</html>
