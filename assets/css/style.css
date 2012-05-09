@@ -1891,10 +1891,10 @@ section.all_content .blogs article .author-display {
   display: inline-block;
 }
 section.all_content .blogs article .sharing-links {
+  display: block;
   margin-bottom: 0;
 }
 section.all_content .blogs article .sharing-links li a {
-  display: inline-block;
   float: left;
   width: 20px;
   height: 20px;
