@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+  
+  <title>{{ page.tag }}</title>
+</head>
+<body>
+  <header id="main">
+    {% include header.html %}
+  </header>
+
+  <section class="all_content">
+    <div class="blogs">
+    <header><h1>{{ page.tag }}</h1></header>
+    {% for post in page.posts %}
+      <article>
+        <a href="{{post.url}}"><img class='blog-img' src="/assets/images/users/{{ post.categories[1] }}.png"/></a>
+        <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
+      </article>
+    {% endfor %}
+    </div>
+    <aside>
+      <h1>Posts by Author</h1>
+      <h1>Posts by Tags</h1>
+      <ul>
+        {{site | tags_list}}
+      </ul>
+
+    </aside>
+  </section>
+
+  {% include footer.html %}
+</body>
+</html>

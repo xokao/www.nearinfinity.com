@@ -1,12 +1,13 @@
 source :rubygems
 
-gem 'jekyll', '=0.11.2'
-gem 'liquid', '=2.3.0'
+gem 'jekyll'
+gem 'liquid'
 gem 'rdiscount'
 gem 'less', :platform => :ruby
 gem 'therubyracer', :platform => :ruby
 gem 'RedCloth'
 gem 'albino'
+gem 'ruby-nuggets'
 
 group :tasks do
   gem "rake"

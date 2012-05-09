@@ -1,6 +1,7 @@
 ---
 layout: techtalks
 title: "Lessons Learned: Oracle and ORM"
+tags: ORM Database
 player_url: http://www.youtube.com/watch?v=SxDGMElt_XY&feature=youtube_gdata_player
 unique_id: SxDGMElt_XY 
 thumbnail_320: http://i.ytimg.com/vi/SxDGMElt_XY/mqdefault.jpg
