@@ -19,6 +19,14 @@ module Jekyll
       tags = obj['tags'][0].is_a?(Array) ? obj['tags'].map{ |t| t[0] } : obj['tags']
       tags.map { |t| tag_link(t, tag_url(t)) if t.is_a?(String) }.compact.join(', ')
     end
+
+    def all_tags_list(site)
+      html = ''
+      site['tags'].each do |tag_key, tag_value|
+        html << "<li><a href='#{tag_url(tag_key.downcase)}'>#{tag_key.downcase}</a></li>"
+      end
+      html
+    end
   end
 end
 

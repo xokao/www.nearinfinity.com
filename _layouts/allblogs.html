@@ -40,129 +40,13 @@
         {%endfor%}
       </ul>
       <h1>{{page.title}} by Tags</h1>
-      <ul class='filter-list'>
-      {%for tag in site.tags %}
-        <li><a href='#' class='tag-filter'>{{tag[0]}}</a></li>
-      {%endfor%}
+      <ul>
+        {{site | all_tags_list}}
       </ul>
 
     </aside>
   </section>
 
   {% include footer.html %}
-  <script>
-  /*
-    Filter Code
-  */
-    $('.clear-filters').on('click',function(){
-      $('article').removeClass('hidden').removeClass('filtered-out');
-      $('.no-articles').addClass('hidden');
-      $('.author-filter,.tag-filter').removeClass('selected');
-      $(this).addClass('hidden');
-      paginationSetup(pageSize);
-    });
-
-    $('.author-filter').on('click',function(){
-      $('.author-filter,.tag-filter').removeClass('selected');
-      $(this).addClass('selected');
-      var author = $(this).html();
-      $('article').removeClass('hidden').removeClass('filtered-out');
-      var num_articles = $('article').size();
-      $('article').each(function(idx,elm){
-        var elm_author = $(elm).find('.author').html();
-        if(elm_author != author){
-          $(elm).addClass('hidden').addClass('filtered-out');
-        }
-        $('.clear-filters').removeClass('hidden');
-        if(idx == num_articles -1){
-          if($('article.filtered-out').size() == num_articles){
-            $('.no-articles').removeClass('hidden')
-          }else{
-            $('.no-articles').addClass('hidden');
-            paginationSetup(pageSize);
-          }
-        }
-      });
-    });
-
-    $('.tag-filter').on('click',function(){
-      $('.author-filter,.tag-filter').removeClass('selected');
-      $(this).addClass('selected');
-      var tag = $(this).html();
-      $('article').removeClass('hidden').removeClass('filtered-out');
-      var num_articles = $('article').size();
-      $('article').each(function(idx,elm){
-        var elm_tags = $(elm).find('.tags').html();
-        if(elm_tags == null || elm_tags.indexOf(tag) == -1){
-          $(elm).addClass('hidden').addClass('filtered-out');
-        }
-        $('.clear-filters').removeClass('hidden');
-        if(idx == num_articles -1){
-          if($('article.filtered-out').size() == num_articles){
-            $('.no-articles').removeClass('hidden')
-          }else{
-            $('.no-articles').addClass('hidden');
-            paginationSetup(pageSize);
-          }
-        }
-      });
-    });
-
-  /*
-    Pagination Code
-  */
-    var paginationSetup = function(size){
-      var articles = $('article').not('.filtered-out');
-      var count = articles.size();
-      if(count > pageSize){
-      pageSize = size;
-      $('.pagination-link').remove()
-      for(var i = 1; i < (count/pageSize) + 1;i++){
-        var markup = '<li class="pagination-link"><a href="#">' + i + '</a></li>';
-        $('.pagination-controls').children('.pagination-forward').before(markup);
-      }
-      $('.pagination-controls').removeClass('hidden');
-      $('.pagination-link').on('click',function(){
-        showPaginatedArticles(parseInt($(this).children().html()));
-      });
-      showPaginatedArticles(1);
-      }else{
-        $('.pagination-controls').addClass('hidden');
-      }
-    }
-    var showPaginatedArticles = function(pageNum){
-      $('.pagination-link').removeClass('selected');
-      var numPages = $('.pagination-link').size() / 2;
-      $('.pagination-link').each(function(idx,link){
-        if((idx + 1) == pageNum || (idx - numPages + 1) == pageNum){
-          $(link).addClass('selected');
-        }
-      });
-      var articles = $('article').not('.filtered-out');
-      articles.each(function(idx,article){
-          if(idx < (((pageNum-1) * pageSize)) || idx > ((pageNum * pageSize) - 1)){
-            $(article).addClass('hidden');
-          }else{
-            $(article).removeClass('hidden');
-          }
-      });
-    }
-    $('.pagination-forward').on('click',function(){
-      var nextLink = $('.pagination-link.selected').next();
-      if(!nextLink.hasClass('pagination-forward')){
-        nextLink.trigger('click');
-      }
-    });
-    $('.pagination-back').on('click',function(){
-      var nextLink = $('.pagination-link.selected').prev();
-      if(!nextLink.hasClass('pagination-back')){
-        nextLink.trigger('click');
-      }
-    });
-    if(typeof(pageSize) == 'undefined' || pageSize == undefined){
-      pageSize = 25;
-    }
-    paginationSetup(pageSize);
-
-
-  </script>
+  </body>
+</html>
