@@ -3,7 +3,8 @@ layout: allblogs
 title: Recent Speaking Engagements
 max_engagements: 10
 ---
-
+<a href='/speaking/all/index.html' class='more'>View all Speaking Engagements...</a>
+<h1 class='no-articles hidden'>No Speaking Engagements Found</h1>
 {% for post in site.categories.speaking limit:page.max_engagements %}
   <article>
   <img class='blog-img' src="/assets/images/users/{{ post.categories[1] }}.png"/>

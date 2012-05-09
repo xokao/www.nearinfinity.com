@@ -20,7 +20,6 @@
       <li class="pagination-back"><a href='#'>&lt;</a></li>
       <li class="pagination-forward"><a href='#'>&gt;</a></li>
     </ul>
-    <h1 class='no-articles'>No Results Found</h1>
     {{ content }}
     <ul class="pagination-controls hidden">
       <li class="pagination-back"><a href='#'>&lt;</a></li>
@@ -28,8 +27,7 @@
     </ul>
     </div>
     <aside>
-      <h1 class='filter-title' > Filters</h1>
-      <a href='#' class='clear-filters' >Clear Filters</a>
+      <a href='#' class='clear-filters hidden' >Clear Filters</a>
       <h1>{{page.title}} by Author</h1>
       <ul class='filter-list'>
       {%for cat in site.categories %}
@@ -58,8 +56,9 @@
   */
     $('.clear-filters').on('click',function(){
       $('article').removeClass('hidden').removeClass('filtered-out');
-      $('.no-articles').hide();
+      $('.no-articles').addClass('hidden');
       $('.author-filter,.tag-filter').removeClass('selected');
+      $(this).addClass('hidden');
       paginationSetup(pageSize);
     });
 
@@ -74,11 +73,12 @@
         if(elm_author != author){
           $(elm).addClass('hidden').addClass('filtered-out');
         }
+        $('.clear-filters').removeClass('hidden');
         if(idx == num_articles -1){
-          if($('article.hidden').size() == num_articles){
-            $('.no-articles').show();
+          if($('article.filtered-out').size() == num_articles){
+            $('.no-articles').removeClass('hidden')
           }else{
-            $('.no-articles').hide();
+            $('.no-articles').addClass('hidden');
             paginationSetup(pageSize);
           }
         }
@@ -93,14 +93,15 @@
       var num_articles = $('article').size();
       $('article').each(function(idx,elm){
         var elm_tags = $(elm).find('.tags').html();
-        if(elm_tags.indexOf(tag) == -1){
+        if(elm_tags == null || elm_tags.indexOf(tag) == -1){
           $(elm).addClass('hidden').addClass('filtered-out');
         }
-        if(idx == num_articles - 1){
-          if($('article.hidden').size() == num_articles){
-            $('.no-articles').show();
+        $('.clear-filters').removeClass('hidden');
+        if(idx == num_articles -1){
+          if($('article.filtered-out').size() == num_articles){
+            $('.no-articles').removeClass('hidden')
           }else{
-            $('.no-articles').hide();
+            $('.no-articles').addClass('hidden');
             paginationSetup(pageSize);
           }
         }
