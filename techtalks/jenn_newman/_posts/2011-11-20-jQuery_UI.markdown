@@ -1,6 +1,7 @@
 ---
 layout: techtalks
 title: "jQuery UI"
+tags: JavaScript
 player_url: http://www.youtube.com/watch?v=leRPsdDnOa0&feature=youtube_gdata_player
 unique_id: leRPsdDnOa0 
 thumbnail_320: http://i.ytimg.com/vi/leRPsdDnOa0/mqdefault.jpg
