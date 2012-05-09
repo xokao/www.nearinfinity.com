@@ -16,7 +16,7 @@
   <section class="dynamic_content">
     <article>
     <header>
-      <img src="/assets/images/users/{{ page.user }}.png"/>
+      <img src="{{ page.user | user_image}}"/>
       <h1>{{ page.name }}</h1>
     </header>
     {{ content }}

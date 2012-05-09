@@ -23,6 +23,8 @@ GEM
       kramdown (~> 0.13)
       liquid (~> 2.3)
       maruku (~> 0.5)
+    jekyll-tagging (0.3.0)
+      ruby-nuggets
     jeweler (1.8.3)
       bundler (~> 1.0)
       git (>= 1.2.5)
@@ -48,6 +50,7 @@ GEM
     rdiscount (1.6.8)
     rdoc (3.12)
       json (~> 1.4)
+    ruby-nuggets (0.8.7)
     simple_oauth (0.1.7)
     syntax (1.0.0)
     therubyracer (0.10.1)
@@ -67,6 +70,7 @@ DEPENDENCIES
   RedCloth
   albino
   jekyll (= 0.11.2)
+  jekyll-tagging
   less
   liquid (= 2.3.0)
   rack
