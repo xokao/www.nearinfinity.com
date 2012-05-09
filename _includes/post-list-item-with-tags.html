@@ -5,9 +5,7 @@
   {% capture tag_count%}{{post.tags | size}}{%endcapture%}
   {%if tag_count != '0'%}
   <h2>Tags: <span class='tags'>
-  {%for tag in post.tags %}
-    {{tag | addition:' '}}
-  {%endfor%}
+  {{post | tags}}
   </span></h2>
   {%endif%}
   {% include sharing-inline.html %}
