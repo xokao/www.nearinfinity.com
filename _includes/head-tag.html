@@ -1,15 +1,33 @@
 
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <link href="/assets/css/style.css" rel="stylesheet" type="text/css"></link>
 	
 	<title>{{ page.title }}</title>
+  {% comment %}
+
+  IE SCRIPTS ONLY!!!
+
+  We need to load these here for the CSS to work
+  but we should add other browser JS in the footer
+  or in the actual page
+
+  {% endcomment %}
+
   <script>
-    if (!'__proto__' in {}) {
-      document.write("<script src=" + "/assets/js/jquery.js" + "></script" + ">");
+    if (!('__proto__' in {})) {
+      document.write("<script src='\/assets\/js\/jquery.js'><\/script>");
     }
   </script>
   <!--[if lt IE 9]>
+  <link href="/assets/css/ie.css" rel="stylesheet" type="text/css"></link>
   <script src="/assets/js/selectivizr.js"></script>
   <script src="/assets/js/html5shim.js"></script>
   <![endif]-->
+</head>
