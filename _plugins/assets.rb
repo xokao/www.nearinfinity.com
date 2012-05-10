@@ -7,10 +7,11 @@ module Jekyll
 
     # Returns a list of all authors
     def authors_list(site, sort = true)
-      authors = site['categories'].keys.reject {|category|
+      site['categories'].keys.reject{|category|
         ['blogs', 'techtalks', 'news', 'speaking'].include? category
-      }.sort
-      authors.map { |author| "<li><a href='#{author_url(author)}' class='author-filter'>#{user_to_name(author)}</a></li>" }.compact.join
+      }.sort.map{ |author|
+        "<li><a href='#{author_url(author)}' class='author-filter'>#{author.gsub('_', ' ')}</a></li>"
+      }.compact.join
     end
 
     def author_url(author)
