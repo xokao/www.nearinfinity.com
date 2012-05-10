@@ -91,38 +91,21 @@ speaking_expire_days: 0
 
   <section class="techtalks">
     <h1>TECH TALKS</h1>
-    {% for post in site.categories.techtalks limit:page.max_techtalks %}
-    <figure>
-      <a href="{{ post.url }}">
-        <img src="{{ post.thumbnail_320 }}"/>
-        <figcaption>{{ post.title }}</figcaption>
-      </a>
-    </figure>
-    {% include sharing-inline.html %}
-    {% endfor %}
+    {{ page.max_techtalks | render_homepage_techtalks }}
     <a class="morelink" href="/techtalks">more tech talks</a>
   </section>
 
   <section class="blogs">
     <h1>BLOGS</h1>
-    {% for post in site.categories.blogs limit:page.max_blogs %}
-    <article>
-      <img src="assets/images/users/{{ post.categories[1] }}.png"/>
-      {% include post-list-item.html %}
-    </article>
-    {% endfor %}
+    {{ page.max_blogs | render_homepage_blogs }}
+
     <a class="morelink" href="/blogs">more blogs</a>
   </section>
 
   {% if has_speaking %}
   <section class="speaking">
     <h1>SPEAKING</h1>
-    {% for post in site.categories.speaking limit:page.max_speaking %}
-    <article>
-      <img src="assets/images/users/{{ post.categories[1] }}.png"/>
-      {% include speaking-list-item.html %}
-    </article>
-    {% endfor %}
+    {{ page.max_speaking | render_homepage_speaking }}
     <a class="morelink" href="/speaking">more speaking engagements</a>
   </section>
   {% else %}
