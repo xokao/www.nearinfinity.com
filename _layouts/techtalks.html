@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-  <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-	
-  <title>{{ page.title }} - {{ page.categories[1] | replace:'_',' ' }}</title>
-</head>
-<body>
-  <header id="main">
-    {% include header.html %}
-  </header>
+  <head>
+  	<meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+    <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>{{ page.title }} - {{ page.categories[1] | replace:'_',' ' }}</title>
+  </head>
+  <body>
+    <header id="main">
+      {% include header.html %}
+    </header>
 
-  <section class="dynamic_content">
-    <article>
-    <header><h1>{{ page.title }}</h1></header>
-    {% include video.html %}
-    {{ content }}
-    </article>
-    <aside>
-      {% include users/sidebar-link.html %}
+    <section class="dynamic_content">
+      <article>
+      <header>
+        <h1>{{ page.title }}</h1>
+      </header>
+      {% include video.html %}
+      {{ content }}
+      </article>
+      <aside>
+        {% include users/sidebar-link.html %}
 
-      {% assign type = 'tech talk' %}
-      {% include sharing.html %}
-      {% assign type = '' %}
+        {% assign type = 'tech talk' %}
+        {% include sharing.html %}
+        {% assign type = '' %}
 
-      {% include blogs/recent.html %}
-    </aside>
-  </section>
+        {% include users/recent_blogs.html %}
+      </aside>
+    </section>
 
-  {% include footer.html %}
-</body>
+    {% include footer.html %}
+  </body>
 </html>

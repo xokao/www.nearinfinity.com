@@ -1,7 +1,0 @@
-{% capture blogs %}{{ page.user | recent_blogs_list }}{% endcapture %}
-{% if blogs.size > 0 %}
-  <h1>Blogs by {{ page.user | user_to_name }}</h1>
-  <ul>
-    {{ blogs }}
-  </ul>
-{% endif %}
