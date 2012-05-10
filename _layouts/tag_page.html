@@ -18,13 +18,14 @@
     <header><h1>{{ page.tag }}</h1></header>
     {% for post in page.posts %}
       <article>
-        <a href="{{post.url}}"><img class='blog-img' src="/assets/images/users/{{ post.categories[1] }}.png"/></a>
+        <a href="{{post.url}}"><img class='blog-img' src="{ post.categories[1] | user_image }}"/></a>
         <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
       </article>
     {% endfor %}
     </div>
     <aside>
       <h1>Posts by Author</h1>
+        {{site | authors_list}}
       <h1>Posts by Tags</h1>
       <ul>
         {{site | tags_list}}

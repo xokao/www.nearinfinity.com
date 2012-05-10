@@ -5,48 +5,30 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <link href="/assets/css/style.css" media="screen" rel="stylesheet" type="text/css" />
-  
   <title>{{ page.title }}</title>
 </head>
-<body>
-  <header id="main">
+  <body>
+    <header id="main">
     {% include header.html %}
-  </header>
-
-  <section class="all_content">
-    <div class="blogs">
-    <header><h1>{{ page.title }}</h1></header>
-    <ul class="pagination-controls hidden">
-      <li class="pagination-back"><a href='#'>&lt;</a></li>
-      <li class="pagination-forward"><a href='#'>&gt;</a></li>
-    </ul>
-    {{ content }}
-    <ul class="pagination-controls hidden">
-      <li class="pagination-back"><a href='#'>&lt;</a></li>
-      <li class="pagination-forward"><a href='#'>&gt;</a></li>
-    </ul>
-    </div>
-    <aside>
-      <a href='#' class='clear-filters hidden' >Clear Filters</a>
-      <h1>{{page.title}} by Author</h1>
-      <ul class='filter-list'>
-      {%for cat in site.categories %}
-        {% case cat[0] %}
-          {% when 'blogs' or 'techtalks' or 'news' or 'speaking' %}
-             
-          {% else %}
-          <li><a href='#' class='author-filter'>{{cat[0]| replace:'_',' '}}</a></li>
-        {% endcase %}
-        {%endfor%}
-      </ul>
-      <h1>{{page.title}} by Tags</h1>
-      <ul>
-        {{site | tags_list}}
-      </ul>
-
-    </aside>
-  </section>
-
-  {% include footer.html %}
+    </header>
+    <section class="all_content">
+      <div class="blogs">
+        <header>
+          <h1>{{ page.title }}</h1>
+        </header>
+      {{ content }}
+      </div>
+      <aside>
+        <h1>{{page.title}} by Author</h1>
+        <ul>
+          {{site | authors_list}}
+        </ul>
+        <h1>{{page.title}} by Tags</h1>
+        <ul>
+          {{site | tags_list}}
+        </ul>
+      </aside>
+    </section>
+    {% include footer.html %}
   </body>
 </html>
