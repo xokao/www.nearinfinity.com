@@ -17,6 +17,22 @@ module Jekyll
     def author_url(author)
       "/blogs/#{author}"
     end
+
+    #capitalize all words in a string, IE names
+    def capitalize_all(input)
+      input.split(' ').collect{|x| x.capitalize}.join(' ')
+    end
+
+    #takes in username with underscore, returns pretty name
+    def user_to_name(input)
+      capitalize_all(input.gsub(/_/,' '))
+    end
+
+    #returns the word at the index provided from the input string
+    def nth_word(input,index)
+      input.split(' ')[index]
+    end
+
   end
 end
 
