@@ -1,0 +1,7 @@
+{% capture talks %}{{ page | recent_techtalks_list }}{% endcapture %}
+{% if talks.size > 0 %}
+  <h1>Tech Talks by {{ page | page_to_user }}</h1>
+  <ul>
+    {{ talks }}
+  </ul>
+{% endif %}

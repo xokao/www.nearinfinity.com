@@ -1,4 +1,4 @@
-{% capture engagements %}{{ page.user | future_speaking_engagements }}{% endcapture %}
+{% capture engagements %}{{ page | future_speaking_engagements }}{% endcapture %}
 {% if engagements.size > 0 %}
   <h1>Speaking Engagements</h1>
   <ul>
