@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en">
-<head>
-  {% include head-tag.html %}
+{% include head-tag.html %}
 </head>
 <body>
   <header id="main" class="homepage bigdata">
@@ -68,13 +66,14 @@
       }
       // Show specific impact item
       function show(impactItem) {
-        index = classes.indexOf(impactItem);
+        index = $.inArray(impactItem, classes);
         $('#main').removeClass(classes.join(' ')).addClass(impactItem)
       }
+      var timer;
       // User events for changing impact item
       $('#main').on('click', '.article-links a, .nextprev a', function(e) {
-        clearInterval(timer);
-        if (classes.indexOf(this.className) > -1) {
+        if (timer) clearInterval(timer);
+        if ($.inArray(this.className, classes) >= 0) {
           show(this.className);
         } else {
           var className = $(this).parent()[0].className;
@@ -83,9 +82,9 @@
           else
             move(-1)
         }
+        e.preventDefault();
       });
       // Cycle through the impact items
-      var timer;
       function startSlideshow() {
         clearInterval(timer);
         timer = window.setInterval(function() {
