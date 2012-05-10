@@ -105,12 +105,8 @@ speaking_expire_days: 0
 
   <section class="blogs">
     <h1>BLOGS</h1>
-    {% for post in site.categories.blogs limit:page.max_blogs %}
-    <article>
-      <img src="assets/images/users/{{ post.categories[1] }}.png"/>
-      {% include post-list-item.html %}
-    </article>
-    {% endfor %}
+    {{ page.max_blogs | render_homepage_blogs }}
+
     <a class="morelink" href="/blogs">more blogs</a>
   </section>
 
