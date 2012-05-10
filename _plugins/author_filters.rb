@@ -1,7 +1,5 @@
 module Jekyll
   module AuthorFilters
-    include Jekyll::ContentFilters
-
     # Returns a list of all authors
     def authors_list(site, sort = true)
       site['categories'].keys.reject{|category|
