@@ -7,20 +7,22 @@ module Jekyll
       filtered_blogs.sort{|a,b| b.date <=> a.date}[0..(amount - 1)]
         .map{|blog| include_template(template, {'post' => blog})}.compact.join
     end
-  end
 
+    # Render the short blog partial for the home page
     def render_homepage_blogs(amount)
-      puts 'derp'
-      render_homepage_posts(amount,'blogs','/homepage/blogs.html')
+      render_homepage_posts(amount,'blogs','homepage/blog.html')
     end
 
+    # Render the short techtalks partial for the home page
     def render_homepage_techtalks(amount)
-      put 'derpderp'
-      render_homepage_posts(amount,'techtalks','/homepage/techtalk.html')
+      render_homepage_posts(amount,'techtalks','homepage/techtalk.html')
     end
+
+    # Render the short speaking partial for the home page
     def render_homepage_speaking(amount)
-      render_homepage_posts(amount,'speaking','/homepage/speaking.html')
+      render_homepage_posts(amount,'speaking','homepage/speaking.html')
     end
+  end
 end
 
 Liquid::Template.register_filter(Jekyll::BlogsFilters)
