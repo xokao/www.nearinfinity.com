@@ -1,13 +1,7 @@
-{% capture speak_count %}{{ site.categories.speaking | size }}{% endcapture %}
-{% if speak_count.size != '0' %}
+{% capture engagements %}{{ page.user | future_speaking_engagements }}{% endcapture %}
+{% if engagements.size > 0 %}
   <h1>Speaking Engagements</h1>
   <ul>
-    {% for post in site.categories.speaking limit:2 %}
-      {% if post.categories[0] == 'speaking' and post.categories[1] == page.user %}
-        <li>
-          {% include post-list-item.html %}
-        </li>
-      {% endif %}
-    {% endfor %}
+    {{ engagements }}
   </ul>
 {% endif %}

@@ -1,14 +1,7 @@
-{% capture talk_count %}{{ site.categories.techtalks | size }}{% endcapture %}
-{{talk_count}}
-{% if talk_count.size != '0' %}
-  <h1>Tech Talks</h1>
+{% capture talks %}{{ page.user | recent_techtalks_list }}{% endcapture %}
+{% if talks.size > 0 %}
+  <h1>Tech Talks by {{ page.user | user_to_name }}</h1>
   <ul>
-    {% for post in site.categories.techtalks limit:3 %}
-      {% if post.categories[0] == 'techtalks' and post.categories[1] == page.user %}
-        <li>
-          {% include post-list-item.html %}
-        </li>
-      {% endif %}
-    {% endfor %}
+    {{ talks }}
   </ul>
 {% endif %}
