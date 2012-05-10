@@ -10,12 +10,23 @@ module Jekyll
       authors = site['categories'].keys.reject {|category|
         ['blogs', 'techtalks', 'news', 'speaking'].include? category
       }.sort
-      authors.map { |author| "<li><a href='#{author_url(author)}' class='author-filter'>#{author.gsub('_', ' ')}</a></li>" }.compact.join
+      authors.map { |author| "<li><a href='#{author_url(author)}' class='author-filter'>#{user_to_name(author)}</a></li>" }.compact.join
     end
 
     def author_url(author)
       "/blogs/#{author}"
     end
+
+    #capitalize all words in a string, IE names
+    def capitalize_all(input)
+      input.split(' ').collect{|x| x.capitalize}.join(' ')
+    end
+
+    #takes in username with underscore, returns pretty name
+    def user_to_name(input)
+      capitalize_all(input.gsub(/_/,' '))
+    end
+
   end
 end
 
