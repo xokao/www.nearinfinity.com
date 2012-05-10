@@ -27,6 +27,11 @@ module Jekyll
       capitalize_all(input.gsub(/_/,' '))
     end
 
+    #returns the word at the index provided from the input string
+    def nth_word(input,index)
+      input.split(' ')[index]
+    end
+
   end
 end
 
