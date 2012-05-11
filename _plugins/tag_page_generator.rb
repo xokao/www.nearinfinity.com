@@ -26,8 +26,11 @@ module Jekyll
     # A <tt>tag_page_layout</tt> have to be defined in your <tt>_config.yml</tt>
     # to use this.
     def generate_tag_pages(site)
-      site.tags.each do |tag, posts|
-        site.pages << new_tag(site, site.source, TAG_PAGE_DIR, tag, posts.sort.reverse, @tag_page_layout)
+      ['blogs', 'techtalks', 'speaking'].each do |type|
+        site.tags.each do |tag, posts|
+          filtered_posts = posts.reject{ |post| !post.categories.include? type }
+          site.pages << new_tag(site, site.source, "#{TAG_PAGE_DIR}/#{type}", tag, filtered_posts.sort.reverse, @tag_page_layout)
+        end
       end
     end
 

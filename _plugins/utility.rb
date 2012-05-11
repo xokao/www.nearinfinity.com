@@ -32,7 +32,6 @@ module Jekyll
   end
 
   class IncludeMarkdownTag < Liquid::Tag
-
     def initialize(tag_name, template, tokens)
       super
       @template = template
@@ -45,8 +44,6 @@ module Jekyll
       converter.convert(input)
     end
   end
-
-
 end
 
 Liquid::Template.register_filter(Jekyll::UtilityFilters)
