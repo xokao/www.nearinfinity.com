@@ -85,7 +85,7 @@ speaking_expire_days: 0
     {% assign has_speaking = true %}
   {% endif %}
 {% endif %}
-
+{% assign has_speaking = false %}
 <section id="techcommunity" class="{% if has_speaking %}has_speaking{% endif %}">
   <h1>TECHNICAL COMMUNITY</h1>
 
@@ -102,6 +102,7 @@ speaking_expire_days: 0
     <a class="morelink" href="/blogs">more blogs</a>
   </section>
 
+
   {% if has_speaking %}
   <section class="speaking">
     <h1>SPEAKING</h1>
@@ -111,12 +112,7 @@ speaking_expire_days: 0
   {% else %}
     <section class="moreblogs">
       <h1>&nbsp;</h1>
-      {% for post in site.categories.blogs limit:page.max_blogs offset:page.max_blogs %}
-      <article>
-        <img src="assets/images/users/{{ post.categories[1] }}.png"/>
-        {% include post-list-item.html %}
-      </article>
-      {% endfor %}
+      {{ page.max_blogs | render_homepage_blogs:page.max_blogs }}
       <a class="morelink" href="/blogs">more blogs</a>
     </section>
   {% endif %}
