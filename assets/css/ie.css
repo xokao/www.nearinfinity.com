@@ -1,4 +1,3 @@
-
 header#main { 
   overflow:hidden;
   height: 70px;
@@ -50,9 +49,9 @@ header#main .article-links {
 .lt-ie7 header#main .article-links a.joinus { left: -75px; }
 
 
-.lt-ie8 header#main article { margin-top: 70px; width: 35% }
-.lt-ie8 header#main hr { display: none; }
-.lt-ie8 header#main hgroup {
+header#main article { margin-top: 70px; width: 35% }
+header#main hr { display: none; }
+header#main hgroup {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -69,7 +68,7 @@ header#main .article-links {
   background-image: none;
   filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/assets/images/logo.png,sizingMethod='scale');
 }
-.lt-ie8 header#main hgroup nav {
+header#main hgroup nav {
   position: absolute;
   left: 10%;
   width: 89.99%;
@@ -81,6 +80,8 @@ header#main .article-links {
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);  
 }
+header#main hgroup nav ol li:first-child { display:inline; }
+
 .lt-ie8 header#main hgroup nav ol li { zoom:1; display:inline; }
 .lt-ie8 header#main hgroup nav ol li a { color: white; }
 .lt-ie8 header#main hgroup {
@@ -95,7 +96,7 @@ header#main .article-links {
   z-index: 20;
 }
 
-.lt-ie8 header#main figure {
+header#main figure {
   height: 500px;
   width: 50%;
   top: 70px;
@@ -139,6 +140,7 @@ header#main .article-links {
   padding: 0.5em 0;
   clear: right;
   width: 100%;
+  margin-left: 0;
 }
 .lt-ie7 #techcommunity {
   zoom: 1;
@@ -235,3 +237,5 @@ body {
   left: 100%;
   margin-left: -60px;
 }
+
+
