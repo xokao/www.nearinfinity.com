@@ -9,35 +9,13 @@ max_techtalks: 1
 news_expire_days: 30
 speaking_expire_days: 0
 ---
-{% capture siteYear %}{{ site.time | date: "%Y" }}{% endcapture %}
-{% capture siteDay %}{{ site.time | date: "%j" }}{% endcapture %}
-
-{% assign has_news = false %}
-{% if site.categories.news.size > 0 %}
-  {% comment %} 
-  Long way to find the age of the news item based on site build date
-
-  (siteYear - newsYear) * 365 + (siteDay - newsDay) = # of days posted from site build
-
-  Don't display any news it the first item (latest) is older than news_expire_days defined at top of page
-  {% endcomment %}
-  {% capture newsYear %}{{ site.categories.news.first.date | date: "%Y" }}{% endcapture %}
-  {% capture newsDay %}{{ site.categories.news.first.date | date: "%j" }}{% endcapture %}
-  {% capture daysBetween %}{{ siteDay | minus:newsDay }}{% endcapture %}
-  {% capture daysBetweenWithYears %}{{ siteYear | minus:newsYear | times:365 | plus:daysBetween }}{% endcapture %}
-  {% capture difference %}{{ page.news_expire_days | minus:daysBetweenWithYears }}{% endcapture %}
-
-  {% comment %}If the difference is negative than don't show{% endcomment %}
-  {% unless difference contains '-' %} 
-    {% assign has_news = true %}
-  {% endunless %}
-{% endif %}
+{%capture news_markup%}{{ 'homepage/news.html' | render_recent_news:page.max_news days_expire:30 }}{%endcapture %}
+{% assign has_news = false %}{% if news_markup.size > 0 %}{% assign has_news = true %}{%endif%}
 
 <section id="aboutnic" class="{% if has_news %}has_news{% endif %}">
   <hgroup>
     <h1>ABOUT NEAR INFINITY</h1>
-    {% capture about_content %}{% include homepage/about_nearinfinity.md %}{% endcapture %}
-    {{ about_content | unindent | markdownify }}
+    {% include_markdown homepage/about_nearinfinity.md %}
 
     <section class="about-fast">
       <h1>FAST</h1>
@@ -56,36 +34,14 @@ speaking_expire_days: 0
   {% if has_news %}
   <section id="news">
     <h1>NEWS</h1>
-    {% for news in site.categories.news limit:page.max_news %}
-      <article>
-      <h2><a href="{{ news.url }}">{{ news.title | upcase }}</a></h2>
-        <p>
-          {% if news.excerpt %}
-            {{ news.excerpt }}
-          {% else %}
-            {{ news.content | truncatewords:25 }}
-          {% endif %}
-        </p>
-      </article>
-    {% endfor %}
+    {{news_markup}}
   </section>
   {% endif %}
 
 </section>
 
-
-{% assign has_speaking = false %}
-{% if site.categories.speaking.size > 0 %}
-  {% capture speakingYear %}{{ site.categories.speaking.first.date | date: "%Y" }}{% endcapture %}
-  {% capture speakingDay %}{{ site.categories.speaking.first.date | date: "%j" }}{% endcapture %}
-  {% capture daysBetween %}{{ speakingDay | minus:siteDay }}{% endcapture %}
-  {% capture daysBetweenWithYears %}{{ speakingYear | minus:siteYear | times:365 | plus:daysBetween }}{% endcapture %}
-  {% capture difference %}{{ page.speaking_expire_days | minus:daysBetweenWithYears }}{% endcapture %}
-  {% if difference contains '-' %} 
-    {% assign has_speaking = true %}
-  {% endif %}
-{% endif %}
-
+{%capture speaking_markup%}{{ 'homepage/speaking.html' | render_future_speaking:page.max_speaking }}{%endcapture %}
+{% assign has_speaking = false %}{% if speaking_markup.size > 0 %}{% assign has_speaking = true %}{%endif%}
 <section id="techcommunity" class="{% if has_speaking %}has_speaking{% endif %}">
   <h1>TECHNICAL COMMUNITY</h1>
 
@@ -102,21 +58,17 @@ speaking_expire_days: 0
     <a class="morelink" href="/blogs">more blogs</a>
   </section>
 
+
   {% if has_speaking %}
   <section class="speaking">
     <h1>SPEAKING</h1>
-    {{ page.max_speaking | render_homepage_speaking }}
+    {{ speaking_markup }}
     <a class="morelink" href="/speaking">more speaking engagements</a>
   </section>
   {% else %}
     <section class="moreblogs">
       <h1>&nbsp;</h1>
-      {% for post in site.categories.blogs limit:page.max_blogs offset:page.max_blogs %}
-      <article>
-        <img src="assets/images/users/{{ post.categories[1] }}.png"/>
-        {% include post-list-item.html %}
-      </article>
-      {% endfor %}
+      {{ page.max_blogs | render_homepage_blogs:page.max_blogs }}
       <a class="morelink" href="/blogs">more blogs</a>
     </section>
   {% endif %}
