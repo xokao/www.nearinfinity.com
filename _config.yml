@@ -2,5 +2,5 @@ pygments: true
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md]
 host: http://www.nearinfinity.com
 tag_page_layout: tag_page
-tag_page_dir: /tags/
-hideFromHomepage: [5, 10, 2, 9]
+tag_page_dir: tags
+hideFromHomepage: []

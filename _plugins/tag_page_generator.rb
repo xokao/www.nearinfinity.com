@@ -29,15 +29,16 @@ module Jekyll
       ['blogs', 'techtalks', 'speaking'].each do |type|
         site.tags.each do |tag, posts|
           filtered_posts = posts.reject{ |post| !post.categories.include? type }
-          site.pages << new_tag(site, site.source, "#{TAG_PAGE_DIR}/#{type}", tag, filtered_posts.sort.reverse, @tag_page_layout)
+          site.pages << new_tag(site, site.source, "#{TAG_PAGE_DIR}/#{type}", tag, filtered_posts.sort.reverse, @tag_page_layout, type)
         end
       end
     end
 
-    def new_tag(site, base, dir, tag, posts, layout)
+    def new_tag(site, base, dir, tag, posts, layout, type)
       TagPage.new(site, base, dir, "#{tag}#{site.layouts[layout].ext}", {
         'layout' => layout,
         'posts'  => posts,
+        'type'   => type
       })
     end
   end

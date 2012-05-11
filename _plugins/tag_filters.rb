@@ -1,27 +1,16 @@
 module Jekyll
   module TagFilters
-    # Create an href for a tag
-    def tag_link(tag, url = tag_url(tag), html_opts = nil)
-      unless html_opts.nil?
-        html_opts = ' ' + html_opts.map { |k, v| %Q{#{k}="#{v}"} }.join(' ')
-      end
-      %Q{<a href="#{url}"#{html_opts}>#{tag}</a>}
-    end
-
-    # Generates the url for a specifc tag
-    def tag_url(tag)
-      "#{Tagger::TAG_PAGE_DIR + ERB::Util.u(tag)}#{'.html'}"
-    end
-
-    # Returns a comma seperated list off all tags for an object
-    def tags(obj)
-      tags = obj['tags'][0].is_a?(Array) ? obj['tags'].map{ |t| t[0] } : obj['tags']
-      tags.sort.map { |t| tag_link(t.downcase, tag_url(t)) if t.is_a?(String) }.compact.join(', ')
+    # Returns a comma seperated list off all tags for a post
+    def tags(post, page)
+      type = page['type'] || page.categories[0]
+      tags = post['tags'][0].is_a?(Array) ? post['tags'].map{ |t| t[0] } : post['tags']
+      tags.sort.map { |t| "<a href='/tags/#{type}/#{t}.html'>#{t}</a>" if t.is_a?(String) }.compact.join(', ')
     end
 
     # Returns a list off all blog tags
-    def tags_list(obj)
-      obj['tags'].sort.map { |tag_key, tag_value| "<li>#{tag_link(tag_key.downcase, tag_url(tag_key))}</li>" }.compact.join
+    def tags_list(site, page)
+      type = page['type'] || page.categories[0]
+      site['tags'].sort.map { |tag_key, tag_value| "<li><a href='/tags/#{type}/#{tag_key}.html'>#{tag_key}</a></li>" }.compact.join
     end
   end
 end
