@@ -15,8 +15,7 @@ speaking_expire_days: 0
 <section id="aboutnic" class="{% if has_news %}has_news{% endif %}">
   <hgroup>
     <h1>ABOUT NEAR INFINITY</h1>
-    {% capture about_content %}{% include homepage/about_nearinfinity.md %}{% endcapture %}
-    {{ about_content | unindent | markdownify }}
+    {% include_markdown homepage/about_nearinfinity.md %}
 
     <section class="about-fast">
       <h1>FAST</h1>

@@ -8,29 +8,25 @@
     <article class="bigdata">
       <h1>BIG DATA</h1>
       <h2>
-      {% capture impact_bigdata %}{% include homepage/impact_bigdata.md %}{% endcapture %}
-      {{ impact_bigdata | unindent | markdownify }}
+      {% include_markdown homepage/impact_bigdata.md %}
       </h2>
     </article>
     <article class="mobile">
       <h1>MOBILE</h1>
       <h2>
-      {% capture impact_mobile %}{% include homepage/impact_mobile.md %}{% endcapture %}
-      {{ impact_mobile | unindent | markdownify }}
+      {% include_markdown homepage/impact_mobile.md %}
       </h2>
     </article>
     <article class="trustedapps">
       <h1>TRUSTED APPS</h1>
       <h2>
-      {% capture impact_trustedapps %}{% include homepage/impact_trustedapps.md %}{% endcapture %}
-      {{ impact_trustedapps | unindent | markdownify }}
+      {% include_markdown homepage/impact_trustedapps.md %}
       </h2>
     </article>
     <article class="joinus">
       <h1>JOIN US</h1>
       <h2>
-      {% capture impact_joinus %}{% include homepage/impact_joinus.md %}{% endcapture %}
-      {{ impact_joinus | unindent | markdownify }}
+      {% include_markdown homepage/impact_joinus.md %}
       </h2>
     </article>
     <figure><div></div></figure>
