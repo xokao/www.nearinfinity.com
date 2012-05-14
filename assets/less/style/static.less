@@ -1,0 +1,41 @@
+section.static_content {
+  #gradient > .vertical(@impact_background, white 300px);
+
+  article {
+    hgroup {
+      h1 {
+        .size(15);
+        .light_header(@nic_orange);
+      }
+      h2 {
+        .size(20);
+      }
+    }
+  }
+}
+
+#who_we_are {
+  ul.team-links .selected {
+    .banner(@nic_orange);
+  }
+}
+
+.user-list-item {
+  min-height: 75px;
+  img {
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+  }
+  div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100px;
+    h1, h2 {
+      margin: 0;
+    }
+    h1 {
+      font-weight: bold;
+    }
+  }
+}

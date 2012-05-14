@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+{% include head-tag.html %}
+</head>
+<body>
+  <header id="main">
+    {% include header.html %}
+  </header>
+  <section {% if page.section_id %}id="{{ page.section_id }}"{% endif %} class="static_content">
+    <article>
+    {{ content }}
+    <article>
+  </section>
+  {% include footer.html %}
+</body>
+</html>

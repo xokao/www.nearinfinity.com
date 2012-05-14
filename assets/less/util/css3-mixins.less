@@ -54,8 +54,15 @@
     -moz-transition: @props;
     transition: @props;
   }
+
   
   #gradient {
+    .multiple-vertical(...) {
+        @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+        background: -webkit-linear-gradient(@props);
+        background: -moz-linear-gradient(@props);
+        background: -o-linear-gradient(top,  @props);
+      }
      .vertical-overlay(@img, @rest...) {
        background: -webkit-linear-gradient(@rest), @img;
        background: -moz-linear-gradient(@rest), @img;

@@ -41,3 +41,50 @@
   .box-shadow(-2px 2px 0 rgba(255,255,255,0.6), -5px 5px 0 rgba(0,0,0,0.1));
 }
 
+
+.banner(@color) {
+  .size(3); 
+  display: inline-block;
+  padding: 1em;
+  padding: 0.5em 20px;
+  margin-left: -20px;
+  position: relative;
+  z-index: 1;
+  #gradient > .multiple-vertical(lighten(@color, 10%), @color 50%, darken(@color, 5%) 50%, darken(@color, 10%));
+
+  .box-shadow(1px 1px 8px fadeOut(darken(rgb(211,104,16),5%), 70%));
+  border: 1px solid darken(@color, 10%);
+  .text-shadow(1px 1px 0 darken(@color, 20%));
+  em {
+    color: @nic_orange;
+  }
+
+  a { text-decoration: none; color: white }
+
+  &:before, &:after {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  &:before {
+    width: 200px;
+    left: -200px;
+    bottom: -10px;
+    z-index: -1;
+    height: 10px;
+    margin-left:20px;
+    #gradient > .vertical(lighten(@color, 5%), darken(@color, 10%));
+    opacity: 0.5;
+    display: none;
+  }
+  &:after {
+    left: 0px;
+    top: 100%;
+    border-width: 5px 10px;
+    border-style: solid;
+    border-color: @color @color transparent transparent;
+    z-index: -1;
+    margin-top: 1px;
+  }
+}

@@ -1,4 +1,75 @@
 ---
-layout: blank
+layout: static
+section_id: who_we_are
+title: Who We Are
+teams:
+  - 
+    name: Management Team
+    subcategories:
+      - 
+        name: Technical
+        people:
+          - 
+            name: Chris D'Agostino
+            username: chris_dagostino
+            title: Chief Technology Officer
+          - 
+            name: Jeff Kunkle
+            username: jeff_kunkle
+            title: Director of Mobile Solutions
+          - 
+            name: Jeff Borst
+            username: jeff_borst
+          -
+            name: Matt Wizeman
+            username: matt_wizeman
+          - 
+            name: Scott Leberknight
+            username: scott_leberknight
+          - 
+            name: David Singley
+            username: dave_singley
+      -
+        name: Corporate
+        people: 
+          -
+            name: Ric Upton
+            username: ric_upton
+            title: President
 ---
-who we are
+<hgroup>
+  <h1>ABOUT US</h1>
+  <h2>Teams of cleared software developers performing mission-critical work in the US Intelligence Community</h2>
+</hgroup>
+
+<p><em>Near Infinity</em> is not your average software development company. By focusing on a few simple principles-hiring only the most qualified and passionate technologists, using customer-centric Agile development practices, and persistently exploring and defining the most effective ways to apply new technologies-Near Infinity has developed a reputation for delivering great software, fast.
+
+<p>Founded in 2002 and headquartered in Northern Virginia, the company has grown into a multi-million dollar software development firm. Our customers range from Fortune 500 companies to major federal customers in the U.S. Intelligence Community. Whether we're building traditional applications using our proven software best practices or delivering a creative solution to a cutting-edge problem, Near Infinity engineers consistently help our customers use technology to achieve their most critical business goals.
+
+
+<section id="who_we_are_team">
+  <ul class="team-links">
+    {% for team in page.teams %}
+      <li class="selected"><a href="#{{ team.name | replace:' ','_' | downcase }}">{{ team.name | upcase }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% for team in page.teams %}
+  <ul class="team_subcategory" id="{{ team.name | replace:' ','_' | downcase }}">
+    {% for category in team.subcategories %}
+      <li>
+      <h1>{{ category.name }}</h1>
+      <ul>
+      {% for person in category.people %}
+        {% include users/user-list-item.html %}
+      {% endfor %}
+      </ul></li>
+    {% endfor %}
+
+    {% for person in team.people %}
+      {% include users/user-list-item.html %}
+    {% endfor %}
+  </ul>
+  {% endfor %}
+
+</section>
