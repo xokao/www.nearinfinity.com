@@ -1,0 +1,37 @@
+section.static_content {
+  article {
+    .pad;
+  }
+
+  @media screen and (min-width:90em) {
+    article {
+      .pad(2);
+    }
+  }
+}
+
+
+#who_we_are_team {
+  .team_subcategory > li {
+
+    & > h1 {
+      .size(10);
+      color: @nic_orange;
+    }
+  }
+
+  @media screen and (min-width:33em) {
+    .team_subcategory  > li {
+      width: 50%;
+      float: left;
+    }
+  }
+  @media screen and (min-width:50em) {
+    .team-links {
+      position: absolute;
+    }
+    .team_subcategory {
+      padding-left: 17em;
+    }
+  }
+}
