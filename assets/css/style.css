@@ -1977,16 +1977,16 @@ section.static_content article hgroup h2 {
   margin-left: -20px;
   position: relative;
   z-index: 1;
-  background: -webkit-linear-gradient(#f8a571, #f68640 50%, #f57728 50%, #f4670f);
-  background: -moz-linear-gradient(#f8a571, #f68640 50%, #f57728 50%, #f4670f);
-  background: -o-linear-gradient(top, #f8a571, #f68640 50%, #f57728 50%, #f4670f);
+  background: -webkit-linear-gradient(#e9a880, #e28b54 50%, #de7c3e 50%, #db6d28);
+  background: -moz-linear-gradient(#e9a880, #e28b54 50%, #de7c3e 50%, #db6d28);
+  background: -o-linear-gradient(top, #e9a880, #e28b54 50%, #de7c3e 50%, #db6d28);
   -webkit-box-shadow: 1px 1px 8px rgba(187, 92, 14, 0.30000000000000004), 0 0 0 transparent;
   -moz-box-shadow: 1px 1px 8px rgba(187, 92, 14, 0.30000000000000004), 0 0 0 transparent;
   -ms-box-shadow: 1px 1px 8px rgba(187, 92, 14, 0.30000000000000004), 0 0 0 transparent;
   -o-box-shadow: 1px 1px 8px rgba(187, 92, 14, 0.30000000000000004), 0 0 0 transparent;
   box-shadow: 1px 1px 8px rgba(187, 92, 14, 0.30000000000000004), 0 0 0 transparent;
-  border: 1px solid #f4670f;
-  text-shadow: 1px 1px 0 #c75209, 0 0 0 transparent;
+  border: 1px solid #db6d28;
+  text-shadow: 1px 1px 0 #b2571e, 0 0 0 transparent;
 }
 #who_we_are ul.team-links .selected em {
   color: #f68640;
@@ -2011,18 +2011,18 @@ section.static_content article hgroup h2 {
   margin-left: 20px;
   /* Legacy browsers */
 
-  background: #f4670f none;
+  background: #db6d28 none;
   /* Recent browsers */
 
   -o-background-size: 100% 100%;
   -moz-background-size: 100% 100%;
   -webkit-background-size: auto auto !important;
   background-size: 100% 100%;
-  background: none, -webkit-gradient(linear, left top, left bottom, from(#f79558), to(#f4670f));
-  background: none, -webkit-linear-gradient(#f79558, #f4670f);
-  background: none, -moz-linear-gradient(#f79558, #f4670f);
-  background: none, -o-linear-gradient(top, #f79558, #f4670f);
-  background: none, -khtml-gradient(linear, left top, left bottom, from(#f79558), to(#f4670f));
+  background: none, -webkit-gradient(linear, left top, left bottom, from(#e6996a), to(#db6d28));
+  background: none, -webkit-linear-gradient(#e6996a, #db6d28);
+  background: none, -moz-linear-gradient(#e6996a, #db6d28);
+  background: none, -o-linear-gradient(top, #e6996a, #db6d28);
+  background: none, -khtml-gradient(linear, left top, left bottom, from(#e6996a), to(#db6d28));
   opacity: 0.5;
   display: none;
 }
@@ -2031,7 +2031,7 @@ section.static_content article hgroup h2 {
   top: 100%;
   border-width: 5px 10px;
   border-style: solid;
-  border-color: #f68640 #f68640 transparent transparent;
+  border-color: #e28b54 #e28b54 transparent transparent;
   z-index: -1;
   margin-top: 1px;
 }
