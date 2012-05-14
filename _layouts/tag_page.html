@@ -18,15 +18,28 @@
     {% endfor %}
     </div>
     <aside>
-      <h1>Posts by Author</h1>
+      {% if page.type != 'blogs'%}
+      <h1>{{page.tag}} Blogs</h1>
       <ul>
-        {{site | authors_list}}
-      </ul>
-      <h1>Posts by Tags</h1>
-      <ul>
-        {{site | tags_list:page}}
-      </ul>
+        {{'blogs' | render_posts_by_tag:page.tag amount:5}}
 
+      </ul>
+      {%endif%}
+
+      {% if page.type != 'speaking'%}
+      <h1>{{page.tag}} Speaking Engagements</h1>
+      <ul>
+
+        {{'speaking' | render_posts_by_tag:page.tag amount:5}}
+      </ul>
+      {%endif%}
+
+      {% if page.type != 'techtalks'%}
+      <h1>{{page.tag}} Tech Talks</h1>
+      <ul>
+        {{'techtalks' | render_posts_by_tag:page.tag amount:5}}
+      </ul>
+      {%endif%}
     </aside>
   </section>
 

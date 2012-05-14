@@ -57,6 +57,19 @@ module Jekyll
       }.compact.join
     end
 
+    def render_posts_by_tag(type,tag,amount)
+      all_posts = @context.registers[:site].categories[type]
+      filtered_posts = all_posts.reject{|post| ! post.tags.include? tag}.sort{|a,b| b.date <=> a.date}
+      filtered_posts = filtered_posts[0..(amount-1)] if filtered_posts.size > amount
+      markup = ''
+      if filtered_posts.size > 0
+        markup = filtered_posts.map{|post| "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"}.compact.join
+      else
+        markup = '<li><h1>No Posts Found</h1></li>'
+      end
+      markup += "<li><a href='/tags/#{type}/#{tag}.html'>View All</a></li>"
+    end
+
     private
     # Renders the list of type posts for the home page
     def render_homepage_posts(amount, type, template,offset)

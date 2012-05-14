@@ -2040,6 +2040,9 @@ section.all_content aside .filter-title {
   color: #f68640;
   margin: 0;
 }
+section.all_content aside ul li .sharing-links {
+  display: none;
+}
 section.all_content aside ul li {
   margin-top: .5em;
 }
