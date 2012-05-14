@@ -1,29 +1,29 @@
-header#main { 
+.lt-ie9 header#main { 
   overflow:hidden;
   height: 70px;
 }
-header#main.homepage {
+.lt-ie9 header#main.homepage {
   height: 445px;
 }
-header#main ol.nextprev {
+.lt-ie9 header#main ol.nextprev {
   left: 0;
 }
-header#main ol.nextprev li {
+.lt-ie9 header#main ol.nextprev li {
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);  
 }
 
-header#main article { visibility:hidden; }
-header#main.bigdata article.bigdata, 
-header#main.mobile article.mobile,
-header#main.trustedapps article.trustedapps,
-header#main.joinus article.joinus { visibility:visible; }
+.lt-ie9 header#main article { visibility:hidden; }
+.lt-ie9 header#main.bigdata article.bigdata, 
+.lt-ie9 header#main.mobile article.mobile,
+.lt-ie9 header#main.trustedapps article.trustedapps,
+.lt-ie9 header#main.joinus article.joinus { visibility:visible; }
 
-header#main .article-links {
+.lt-ie9 header#main .article-links {
   left: 0;
   text-indent: -1000px;
   font-size: 0;
-  margin-bottom: 1em;
+  margin-bottom: 25px;
 }
 
 .lt-ie7 header#main .article-links { position: absolute; overflow:hidden; height:25px; width: 100px; display:block; clear:left; left: 0; }
@@ -49,9 +49,9 @@ header#main .article-links {
 .lt-ie7 header#main .article-links a.joinus { left: -75px; }
 
 
-header#main article { margin-top: 70px; width: 35% }
-header#main hr { display: none; }
-header#main hgroup {
+.lt-ie9 header#main article { margin-top: 70px; width: 35% }
+.lt-ie9 header#main hr { display: none; }
+.lt-ie9 header#main hgroup {
   position: absolute;
   margin: 0;
   padding: 0;
@@ -68,7 +68,7 @@ header#main hgroup {
   background-image: none;
   filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=/assets/images/logo.png,sizingMethod='scale');
 }
-header#main hgroup nav {
+.lt-ie9 header#main hgroup nav {
   position: absolute;
   left: 10%;
   width: 89.99%;
@@ -80,7 +80,7 @@ header#main hgroup nav {
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
   filter: alpha(opacity=60);  
 }
-header#main hgroup nav ol li:first-child { display:inline; }
+.lt-ie9 header#main hgroup nav ol li:first-child { display:inline; }
 
 .lt-ie8 header#main hgroup nav ol li { zoom:1; display:inline; }
 .lt-ie8 header#main hgroup nav ol li a { color: white; }
@@ -96,7 +96,7 @@ header#main hgroup nav ol li:first-child { display:inline; }
   z-index: 20;
 }
 
-header#main figure {
+.lt-ie9 header#main figure {
   height: 500px;
   width: 50%;
   top: 70px;
@@ -132,8 +132,10 @@ header#main figure {
 .lt-ie9 #aboutnic #news article h2 a {
   color: white;
 }
-.lt-ie9 #techcommunity {
+body #techcommunity {
   background-image: url(/assets/graphics/textures/leather.jpg);
+}
+.lt-ie9 #techcommunity {
   padding: 0 10% 1em 10%;
 }
 .lt-ie9 #techcommunity h1 {
@@ -191,7 +193,7 @@ header#main figure {
   width: 30%;
 }
 
-body {
+.lt-ie9 body {
   background-image: url(/assets/graphics/textures/footer-background.png);
 }
 
@@ -214,23 +216,29 @@ body {
 .lt-ie7 footer section.contactus li a,
 .lt-ie7 footer section.contactus li { margin: 0; padding: 0; }
 
-
-.lt-ie8 section.dynamic_content {
+body section.dynamic_content {
+  background: white url("/assets/graphics/dynamic-gradient-background.svg");
+}
+.lt-ie9 section.dynamic_content {
+  background: none;
   zoom: 1;
   padding-top: 2em;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7e7e7', endColorstr='#ffffff');
 }
-.lt-ie8 section.dynamic_content article {
+.lt-ie9 section.dynamic_content article {
   width: 50%;
   float: left;
 }
-.lt-ie8 section.dynamic_content aside {
+.lt-ie9 section.dynamic_content aside {
   width: 22%;
   float: left;
   margin: 0 0 0 5%;
   clear: none;
 }
-.lt-ie8 section.dynamic_content aside .user-page-link { position: relative; }
+.lt-ie8 section.dynamic_content aside .user-page-link { 
+  position: relative;
+  display: block;
+}
 .lt-ie8 section.dynamic_content aside .user-page-link hgroup { background: none; }
 .lt-ie8 section.dynamic_content aside .user-page-link img {
   position: absolute;
