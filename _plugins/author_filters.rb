@@ -4,13 +4,13 @@ module Jekyll
     def authors_list(site, sort = true)
       site['categories'].keys.reject{|category|
         ['blogs', 'techtalks', 'news', 'speaking'].include? category
-      }.sort.map{ |author|
-        "<li><a href='#{author_url(author)}' class='author-filter'>#{author.gsub('_', ' ')}</a></li>"
+      }.sort.map{ |user|
+        "<li><a href='#{author_url(user)}' class='author-filter'>#{user_to_name(user)}</a></li>"
       }.compact.join
     end
 
-    def author_url(author)
-      "/blogs/#{author}"
+    def author_url(user)
+      "/blogs/#{user}"
     end
 
     # Return a list of the COUNT most recent blogs by an author
