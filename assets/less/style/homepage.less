@@ -1,13 +1,13 @@
 
 #aboutnic {
-  background: @dark-data-url repeat;
+  background: url('/assets/images/fake_brick.png') repeat;
   color: darken(white, 5%);
   .box-shadow(0 -5px 5px fadeout(black, 50%) inset, 0 1px 2px fadeout(black, 50%) inset);
 
   hgroup {
     position: relative;
     h1 {
-      .light_header(white);
+      .light_header_shadowless(@nic_orange);
       .size(20);
     }
     p em {
@@ -29,7 +29,7 @@
   }
   #news {
     h1 { 
-      .light_header(@nic_orange);
+      .light_header_shadowless(@nic_orange);
       .size(13);
     }
     article {
@@ -44,12 +44,10 @@
 
 #techcommunity {
   color: @impact_background;
-  padding-bottom: 1em;
-  #gradient > .vertical-overlay(@leather-data-url, rgba(0,0,0,0.1) ~"," transparent 5% ~"," transparent 95% ~"," rgba(0,0,0,0.1));
+  background: url('/assets/images/irongrip.png') repeat;
 
   & > h1 {
-    //.light_header(white);
-    color: white;
+    .light_header(white);
     .text-shadow(-3px 2px 2px fade(black, 30%));
     .size(20);
     margin-bottom: 1em;
@@ -58,7 +56,7 @@
   & > section {
     & > h1 {
       .size(8);
-      color: @nic_orange;
+      .light_header(@nic_orange);
       .text-shadow(-3px 2px 2px fade(black, 30%));
     }
   }
@@ -86,6 +84,9 @@
     opacity: 0.3;
     padding: 0;
     .transition(opacity linear 0.2s);
+    &:before {
+      background-image: url('/assets/images/icons/glyphicon-sprite-white.png');
+    }
   }
 
   .techtalks {
@@ -124,12 +125,12 @@
       h1 {
         font-weight: bold;
         margin-bottom:0;
-        color: darken(@light_text, 10%);
+        color: darken(white, 10%);
         .plain-anchor;
       }
       h2 {
         font-size: 90%;
-        color: darken(@light_text, 5%);
+        color: darken(white, 15%);
       }
     }
     

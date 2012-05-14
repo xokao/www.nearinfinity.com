@@ -10,8 +10,11 @@
 @total-width: 100%;
 
 body {
-  background: @footer-data-url repeat;
+  background: url('/assets/images/lghtmesh.png') repeat;
   color: @light_text;
+  & > section{
+  .box-shadow(0 -2px 4px fadeout(black, 50%) inset);
+  }
 }
 a { color: @darker_text; }
 

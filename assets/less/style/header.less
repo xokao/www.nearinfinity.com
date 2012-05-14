@@ -36,7 +36,7 @@ header#main {
     }
   }
   nav {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.8);
     color: white;
     ol { 
       text-align: right;
@@ -59,8 +59,9 @@ header#main {
     .transition(opacity linear 0.2s);
 
     h1 {
-      .light_header(@light_text);
-      .size(25);
+      .light_header(darken(@light_text,10%);
+      font-weight:bold;
+      .size(30);
     }
     h2 {
       color: lighten(@light_text, 15%);
