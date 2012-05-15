@@ -28,6 +28,7 @@ section.static_content {
 
 .user-list-item {
   min-height: 75px;
+  //position: relative;
   img {
     float: left;
     width: 100px;
@@ -42,6 +43,55 @@ section.static_content {
     }
     h1 {
       font-weight: bold;
+    }
+  }
+  .bio {
+    opacity: 0;
+    .transform(0.1);
+    .transition(opacity ease-in 0.0s);
+    margin-top: -121px;
+    margin-left: -30px;
+    width: 24em;
+    padding: 120px 25px 0 25px;
+
+    position: absolute;
+    z-index: 10;
+    border: 10px solid white;
+    background: url(/assets/images/paper.png) repeat;
+    .box-shadow(0 1px 10px fadeOut(black, 50%));
+    color: lighten(black, 35%);
+
+    em {
+      font-weight: bold;
+    }
+    dl {
+      dt, dd { float: left; margin: 0;}
+      dt { 
+        font-weight: bold; 
+        clear: left; 
+        margin-right: 5px;
+        &:after {
+          content: ':';
+        }
+      }
+      overflow: hidden;
+      margin: 0 0 1em 0;
+    }
+    p {
+      clear: left;
+    }
+  }
+
+  &:hover {
+    img, div {
+      position: relative;
+      z-index: 20;
+    }
+    .bio {
+      opacity: 1;
+      .transform(1);
+      .transition(all ease-in 0.6s);
+      -webkit-transform-origin: 50% 50%;
     }
   }
 }

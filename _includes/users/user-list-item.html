@@ -4,4 +4,14 @@
 <h1>{{ person.name }}</h1>
 <h2>{{ person.title }}</h2>
 </div>
+<section class="bio" {% if person.name != "Chris D'Agostino" %}style="display:none;"{% endif %}>
+
+<dl>
+  <dt>At Near Infinity Since</dt><dd>2002</dd>
+  <dt>Alma Mater</dt><dd>Virginia Tech</dd>
+  <dt>NIC Sports</dt><dd>Soccer</dd>
+</dl>
+
+<p><em>About {{ person.name | nth_word:0 }}:</em> As Founder of Near Infinity, D'Agostino focused on building a company for developers, a company that would attract extraordinary software developers who loved to learn and who would stay on the cutting edge of evolving technology and development process
+</section>
 </li>

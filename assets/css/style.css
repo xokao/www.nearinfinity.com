@@ -2118,6 +2118,79 @@ section.static_content article hgroup h2 {
 .user-list-item div h1 {
   font-weight: bold;
 }
+.user-list-item .bio {
+  opacity: 0;
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -ms-transform: scale(0.1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -webkit-transform: scale(0.1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -moz-transform: scale(0.1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -o-transform: scale(0.1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  transform: scale(0.1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -webkit-transition: opacity, ease-in, 0s;
+  -moz-transition: opacity, ease-in, 0s;
+  transition: opacity, ease-in, 0s;
+  margin-top: -121px;
+  margin-left: -30px;
+  width: 24em;
+  padding: 120px 25px 0 25px;
+  position: absolute;
+  z-index: 10;
+  border: 10px solid white;
+  background: url(/assets/images/paper.png) repeat;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -ms-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -o-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  color: #595959;
+}
+.user-list-item .bio em {
+  font-weight: bold;
+}
+.user-list-item .bio dl {
+  overflow: hidden;
+  margin: 0 0 1em 0;
+}
+.user-list-item .bio dl dt,
+.user-list-item .bio dl dd {
+  float: left;
+  margin: 0;
+}
+.user-list-item .bio dl dt {
+  font-weight: bold;
+  clear: left;
+  margin-right: 5px;
+}
+.user-list-item .bio dl dt:after {
+  content: ':';
+}
+.user-list-item .bio p {
+  clear: left;
+}
+.user-list-item:hover img,
+.user-list-item:hover div {
+  position: relative;
+  z-index: 20;
+}
+.user-list-item:hover .bio {
+  opacity: 1;
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+  -ms-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -webkit-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -moz-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -o-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
+  -webkit-transition: all, ease-in, 0.6s;
+  -moz-transition: all, ease-in, 0.6s;
+  transition: all, ease-in, 0.6s;
+  -webkit-transform-origin: 50% 50%;
+}
 section.all_content {
   padding-bottom: 50px;
   /* Legacy browsers */
