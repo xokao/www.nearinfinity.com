@@ -9,26 +9,26 @@ section.static_content {
   #history{
     section{
       h2 {
-        margin-bottom: 20px;
+        margin-bottom: 1em;
         .light_header(white);
         .text-shadow(-3px 2px 2px fade(black, 30%));
         .size(20);
       }
       p{
         margin: auto;
-        margin-bottom:20px;
+        margin-bottom:1em;
       }
     }
     aside{
       h2 {
-        margin-bottom: 20px;
+        margin-bottom: 1em;
         .light_header(white);
         .text-shadow(-3px 2px 2px fade(black, 30%));
         .size(13);
       }
       p{
         margin: auto;
-        margin-bottom:20px;
+        margin-bottom:1em;
       }
     }
 
@@ -84,10 +84,25 @@ section.static_content {
       }
     }
   }
-
 }
 
-
+#benefits{
+  section{
+    h2{
+      .light_header_shadowless(@nic_orange);
+      .size(10);
+    }
+    h3{
+      .light_header_shadowless(black);
+      .size(4);
+      margin-bottom:0;
+    }
+    .split{
+      .push(1);
+      .column(5,10);
+    }
+  }
+}
 #who_we_are_team {
   overflow:hidden;
 
