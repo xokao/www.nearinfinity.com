@@ -1098,7 +1098,7 @@ section.dynamic_content .video-container embed {
     *margin: 0 0.9895833333333331%;
   }
 }
-section.static_content article {
+section.static_content article > * {
   display: inline;
   float: left;
   width: 81.25%;
@@ -1107,8 +1107,74 @@ section.static_content article {
   *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
+section.static_content #history,
+section.static_content #what_we_do_details {
+  margin: 0;
+  width: auto;
+}
+section.static_content #history  > *,
+section.static_content #what_we_do_details  > * {
+  display: inline;
+  float: left;
+  width: 81.25%;
+  margin: 0 1.0416666666666665%;
+  *width: 81.19791666666667%;
+  *margin: 0 0.9895833333333331%;
+  margin-left: 9.374999999999998%;
+}
+section.static_content #history section h2 {
+  margin-bottom: 20px;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
+  font-size: 2.5384615384615383em;
+  line-height: 1em;
+}
+section.static_content #history section p {
+  margin: auto;
+  margin-bottom: 20px;
+}
+section.static_content #history aside h2 {
+  margin-bottom: 20px;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
+  font-size: 2em;
+  line-height: 1.1076923076923078em;
+}
+section.static_content #history aside p {
+  margin: auto;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 50em) {
+  section.static_content #history section {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+  section.static_content #history section:after {
+    display: block;
+  }
+  section.static_content #history aside {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+}
 @media screen and (min-width: 90em) {
-  section.static_content article {
+  section.static_content #history aside {
     display: inline;
     float: left;
     width: 64.58333333333334%;
@@ -1117,6 +1183,86 @@ section.static_content article {
     *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
+  section.static_content #history section {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 17.708333333333332%;
+  }
+  section.static_content #history section {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 17.708333333333332%;
+  }
+  section.static_content #history section:after {
+    display: block;
+  }
+  section.static_content #history aside {
+    display: inline;
+    float: left;
+    width: 14.583333333333334%;
+    margin: 0 1.0416666666666665%;
+    *width: 14.53125%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+}
+section.static_content #what_we_do_details section h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+  font-size: 1.7692307692307692em;
+  line-height: 1.1612903225806452em;
+}
+@media screen and (min-width: 70em) {
+  section.static_content #what_we_do_details section {
+    display: inline;
+    float: left;
+    width: 27.500000000000004%;
+    margin: 0 1.25%;
+    *width: 27.44791666666667%;
+    *margin: 0 1.1979166666666667%;
+  }
+  section.static_content #what_we_do_details section.big-data {
+    display: inline;
+    float: left;
+    width: 37.5%;
+    margin: 0 1.25%;
+    *width: 37.447916666666664%;
+    *margin: 0 1.1979166666666667%;
+  }
+}
+@media screen and (min-width: 90em) {
+  section.static_content #what_we_do_details section {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+    *width: 64.53125000000001%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 17.708333333333332%;
+    display: inline;
+    float: left;
+    width: 14.583333333333334%;
+    margin: 0 1.0416666666666665%;
+    *width: 14.53125%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+}
+#who_we_are_team {
+  overflow: hidden;
 }
 #who_we_are_team .team_subcategory > li  > h1 {
   font-size: 1.7692307692307692em;
@@ -2009,6 +2155,9 @@ section.static_content {
   background: none, -o-linear-gradient(top, #e7e7e7, #ffffff 300px);
   background: none, -khtml-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
 }
+section.static_content p {
+  margin-bottom: 1em;
+}
 section.static_content article hgroup h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
@@ -2097,6 +2246,32 @@ section.static_content article hgroup h2 {
 }
 #who_we_are #who_we_are_team {
   margin-top: 4em;
+}
+#history,
+#what_we_do_details {
+  color: #e7e7e7;
+  background: url('/assets/images/irongrip.png') repeat;
+  padding: 2em 0;
+}
+#history em,
+#what_we_do_details em {
+  color: #ff7b28;
+}
+#history h1,
+#what_we_do_details h1 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
+  font-size: 2.5384615384615383em;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+#history aside h3,
+#what_we_do_details aside h3 {
+  color: #ff7b28;
+  margin-bottom: 0;
 }
 .user-list-item {
   min-height: 75px;
