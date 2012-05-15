@@ -1492,6 +1492,16 @@ footer {
   color: black;
   padding-top: 1em;
 }
+footer:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  display: block;
+  margin-top: -1em;
+  height: 2px;
+  background: rgba(0, 0, 0, 0.1);
+}
 footer a {
   color: inherit;
 }
@@ -1814,14 +1824,12 @@ opacity: 0.3;
 }
 #aboutnic hgroup:after {
   content: '';
-  width: 0;
-  background: red;
+  width: 1px;
+  background: #333;
   height: 90%;
   position: absolute;
   top: 0;
   left: 110%;
-  border-left: 1px solid #555;
-  border-right: 1px solid black;
 }
 #aboutnic #news h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
