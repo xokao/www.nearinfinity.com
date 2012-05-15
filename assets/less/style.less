@@ -10,13 +10,18 @@
 @total-width: 100%;
 
 body {
-  background: url('/assets/images/lghtmesh.png') repeat;
+  background: url('/assets/images/paper.png') repeat;
   color: @light_text;
-  & > section{
-  .box-shadow(0 -2px 4px fadeout(black, 50%) inset);
-  }
 }
-a { color: @darker_text; }
+a { 
+text-decoration:none;
+font-weight:bold;
+color: darken(@darker_text,30%); 
+  &:hover{
+  color:@nic_orange;
+  text-decoration:none;
+}
+}
 
 @import 'structure';
 @import 'style/header';

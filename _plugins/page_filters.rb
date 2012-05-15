@@ -64,10 +64,11 @@ module Jekyll
       markup = ''
       if filtered_posts.size > 0
         markup = filtered_posts.map{|post| "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"}.compact.join
+        markup += "<li><a href='/tags/#{type}/#{tag}.html'>View All</a></li>"
+        markup
       else
-        markup = '<li><h1>No Posts Found</h1></li>'
+        ''
       end
-      markup += "<li><a href='/tags/#{type}/#{tag}.html'>View All</a></li>"
     end
 
     private

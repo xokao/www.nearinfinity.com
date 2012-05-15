@@ -1,15 +1,14 @@
 ---
 layout: homepage
-title: near infinity
+title: Near Infinity
 impact_duration_seconds: 10
 max_news: 2
 max_blogs: 2
 max_speaking: 2
 max_techtalks: 1
-news_expire_days: 30
 speaking_expire_days: 0
 ---
-{%capture news_markup%}{{ 'homepage/news.html' | render_recent_news:page.max_news days_expire:30 }}{%endcapture %}
+{%capture news_markup%}{{ 'homepage/news.html' | render_recent_news:page.max_news days_expire: 90 }}{%endcapture %}
 {% assign has_news = false %}{% if news_markup.size > 0 %}{% assign has_news = true %}{%endif%}
 
 <section id="aboutnic" class="{% if has_news %}has_news{% endif %}">

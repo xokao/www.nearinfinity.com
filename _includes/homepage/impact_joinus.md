@@ -1,1 +1,1 @@
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Near Infinity is a great place to work. We have been honored by numerous organizations for our internal training and development program, our exceptional work environment, and our commitment to lifelong learning. 

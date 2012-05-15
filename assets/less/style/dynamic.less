@@ -5,9 +5,10 @@ section.dynamic_content {
   article {
     padding-bottom: 2em;
     header h1 {
-      //color: @darker_text;
-      .size(14);
-      .light_header(@darker_text);
+      .light_header(darken(@light_text,10%));
+      font-weight:bold;
+      margin-top: 0.5em;
+      .size(30);
     }
     h1 {
       .size(8);
@@ -70,8 +71,9 @@ section.dynamic_content {
       }
     }
     & > h1 {
-      .size(2);
-      .light_header(@darker_text);
+      .size(5);
+      .light_header_shadowless(@nic_orange);
+      margin-top: 1.5em;
       margin-top: 2em;
     }
 

@@ -3,7 +3,12 @@
   background: url('/assets/images/fake_brick.png') repeat;
   color: darken(white, 5%);
   .box-shadow(0 -5px 5px fadeout(black, 50%) inset, 0 1px 2px fadeout(black, 50%) inset);
-
+  a{
+  color:inherit;
+  &:hover{
+    color:@nic_orange;
+  }
+  }
   hgroup {
     position: relative;
     h1 {
@@ -33,6 +38,9 @@
       .size(13);
     }
     article {
+      p{
+        margin-bottom:2em;
+      }
       h2 {
         .size(4);
         .plain-anchor;
@@ -122,6 +130,7 @@
       position: relative;
       min-height: 6em;
       padding-left:65px;
+      padding-bottom:20px;
       h1 {
         font-weight: bold;
         margin-bottom:0;
@@ -131,6 +140,9 @@
       h2 {
         font-size: 90%;
         color: darken(white, 15%);
+      }
+      p{
+        margin-bottom: 5px;
       }
     }
     

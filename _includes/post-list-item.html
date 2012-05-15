@@ -2,4 +2,5 @@
 <h2>
   <span class='author'>{{ post.categories[1] | user_to_name}}</span> on {{ post.date | date:'%b %d, %Y' }}
 </h2>
+<p>{{post |excerpt: 15}}</p>
 {% include sharing-inline.html %}

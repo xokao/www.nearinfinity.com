@@ -4,11 +4,14 @@ section.static_content {
   article {
     hgroup {
       h1 {
-        .size(15);
-        .light_header(@nic_orange);
+        .light_header(darken(@light_text,10%));
+        font-weight:bold;
+        margin-top: 0.5em;
+        .size(30);
       }
       h2 {
-        .size(20);
+        .size(13);
+        .light_header_shadowless(@nic_orange);
       }
     }
   }
@@ -17,6 +20,9 @@ section.static_content {
 #who_we_are {
   ul.team-links .selected {
     .banner(desaturate(@nic_orange, 20%));
+  }
+  #who_we_are_team{
+    margin-top:4em;
   }
 }
 

@@ -18,26 +18,29 @@
     {% endfor %}
     </div>
     <aside>
-      {% if page.type != 'blogs'%}
+      {%capture blog_content %}{{'blogs' | render_posts_by_tag:page.tag amount:5}}{% endcapture %}
+      {%capture speaking_content %}{{'speaking' | render_posts_by_tag:page.tag amount:5}}{% endcapture %}
+      {%capture techtalk_content %}{{'techtalks' | render_posts_by_tag:page.tag amount:5}}{% endcapture %}
+      {% if page.type != 'blogs' && blog_content.size > 0 %}
       <h1>{{page.tag}} Blogs</h1>
       <ul>
-        {{'blogs' | render_posts_by_tag:page.tag amount:5}}
+        {{blog_content}}
 
       </ul>
       {%endif%}
 
-      {% if page.type != 'speaking'%}
+      {% if page.type != 'speaking' && speaking_content.size > 0 %}
       <h1>{{page.tag}} Speaking Engagements</h1>
       <ul>
 
-        {{'speaking' | render_posts_by_tag:page.tag amount:5}}
+        {{speaking_content}}
       </ul>
       {%endif%}
 
-      {% if page.type != 'techtalks'%}
+      {% if page.type != 'techtalks' && techtalk_content.size > 0%}
       <h1>{{page.tag}} Tech Talks</h1>
       <ul>
-        {{'techtalks' | render_posts_by_tag:page.tag amount:5}}
+        {{techtalk_content}}
       </ul>
       {%endif%}
     </aside>

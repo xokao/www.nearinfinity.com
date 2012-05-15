@@ -1,1 +1,1 @@
-_NEAR INFINITY_ builds software for a variety of commercial and government customers, focusing on the financial and intelligence sectors. We specialize in big data and mobile development. 
+_NEAR INFINITY_ is laser focused on software development. We serve a range of customers in the federal government as well as the commercial sector, specializing in the financial, intelligence and security industries. 
