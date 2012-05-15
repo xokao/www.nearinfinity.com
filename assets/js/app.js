@@ -18,19 +18,5 @@ $(function() {
             }
         }
     });
-
-    /*
-    // TEMP Header image rotation
-    var classes = [
-        'bigdata',
-        'mobile',
-        'trustedapps',
-        'joinus'
-    ];
-    var index = 0;
-    $('#main').on('click', function() {
-        $(this).removeClass(classes.join(' ')).addClass(classes[++index % classes.length]);
-    });
-    */
 });
 
