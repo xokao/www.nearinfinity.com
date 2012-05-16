@@ -1,1 +1,1 @@
-Near Infinity’s open source search engine, Blur, is capable of searching massive amounts of data at incredible speeds. Currently in production in the U.S. Government, it helps solve some of the country’s hardest mission problems. 
+NIC has more than 30 man years of experience developing, deploying, operating and evolving the government's most successful cloud-based, big data entity analytic capabilities. We've also developed the open source structured data search engine, Blur, capable of querying massive amounts of data at incredible speeds.
