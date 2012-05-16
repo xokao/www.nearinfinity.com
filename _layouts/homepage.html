@@ -3,7 +3,7 @@
 {% include head-tag.html %}
 </head>
 <body>
-  <header id="main" class="homepage bigdata">
+  <header id="main" class="homepage bigdata end-transition">
     {% include header.html %}
     <article class="bigdata">
       <h1>BIG DATA</h1>
@@ -29,7 +29,10 @@
       {% include_markdown homepage/impact_joinus.md %}
       </h2>
     </article>
-    <figure><div></div></figure>
+    <figure class="bigdata"><div></div></figure>
+    <figure class="mobile"><div></div></figure>
+    <figure class="trustedapps"><div></div></figure>
+    <figure class="joinus"><div></div></figure>
     <section class="article-links">
       <a class="bigdata" href="#">Big Data</a>
       <a class="mobile" href="#">Mobile</a>
@@ -52,13 +55,24 @@
 
       // Move forward "1" or backward "-1" one place
       function move(direction) {
+        var previousClass = classes[index % classes.length]
         index += direction
-
         // Wrap around if negative
         if (index < 0) index = classes.length - 1
 
         var newClass = classes[index % classes.length]
-        $('#main').removeClass(classes.join(' ')).addClass(newClass)
+
+        if (direction > 0) {
+          // CSS transition
+          $('#main article').on('webkitTransitionEnd', function() {
+            console.log('finished');
+            $('#main').addClass('end-transition');
+          });
+          $('#main')[0].className = 'homepage ' + newClass + ' ' + previousClass + '_left';
+        }
+        else {
+          $('#main')[0].className = 'homepage ' + newClass;
+        }
       }
       // Show specific impact item
       function show(impactItem) {
@@ -80,6 +94,7 @@
         }
         e.preventDefault();
       });
+
       // Cycle through the impact items
       function startSlideshow() {
         clearInterval(timer);
