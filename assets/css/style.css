@@ -1108,12 +1108,16 @@ section.static_content article > * {
   margin-left: 9.374999999999998%;
 }
 section.static_content #history,
-section.static_content #what_we_do_details {
+section.static_content #what_we_do_details,
+section.static_content #get_to_know_us,
+section.static_content #awards {
   margin: 0;
-  width: auto;
+  width: 100%;
 }
 section.static_content #history  > *,
-section.static_content #what_we_do_details  > * {
+section.static_content #what_we_do_details  > *,
+section.static_content #get_to_know_us  > *,
+section.static_content #awards  > * {
   display: inline;
   float: left;
   width: 81.25%;
@@ -1261,7 +1265,54 @@ section.static_content #what_we_do_details section h2 {
     margin-left: 9.374999999999998%;
   }
 }
-#benefits section h2 {
+#get_to_know_us {
+  margin-top: 1em;
+}
+#get_to_know_us .join_us_icons {
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding-top: 2em;
+}
+#get_to_know_us section h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+  font-size: 1.3846153846153846em;
+  line-height: 1.263157894736842em;
+}
+@media screen and (min-width: 70em) {
+  #get_to_know_us section {
+    width: 16%;
+    float: left;
+  }
+  #get_to_know_us section.be-challenged {
+    padding-left: 7%;
+  }
+  #get_to_know_us section.technology-focus {
+    padding-left: 6%;
+  }
+  #get_to_know_us section.people-first {
+    padding-left: 7%;
+  }
+  #get_to_know_us section.work-fun {
+    padding-left: 8%;
+  }
+}
+#benefits,
+#open_positions,
+#open_source,
+#ssl_everywhere {
+  padding-bottom: 3em;
+}
+#benefits h2,
+#open_positions h2,
+#open_source h2,
+#ssl_everywhere h2 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #ff7b28;
@@ -1269,8 +1320,12 @@ section.static_content #what_we_do_details section h2 {
   text-shadow: none;
   font-size: 1.7692307692307692em;
   line-height: 1.1612903225806452em;
+  margin-bottom: .5em;
 }
-#benefits section h3 {
+#benefits h3,
+#open_positions h3,
+#open_source h3,
+#ssl_everywhere h3 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #000000;
@@ -1278,9 +1333,12 @@ section.static_content #what_we_do_details section h2 {
   text-shadow: none;
   font-size: 1.3076923076923077em;
   line-height: 1.2857142857142858em;
-  margin-bottom: 0;
+  margin-bottom: .5em;
 }
-#benefits section .split {
+#benefits section .split,
+#open_positions section .split,
+#open_source section .split,
+#ssl_everywhere section .split {
   margin-left: 9.374999999999998%;
   display: inline;
   float: left;
@@ -1288,6 +1346,20 @@ section.static_content #what_we_do_details section h2 {
   margin: 0 1.25%;
   *width: 47.447916666666664%;
   *margin: 0 1.1979166666666667%;
+  margin-bottom: 0.5em;
+}
+#benefits section .split ul,
+#open_positions section .split ul,
+#open_source section .split ul,
+#ssl_everywhere section .split ul {
+  list-style-type: square;
+  margin-left: 2em;
+}
+#benefits section .split ul li,
+#open_positions section .split ul li,
+#open_source section .split ul li,
+#ssl_everywhere section .split ul li {
+  margin-bottom: .25em;
 }
 #who_we_are_team {
   overflow: hidden;
@@ -1521,6 +1593,9 @@ footer section li {
 }
 footer section li  > .addr {
   margin-bottom: 0.75em;
+}
+footer section ol li a {
+  font-weight: normal;
 }
 footer section.contactus a,
 footer section.social a {
@@ -2284,17 +2359,23 @@ section.static_content article hgroup h2 {
   margin-top: 4em;
 }
 #history,
-#what_we_do_details {
+#what_we_do_details,
+#get_to_know_us,
+#awards {
   color: #e7e7e7;
   background: url('/assets/images/irongrip.png') repeat;
   padding: 2em 0;
 }
 #history em,
-#what_we_do_details em {
+#what_we_do_details em,
+#get_to_know_us em,
+#awards em {
   color: #ff7b28;
 }
 #history h1,
-#what_we_do_details h1 {
+#what_we_do_details h1,
+#get_to_know_us h1,
+#awards h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #ffffff;
@@ -2302,14 +2383,39 @@ section.static_content article hgroup h2 {
   text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
   font-size: 2.5384615384615383em;
   line-height: 1em;
-  margin-bottom: 20px;
+  padding-bottom: .5em;
 }
 #history aside h3,
-#what_we_do_details aside h3 {
+#what_we_do_details aside h3,
+#get_to_know_us aside h3,
+#awards aside h3 {
   font-size: 1.1538461538461537em;
   line-height: 1.3333333333333333em;
   color: #ff7b28;
-  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#get_to_know_us h1 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+  margin-bottom: 2em;
+}
+#awards {
+  background: url('/assets/images/fake_brick.png') repeat;
+}
+#awards h2 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+  font-size: 1.3846153846153846em;
+  line-height: 1.263157894736842em;
+}
+#awards p {
+  padding-bottom: 2em;
 }
 .user-list-item {
   min-height: 75px;

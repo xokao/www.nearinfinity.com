@@ -1,9 +1,9 @@
 section.static_content {
   article > * { .pad; }
   
-  #history, #what_we_do_details { 
+  #history, #what_we_do_details,#get_to_know_us,#awards { 
     margin:0;
-    width: auto;
+    width: 100%;
     & > * { .pad; } 
     }
   #history{
@@ -86,20 +86,67 @@ section.static_content {
   }
 }
 
-#benefits{
-  section{
-    h2{
+#get_to_know_us{
+  margin-top:1em;
+  .join_us_icons{
+    display:block;
+    width:80%;
+    margin:auto;
+    padding-top:2em;
+  }
+  section {
+    h2 {
+      text-align:center;
+      margin-bottom: 1em;
+      .light_header_shadowless(@nic_orange);
+      .size(5);
+    }
+  }
+  @media screen and (min-width: 70em) {
+      section {
+        width:16%;
+        float:left;
+        &.be-challenged{
+          padding-left:7%;
+        }
+        &.technology-focus{
+          padding-left:6%;
+        }
+        &.people-first{
+          padding-left:7%;
+        }
+        &.work-fun{
+          padding-left:8%;
+        }
+      }
+    }
+}
+
+#benefits,#open_positions,#open_source,#ssl_everywhere{
+  padding-bottom:3em;
+  h2{
       .light_header_shadowless(@nic_orange);
       .size(10);
+      margin-bottom:.5em;
     }
-    h3{
+  h3{
       .light_header_shadowless(black);
       .size(4);
-      margin-bottom:0;
-    }
+      margin-bottom:.5em;
+  }
+  section{
+
     .split{
       .push(1);
       .column(5,10);
+      ul{
+      list-style-type:square;
+      margin-left:2em;
+      }
+      ul li{
+        margin-bottom:.25em;
+      }
+      margin-bottom:0.5em;
     }
   }
 }
