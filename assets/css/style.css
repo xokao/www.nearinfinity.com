@@ -1459,38 +1459,6 @@ header#main figure.trustedapps div {
 header#main figure.joinus div {
   background: url(../images/impact/join-us.png) 15px 0px no-repeat;
 }
-header#main.bigdata article.bigdata {
-  opacity: 1;
-  height: auto;
-  left: 0;
-}
-header#main.bigdata .article-links a.bigdata {
-  background-position: -150px -24px;
-}
-header#main.mobile article.mobile {
-  opacity: 1;
-  height: auto;
-  left: 0;
-}
-header#main.mobile .article-links a.mobile {
-  background-position: -150px -24px;
-}
-header#main.trustedapps article.trustedapps {
-  opacity: 1;
-  height: auto;
-  left: 0;
-}
-header#main.trustedapps .article-links a.trustedapps {
-  background-position: -150px -24px;
-}
-header#main.joinus article.joinus {
-  opacity: 1;
-  height: auto;
-  left: 0;
-}
-header#main.joinus .article-links a.joinus {
-  background-position: -150px -24px;
-}
 header#main article {
   left: 1500px;
   opacity: 0;
@@ -1498,18 +1466,28 @@ header#main article {
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-header#main.end-transition.bigdata article.bigdata,
-header#main.end-transition.mobile article.mobile,
-header#main.end-transition.trustedapps article.trustedapps,
-header#main.end-transition.joinus article.joinus {
-  position: relative;
-}
 header#main figure div {
   opacity: 0;
   left: 1500px;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+header#main.disable-animation article {
+  -webkit-transition: all 0 linear;
+  -moz-transition: all 0 linear;
+  transition: all 0 linear;
+}
+header#main.disable-animation figure div {
+  -webkit-transition: all 0 linear;
+  -moz-transition: all 0 linear;
+  transition: all 0 linear;
+}
+header#main.end-transition.bigdata article.bigdata,
+header#main.end-transition.mobile article.mobile,
+header#main.end-transition.trustedapps article.trustedapps,
+header#main.end-transition.joinus article.joinus {
+  position: relative;
 }
 header#main.bigdata figure.bigdata div {
   left: 0;
@@ -1558,6 +1536,54 @@ header#main.joinus_left article.joinus {
 header#main.joinus_left figure.joinus div {
   left: -1500px;
   opacity: 0;
+}
+header#main.bigdata article.bigdata {
+  opacity: 1;
+  height: auto;
+  left: 0;
+}
+header#main.bigdata figure.bigdata div {
+  left: 0;
+  opacity: 1;
+}
+header#main.bigdata .article-links a.bigdata {
+  background-position: -150px -24px;
+}
+header#main.mobile article.mobile {
+  opacity: 1;
+  height: auto;
+  left: 0;
+}
+header#main.mobile figure.mobile div {
+  left: 0;
+  opacity: 1;
+}
+header#main.mobile .article-links a.mobile {
+  background-position: -150px -24px;
+}
+header#main.trustedapps article.trustedapps {
+  opacity: 1;
+  height: auto;
+  left: 0;
+}
+header#main.trustedapps figure.trustedapps div {
+  left: 0;
+  opacity: 1;
+}
+header#main.trustedapps .article-links a.trustedapps {
+  background-position: -150px -24px;
+}
+header#main.joinus article.joinus {
+  opacity: 1;
+  height: auto;
+  left: 0;
+}
+header#main.joinus figure.joinus div {
+  left: 0;
+  opacity: 1;
+}
+header#main.joinus .article-links a.joinus {
+  background-position: -150px -24px;
 }
 header#main .article-links a {
   text-decoration: none;

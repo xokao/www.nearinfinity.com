@@ -53,32 +53,40 @@
       var classes = [ 'bigdata', 'mobile', 'trustedapps', 'joinus' ], 
           index = 0;
 
+      $('#main article').on('webkitTransitionEnd', function() {
+        $('#main').addClass('end-transition');
+      });
+
       // Move forward "1" or backward "-1" one place
       function move(direction) {
-        var previousClass = classes[index % classes.length]
-        index += direction
-        // Wrap around if negative
-        if (index < 0) index = classes.length - 1
+        var newIndex = (index + direction)
+        if (newIndex < 0) newIndex = classes.length - 1
 
-        var newClass = classes[index % classes.length]
-
-        if (direction > 0) {
-          // CSS transition
-          $('#main article').on('webkitTransitionEnd', function() {
-            console.log('finished');
-            $('#main').addClass('end-transition');
-          });
-          $('#main')[0].className = 'homepage ' + newClass + ' ' + previousClass + '_left';
-        }
-        else {
-          $('#main')[0].className = 'homepage ' + newClass;
-        }
+        show(classes[newIndex % classes.length]);
       }
       // Show specific impact item
       function show(impactItem) {
+        var previousIndex = index;
+        var previousClass = classes[index % classes.length]
         index = $.inArray(impactItem, classes);
-        $('#main').removeClass(classes.join(' ')).addClass(impactItem)
+        var newClass = classes[index % classes.length]
+        var el = $('#main')[0];
+
+        if (previousIndex < index) {
+          // Move to right
+          el.className = 'homepage ' + newClass + ' ' + previousClass + '_left';
+        } else {
+          // Move to left
+
+          // Start by aligning the previous to the left
+          el.className = 'homepage disable-animation ' + newClass + '_left ' + previousClass;
+          // Kick off the new animation
+          setTimeout(function() {
+            el.className = 'homepage ' + newClass + '_left ' + newClass;
+          }, 10);
+        }
       }
+
       var timer;
       // User events for changing impact item
       $('#main').on('click', '.article-links a, .nextprev a', function(e) {

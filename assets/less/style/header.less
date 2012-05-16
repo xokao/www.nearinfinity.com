@@ -74,22 +74,6 @@ header#main {
   figure.trustedapps div { background: url(../images/impact/trusted-apps.png) 15px 0px no-repeat; }
   figure.joinus div { background: url(../images/impact/join-us.png) 15px 0px no-repeat; }
 
-  &.bigdata {
-    article.bigdata { .selected-impact; }
-    .article-links a.bigdata { background-position:-150px -24px; }
-  }
-  &.mobile {
-    article.mobile { .selected-impact; }
-    .article-links a.mobile { background-position:-150px -24px; }
-  }
-  &.trustedapps {
-    article.trustedapps  { .selected-impact; }
-    .article-links a.trustedapps { background-position:-150px -24px; }
-  }
-  &.joinus {
-    article.joinus { .selected-impact; }
-    .article-links a.joinus { background-position:-150px -24px; }
-  }
 
 
   @distance: 1500px;
@@ -97,6 +81,19 @@ header#main {
     left: @distance;
     opacity: 0;
     .transition(~"all 0.3s ease-in-out");
+  }
+  figure div {
+    opacity: 0;
+    left: @distance;
+    .transition(~"all 0.3s ease-in-out");
+  }
+  &.disable-animation {
+    article {
+      .transition(~"all 0 linear");
+    }
+    figure div {
+      .transition(~"all 0 linear");
+    }
   }
 
   &.end-transition {
@@ -106,12 +103,6 @@ header#main {
     &.joinus article.joinus {
       position: relative;
     }
-  }
-
-  figure div {
-    opacity: 0;
-    left: @distance;
-    .transition(~"all 0.3s ease-in-out");
   }
 
   &.bigdata figure.bigdata div { left: 0; opacity:1; }
@@ -135,6 +126,28 @@ header#main {
     article.joinus { opacity: 0; left: -@distance; }
     figure.joinus div { left: -@distance; opacity: 0; }
   }
+
+  &.bigdata {
+    article.bigdata { .selected-impact; }
+    figure.bigdata div { left: 0; opacity: 1; }
+    .article-links a.bigdata { background-position:-150px -24px; }
+  }
+  &.mobile {
+    article.mobile { .selected-impact; }
+    figure.mobile div { left: 0; opacity: 1; }
+    .article-links a.mobile { background-position:-150px -24px; }
+  }
+  &.trustedapps {
+    article.trustedapps  { .selected-impact; }
+    figure.trustedapps div { left: 0; opacity: 1; }
+    .article-links a.trustedapps { background-position:-150px -24px; }
+  }
+  &.joinus {
+    article.joinus { .selected-impact; }
+    figure.joinus div { left: 0; opacity: 1; }
+    .article-links a.joinus { background-position:-150px -24px; }
+  }
+
 
   .article-links {
     a {
