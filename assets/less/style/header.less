@@ -2,8 +2,7 @@
 .selected-impact {
   opacity: 1;
   height:auto;
-  position: relative;
-  .transition(opacity linear 0.2s);
+  left: 0;
 }
 
 header#main {
@@ -55,8 +54,7 @@ header#main {
     padding: 2em 0;
     position: absolute;
     opacity: 0;
-    height:0;
-    .transition(opacity linear 0.2s);
+    left: 0px;
 
     h1 {
       .light_header(darken(@light_text,10%);
@@ -71,25 +69,71 @@ header#main {
     }
   }
 
+  figure.bigdata div { background: url(../images/impact/big-data.png) 15px 0px no-repeat; }
+  figure.mobile div { background: url(../images/impact/mobile.png) 15px 0px no-repeat; }
+  figure.trustedapps div { background: url(../images/impact/trusted-apps.png) 15px 0px no-repeat; }
+  figure.joinus div { background: url(../images/impact/join-us.png) 15px 0px no-repeat; }
+
   &.bigdata {
-    figure div { background: url(../images/impact/big-data.png) 15px 0px no-repeat; }
     article.bigdata { .selected-impact; }
     .article-links a.bigdata { background-position:-150px -24px; }
   }
   &.mobile {
-    figure div { background: url(../images/impact/mobile.png) 15px 0px no-repeat; }
     article.mobile { .selected-impact; }
     .article-links a.mobile { background-position:-150px -24px; }
   }
   &.trustedapps {
-    figure div { background: url(../images/impact/trusted-apps.png) 15px 0px no-repeat; }
     article.trustedapps  { .selected-impact; }
     .article-links a.trustedapps { background-position:-150px -24px; }
   }
   &.joinus {
-    figure div { background: url(../images/impact/join-us.png) 15px 0px no-repeat; }
     article.joinus { .selected-impact; }
     .article-links a.joinus { background-position:-150px -24px; }
+  }
+
+
+  @distance: 1500px;
+  article {
+    left: @distance;
+    opacity: 0;
+    .transition(~"all 0.3s ease-in-out");
+  }
+
+  &.end-transition {
+    &.bigdata article.bigdata,
+    &.mobile article.mobile,
+    &.trustedapps article.trustedapps,
+    &.joinus article.joinus {
+      position: relative;
+    }
+  }
+
+  figure div {
+    opacity: 0;
+    left: @distance;
+    .transition(~"all 0.3s ease-in-out");
+  }
+
+  &.bigdata figure.bigdata div { left: 0; opacity:1; }
+  &.mobile figure.mobile div { left: 0; opacity:1; }
+  &.trustedapps figure.trustedapps div { left: 0; opacity:1; }
+  &.joinus figure.joinus div { left: 0; opacity:1; }
+
+  &.bigdata_left {
+    article.bigdata { opacity: 0; left: -@distance; }
+    figure.bigdata div { left: -@distance; opacity: 0; }
+  }
+  &.mobile_left {
+    article.mobile { opacity: 0; left: -@distance; }
+    figure.mobile div { left: -@distance; opacity: 0; }
+  }
+  &.trustedapps_left {
+    article.trustedapps { opacity: 0; left: -@distance; }
+    figure.trustedapps div { left: -@distance; opacity: 0; }
+  }
+  &.joinus_left {
+    article.joinus { opacity: 0; left: -@distance; }
+    figure.joinus div { left: -@distance; opacity: 0; }
   }
 
   .article-links {
@@ -124,4 +168,6 @@ header#main {
     }
   }
 }
+
+
 

@@ -1388,10 +1388,7 @@ section.static_content #what_we_do_details section p {
 .selected-impact {
   opacity: 1;
   height: auto;
-  position: relative;
-  -webkit-transition: opacity, linear, 0.2s;
-  -moz-transition: opacity, linear, 0.2s;
-  transition: opacity, linear, 0.2s;
+  left: 0;
 }
 header#main {
   background: #e7e7e7;
@@ -1451,10 +1448,7 @@ header#main article {
   padding: 2em 0;
   position: absolute;
   opacity: 0;
-  height: 0;
-  -webkit-transition: opacity, linear, 0.2s;
-  -moz-transition: opacity, linear, 0.2s;
-  transition: opacity, linear, 0.2s;
+  left: 0px;
 }
 header#main article h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -1472,61 +1466,117 @@ header#main article h2 {
   line-height: 1.3333333333333333em;
   line-height: 1.4em;
 }
-header#main.bigdata figure div {
+header#main figure.bigdata div {
   background: url(../images/impact/big-data.png) 15px 0px no-repeat;
+}
+header#main figure.mobile div {
+  background: url(../images/impact/mobile.png) 15px 0px no-repeat;
+}
+header#main figure.trustedapps div {
+  background: url(../images/impact/trusted-apps.png) 15px 0px no-repeat;
+}
+header#main figure.joinus div {
+  background: url(../images/impact/join-us.png) 15px 0px no-repeat;
 }
 header#main.bigdata article.bigdata {
   opacity: 1;
   height: auto;
-  position: relative;
-  -webkit-transition: opacity, linear, 0.2s;
-  -moz-transition: opacity, linear, 0.2s;
-  transition: opacity, linear, 0.2s;
+  left: 0;
 }
 header#main.bigdata .article-links a.bigdata {
   background-position: -150px -24px;
 }
-header#main.mobile figure div {
-  background: url(../images/impact/mobile.png) 15px 0px no-repeat;
-}
 header#main.mobile article.mobile {
   opacity: 1;
   height: auto;
-  position: relative;
-  -webkit-transition: opacity, linear, 0.2s;
-  -moz-transition: opacity, linear, 0.2s;
-  transition: opacity, linear, 0.2s;
+  left: 0;
 }
 header#main.mobile .article-links a.mobile {
   background-position: -150px -24px;
 }
-header#main.trustedapps figure div {
-  background: url(../images/impact/trusted-apps.png) 15px 0px no-repeat;
-}
 header#main.trustedapps article.trustedapps {
   opacity: 1;
   height: auto;
-  position: relative;
-  -webkit-transition: opacity, linear, 0.2s;
-  -moz-transition: opacity, linear, 0.2s;
-  transition: opacity, linear, 0.2s;
+  left: 0;
 }
 header#main.trustedapps .article-links a.trustedapps {
   background-position: -150px -24px;
 }
-header#main.joinus figure div {
-  background: url(../images/impact/join-us.png) 15px 0px no-repeat;
-}
 header#main.joinus article.joinus {
   opacity: 1;
   height: auto;
-  position: relative;
-  -webkit-transition: opacity, linear, 0.2s;
-  -moz-transition: opacity, linear, 0.2s;
-  transition: opacity, linear, 0.2s;
+  left: 0;
 }
 header#main.joinus .article-links a.joinus {
   background-position: -150px -24px;
+}
+header#main article {
+  left: 1500px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+header#main.end-transition.bigdata article.bigdata,
+header#main.end-transition.mobile article.mobile,
+header#main.end-transition.trustedapps article.trustedapps,
+header#main.end-transition.joinus article.joinus {
+  position: relative;
+}
+header#main figure div {
+  opacity: 0;
+  left: 1500px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+header#main.bigdata figure.bigdata div {
+  left: 0;
+  opacity: 1;
+}
+header#main.mobile figure.mobile div {
+  left: 0;
+  opacity: 1;
+}
+header#main.trustedapps figure.trustedapps div {
+  left: 0;
+  opacity: 1;
+}
+header#main.joinus figure.joinus div {
+  left: 0;
+  opacity: 1;
+}
+header#main.bigdata_left article.bigdata {
+  opacity: 0;
+  left: -1500px;
+}
+header#main.bigdata_left figure.bigdata div {
+  left: -1500px;
+  opacity: 0;
+}
+header#main.mobile_left article.mobile {
+  opacity: 0;
+  left: -1500px;
+}
+header#main.mobile_left figure.mobile div {
+  left: -1500px;
+  opacity: 0;
+}
+header#main.trustedapps_left article.trustedapps {
+  opacity: 0;
+  left: -1500px;
+}
+header#main.trustedapps_left figure.trustedapps div {
+  left: -1500px;
+  opacity: 0;
+}
+header#main.joinus_left article.joinus {
+  opacity: 0;
+  left: -1500px;
+}
+header#main.joinus_left figure.joinus div {
+  left: -1500px;
+  opacity: 0;
 }
 header#main .article-links a {
   text-decoration: none;
