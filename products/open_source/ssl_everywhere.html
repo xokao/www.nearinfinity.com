@@ -1,0 +1,42 @@
+---
+layout: static
+section_id: simple_page
+title: SSL Everywhere
+---
+<hgroup>
+  <h1>SSL EVERYWHERE</h1>
+</hgroup>
+<section>
+
+<p>SSL Everywhere is a Safari web browser extension developed by <a href="/">Near Infinity</a> to force SSL encryption for many of today's popular websites. The extension leverages work done by the <a href="https://www.eff.org/">Electronic Frontier Foundation's</a> (EFF) <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a> extension for Firefox. </p>
+
+<p>Many of today's websites offer limited support for encryption using SSL, sometimes referred to as HTTPS. They may default to a non-SSL connection, redirect you to a non-SSL version, or include non-SSL links to other pages even while viewing a page encrypted with SSL.</p>
+
+<p>SSL Everywhere fixes some of the problems by automatically redirecting you to secure versions of many websites and rewriting insecure links to their SSL-encrypted equivalents.</p>
+
+<p>As stated on the <a href="https://www.eff.org/https-everywhere">EFF's HTTPS Everywhere page</a>, "sadly, many sites still include a lot of content from third-party domains that are not available over HTTPS (SSL). As always, if the browser's lock icon is broken or carries an exclamation mark, you may remain vulnerable to some adversaries that use active attacks or traffic analysis." The same can be said for SSL Everywhere.</p>
+
+<h2>Status</h2>
+
+<p>Although SSL Everywhere does its best to encrypt your connections, <a href="/blogs/jeff_kunkle/lessons_learned_building_an_ht.html">it cannot guarantee your protection</a>. If your site doesn't support SSL, SSL Everywhere can't offer you any protection at all. In such a case, please ask the website owner to read the EFF's article on <a href="https://www.eff.org/pages/how-deploy-https-correctly">How to Deploy HTTPS Correctly</a> and enable SSL.</p>
+
+<h2>Firesheep and SSL Everywhere</h2>
+
+<p><a href="http://codebutler.com/firesheep">Firesheep</a> is a Firefox extension that makes hijacking user sessions on popular websites trivial for anyone on an open WiFi network. These attacks often take place on open WiFi networks in coffee shops, restaurants, hotels, airports, and more. If you don't have to type in a password when joining a wireless network, you're using an open WiFi connection.</p>
+
+<p>Due to limitations placed on Safari extensions, SSL Everywhere will not completely protect you from Firesheep attacks. However, it does enhance security by automatically redirecting you to secure versions of many websites and rewriting insecure links to their SSL-encrypted equivalents. If you must use Safari to access popular websites when connected to an open WiFi network, you're probably better off doing it with SSL Everywhere.</p>
+
+<h2>Contributing</h2>
+
+<p>SSL Everywhere is open source software license under the same GPL v2 license as HTTPS Everywhere. There are two major ways you can contribute to the SSL Everywhere extension.</p>
+
+<ol>
+<li>Improve the SSL Everywhere extension code.</li>
+<li>Write new rules for additional websites.</li>
+</ol>
+
+<p>If you'd like to improve the SSL Everywhere extension source code or add new features, you can find the source code on the <a href="https://github.com/nearinfinity/ssl-everywhere.safariextension">SSL Everywhere Github page</a>.</p>
+
+<p>If you'd like to add to the list of sites protected by SSL Everywhere, please contribute additional rules to the <a href="https://www.eff.org/https-everywhere">HTTPS Everywhere</a>. We see no reason to duplicate the effort of establishing a solid set of rules for both the HTTPS Everywhere extension for Firefox and SSL Everywhere. Once a rule is added to the HTTPS Everywhere project, we will copy it into SSL Everywhere. </p>
+
+<h2>Credits</h2>

@@ -1303,16 +1303,10 @@ section.static_content #what_we_do_details section h2 {
     padding-left: 8%;
   }
 }
-#benefits,
-#open_positions,
-#open_source,
-#ssl_everywhere {
+#simple_page {
   padding-bottom: 3em;
 }
-#benefits h2,
-#open_positions h2,
-#open_source h2,
-#ssl_everywhere h2 {
+#simple_page h2 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #ff7b28;
@@ -1322,10 +1316,7 @@ section.static_content #what_we_do_details section h2 {
   line-height: 1.1612903225806452em;
   margin-bottom: .5em;
 }
-#benefits h3,
-#open_positions h3,
-#open_source h3,
-#ssl_everywhere h3 {
+#simple_page h3 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #000000;
@@ -1335,10 +1326,7 @@ section.static_content #what_we_do_details section h2 {
   line-height: 1.2857142857142858em;
   margin-bottom: .5em;
 }
-#benefits section .split,
-#open_positions section .split,
-#open_source section .split,
-#ssl_everywhere section .split {
+#simple_page section .split {
   margin-left: 9.374999999999998%;
   display: inline;
   float: left;
@@ -1348,17 +1336,11 @@ section.static_content #what_we_do_details section h2 {
   *margin: 0 1.1979166666666667%;
   margin-bottom: 0.5em;
 }
-#benefits section .split ul,
-#open_positions section .split ul,
-#open_source section .split ul,
-#ssl_everywhere section .split ul {
+#simple_page section .split ul {
   list-style-type: square;
   margin-left: 2em;
 }
-#benefits section .split ul li,
-#open_positions section .split ul li,
-#open_source section .split ul li,
-#ssl_everywhere section .split ul li {
+#simple_page section .split ul li {
   margin-bottom: .25em;
 }
 #who_we_are_team {
