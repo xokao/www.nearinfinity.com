@@ -1106,6 +1106,28 @@ section.static_content article > * {
   *width: 81.19791666666667%;
   *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
+  z-index: 0;
+  position: relative;
+}
+section.static_content article {
+  position: relative;
+}
+section.static_content .what_we_do_ball {
+  display: none;
+}
+@media screen and (min-width: 70em) {
+  section.static_content .what_we_do_ball {
+    position: absolute;
+    right: -16%;
+    top: -20px;
+    z-index: 0;
+    display: block;
+    width: auto;
+    height: 350px;
+  }
+  section.static_content .about {
+    width: 55%;
+  }
 }
 section.static_content #history,
 section.static_content #what_we_do_details,
@@ -1218,6 +1240,9 @@ section.static_content #history aside p {
     margin-left: 9.374999999999998%;
   }
 }
+section.static_content #what_we_do_details {
+  margin-top: 1em !important;
+}
 section.static_content #what_we_do_details section h2 {
   text-align: center;
   margin-bottom: 1em;
@@ -1229,40 +1254,34 @@ section.static_content #what_we_do_details section h2 {
   font-size: 1.7692307692307692em;
   line-height: 1.1612903225806452em;
 }
+section.static_content #what_we_do_details section h2::after {
+  content: '';
+  display: block;
+  width: 73px;
+  height: 50px;
+  background-size: auto 50px;
+  border: 0;
+  margin: .5em auto 0;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+section.static_content #what_we_do_details section.mobile h2::after {
+  background-image: url(../images/icons/mobile.png);
+}
+section.static_content #what_we_do_details section.big_data h2::after {
+  background-image: url(../images/icons/big_data.png);
+}
+section.static_content #what_we_do_details section.trusted_apps h2::after {
+  background-image: url(../images/icons/trusted_apps.png);
+}
+section.static_content #what_we_do_details section p {
+  text-align: center;
+}
 @media screen and (min-width: 70em) {
   section.static_content #what_we_do_details section {
-    display: inline;
+    width: 31%;
     float: left;
-    width: 27.500000000000004%;
-    margin: 0 1.25%;
-    *width: 27.44791666666667%;
-    *margin: 0 1.1979166666666667%;
-  }
-  section.static_content #what_we_do_details section.big-data {
-    display: inline;
-    float: left;
-    width: 37.5%;
-    margin: 0 1.25%;
-    *width: 37.447916666666664%;
-    *margin: 0 1.1979166666666667%;
-  }
-}
-@media screen and (min-width: 90em) {
-  section.static_content #what_we_do_details section {
-    display: inline;
-    float: left;
-    width: 64.58333333333334%;
-    margin: 0 1.0416666666666665%;
-    *width: 64.53125000000001%;
-    *margin: 0 0.9895833333333331%;
-    margin-left: 17.708333333333332%;
-    display: inline;
-    float: left;
-    width: 14.583333333333334%;
-    margin: 0 1.0416666666666665%;
-    *width: 14.53125%;
-    *margin: 0 0.9895833333333331%;
-    margin-left: 9.374999999999998%;
+    padding: 2em 1%;
   }
 }
 #get_to_know_us {
@@ -2087,6 +2106,36 @@ section.dynamic_content article header h1 {
   font-size: 3.3076923076923075em;
   line-height: 0.8780487804878049em;
 }
+section.dynamic_content article header img {
+  float: right;
+  position: relative;
+  top: -25px;
+  right: 60px;
+}
+section.dynamic_content article header hgroup.blogger {
+  margin-left: -0.5em;
+  border-radius: 8px;
+  background: #D8D8D8;
+  border-style: 1px solid rgba(150, 150, 150, 0.36);
+  -moz-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.48), inset 0px 1px 3px rgba(0, 0, 0, 0.03);
+  -webkit-box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.48), inset 0px 1px 3px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.48), inset 0px 1px 3px rgba(0, 0, 0, 0.03);
+  margin-top: 15px;
+  margin-bottom: 1em;
+  width: 90%;
+  min-height: 75px;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+section.dynamic_content article header hgroup.blogger h1 {
+  text-transform: uppercase;
+  margin-bottom: 0;
+  display: table-cell;
+  vertical-align: middle;
+  height: 75px;
+}
 section.dynamic_content article h1 {
   font-size: 1.6153846153846154em;
   line-height: 1.2em;
@@ -2122,6 +2171,9 @@ section.dynamic_content article pre {
 }
 section.dynamic_content article code {
   font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+}
+section.dynamic_content article .user-info-list em {
+  font-weight: bold;
 }
 section.dynamic_content .video-container {
   -webkit-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);

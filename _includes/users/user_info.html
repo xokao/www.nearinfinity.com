@@ -1,0 +1,7 @@
+{% if page.user_info%}
+  <ul class='user-info-list'>
+    {% for info in page.user_info %}
+      <li><em>{{info[0]}}:</em> {{info[1]}}</li>
+    {% endfor %}
+  </ul>
+{% endif %}

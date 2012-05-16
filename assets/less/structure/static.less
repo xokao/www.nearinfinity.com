@@ -1,6 +1,22 @@
 section.static_content {
-  article > * { .pad; }
-  
+  article > * { .pad; z-index:0;position:relative;}
+
+  article{position:relative}
+  .what_we_do_ball{display:none;}
+  @media screen and (min-width: 70em) {
+    .what_we_do_ball{
+      position:absolute;
+      right:-16%;
+      top:-20px;
+      z-index:0;
+      display:block;
+      width:auto;
+      height:350px;
+    }
+    .about{
+    width:55%;
+    }
+  }
   #history, #what_we_do_details,#get_to_know_us,#awards { 
     margin:0;
     width: 100%;
@@ -58,29 +74,45 @@ section.static_content {
       }
     }
   }
-
   #what_we_do_details { 
+    margin-top:1em !important;
     section {
+
       h2 {
         text-align:center;
         margin-bottom: 1em;
         .light_header_shadowless(@nic_orange);
         .size(10);
       }
+      h2::after{
+        content: '';
+        display: block;
+        width: 73px;
+        height:50px;
+        background-size: auto 50px;
+        border: 0;
+        margin: .5em auto 0;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      &.mobile h2::after{
+        background-image: url(../images/icons/mobile.png);
+      }
+      &.big_data h2::after{
+        background-image: url(../images/icons/big_data.png);
+      }
+      &.trusted_apps h2::after{
+        background-image: url(../images/icons/trusted_apps.png);
+      }
+      p{
+        text-align:center;
+      }
     }
     @media screen and (min-width: 70em) {
       section {
-        .column(3,10);
-      }
-      section.big-data{
-        .column(4,10);
-      }
-    }
-    @media screen and (min-width:90em) {
-      section {
-        .pad(2);
-        .column(2);
-        .push(1);
+        width:31%;
+        float:left;
+        padding: 2em 1%;
       }
     }
   }

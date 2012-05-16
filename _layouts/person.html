@@ -10,9 +10,12 @@
   <section class="dynamic_content">
     <article>
     <header>
-      <img src="{{ page.user | user_image}}"/>
-      <h1>{{ page | page_to_user }}</h1>
+      <img src="/assets/images/users/{{ page.user }}.png"/>
+      <hgroup class="blogger">
+        <h1>{{ page.user | user_to_name}}</h1>
+      </hgroup>
     </header>
+    {% include users/user_info.html %}
     {{ content }}
     </article>
     <aside class="links">
