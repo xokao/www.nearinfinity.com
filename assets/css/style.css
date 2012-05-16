@@ -1391,6 +1391,7 @@ section.static_content #what_we_do_details section p {
   left: 0;
 }
 header#main {
+  overflow: hidden;
   background: #e7e7e7;
 }
 header#main.homepage {
