@@ -1157,6 +1157,7 @@ section.static_content #history section h2 {
   text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
   font-size: 2.5384615384615383em;
   line-height: 1em;
+  text-transform: uppercase;
 }
 section.static_content #history section p {
   margin: auto;
@@ -1171,6 +1172,7 @@ section.static_content #history aside h2 {
   text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
   font-size: 2em;
   line-height: 1.1076923076923078em;
+  text-transform: uppercase;
 }
 section.static_content #history aside p {
   margin: auto;
@@ -1253,6 +1255,7 @@ section.static_content #what_we_do_details section h2 {
   text-shadow: none;
   font-size: 1.7692307692307692em;
   line-height: 1.1612903225806452em;
+  text-transform: uppercase;
 }
 section.static_content #what_we_do_details section h2::after {
   content: '';
@@ -1362,7 +1365,7 @@ section.static_content #what_we_do_details section p {
 #simple_page section .split ul li {
   margin-bottom: .25em;
 }
-#who_we_are_team {
+#management_team {
   overflow: hidden;
 }
 #who_we_are_team .team_subcategory > li  > h1 {
@@ -2389,6 +2392,7 @@ section.static_content article hgroup h1 {
   margin-top: 0.5em;
   font-size: 3.3076923076923075em;
   line-height: 0.8780487804878049em;
+  text-transform: uppercase;
 }
 section.static_content article hgroup h2 {
   font-size: 2em;
@@ -2495,6 +2499,7 @@ section.static_content article hgroup h2 {
   font-size: 2.5384615384615383em;
   line-height: 1em;
   padding-bottom: .5em;
+  text-transform: uppercase;
 }
 #history aside h3,
 #what_we_do_details aside h3,
@@ -2512,6 +2517,7 @@ section.static_content article hgroup h2 {
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
   text-shadow: none;
   margin-bottom: 2em;
+  text-transform: uppercase;
 }
 #awards {
   background: url('/assets/images/fake_brick.png') repeat;
