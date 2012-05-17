@@ -14,9 +14,12 @@
         </header>
         {{ content }}
 
+        {{page.tags | render_job_ad}}
+
         {% include comments.html %}
       </article>
       <aside>
+        {{page.tags | render_job_ad}}
         {% include users/sidebar-link.html %}
 
         {% assign type = 'blog' %}

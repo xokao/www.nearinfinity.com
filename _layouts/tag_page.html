@@ -9,7 +9,7 @@
 
   <section class="all_content">
     <div class="blogs">
-    <header><h1>{{ page.tag }}</h1></header>
+    <header><h1>{{ page.tag_key }}</h1></header>
     {% for post in page.posts %}
       <article>
         <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
@@ -18,11 +18,11 @@
     {% endfor %}
     </div>
     <aside>
-      {%capture blog_content %}{{'blogs' | render_posts_by_tag:page.tag amount:5}}{% endcapture %}
-      {%capture speaking_content %}{{'speaking' | render_posts_by_tag:page.tag amount:5}}{% endcapture %}
-      {%capture techtalk_content %}{{'techtalks' | render_posts_by_tag:page.tag amount:5}}{% endcapture %}
+      {%capture blog_content %}{{'blogs' | render_posts_by_tag:page.tag_key amount:5}}{% endcapture %}
+      {%capture speaking_content %}{{'speaking' | render_posts_by_tag:page.tag_key amount:5}}{% endcapture %}
+      {%capture techtalk_content %}{{'techtalks' | render_posts_by_tag:page.tag_key amount:5}}{% endcapture %}
       {% if page.type != 'blogs' and blog_content.size > 0 %}
-      <h1>{{page.tag}} Blogs</h1>
+      <h1>{{page.tag_key}} Blogs</h1>
       <ul>
         {{blog_content}}
 
@@ -31,7 +31,7 @@
 
       {% if page.type != 'speaking' and speaking_content.size > 0 %}
       {{speaking_content.size}}
-      <h1>{{page.tag}} Speaking Engagements</h1>
+      <h1>{{page.tag_key}} Speaking Engagements</h1>
       <ul>
 
         {{speaking_content}}
@@ -39,7 +39,7 @@
       {%endif%}
 
       {% if page.type != 'techtalks' and techtalk_content.size > 0%}
-      <h1>{{page.tag}} Tech Talks</h1>
+      <h1>{{page.tag_key}} Tech Talks</h1>
       <ul>
         {{techtalk_content}}
       </ul>
