@@ -71,6 +71,18 @@ module Jekyll
       end
     end
 
+    def render_job_ad(tags)
+      if tags.length > 0
+        tags.map!{|tag|tag.downcase}
+        jobs = @context.registers[:site].config['jobs_whitelist']
+        filtered_jobs = jobs.reject{|job,job_tags|(tags & job_tags.map{|tag|tag.downcase}).size < 1}
+        job = filtered_jobs.keys.first
+        "<a href='/join_us/open_positions'><h2>Near Infinity is recruiting #{job} Developers! Interested? Apply here</h2></a>"
+      else
+        "<a href='/join_us/open_positions'><h2>Near Infinity is recruiting Developers! Interested? Apply here</h2></a>"
+      end
+    end
+
     private
     # Renders the list of type posts for the home page
     def render_homepage_posts(amount, type, template,offset)

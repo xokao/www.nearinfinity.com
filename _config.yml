@@ -4,3 +4,12 @@ host: http://www.nearinfinity.com
 tag_page_layout: tag_page
 tag_page_dir: tags
 hideFromHomepage: []
+jobs_whitelist:
+  Rails: [rails, ruby, grails]
+  'Big Data': [hadoop, lucene, database, orm]
+  Node: [node]
+  Java: [java, groovy, jruby, ant]
+  Mobile: [iphone, ios, ipad, android, mobile]
+  '.Net': [.net]
+  Web: [web, javascript, css]
+
