@@ -3,7 +3,7 @@
 {% include head-tag.html %}
 </head>
 <body>
-  <header id="main" class="homepage bigdata end-transition">
+  <header id="main" class="homepage bigdata end-transition disable-animation">
     {% include header.html %}
     <article class="bigdata">
       <h1>BIG DATA</h1>
@@ -54,7 +54,7 @@
           index = 0;
 
       $('#main article').on('webkitTransitionEnd', function() {
-        $('#main').addClass('end-transition');
+        $('#main').addClass('end-transition disable-animation');
       });
 
       // Move forward "1" or backward "-1" one place

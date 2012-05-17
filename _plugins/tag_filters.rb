@@ -10,7 +10,7 @@ module Jekyll
     # Returns a list off all blog tags
     def tags_list(site, page)
       type =page['type'] || page['url'].split('/')[1]
-      site['tags'].sort.map { |tag_key, tag_value| "<li><a href='/tags/#{type}/#{tag_key}.html'>#{tag_key}</a></li>" }.compact.join
+      site['tags'].map{ |tag_key, tag_value| "<li><a href='/tags/#{type}/#{tag_key.downcase}.html'>#{tag_key.downcase}</a></li>" }.uniq.sort.compact.join
     end
   end
 end
