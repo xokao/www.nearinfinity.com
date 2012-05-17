@@ -1,15 +1,25 @@
 task :default => [:jekyll]
 
+task :slow_warning do
+  puts "Generating pygments cache, this may take a while. Subsequent runs will be faster." unless File.exists? '_cache'
+end
+
 desc "Run jekyll and create the _site dir"
-task :jekyll do
-  `bundle exec jekyll --no-pygments`
+task :jekyll => [:slow_warning] do
+  `bundle exec jekyll`
 end
 
 desc "Run the jekyll server"
-task :server do
-  `bundle exec jekyll --no-pygments --server --auto --limit_posts 10`
+task :server => [:slow_warning] do
+  `bundle exec jekyll --server --auto`
 end
 
+namespace :server do
+  desc "Run the jekyll server, only generate 5 most recent posts"
+  task :recent => [:slow_warning] do
+    `bundle exec jekyll --server --auto --limit_posts 5`
+  end
+end
 
 namespace :assets do
 

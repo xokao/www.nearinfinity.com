@@ -1948,6 +1948,21 @@ opacity: 0.3;
 .highlight .c1 {
   color: #586E75;
 }
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+.video iframe,
+.video object,
+.video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 #aboutnic {
   background: url('/assets/images/fake_brick.png') repeat;
   color: #f2f2f2;
