@@ -2,7 +2,7 @@ module Jekyll
   module BlogsFilters
     # Returns a specific number of posts that have happened since a certain date
     def n_posts_from_date(posts, amount,date)
-      posts.sort!{|a,b|a.date <=> b.date}
+      posts.sort!{|a,b|b.date <=> a.date}
       filtered_posts = Array.new
       previous_size = -1
       count = 0
