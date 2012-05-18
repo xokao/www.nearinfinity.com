@@ -2614,6 +2614,9 @@ section.dynamic_content aside .join-us-ad h2 {
 section.dynamic_content aside .join-us-ad h2 a {
   color: white;
 }
+section.dynamic_content aside .join-us-ad h2 a:hover {
+  color: #ff7b28;
+}
 section.dynamic_content aside hgroup.blogger {
   margin-left: -0.5em;
   border-radius: 8px;
