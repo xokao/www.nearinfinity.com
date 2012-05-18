@@ -26,7 +26,6 @@ module Jekyll
     def render_posts_by_tag(type,tag,amount)
       all_posts = @context.registers[:site].categories[type]
       filtered_posts = all_posts.reject{|post| ! post.tags.map{|tag|tag.downcase}.include? tag.downcase}.sort{|a,b| b.date <=> a.date}
-      puts filtered_posts.size
       filtered_posts = filtered_posts[0..(amount-1)] if filtered_posts.size > amount
       if filtered_posts.size > 0
         markup = filtered_posts.map{|post| "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"}.compact.join

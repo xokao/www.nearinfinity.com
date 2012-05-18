@@ -5,14 +5,15 @@ module Jekyll
       posts.sort!{|a,b|a.date <=> b.date}
       filtered_posts = Array.new
       previous_size = -1
-      post = posts.pop
-      while filtered_posts.size < amount and filtered_posts.size > previous_size and !post.nil?
+      count = 0
+      while filtered_posts.size < amount and filtered_posts.size > previous_size and count < posts.size
+        post = posts[count]
         previous_size = filtered_posts.size
         last_time = post.date
         if(last_time > date)
           filtered_posts.push(post)
         end
-        post = posts.pop
+        count += 1
       end
       filtered_posts
     end
