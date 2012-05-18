@@ -6,11 +6,12 @@ tag_page_layout: tag_page
 tag_page_dir: tags
 hideFromHomepage: []
 jobs_whitelist:
-  Rails: [rails, ruby, grails]
+  Mobile: [iphone, ios, ipad, android, mobile]
   'Big Data': [hadoop, lucene, database, orm]
+  Rails: [rails, ruby, grails]
   Node: [node]
   Java: [java, groovy, jruby, ant]
-  Mobile: [iphone, ios, ipad, android, mobile]
   '.Net': [.net]
+  Agile: [agile]
   Web: [web, javascript, css]
 

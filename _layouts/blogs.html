@@ -13,19 +13,16 @@
           <h1>{{ page.title }}</h1>
         </header>
         {{ content }}
-
-        {{page.tags | render_job_ad}}
-
         {% include comments.html %}
       </article>
       <aside>
-        {{page.tags | render_job_ad}}
+
         {% include users/sidebar-link.html %}
 
         {% assign type = 'blog' %}
         {% include sharing.html %}
         {% assign type = '' %}
-
+        {{page.tags | render_job_ad}}
         {% include users/recent_blogs.html %}
         {% include blogs/with_same_tags.html %}
       </aside>
