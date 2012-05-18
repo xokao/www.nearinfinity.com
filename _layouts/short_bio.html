@@ -1,0 +1,13 @@
+<hgroup>
+  <h1>{{ page.name }}</h1>
+  <h2>{{ page.user_info.title }}</h2>
+</hgroup>
+
+<dl>
+  <dt>Areas of Interest</dt><dd>{{ page.user_info.areas_of_interest }}</dd>
+  <dt>At Near Infinity Since</dt><dd>{{ page.user_info.employment_date }}</dd>
+  <dt>Alma Mater</dt><dd>{{ page.user_info.alma_mater }}</dd>
+  <dt>NIC Sports</dt><dd>{{ page.user_info.nic_sports }}</dd>
+</dl>
+
+<p><em>About {{ page.name | nth_word:0 }}:</em> {{ page.short_bio }}
