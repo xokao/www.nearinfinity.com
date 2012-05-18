@@ -2253,6 +2253,77 @@ opacity: 0.3;
   width: 100%;
   height: 100%;
 }
+figure.user_popup img {
+  -webkit-transition: max-width 0.3s ease-in-out;
+  -moz-transition: max-width 0.3s ease-in-out;
+  transition: max-width 0.3s ease-in-out;
+  z-index: 21;
+  cursor: pointer;
+}
+figure.user_popup.show_bio img {
+  max-width: 100px !important;
+}
+figure.user_popup figcaption {
+  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
+  -webkit-transform: perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg);
+  -webkit-transform-origin: 50% 50%;
+  opacity: 0;
+  visibility: hidden;
+  left: 20px;
+  top: 20px;
+  z-index: 20;
+  padding: 0.5em;
+  position: absolute;
+  border: 10px solid white;
+  background: url(/assets/images/paper.png) repeat;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -ms-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -o-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  color: #595959;
+}
+figure.user_popup figcaption hgroup {
+  margin-left: 75px;
+  min-height: 50px;
+}
+figure.user_popup figcaption hgroup h1,
+figure.user_popup figcaption hgroup h2 {
+  color: #595959 !important;
+}
+figure.user_popup figcaption em {
+  font-weight: bold;
+}
+figure.user_popup figcaption dl {
+  overflow: hidden;
+  margin: 0 0 1em 0;
+}
+figure.user_popup figcaption dl dt,
+figure.user_popup figcaption dl dd {
+  float: left;
+  margin: 0;
+  display: inline;
+}
+figure.user_popup figcaption dl dt {
+  font-weight: bold;
+  clear: left;
+  margin-right: 5px;
+}
+figure.user_popup figcaption dl dt:after {
+  content: ':';
+}
+figure.user_popup figcaption p {
+  clear: left;
+}
+figure.user_popup.show_bio figcaption {
+  -webkit-transform: rotatex(0deg);
+  visibility: visible;
+  opacity: 1.0;
+  width: auto;
+  height: auto;
+}
 #aboutnic {
   background: url('/assets/images/fake_brick.png') repeat;
   color: #f2f2f2;
