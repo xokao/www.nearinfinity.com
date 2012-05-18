@@ -25,6 +25,11 @@ opacity: 0.3;
       background: url(../images/icons/glyphicon-sprite.png) no-repeat;
       width: @sprite-dim;
       height: @sprite-dim;
+
+    }
+    &:hover:before{
+        opacity: 1;
+        background-color:@nic_orange;
     }
     &.addr:before { background-position: (@sprite-dim*-3px) 0; }
     &.phone:before { background-position: (@sprite-dim*-2px) 0; }
