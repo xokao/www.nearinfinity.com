@@ -29,7 +29,7 @@ module Jekyll
       ['blogs', 'techtalks', 'speaking'].each do |type|
         site.tags.each do |tag, posts|
           filtered_posts = posts.reject{ |post| !post.categories.include? type }.sort.reverse
-          return if filtered_posts.count <= 0
+          next if filtered_posts.count <= 0
           first_page_posts = filtered_posts.shift(15)
           site.pages << new_tag(site, site.source, "#{TAG_PAGE_DIR}/#{type}/#{tag}", tag, first_page_posts, @tag_page_layout, type)
           site.pages << new_tag(site, site.source, "#{TAG_PAGE_DIR}/#{type}/#{tag}/page_1", tag, first_page_posts, @tag_page_layout, type)
