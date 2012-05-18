@@ -4,7 +4,7 @@ module Jekyll
     def tags(post, page)
       type =page['type'] || page['url'].split('/')[1]
       tags = post['tags'][0].is_a?(Array) ? post['tags'].map{ |t| t[0] } : post['tags']
-      tags.sort.map { |t| "<a href='/tags/#{type}/#{t}.html'>#{t}</a>" if t.is_a?(String) }.compact.join(', ')
+      tags.sort.map { |t| "<a href='/tags/#{type}/#{t.downcase}'>#{t.downcase}</a>" if t.is_a?(String) }.compact.join(', ')
     end
 
     # Returns a list off all blog tags
@@ -25,9 +25,8 @@ module Jekyll
 
     def render_posts_by_tag(type,tag,amount)
       all_posts = @context.registers[:site].categories[type]
-      filtered_posts = all_posts.reject{|post| ! post.tags.include? tag}.sort{|a,b| b.date <=> a.date}
+      filtered_posts = all_posts.reject{|post| ! post.tags.map{|tag|tag.downcase}.include? tag.downcase}.sort{|a,b| b.date <=> a.date}
       filtered_posts = filtered_posts[0..(amount-1)] if filtered_posts.size > amount
-      markup = ''
       if filtered_posts.size > 0
         markup = filtered_posts.map{|post| "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"}.compact.join
         markup += "<li><a href='/tags/#{type}/#{tag}/'>View All</a></li>"
