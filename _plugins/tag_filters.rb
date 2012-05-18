@@ -4,7 +4,7 @@ module Jekyll
     def tags(post, page)
       type =page['type'] || page['url'].split('/')[1]
       tags = post['tags'][0].is_a?(Array) ? post['tags'].map{ |t| t[0] } : post['tags']
-      tags.sort.map { |t| "<a href='/tags/#{type}/#{t}.html'>#{t}</a>" if t.is_a?(String) }.compact.join(', ')
+      tags.sort.map { |t| "<a href='/tags/#{type}/#{t.downcase}'>#{t.downcase}</a>" if t.is_a?(String) }.compact.join(', ')
     end
 
     # Returns a list off all blog tags
