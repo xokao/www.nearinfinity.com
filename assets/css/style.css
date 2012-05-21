@@ -1132,7 +1132,8 @@ section.static_content #history,
 section.static_content #what_we_do_details,
 section.static_content #get_to_know_us,
 section.static_content #awards,
-section.static_content #about_us_band {
+section.static_content #about_us_band,
+section.static_content #check_aval {
   margin: 0;
   width: 100%;
 }
@@ -1140,7 +1141,8 @@ section.static_content #history  > *,
 section.static_content #what_we_do_details  > *,
 section.static_content #get_to_know_us  > *,
 section.static_content #awards  > *,
-section.static_content #about_us_band  > * {
+section.static_content #about_us_band  > *,
+section.static_content #check_aval  > * {
   display: inline;
   float: left;
   width: 81.25%;
@@ -2891,7 +2893,8 @@ section.static_content article hgroup h2 {
 #history,
 #what_we_do_details,
 #get_to_know_us,
-#awards {
+#awards,
+#check_aval {
   color: #e7e7e7;
   background: url('/assets/images/irongrip.png') repeat;
   padding: 4em 0;
@@ -2899,13 +2902,15 @@ section.static_content article hgroup h2 {
 #history em,
 #what_we_do_details em,
 #get_to_know_us em,
-#awards em {
+#awards em,
+#check_aval em {
   color: #ff7b28;
 }
 #history h1,
 #what_we_do_details h1,
 #get_to_know_us h1,
-#awards h1 {
+#awards h1,
+#check_aval h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #ffffff;
@@ -2919,7 +2924,8 @@ section.static_content article hgroup h2 {
 #history aside h3,
 #what_we_do_details aside h3,
 #get_to_know_us aside h3,
-#awards aside h3 {
+#awards aside h3,
+#check_aval aside h3 {
   font-size: 1.1538461538461537em;
   line-height: 1.3333333333333333em;
   color: #ff7b28;
@@ -2965,6 +2971,22 @@ section.static_content article hgroup h2 {
 }
 #awards p {
   padding-bottom: 2em;
+}
+#check_aval h3 {
+  color: white;
+  padding-top: .5em;
+}
+#check_aval .t1,
+#check_aval .t2,
+#check_aval .date-check-error,
+#check_aval .date-loading {
+  display: none;
+}
+#check_aval .Available {
+  color: green;
+}
+#check_aval .Unavailable {
+  color: red;
 }
 .user-list-item {
   min-height: 75px;

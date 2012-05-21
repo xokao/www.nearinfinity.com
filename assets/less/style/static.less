@@ -29,7 +29,7 @@ section.static_content {
     margin-top:4em;
   }
 }
-#history,#what_we_do_details, #get_to_know_us,#awards{
+#history,#what_we_do_details, #get_to_know_us,#awards,#check_aval{
   color: @impact_background;
   background: url('/assets/images/irongrip.png') repeat;
   padding:4em 0; 
@@ -87,7 +87,21 @@ section.static_content {
     padding-bottom:2em;
   }
 }
-
+#check_aval{
+  h3{
+    color:white;
+    padding-top:.5em;
+  }
+  .t1,.t2,.date-check-error,.date-loading{
+    display:none;
+  }
+  .Available{
+    color:green;
+  }
+  .Unavailable{
+    color:red;
+  }
+}
 
 
 .user-list-item {

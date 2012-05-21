@@ -1,4 +1,112 @@
 ---
-layout: blank
+layout: static
+section_id: simple_page
 ---
-<h1>Training Center</h1>
+
+<hgroup>
+<h1>NIC-U Training Center</h1>
+</hgroup>
+<section>
+<p>Looking for a great place to hold a training event? We have a brand
+new training facility that is just what you need!</p>
+
+<p>The NIC-U Training Center can accommodate up to 60 attendees,
+classroom-style with table space for each attendee. For smaller
+events, the NIC-U Training Center can be divided with a movable wall, with
+each room accommodating 30 attendees, set in classroom-style.</p>
+
+<p>Set up theater-style (chairs only, with no tables), the facility can
+accommodate up to 121 attendees, or divided, it can host 66 attendees in Training Room 1 and 33 attendees in Training Room 2.</p>
+
+{% video_tag :youtube => DSRBX_TXdFU %}
+
+<p>The facility includes the following:</p>
+<ul>
+<li>Digital LCD Projection in each training room (2 projectors and 2 wall screens at the front of each room)</li>
+<li>Lavalier microphones (lapel mics) and ceiling-mounted speakers</li>
+<li>Internet access via wireless and wired connections</li>
+<li>Plenty of power outlets, both along the walls, and built into the attendee tables</li>
+<li>A sound-proof floor-to-ceiling dividing wall</li>
+<li>A separate lunch room for the use of the facility attendees</li>
+<li>A separate entrance and reception area for the NIC-U Training Center</li>
+<li>A visiting instructor's office</li>
+<li>Plenty of parking in front of our building or in the parking garage behind it</li>
+</ul>
+</section>
+
+<section id="check_aval">
+  <h2>Check For Availablity</h2>
+  <form id ='date_check_form' name='date_check_form' action="http://localhost:4567/check?callback=?">
+    <label for "date">Date <input type="input" name="date"></input></label> e.g DD/MM/YYYY
+    <br/>
+    <label for "from_time">From
+      <select name="from_time">
+        <option value="12:00">12:00</option><option value="12:30">12:30</option>
+        <option value="1:00">1:00</option><option value="1:30">1:30</option>
+        <option value="2:00">2:00</option><option value="2:30">2:30</option>
+        <option value="3:00">3:00</option><option value="3:30">3:30</option>
+        <option value="4:00">4:00</option><option value="4:30">4:30</option>
+        <option value="5:00">5:00</option><option value="5:30">5:30</option>
+        <option value="6:00">6:00</option><option value="6:30">6:30</option>
+        <option value="7:00">7:00</option><option value="7:30">7:30</option>
+        <option value="8:00">8:00</option><option value="8:30">8:30</option>
+        <option value="9:00" selected="selected">9:00</option><option value="9:30">9:30</option>
+        <option value="10:00">10:00</option><option value="10:30">10:30</option>
+        <option value="11:00">11:00</option><option value="11:30">11:30</option>
+      </select>
+      <select name="from_am_pm"><option value="am" selected="selected" >AM</option><option value="pm">PM</option></select>
+    </label>
+    <label for="to_time">To 
+      <select name="to_time">
+        <option value="12:00">12:00</option><option value="12:30">12:30</option>
+        <option value="1:00">1:00</option><option value="1:30">1:30</option>
+        <option value="2:00">2:00</option><option value="2:30">2:30</option>
+        <option value="3:00">3:00</option><option value="3:30">3:30</option>
+        <option value="4:00">4:00</option><option value="4:30">4:30</option>
+        <option value="5:00" selected="selected">5:00</option><option value="5:30">5:30</option>
+        <option value="6:00">6:00</option><option value="6:30">6:30</option>
+        <option value="7:00">7:00</option><option value="7:30">7:30</option>
+        <option value="8:00">8:00</option><option value="8:30">8:30</option>
+        <option value="9:00">9:00</option><option value="9:30">9:30</option>
+        <option value="10:00">10:00</option><option value="10:30">10:30</option>
+        <option value="11:00">11:00</option><option value="11:30">11:30</option>
+      </select>
+      <select name="to_am_pm"><option value="am">AM</option><option value="pm" selected="selected">PM</option></select>
+    </label>
+    <label for="all_day">or All Day <input type="checkbox" name="all_day" value="all_day"></input></label>
+    <br/>
+    <input type="submit" value="View Availability"></input>
+    <div class="results">
+      <h3 class="t1">Training Room 1 is <span></span></h3>
+      <h3 class="t2">Training Room 2 is <span></span></h3>
+      <h3 class="date-check-error">Problem checking availability</h3>
+      <div class="date-loading">Loading...</div>
+    </div>
+  </form>
+  <p>Please contact us from the links below for requests and further details.</p>
+</section>
+
+<section >
+  <h2>Nearby Airport</h2>
+  <p>Dulles International Airport is the closest major airport, located
+  about five miles west of Near Infinity.</p>
+
+  <h2>Nearby Hotels</h2>
+  <p>The Sheraton Reston and the Westin Reston Heights are approximately
+  one mile from Near Infinity. Both provide shuttle service for hotel
+  guests to and from Near Infinity.</p>
+
+  <ul>
+    <li>
+      <a href="http://www.starwoodhotels.com/sheraton/property/overview/index.html?propertyID=655&amp;language=en_US">Sheraton Reston</a>
+    </li>
+    <li>11810 Sunrise Valley Drive</li>
+    <li>Reston, Virginia 20191</li>
+    <li></li>
+    <li>
+      <a href="http://www.starwoodhotels.com/westin/property/overview/index.html?propertyID=1752&amp;language=en_US">Westin Reston Heights</a>
+    </li>
+    <li>11750 Sunrise Valley Drive</li>
+    <li>Reston, VA 20191</li>
+  </ul>
+</section>
