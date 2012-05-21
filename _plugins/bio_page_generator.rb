@@ -25,7 +25,7 @@ module Jekyll
 
     private
     def bio_sub_directory?(dir_parse)
-      return true if dir_parse.include? 'blogs'
+      return true if dir_parse.include? 'blogs' and dir_parse.length > 2
       return true if dir_parse.include? 'who_we_are' and dir_parse.include? 'bios'
       return false
     end
