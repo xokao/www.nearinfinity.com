@@ -2254,9 +2254,9 @@ opacity: 0.3;
   height: 100%;
 }
 figure.user_popup img {
-  -webkit-transition: max-width 0.3s ease-in-out;
-  -moz-transition: max-width 0.3s ease-in-out;
-  transition: max-width 0.3s ease-in-out;
+  -webkit-transition: max-width 0.2s ease-in-out;
+  -moz-transition: max-width 0.2s ease-in-out;
+  transition: max-width 0.2s ease-in-out;
   z-index: 21;
   cursor: pointer;
 }
@@ -2264,13 +2264,12 @@ figure.user_popup.show_bio img {
   max-width: 100px !important;
 }
 figure.user_popup figcaption {
-  -webkit-transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
-  -moz-transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
-  transition: opacity 0.4s linear, -webkit-transform 0.4s ease-in-out;
+  -webkit-transition: opacity 0.2s linear, -webkit-transform 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s linear, -webkit-transform 0.2s ease-in-out;
+  transition: opacity 0.2s linear, -webkit-transform 0.2s ease-in-out;
   -webkit-transform: perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg);
   -webkit-transform-origin: 50% 50%;
   opacity: 0;
-  visibility: hidden;
   left: 20px;
   top: 20px;
   z-index: 20;
@@ -2319,10 +2318,7 @@ figure.user_popup figcaption p {
 }
 figure.user_popup.show_bio figcaption {
   -webkit-transform: rotatex(0deg);
-  visibility: visible;
   opacity: 1.0;
-  width: auto;
-  height: auto;
 }
 #aboutnic {
   background: url('/assets/images/fake_brick.png') repeat;

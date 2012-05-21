@@ -1,6 +1,6 @@
 figure.user_popup {
   img { 
-    .transition(~"max-width 0.3s ease-in-out");
+    .transition(~"max-width 0.2s ease-in-out");
     z-index: 21; 
     cursor: pointer;
   }
@@ -9,12 +9,11 @@ figure.user_popup {
   }
 
   figcaption { 
-    .transition(~"opacity 0.4s linear, -webkit-transform 0.4s ease-in-out");
+    .transition(~"opacity 0.2s linear, -webkit-transform 0.2s ease-in-out");
     // FIXME
     -webkit-transform: perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg);
     -webkit-transform-origin: 50% 50%;
     opacity: 0;
-    visibility: hidden;
     left: 20px;
     top: 20px;
     z-index: 20;
@@ -54,10 +53,7 @@ figure.user_popup {
   &.show_bio {
     figcaption { 
       -webkit-transform: rotateX(0deg);
-      visibility: visible;
       opacity: 1.0;
-      width: auto;
-      height: auto;
     }
   }
 }

@@ -39,7 +39,10 @@ $(function() {
             },
             'mouseout': function(e) {
                 clearTimeout(userPopupTimer);
-                $('figure.user_popup.show_bio figcaption').hide().parent('figure').removeClass('show_bio')
+                $('figure.user_popup.show_bio figcaption').on('webkitTransitionEnd', function() {
+                    $(this).hide().off('webkitTransitionEnd');
+                })
+                $('figure.user_popup.show_bio').removeClass('show_bio');
             } 
         },
         'img'
