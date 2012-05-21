@@ -1133,7 +1133,9 @@ section.static_content #what_we_do_details,
 section.static_content #get_to_know_us,
 section.static_content #awards,
 section.static_content #about_us_band,
-section.static_content #check_aval {
+section.static_content #check_aval,
+section.static_content #travel,
+section.static_content #about-training {
   margin: 0;
   width: 100%;
 }
@@ -1142,7 +1144,9 @@ section.static_content #what_we_do_details  > *,
 section.static_content #get_to_know_us  > *,
 section.static_content #awards  > *,
 section.static_content #about_us_band  > *,
-section.static_content #check_aval  > * {
+section.static_content #check_aval  > *,
+section.static_content #travel  > *,
+section.static_content #about-training  > * {
   display: inline;
   float: left;
   width: 81.25%;
@@ -1150,6 +1154,62 @@ section.static_content #check_aval  > * {
   *width: 81.19791666666667%;
   *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
+}
+section.static_content #travel {
+  padding-top: 4em;
+}
+@media screen and (min-width: 50em) {
+  section.static_content #travel .airport {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+    *width: 22.864583333333332%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+  section.static_content #travel .hotels {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+  section.static_content #travel .hotels ul {
+    display: inline;
+    float: left;
+    width: 45.83333333333333%;
+    margin: 0 2.083333333333333%;
+    *width: 45.78124999999999%;
+    *margin: 0 2.0312499999999996%;
+  }
+}
+@media screen and (min-width: 50em) {
+  section.static_content #about-training .about-text {
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 31.197916666666668%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+  section.static_content #about-training .video {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
+    padding-bottom: 0;
+    height: auto;
+    overflow: visible;
+  }
+  section.static_content #about-training .video iframe {
+    height: 300px;
+  }
 }
 section.static_content #history section h2 {
   margin-bottom: 1em;
@@ -2820,6 +2880,15 @@ section.static_content article hgroup h2 {
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
   text-shadow: none;
 }
+section.static_content ul li {
+  margin-bottom: .25em;
+}
+section.static_content ul li::before {
+  content: '▶';
+  font-family: 'Arial Black';
+  color: #ff7b28;
+  margin: 0 15px;
+}
 #who_we_are ul.team-links .selected {
   font-size: 1.2307692307692308em;
   line-height: 1.309090909090909em;
@@ -2940,13 +3009,15 @@ section.static_content article hgroup h2 {
   margin-bottom: 2em;
   text-transform: uppercase;
 }
-#about_us_band {
+#about_us_band,
+#travel {
   background: url('/assets/images/cartographer_orange.png') repeat;
   margin-top: -20px !important;
   color: #e7e7e7;
   padding-bottom: 4em;
 }
-#about_us_band hgroup h1 {
+#about_us_band hgroup h1,
+#travel hgroup h1 {
   margin-bottom: .5em;
   margin-top: 1em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -2954,8 +3025,16 @@ section.static_content article hgroup h2 {
   color: #ffffff;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
 }
-#about_us_band img {
+#about_us_band img,
+#travel img {
   margin-bottom: 1em;
+}
+#about_us_band a,
+#travel a {
+  color: #e7e7e7;
+}
+#travel li::before {
+  color: black;
 }
 #awards {
   background: url('/assets/images/fake_brick.png') repeat;
@@ -2971,6 +3050,9 @@ section.static_content article hgroup h2 {
 }
 #awards p {
   padding-bottom: 2em;
+}
+#check_aval {
+  margin-top: 2em;
 }
 #check_aval h3 {
   color: white;

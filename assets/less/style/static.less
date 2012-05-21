@@ -19,6 +19,16 @@ section.static_content {
       }
     }
   }
+  ul li{
+    margin-bottom:.25em;
+    &::before{
+      content:'▶';
+      font-family: 'Arial Black';
+      color: @nic_orange;
+      margin:0 15px;
+
+    }
+  }
 }
 
 #who_we_are {
@@ -60,7 +70,7 @@ section.static_content {
     text-transform: uppercase;
   }
 }
-#about_us_band{
+#about_us_band,#travel{
   background: url('/assets/images/cartographer_orange.png') repeat;
   margin-top:-20px !important;
   color: @impact_background;
@@ -75,6 +85,14 @@ section.static_content {
   img{
     margin-bottom:1em;
   }
+  a{
+    color:@impact_background;
+  }
+}
+#travel{
+  li::before{
+    color:black;
+  }
 }
 #awards{
 
@@ -88,6 +106,7 @@ section.static_content {
   }
 }
 #check_aval{
+  margin-top:2em;
   h3{
     color:white;
     padding-top:.5em;
