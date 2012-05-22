@@ -1,6 +1,64 @@
+img.loading:hover {
+  cursor: wait;
+}
+div.bio-popup {
+  padding: 1em;
+  position: absolute;
+  border: 10px solid white;
+  background: #efefef url(/assets/images/paper.png) repeat;
+  .box-shadow(0 5px 10px fadeOut(black, 50%));
+  .box-sizing;
+  color: lighten(black, 35%);
+
+  // FIXME
+  .transition(~"all 0.2s ease-in-out");
+  #css3 > .transform(~"perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg)");
+  #css3 > .transform-origin(~"50% 50%");
+  opacity: 0;
+
+  &.show_bio {
+    #css3 > .transform(~"rotate3d(1, 0, 0, 0deg)");
+    opacity: 1.0;
+  }
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 75px;
+    margin: 0; //-0.5em 0 0 -0.5em;
+    padding: 0;
+  }
+
+  hgroup {
+    margin-left: 75px;
+    min-height: 75px;
+    h1, h2 { 
+      margin: 0;
+      color: lighten(black, 35%);
+    }
+    h1 { font-weight: bold; }
+  }
+
+  em {
+    font-weight: bold;
+    &:after {
+      content: ':';
+    }
+  }
+  section.about {
+    margin: 0 0 1em 0;
+    p { margin: 0; }
+  }
+  p {
+    clear: left;
+    margin-bottom: 0;
+  }
+}
+/*
 figure.user_popup {
   img { 
-    .transition(~"max-width 0.3s ease-in-out");
+    .transition(~"max-width 0.2s ease-in-out");
     z-index: 21; 
     cursor: pointer;
   }
@@ -9,12 +67,11 @@ figure.user_popup {
   }
 
   figcaption { 
-    .transition(~"opacity 0.4s linear, -webkit-transform 0.4s ease-in-out");
+    .transition(~"opacity 0.2s linear, -webkit-transform 0.2s ease-in-out");
     // FIXME
     -webkit-transform: perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg);
     -webkit-transform-origin: 50% 50%;
     opacity: 0;
-    visibility: hidden;
     left: 20px;
     top: 20px;
     z-index: 20;
@@ -53,11 +110,9 @@ figure.user_popup {
   }
   &.show_bio {
     figcaption { 
-      -webkit-transform: rotateX(0deg);
-      visibility: visible;
+      -webkit-transform: rotate3d(1, 0, 0, 0deg);
       opacity: 1.0;
-      width: auto;
-      height: auto;
     }
   }
 }
+*/
