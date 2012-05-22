@@ -55,6 +55,21 @@
     transition: @props;
   }
 
+  #css3 {
+    .transform(...) {
+      @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+      -webkit-transform: @props;
+      -moz-transform: @props;
+      transform: @props;
+    }
+    .transform-origin(...) {
+      @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+      -webkit-transform-origin: @props;
+      -moz-transform-origin: @props;
+      transform-origin: @props;
+    }
+  }
+
   
   #gradient {
     .multiple-vertical(...) {

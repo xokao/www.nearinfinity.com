@@ -2315,33 +2315,59 @@ opacity: 0.3;
   width: 100%;
   height: 100%;
 }
+img.loading:hover {
+  cursor: wait;
+}
 div.bio-popup {
-  padding: 0.5em;
+  padding: 1em;
   position: absolute;
   border: 10px solid white;
-  background: url(/assets/images/paper.png) repeat;
-  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  -ms-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  -o-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  background: #efefef url(/assets/images/paper.png) repeat;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -ms-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -o-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   color: #595959;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg);
+  -moz-transform: perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg);
+  transform: perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+div.bio-popup.show_bio {
+  -webkit-transform: rotate3d(1, 0, 0, 0deg);
+  -moz-transform: rotate3d(1, 0, 0, 0deg);
+  transform: rotate3d(1, 0, 0, 0deg);
+  opacity: 1.0;
 }
 div.bio-popup img {
   position: absolute;
   left: 0;
   top: 0;
-  width: 75px;
-  margin: -0.5em 0 0 -0.5em;
+  height: 75px;
+  margin: 0;
   padding: 0;
 }
 div.bio-popup hgroup {
   margin-left: 75px;
-  min-height: 50px;
+  min-height: 75px;
 }
 div.bio-popup hgroup h1,
 div.bio-popup hgroup h2 {
+  margin: 0;
   color: #595959;
+}
+div.bio-popup hgroup h1 {
+  font-weight: bold;
 }
 div.bio-popup em {
   font-weight: bold;
@@ -2357,6 +2383,7 @@ div.bio-popup section.about p {
 }
 div.bio-popup p {
   clear: left;
+  margin-bottom: 0;
 }
 /*
 figure.user_popup {
@@ -3122,91 +3149,6 @@ section.static_content ul li::before {
 }
 .user-list-item div h1 {
   font-weight: bold;
-}
-.user-list-item .bio {
-  z-index: 10;
-  opacity: 0;
-  -webkit-transform-origin: 0% 0%;
-  -moz-transform-origin: 0% 0%;
-  -ms-transform-origin: 0% 0%;
-  transform-origin: 0% 0%;
-  -ms-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -webkit-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -moz-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -o-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -webkit-transform-origin: 66px 60px;
-  margin-top: -121px;
-  margin-left: -30px;
-  width: 24em;
-  padding: 120px 25px 0 25px;
-  position: absolute;
-  border: 10px solid white;
-  background: url(/assets/images/paper.png) repeat;
-  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  -ms-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  -o-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5), 0 0 0 transparent;
-  color: #595959;
-}
-.user-list-item .bio em {
-  font-weight: bold;
-}
-.user-list-item .bio dl {
-  overflow: hidden;
-  margin: 0 0 1em 0;
-}
-.user-list-item .bio dl dt,
-.user-list-item .bio dl dd {
-  float: left;
-  margin: 0;
-}
-.user-list-item .bio dl dt {
-  font-weight: bold;
-  clear: left;
-  margin-right: 5px;
-}
-.user-list-item .bio dl dt:after {
-  content: ':';
-}
-.user-list-item .bio p {
-  clear: left;
-}
-.user-list-item:hover img,
-.user-list-item:hover div {
-  position: relative;
-  z-index: 20;
-  cursor: pointer;
-}
-.user-list-item:hover .bio {
-  opacity: 1;
-  -webkit-transform-origin: 0% 0%;
-  -moz-transform-origin: 0% 0%;
-  -ms-transform-origin: 0% 0%;
-  transform-origin: 0% 0%;
-  -ms-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -webkit-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -moz-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -o-transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  transform: scale(1) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -webkit-transform-origin: 66px 60px;
-  -webkit-transition: opacity 0.1s ease-out 0.1s, -webkit-transform 0.2s ease-out 0.1s;
-  -moz-transition: opacity 0.1s ease-out 0.1s, -webkit-transform 0.2s ease-out 0.1s;
-  transition: opacity 0.1s ease-out 0.1s, -webkit-transform 0.2s ease-out 0.1s;
-}
-.user-list-item:hover .bio:hover {
-  opacity: 0;
-  -webkit-transform-origin: 0% 0%;
-  -moz-transform-origin: 0% 0%;
-  -ms-transform-origin: 0% 0%;
-  transform-origin: 0% 0%;
-  -ms-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -webkit-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -moz-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -o-transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  transform: scale(0.2) rotate(0) translatex(0) translatey(0) skewx(0) skewy(0);
-  -webkit-transform-origin: 66px 60px;
 }
 section.all_content {
   padding-bottom: 50px;

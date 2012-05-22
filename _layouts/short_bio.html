@@ -4,10 +4,29 @@
 </hgroup>
 
 <section class="about">
-<p><em>Areas of Interest</em> {{ page.user_info.areas_of_interest }}
-<p><em>At Near Infinity Since</em> {{ page.user_info.employment_date }}
-<p><em>Alma Mater</em> {{ page.user_info.alma_mater }}
-<p><em>NIC Sports</em> {{ page.user_info.nic_sports }}
+{% if page.user_info.size > 0 %}
+
+  {% if page.user_info.areas_of_interest %}
+    <p><em>Areas of Interest</em> {{ page.user_info.areas_of_interest }}
+  {% endif %}
+
+  {% if page.user_info.employment_date %}
+    <p><em>At Near Infinity Since</em> {{ page.user_info.employment_date }}
+  {% endif %}
+
+  {% if page.user_info.alma_mater %}
+    <p><em>Alma Mater</em> {{ page.user_info.alma_mater }}
+  {% endif %}
+
+  {% if page.user_info.nic_sports %}
+    <p><em>NIC Sports</em> {{ page.user_info.nic_sports }}
+  {% endif %}
+
+{% else %}
+<p>no information available
+{% endif %}
 </section>
 
+{% if page.short_bio %}
 <p><em>About {{ page.name | nth_word:0 }}</em> {{ page.short_bio }}
+{% endif %}

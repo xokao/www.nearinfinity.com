@@ -7,71 +7,68 @@ function shareLink(link, e) {
 }
 
 $(function() {
-    console.log('b');
-
     
     // USER POPUP
     var userImageRegex = /assets\/images\/users\/(.*)\.png/;
     var userPopupTimer;
+    var removeBios = function() {
+        var bios = $('.bio-popup').removeClass('show_bio')
+        setTimeout(function() { bios.remove(); }, 500);
+        $('img.loading').removeClass('loading')
+    }
     $(document.body).on(
         {
             'mouseover': function(e) {
 
-                var img = e.target;
-                var match = img && img.src && img.src.match(userImageRegex);
-                var user = match && match.length == 2 && match[1];
+                var img = e.target
+                var match = img && img.src && img.src.match(userImageRegex)
+                var user = match && match.length == 2 && match[1]
 
-                clearTimeout(userPopupTimer);
+                clearTimeout(userPopupTimer)
                 if (user && $(img).parents('.bio-popup').length === 0) {
-                    // Start loading html
-                    var doneLoading = false, doneWaiting = false;
-                    var addToPage = function() {
-                        cap.append($(img).clone());
-                        var offset = $(img).offset()
-                        delete offset.height;
-                        offset.width = Math.max(275, offset.width);
-                        offset.left -= 12;
-                        offset.top -= 12;
-                        console.log(offset);
-                        $(document.body).append(cap.css(offset));
-                    };
-                    var cap = $('<div class="bio-popup"/>').load('/short_bios/popup_bio/'+user+'.html', function() {
-                        doneLoading = true;
-                        if (doneWaiting) addToPage();
-                    });
-
+                    console.log('mouseon')
                     userPopupTimer = setTimeout(function() {
-                        doneWaiting = true;
-                        if (doneLoading) addToPage();
+                        $(img).addClass('loading')
+                        var show = function(text) {
+                                var cap = $('<div class="bio-popup"/>').html(text)
+                                var image = $(img)
+                                var offset = image.offset()
+                                var bump = (75 - offset.height) / 2 + 10 // center image (10=border)
 
-                        /*
-                        var figure = $(img).parent('figure');
-                        if (figure.length) {
-                            figure.find('figcaption').show();
-                            figure.addClass('show_bio');
-                        } else {
-                            var cap = $('<figcaption/>').load('/short_bios/popup_bio/'+user+'.html', function() {
-                                figure = $(img).wrap('<figure class="user_popup" />').parent()
-                                figure.append(cap);
-                                setTimeout(function() {
-                                    cap.show();
-                                    figure.addClass('show_bio');
-                                }, 10);
-                            });
-                        }
-                        */
+                                delete offset.height
+                                offset.width = '300px'
+                                offset.left -= +bump
+                                offset.top -= +bump
+                                
+                                removeBios()
+                                $(document.body).append(
+                                    cap.append(image.clone().attr({width:'75px',height:'75px'})).css(offset)
+                                )
+
+                                setTimeout(function() { cap.addClass('show_bio') }, 10)
+                        };
+                        $.ajax({
+                            url: '/short_bios/popup_bio/'+user+'.html',
+                            success: function(response){
+                                show(response);
+                            },
+                            error: function() {
+                                show('<hgroup></hgroup><section class="about">No information available</section>');
+                            }
+                        });
                     }, 250);
                 }   
             },
             'mouseout': function(e) {
-                clearTimeout(userPopupTimer);
-                $('.bio-popup').remove()
-                /*
-                $('figure.user_popup.show_bio figcaption').on('webkitTransitionEnd', function() {
-                    $(this).hide().off('webkitTransitionEnd');
-                })
-                $('figure.user_popup.show_bio').removeClass('show_bio');
-                */
+                var to = e.relatedTarget || e.toElement;
+
+                // Return if mousing to the popup image
+                if (to && $(to).parents('.bio-popup').length)
+                    return
+
+                console.log('mouseout', to)
+                clearTimeout(userPopupTimer)
+                removeBios()
             } 
         },
         'img'
@@ -95,4 +92,3 @@ $(function() {
         });
     }
 });
-

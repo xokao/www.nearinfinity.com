@@ -1,24 +1,43 @@
+img.loading:hover {
+  cursor: wait;
+}
 div.bio-popup {
-  padding: 0.5em;
+  padding: 1em;
   position: absolute;
   border: 10px solid white;
-  background: url(/assets/images/paper.png) repeat;
-  .box-shadow(0 1px 10px fadeOut(black, 50%));
+  background: #efefef url(/assets/images/paper.png) repeat;
+  .box-shadow(0 5px 10px fadeOut(black, 50%));
+  .box-sizing;
   color: lighten(black, 35%);
+
+  // FIXME
+  .transition(~"all 0.2s ease-in-out");
+  #css3 > .transform(~"perspective(500px) rotate3d(-0.5, 0.5, 0, -20deg)");
+  #css3 > .transform-origin(~"50% 50%");
+  opacity: 0;
+
+  &.show_bio {
+    #css3 > .transform(~"rotate3d(1, 0, 0, 0deg)");
+    opacity: 1.0;
+  }
 
   img {
     position: absolute;
     left: 0;
     top: 0;
-    width: 75px;
-    margin: -0.5em 0 0 -0.5em;
+    height: 75px;
+    margin: 0; //-0.5em 0 0 -0.5em;
     padding: 0;
   }
 
   hgroup {
     margin-left: 75px;
-    min-height: 50px;
-    h1, h2 { color: lighten(black, 35%); } 
+    min-height: 75px;
+    h1, h2 { 
+      margin: 0;
+      color: lighten(black, 35%);
+    }
+    h1 { font-weight: bold; }
   }
 
   em {
@@ -33,6 +52,7 @@ div.bio-popup {
   }
   p {
     clear: left;
+    margin-bottom: 0;
   }
 }
 /*
