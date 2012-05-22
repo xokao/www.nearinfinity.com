@@ -7,7 +7,7 @@ Setup Repository
 
 ```
 # Clone repo and blogs submodule
-git clone --recursive git@github.com:nearinfinity/nearinfinity.github.com.git
+git clone --recursive git@github.com:nearinfinity/www.nearinfinity.com.git
 cd nearinfinity.github.com/blogs    
 git checkout master
 
