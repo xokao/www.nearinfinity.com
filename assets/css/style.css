@@ -1128,25 +1128,29 @@ section.static_content .what_we_do_ball {
     width: 55%;
   }
 }
-section.static_content #history,
-section.static_content #what_we_do_details,
-section.static_content #get_to_know_us,
-section.static_content #awards,
-section.static_content #about_us_band,
-section.static_content #check_aval,
-section.static_content #travel,
-section.static_content #about-training {
+#history,
+#what_we_do_details,
+#get_to_know_us,
+#awards,
+#about_us_band,
+#check_aval,
+#travel,
+#about-training,
+#supergeek,
+#intern_visit {
   margin: 0;
   width: 100%;
 }
-section.static_content #history  > *,
-section.static_content #what_we_do_details  > *,
-section.static_content #get_to_know_us  > *,
-section.static_content #awards  > *,
-section.static_content #about_us_band  > *,
-section.static_content #check_aval  > *,
-section.static_content #travel  > *,
-section.static_content #about-training  > * {
+#history  > *,
+#what_we_do_details  > *,
+#get_to_know_us  > *,
+#awards  > *,
+#about_us_band  > *,
+#check_aval  > *,
+#travel  > *,
+#about-training  > *,
+#supergeek  > *,
+#intern_visit  > * {
   display: inline;
   float: left;
   width: 81.25%;
@@ -1155,11 +1159,11 @@ section.static_content #about-training  > * {
   *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
-section.static_content #travel {
+#travel {
   padding-top: 4em;
 }
 @media screen and (min-width: 50em) {
-  section.static_content #travel .airport {
+  #travel .airport {
     display: inline;
     float: left;
     width: 22.916666666666664%;
@@ -1168,7 +1172,7 @@ section.static_content #travel {
     *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
-  section.static_content #travel .hotels {
+  #travel .hotels {
     display: inline;
     float: left;
     width: 47.91666666666667%;
@@ -1177,7 +1181,7 @@ section.static_content #travel {
     *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
-  section.static_content #travel .hotels ul {
+  #travel .hotels ul {
     display: inline;
     float: left;
     width: 45.83333333333333%;
@@ -1186,8 +1190,84 @@ section.static_content #travel {
     *margin: 0 2.0312499999999996%;
   }
 }
+#supergeek {
+  padding-bottom: 0 !important;
+}
+#supergeek img {
+  width: 100%;
+  margin-bottom: 0 !important;
+  padding-top: 2em;
+  margin-right: 0 !important;
+}
 @media screen and (min-width: 50em) {
-  section.static_content #about-training .about-text {
+  #supergeek section {
+    display: inline;
+    float: left;
+    width: 56.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 56.197916666666664%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+  #supergeek img {
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 31.197916666666668%;
+    *margin: 0 0.9895833333333331%;
+    float: right;
+    height: 350px;
+  }
+}
+#about_internship {
+  padding: 4em 0;
+}
+@media screen and (min-width: 50em) {
+  #about_internship .intern_desc {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    *width: 47.864583333333336%;
+    *margin: 0 0.9895833333333331%;
+  }
+  #about_internship .intern_benefits {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+  #about_internship p {
+    margin-bottom: 0;
+  }
+  #about_internship .requirements {
+    padding-bottom: 0;
+    display: inline;
+    float: left;
+    width: 81.25%;
+    margin: 0 1.0416666666666665%;
+    *width: 81.19791666666667%;
+    *margin: 0 0.9895833333333331%;
+  }
+}
+#intern_visit {
+  padding: 4em 0;
+  height: 250px;
+}
+#intern_visit .video {
+  padding-bottom: 0;
+  height: auto;
+  overflow: visible;
+}
+#intern_visit .video iframe {
+  height: 250px;
+}
+@media screen and (min-width: 50em) {
+  #intern_visit section {
     display: inline;
     float: left;
     width: 31.25%;
@@ -1196,22 +1276,49 @@ section.static_content #travel {
     *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
-  section.static_content #about-training .video {
+  #intern_visit .video {
     display: inline;
     float: left;
-    width: 47.91666666666667%;
+    width: 39.58333333333333%;
     margin: 0 1.0416666666666665%;
-    *width: 47.864583333333336%;
+    *width: 39.53124999999999%;
     *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
+  }
+}
+#about-training {
+  margin-bottom: 3em;
+}
+#about-training p {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 50em) {
+  #about-training .features {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 51.041666666666664%;
+  }
+  #about-training .video {
+    display: inline;
+    float: left;
+    width: 39.58333333333333%;
+    margin: 0 1.0416666666666665%;
+    *width: 39.53124999999999%;
+    *margin: 0 0.9895833333333331%;
+    margin-left: 9.374999999999998%;
     padding-bottom: 0;
     height: auto;
     overflow: visible;
   }
-  section.static_content #about-training .video iframe {
+  #about-training .video iframe {
     height: 300px;
   }
 }
-section.static_content #history section h2 {
+#history section h2 {
   margin-bottom: 1em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
@@ -1222,11 +1329,11 @@ section.static_content #history section h2 {
   line-height: 1em;
   text-transform: uppercase;
 }
-section.static_content #history section p {
+#history section p {
   margin: auto;
-  margin-bottom: 1em;
+  margin-bottom: 0 !important;
 }
-section.static_content #history aside h2 {
+#history aside h2 {
   margin-bottom: 1em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
@@ -1237,12 +1344,13 @@ section.static_content #history aside h2 {
   line-height: 1.1076923076923078em;
   text-transform: uppercase;
 }
-section.static_content #history aside p {
+#history aside p {
   margin: auto;
-  margin-bottom: 1em;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 @media screen and (min-width: 50em) {
-  section.static_content #history section {
+  #history section {
     display: inline;
     float: left;
     width: 47.91666666666667%;
@@ -1251,10 +1359,10 @@ section.static_content #history aside p {
     *margin: 0 0.9895833333333331%;
     margin-left: 9.374999999999998%;
   }
-  section.static_content #history section:after {
+  #history section:after {
     display: block;
   }
-  section.static_content #history aside {
+  #history aside {
     display: inline;
     float: left;
     width: 22.916666666666664%;
@@ -1265,7 +1373,7 @@ section.static_content #history aside p {
   }
 }
 @media screen and (min-width: 90em) {
-  section.static_content #history aside {
+  #history aside {
     display: inline;
     float: left;
     width: 64.58333333333334%;
@@ -1274,7 +1382,7 @@ section.static_content #history aside p {
     *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
-  section.static_content #history section {
+  #history section {
     display: inline;
     float: left;
     width: 64.58333333333334%;
@@ -1283,7 +1391,7 @@ section.static_content #history aside p {
     *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
-  section.static_content #history section {
+  #history section {
     display: inline;
     float: left;
     width: 39.58333333333333%;
@@ -1292,10 +1400,10 @@ section.static_content #history aside p {
     *margin: 0 0.9895833333333331%;
     margin-left: 17.708333333333332%;
   }
-  section.static_content #history section:after {
+  #history section:after {
     display: block;
   }
-  section.static_content #history aside {
+  #history aside {
     display: inline;
     float: left;
     width: 14.583333333333334%;
@@ -1305,10 +1413,10 @@ section.static_content #history aside p {
     margin-left: 9.374999999999998%;
   }
 }
-section.static_content #what_we_do_details {
+#what_we_do_details {
   margin-top: 3em !important;
 }
-section.static_content #what_we_do_details section h2 {
+#what_we_do_details section h2 {
   text-align: center;
   margin-bottom: 1em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -1320,7 +1428,13 @@ section.static_content #what_we_do_details section h2 {
   line-height: 1.1612903225806452em;
   text-transform: uppercase;
 }
-section.static_content #what_we_do_details section h2::after {
+#what_we_do_details section h2:hover::after {
+  opacity: 1;
+  -webkit-transition: opacity, linear, 0.2s;
+  -moz-transition: opacity, linear, 0.2s;
+  transition: opacity, linear, 0.2s;
+}
+#what_we_do_details section h2::after {
   content: '';
   display: block;
   width: 73px;
@@ -1330,21 +1444,22 @@ section.static_content #what_we_do_details section h2::after {
   margin: .5em auto 0;
   background-repeat: no-repeat;
   background-position: center;
+  opacity: 0.5;
 }
-section.static_content #what_we_do_details section.mobile h2::after {
+#what_we_do_details section.mobile h2::after {
   background-image: url(../images/icons/mobile.png);
 }
-section.static_content #what_we_do_details section.big_data h2::after {
+#what_we_do_details section.big_data h2::after {
   background-image: url(../images/icons/big_data.png);
 }
-section.static_content #what_we_do_details section.trusted_apps h2::after {
+#what_we_do_details section.trusted_apps h2::after {
   background-image: url(../images/icons/trusted_apps.png);
 }
-section.static_content #what_we_do_details section p {
+#what_we_do_details section p {
   text-align: center;
 }
 @media screen and (min-width: 70em) {
-  section.static_content #what_we_do_details section {
+  #what_we_do_details section {
     width: 31%;
     float: left;
     padding: 2em 1% 0;
@@ -1388,6 +1503,26 @@ section.static_content #what_we_do_details section p {
     padding-left: 8%;
   }
 }
+#training_center h2 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+  font-size: 2.1538461538461537em;
+  line-height: 1.0746268656716418em;
+  margin-bottom: .5em;
+}
+#training_center h3 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #000000;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+  font-size: 1.3076923076923077em;
+  line-height: 1.2857142857142858em;
+  margin-bottom: .5em;
+}
 #simple_page {
   padding-bottom: 3em;
 }
@@ -1397,8 +1532,8 @@ section.static_content #what_we_do_details section p {
   color: #ff7b28;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
   text-shadow: none;
-  font-size: 1.7692307692307692em;
-  line-height: 1.1612903225806452em;
+  font-size: 2.1538461538461537em;
+  line-height: 1.0746268656716418em;
   margin-bottom: .5em;
 }
 #simple_page h3 {
@@ -1781,7 +1916,6 @@ footer section.social a:hover:before,
 footer section.contactus .icon:hover:before,
 footer section.social .icon:hover:before {
   opacity: 1;
-  background-color: #ff7b28;
 }
 footer section.contactus a.addr:before,
 footer section.social a.addr:before,
@@ -1973,7 +2107,6 @@ opacity: 0.3;
 .sharing-links a:hover:before,
 .sharing-links .icon:hover:before {
   opacity: 1;
-  background-color: #ff7b28;
 }
 .sharing-links a.addr:before,
 .sharing-links .icon.addr:before {
@@ -2858,7 +2991,7 @@ section.static_content {
   background: none, -khtml-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
 }
 section.static_content p {
-  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
 section.static_content article hgroup h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -2880,14 +3013,9 @@ section.static_content article hgroup h2 {
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
   text-shadow: none;
 }
-section.static_content ul li {
-  margin-bottom: .25em;
-}
-section.static_content ul li::before {
-  content: '▶';
-  font-family: 'Arial Black';
-  color: #ff7b28;
-  margin: 0 15px;
+.address {
+  padding-left: 2em;
+  padding-bottom: 1em;
 }
 #who_we_are ul.team-links .selected {
   font-size: 1.2307692307692308em;
@@ -2959,6 +3087,15 @@ section.static_content ul li::before {
 #who_we_are #who_we_are_team {
   margin-top: 4em;
 }
+ul.triangles li {
+  margin-bottom: .25em;
+}
+ul.triangles li::before {
+  content: '▶';
+  font-family: 'Arial Black';
+  color: #ff7b28;
+  margin: 0 15px;
+}
 #history,
 #what_we_do_details,
 #get_to_know_us,
@@ -2974,6 +3111,13 @@ section.static_content ul li::before {
 #awards em,
 #check_aval em {
   color: #ff7b28;
+}
+#history a,
+#what_we_do_details a,
+#get_to_know_us a,
+#awards a,
+#check_aval a {
+  color: white;
 }
 #history h1,
 #what_we_do_details h1,
@@ -2999,6 +3143,7 @@ section.static_content ul li::before {
   line-height: 1.3333333333333333em;
   color: #ff7b28;
   margin-bottom: 0;
+  margin-top: 1em;
 }
 #get_to_know_us h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -3009,37 +3154,61 @@ section.static_content ul li::before {
   margin-bottom: 2em;
   text-transform: uppercase;
 }
+#what_we_do_details section a h2::before {
+  opacity: 0.5;
+}
+#what_we_do_details section a h2::before:hover {
+  opacity: 1;
+}
 #about_us_band,
-#travel {
+#travel,
+#supergeek {
   background: url('/assets/images/cartographer_orange.png') repeat;
-  margin-top: -20px !important;
   color: #e7e7e7;
   padding-bottom: 4em;
 }
 #about_us_band hgroup h1,
-#travel hgroup h1 {
+#travel hgroup h1,
+#supergeek hgroup h1 {
   margin-bottom: .5em;
   margin-top: 1em;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #ffffff;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  font-size: 2.5384615384615383em;
+  line-height: 1em;
 }
 #about_us_band img,
-#travel img {
+#travel img,
+#supergeek img {
   margin-bottom: 1em;
 }
 #about_us_band a,
-#travel a {
+#travel a,
+#supergeek a {
   color: #e7e7e7;
 }
-#travel li::before {
-  color: black;
+#about_us_band,
+#supergeek {
+  margin-top: -20px !important;
 }
-#awards {
+#travel h1 {
+  padding-bottom: .5em;
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  font-size: 2.5384615384615383em;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+#awards,
+#intern_visit {
   background: url('/assets/images/fake_brick.png') repeat;
 }
-#awards h2 {
+#awards h2,
+#intern_visit h2 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
   color: #ff7b28;
@@ -3048,11 +3217,15 @@ section.static_content ul li::before {
   font-size: 1.3846153846153846em;
   line-height: 1.263157894736842em;
 }
-#awards p {
+#awards p,
+#intern_visit p {
   padding-bottom: 2em;
 }
 #check_aval {
-  margin-top: 2em;
+  margin-top: 2em !important;
+}
+#check_aval #date_check_form {
+  padding-top: 1em;
 }
 #check_aval h3 {
   color: white;
@@ -3069,6 +3242,12 @@ section.static_content ul li::before {
 }
 #check_aval .Unavailable {
   color: red;
+}
+#check_aval .form-line {
+  padding-bottom: .5em;
+}
+#check_aval .results {
+  margin-bottom: 2em;
 }
 .user-list-item {
   min-height: 75px;

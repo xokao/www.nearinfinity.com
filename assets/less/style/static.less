@@ -1,7 +1,7 @@
 section.static_content {
   #gradient > .vertical(@impact_background, white 300px);
   p{
-    margin-bottom:1em;
+    padding-bottom:1em;
   }
 
   article {
@@ -19,18 +19,12 @@ section.static_content {
       }
     }
   }
-  ul li{
-    margin-bottom:.25em;
-    &::before{
-      content:'▶';
-      font-family: 'Arial Black';
-      color: @nic_orange;
-      margin:0 15px;
 
-    }
-  }
 }
-
+.address{
+  padding-left:2em;
+  padding-bottom:1em;
+}
 #who_we_are {
   ul.team-links .selected {
     .banner(desaturate(@nic_orange, 20%));
@@ -39,6 +33,17 @@ section.static_content {
     margin-top:4em;
   }
 }
+ul.triangles li{
+  margin-bottom:.25em;
+  &::before{
+    content:'▶';
+    font-family: 'Arial Black';
+    color: @nic_orange;
+    margin:0 15px;
+
+  }
+}
+
 #history,#what_we_do_details, #get_to_know_us,#awards,#check_aval{
   color: @impact_background;
   background: url('/assets/images/irongrip.png') repeat;
@@ -46,7 +51,9 @@ section.static_content {
   em{
     color:@nic_orange;
   }
-
+  a{
+      color:white;
+  }
   h1 {
     .light_header(white);
     .text-shadow(-3px 2px 2px fade(black, 30%));
@@ -59,8 +66,8 @@ section.static_content {
       .size(2);
       color:@nic_orange;
       margin-bottom:0;
+      margin-top:1em;
     }
-
   }
 }
 #get_to_know_us{
@@ -70,15 +77,23 @@ section.static_content {
     text-transform: uppercase;
   }
 }
-#about_us_band,#travel{
+#what_we_do_details{
+  section a h2::before{
+    opacity: 0.5;
+    &:hover{
+      opacity:1;
+    }
+  }
+}
+#about_us_band,#travel,#supergeek{
   background: url('/assets/images/cartographer_orange.png') repeat;
-  margin-top:-20px !important;
   color: @impact_background;
   hgroup{
     h1{
       margin-bottom:.5em;
       margin-top:1em;
       .light_header(white);
+      .size(20);
     }
   }
   padding-bottom:4em;
@@ -89,12 +104,18 @@ section.static_content {
     color:@impact_background;
   }
 }
+#about_us_band,#supergeek{
+  margin-top:-20px !important;
+}
 #travel{
-  li::before{
-    color:black;
+  h1{
+    padding-bottom:.5em;
+    .light_header(white);
+    .size(20);
+    text-transform:uppercase;
   }
 }
-#awards{
+#awards,#intern_visit{
 
   background: url('/assets/images/fake_brick.png') repeat;
   h2 {
@@ -106,7 +127,10 @@ section.static_content {
   }
 }
 #check_aval{
-  margin-top:2em;
+  margin-top:2em !important;
+  #date_check_form{
+    padding-top:1em;
+  }
   h3{
     color:white;
     padding-top:.5em;
@@ -119,6 +143,12 @@ section.static_content {
   }
   .Unavailable{
     color:red;
+  }
+  .form-line{
+    padding-bottom:.5em;
+  }
+  .results{
+    margin-bottom:2em;
   }
 }
 
