@@ -1,9 +1,12 @@
+p{
+  padding-bottom:1em;
+}
 section.static_content {
   #gradient > .vertical(@impact_background, white 300px);
-  p{
-    padding-bottom:1em;
-  }
 
+  em{
+    color:@nic_orange;
+  }
   article {
     hgroup {
       h1 {
@@ -18,8 +21,12 @@ section.static_content {
         .light_header_shadowless(@nic_orange);
       }
     }
+    h2{
+      .light_header_shadowless(@nic_orange);
+      .size(15);
+      margin-bottom:.5em;
+    }
   }
-
 }
 .address{
   padding-left:2em;
@@ -29,12 +36,11 @@ section.static_content {
   ul.team-links .selected {
     .banner(desaturate(@nic_orange, 20%));
   }
-  #who_we_are_team{
-    margin-top:4em;
-  }
 }
 ul.triangles li{
   margin-bottom:.25em;
+  text-indent:-4em;
+  padding-left:4em;
   &::before{
     content:'▶';
     font-family: 'Arial Black';
@@ -44,90 +50,52 @@ ul.triangles li{
   }
 }
 
-#history,#what_we_do_details, #get_to_know_us,#awards,#check_aval{
+.gray-band{
   color: @impact_background;
   background: url('/assets/images/irongrip.png') repeat;
-  padding:4em 0; 
-  em{
-    color:@nic_orange;
-  }
   a{
       color:white;
+      &:hover{
+        color:@nic_orange;
+      }
   }
-  h1 {
-    .light_header(white);
-    .text-shadow(-3px 2px 2px fade(black, 30%));
-    .size(20);
-    padding-bottom:.5em;
-    text-transform: uppercase;
+}
+.black-band{
+  background: url('/assets/images/fake_brick.png') repeat;
+  a{
+      color:white;
+      &:hover{
+        color:@nic_orange;
+      }
   }
-  aside{
-    h3{
-      .size(2);
-      color:@nic_orange;
-      margin-bottom:0;
-      margin-top:1em;
-    }
+}
+.orange-band{
+  background: url('/assets/images/cartographer_orange.png') repeat;
+  color: @impact_background;
+  a{
+    color:@impact_background;
+  }
+}
+.top-band{
+  margin-top:-20px !important;
+  h1{
+    font-weight:bold;
+    margin-top:-0.5em;
+    .size(30);
   }
 }
 #get_to_know_us{
   h1{
     .light_header_shadowless(@nic_orange);
-    margin-bottom:2em;
-    text-transform: uppercase;
   }
 }
-#what_we_do_details{
-  section a h2::before{
-    opacity: 0.5;
-    &:hover{
-      opacity:1;
-    }
+#awards{
+  h2{
+    .size(5);
   }
 }
-#about_us_band,#travel,#supergeek{
-  background: url('/assets/images/cartographer_orange.png') repeat;
-  color: @impact_background;
-  hgroup{
-    h1{
-      margin-bottom:.5em;
-      margin-top:1em;
-      .light_header(white);
-      .size(20);
-    }
-  }
-  padding-bottom:4em;
-  img{
-    margin-bottom:1em;
-  }
-  a{
-    color:@impact_background;
-  }
-}
-#about_us_band,#supergeek{
-  margin-top:-20px !important;
-}
-#travel{
-  h1{
-    padding-bottom:.5em;
-    .light_header(white);
-    .size(20);
-    text-transform:uppercase;
-  }
-}
-#awards,#intern_visit{
 
-  background: url('/assets/images/fake_brick.png') repeat;
-  h2 {
-      .light_header_shadowless(@nic_orange);
-      .size(5);
-    }
-  p{
-    padding-bottom:2em;
-  }
-}
 #check_aval{
-  margin-top:2em !important;
   #date_check_form{
     padding-top:1em;
   }
@@ -164,10 +132,10 @@ ul.triangles li{
     display: table-cell;
     vertical-align: middle;
     height: 100px;
-    h1, h2 {
+    h4, h5 {
       margin: 0;
     }
-    h1 {
+    h4 {
       font-weight: bold;
     }
   }

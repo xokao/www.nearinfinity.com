@@ -18,13 +18,47 @@ section.static_content {
     }
   }
 }
-#history, #what_we_do_details,#get_to_know_us,#awards,#about_us_band,#check_aval,#travel,#about-training,#supergeek,#intern_visit { 
-  margin:0;
-  width: 100%;
+.band{ 
+  margin:0 !important;
+  width: 100% !important;
+  padding: 4em 0;
   & > * { .pad; } 
+  color:@impact_background;
+  h1{
+    .light_header(white);
+    .light_header(white);
+    .text-shadow(-3px 2px 2px fade(black, 30%));
+    .size(20);
+    padding-bottom:.5em;
+    text-transform: uppercase;
+  }
+
+  h2{
+      .light_header_shadowless(@nic_orange);
+      .size(15);
+      margin-bottom:.5em;
+    }
+  h3{
+      .light_header_shadowless(black);
+      .size(4);
+      margin-bottom:.5em;
+  }
+  aside{
+    h3{
+      .size(2);
+      color:@nic_orange;
+      margin-bottom:0;
+      margin-top:1em;
+    }
+  }
+  &.pad-bottom, &.pad-both{
+    margin-bottom:4em !important;
+  }
+  &.pad-top, &.pad-both{
+    margin-top: 4em !important;
+  }
 }
 #travel{
-  padding-top:4em;
   @media screen and (min-width:50em){
     .airport{
 
@@ -61,7 +95,6 @@ section.static_content {
   }
 }
 #about_internship{
-  padding: 4em 0;
   @media screen and (min-width: 50em){
     .intern_desc{
       .column(6);
@@ -80,7 +113,6 @@ section.static_content {
   }
 }
 #intern_visit{
-  padding: 4em 0;
   height:250px;
   .video{
     padding-bottom:0;
@@ -124,19 +156,6 @@ section.static_content {
   }
 }
 #history{
-  section{
-    h2 {
-      margin-bottom: 1em;
-      .light_header(white);
-      .text-shadow(-3px 2px 2px fade(black, 30%));
-      .size(20);
-      text-transform: uppercase;
-    }
-    p{
-      margin: auto;
-      margin-bottom:0 !important;
-    }
-  }
   aside{
     h2 {
       margin-bottom: 1em;
@@ -179,15 +198,9 @@ section.static_content {
   }
 }
 #what_we_do_details { 
-  margin-top:3em !important;
   section {
-
     h2 {
       text-align:center;
-      margin-bottom: 1em;
-      .light_header_shadowless(@nic_orange);
-      .size(10);
-      text-transform: uppercase;
     }
     h2:hover{
       &::after{
@@ -230,7 +243,6 @@ section.static_content {
 }
 
 #get_to_know_us{
-  margin-top: 3em !important;
   .join_us_icons{
     display:block;
     width:80%;
@@ -241,7 +253,6 @@ section.static_content {
     h2 {
       text-align:center;
       margin-bottom: 3em;
-      .light_header_shadowless(@nic_orange);
       .size(5);
     }
   }
@@ -264,32 +275,10 @@ section.static_content {
     }
   }
 }
-#training_center{
-  h2{
-      .light_header_shadowless(@nic_orange);
-      .size(15);
-      margin-bottom:.5em;
-    }
-  h3{
-      .light_header_shadowless(black);
-      .size(4);
-      margin-bottom:.5em;
-  }
-}
+
 #simple_page{
   padding-bottom:3em;
-  h2{
-      .light_header_shadowless(@nic_orange);
-      .size(15);
-      margin-bottom:.5em;
-    }
-  h3{
-      .light_header_shadowless(black);
-      .size(4);
-      margin-bottom:.5em;
-  }
   section{
-
     .split{
       .push(1);
       .column(5,10);

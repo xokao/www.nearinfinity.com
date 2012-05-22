@@ -1128,29 +1128,13 @@ section.static_content .what_we_do_ball {
     width: 55%;
   }
 }
-#history,
-#what_we_do_details,
-#get_to_know_us,
-#awards,
-#about_us_band,
-#check_aval,
-#travel,
-#about-training,
-#supergeek,
-#intern_visit {
-  margin: 0;
-  width: 100%;
+.band {
+  margin: 0 !important;
+  width: 100% !important;
+  padding: 4em 0;
+  color: #e7e7e7;
 }
-#history  > *,
-#what_we_do_details  > *,
-#get_to_know_us  > *,
-#awards  > *,
-#about_us_band  > *,
-#check_aval  > *,
-#travel  > *,
-#about-training  > *,
-#supergeek  > *,
-#intern_visit  > * {
+.band  > * {
   display: inline;
   float: left;
   width: 81.25%;
@@ -1159,8 +1143,55 @@ section.static_content .what_we_do_ball {
   *margin: 0 0.9895833333333331%;
   margin-left: 9.374999999999998%;
 }
-#travel {
-  padding-top: 4em;
+.band h1 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
+  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
+  font-size: 2.5384615384615383em;
+  line-height: 1em;
+  padding-bottom: .5em;
+  text-transform: uppercase;
+}
+.band h2 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+  font-size: 2.1538461538461537em;
+  line-height: 1.0746268656716418em;
+  margin-bottom: .5em;
+}
+.band h3 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #000000;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+  font-size: 1.3076923076923077em;
+  line-height: 1.2857142857142858em;
+  margin-bottom: .5em;
+}
+.band aside h3 {
+  font-size: 1.1538461538461537em;
+  line-height: 1.3333333333333333em;
+  color: #ff7b28;
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+.band.pad-bottom,
+.band.pad-both {
+  margin-bottom: 4em !important;
+}
+.band.pad-top,
+.band.pad-both {
+  margin-top: 4em !important;
 }
 @media screen and (min-width: 50em) {
   #travel .airport {
@@ -1220,9 +1251,6 @@ section.static_content .what_we_do_ball {
     height: 350px;
   }
 }
-#about_internship {
-  padding: 4em 0;
-}
 @media screen and (min-width: 50em) {
   #about_internship .intern_desc {
     display: inline;
@@ -1255,7 +1283,6 @@ section.static_content .what_we_do_ball {
   }
 }
 #intern_visit {
-  padding: 4em 0;
   height: 250px;
 }
 #intern_visit .video {
@@ -1317,21 +1344,6 @@ section.static_content .what_we_do_ball {
   #about-training .video iframe {
     height: 300px;
   }
-}
-#history section h2 {
-  margin-bottom: 1em;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
-  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
-  font-size: 2.5384615384615383em;
-  line-height: 1em;
-  text-transform: uppercase;
-}
-#history section p {
-  margin: auto;
-  margin-bottom: 0 !important;
 }
 #history aside h2 {
   margin-bottom: 1em;
@@ -1413,20 +1425,8 @@ section.static_content .what_we_do_ball {
     margin-left: 9.374999999999998%;
   }
 }
-#what_we_do_details {
-  margin-top: 3em !important;
-}
 #what_we_do_details section h2 {
   text-align: center;
-  margin-bottom: 1em;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ff7b28;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
-  text-shadow: none;
-  font-size: 1.7692307692307692em;
-  line-height: 1.1612903225806452em;
-  text-transform: uppercase;
 }
 #what_we_do_details section h2:hover::after {
   opacity: 1;
@@ -1465,9 +1465,6 @@ section.static_content .what_we_do_ball {
     padding: 2em 1% 0;
   }
 }
-#get_to_know_us {
-  margin-top: 3em !important;
-}
 #get_to_know_us .join_us_icons {
   display: block;
   width: 80%;
@@ -1477,11 +1474,6 @@ section.static_content .what_we_do_ball {
 #get_to_know_us section h2 {
   text-align: center;
   margin-bottom: 3em;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ff7b28;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
-  text-shadow: none;
   font-size: 1.3846153846153846em;
   line-height: 1.263157894736842em;
 }
@@ -1503,48 +1495,8 @@ section.static_content .what_we_do_ball {
     padding-left: 8%;
   }
 }
-#training_center h2 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ff7b28;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
-  text-shadow: none;
-  font-size: 2.1538461538461537em;
-  line-height: 1.0746268656716418em;
-  margin-bottom: .5em;
-}
-#training_center h3 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #000000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(0, 0, 0, 0.2);
-  text-shadow: none;
-  font-size: 1.3076923076923077em;
-  line-height: 1.2857142857142858em;
-  margin-bottom: .5em;
-}
 #simple_page {
   padding-bottom: 3em;
-}
-#simple_page h2 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ff7b28;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
-  text-shadow: none;
-  font-size: 2.1538461538461537em;
-  line-height: 1.0746268656716418em;
-  margin-bottom: .5em;
-}
-#simple_page h3 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #000000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(0, 0, 0, 0.2);
-  text-shadow: none;
-  font-size: 1.3076923076923077em;
-  line-height: 1.2857142857142858em;
-  margin-bottom: .5em;
 }
 #simple_page section .split {
   margin-left: 9.374999999999998%;
@@ -2974,6 +2926,9 @@ section.dynamic_content aside ul li h2 {
   font-size: 0.8461538461538461em;
   line-height: 1.44em;
 }
+p {
+  padding-bottom: 1em;
+}
 section.static_content {
   /* Legacy browsers */
 
@@ -2990,8 +2945,8 @@ section.static_content {
   background: none, -o-linear-gradient(top, #e7e7e7, #ffffff 300px);
   background: none, -khtml-gradient(linear, left top, left bottom, from(#e7e7e7), to(#ffffff 300px));
 }
-section.static_content p {
-  padding-bottom: 1em;
+section.static_content em {
+  color: #ff7b28;
 }
 section.static_content article hgroup h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -3012,6 +2967,16 @@ section.static_content article hgroup h2 {
   color: #ff7b28;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
   text-shadow: none;
+}
+section.static_content article h2 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+  font-size: 2.1538461538461537em;
+  line-height: 1.0746268656716418em;
+  margin-bottom: .5em;
 }
 .address {
   padding-left: 2em;
@@ -3084,11 +3049,10 @@ section.static_content article hgroup h2 {
   z-index: -1;
   margin-top: 1px;
 }
-#who_we_are #who_we_are_team {
-  margin-top: 4em;
-}
 ul.triangles li {
   margin-bottom: .25em;
+  text-indent: -4em;
+  padding-left: 4em;
 }
 ul.triangles li::before {
   content: '▶';
@@ -3096,54 +3060,40 @@ ul.triangles li::before {
   color: #ff7b28;
   margin: 0 15px;
 }
-#history,
-#what_we_do_details,
-#get_to_know_us,
-#awards,
-#check_aval {
+.gray-band {
   color: #e7e7e7;
   background: url('/assets/images/irongrip.png') repeat;
-  padding: 4em 0;
 }
-#history em,
-#what_we_do_details em,
-#get_to_know_us em,
-#awards em,
-#check_aval em {
-  color: #ff7b28;
-}
-#history a,
-#what_we_do_details a,
-#get_to_know_us a,
-#awards a,
-#check_aval a {
+.gray-band a {
   color: white;
 }
-#history h1,
-#what_we_do_details h1,
-#get_to_know_us h1,
-#awards h1,
-#check_aval h1 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
-  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
-  font-size: 2.5384615384615383em;
-  line-height: 1em;
-  padding-bottom: .5em;
-  text-transform: uppercase;
-}
-#history aside h3,
-#what_we_do_details aside h3,
-#get_to_know_us aside h3,
-#awards aside h3,
-#check_aval aside h3 {
-  font-size: 1.1538461538461537em;
-  line-height: 1.3333333333333333em;
+.gray-band a:hover {
   color: #ff7b28;
-  margin-bottom: 0;
-  margin-top: 1em;
+}
+.black-band {
+  background: url('/assets/images/fake_brick.png') repeat;
+}
+.black-band a {
+  color: white;
+}
+.black-band a:hover {
+  color: #ff7b28;
+}
+.orange-band {
+  background: url('/assets/images/cartographer_orange.png') repeat;
+  color: #e7e7e7;
+}
+.orange-band a {
+  color: #e7e7e7;
+}
+.top-band {
+  margin-top: -20px !important;
+}
+.top-band h1 {
+  font-weight: bold;
+  margin-top: -0.5em;
+  font-size: 3.3076923076923075em;
+  line-height: 0.8780487804878049em;
 }
 #get_to_know_us h1 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -3151,78 +3101,10 @@ ul.triangles li::before {
   color: #ff7b28;
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
   text-shadow: none;
-  margin-bottom: 2em;
-  text-transform: uppercase;
 }
-#what_we_do_details section a h2::before {
-  opacity: 0.5;
-}
-#what_we_do_details section a h2::before:hover {
-  opacity: 1;
-}
-#about_us_band,
-#travel,
-#supergeek {
-  background: url('/assets/images/cartographer_orange.png') repeat;
-  color: #e7e7e7;
-  padding-bottom: 4em;
-}
-#about_us_band hgroup h1,
-#travel hgroup h1,
-#supergeek hgroup h1 {
-  margin-bottom: .5em;
-  margin-top: 1em;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
-  font-size: 2.5384615384615383em;
-  line-height: 1em;
-}
-#about_us_band img,
-#travel img,
-#supergeek img {
-  margin-bottom: 1em;
-}
-#about_us_band a,
-#travel a,
-#supergeek a {
-  color: #e7e7e7;
-}
-#about_us_band,
-#supergeek {
-  margin-top: -20px !important;
-}
-#travel h1 {
-  padding-bottom: .5em;
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
-  font-size: 2.5384615384615383em;
-  line-height: 1em;
-  text-transform: uppercase;
-}
-#awards,
-#intern_visit {
-  background: url('/assets/images/fake_brick.png') repeat;
-}
-#awards h2,
-#intern_visit h2 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ff7b28;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
-  text-shadow: none;
+#awards h2 {
   font-size: 1.3846153846153846em;
   line-height: 1.263157894736842em;
-}
-#awards p,
-#intern_visit p {
-  padding-bottom: 2em;
-}
-#check_aval {
-  margin-top: 2em !important;
 }
 #check_aval #date_check_form {
   padding-top: 1em;
@@ -3262,11 +3144,11 @@ ul.triangles li::before {
   vertical-align: middle;
   height: 100px;
 }
-.user-list-item div h1,
-.user-list-item div h2 {
+.user-list-item div h4,
+.user-list-item div h5 {
   margin: 0;
 }
-.user-list-item div h1 {
+.user-list-item div h4 {
   font-weight: bold;
 }
 .user-list-item .bio {
