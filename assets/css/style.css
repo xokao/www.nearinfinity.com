@@ -1454,7 +1454,8 @@ section.dynamic_content .video-container embed {
   }
 }
 @media screen and (min-width: 55em) {
-  #positions section {
+  #positions section,
+  #benefits-list section {
     width: 33%;
     float: left;
     -webkit-box-sizing: border-box;
@@ -1462,7 +1463,8 @@ section.dynamic_content .video-container embed {
     box-sizing: border-box;
     padding: 0 2em;
   }
-  #positions article > p {
+  #positions article > p,
+  #benefits-list article > p {
     clear: left;
   }
 }
