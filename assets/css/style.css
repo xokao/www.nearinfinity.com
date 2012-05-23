@@ -743,68 +743,7 @@ footer .copyright {
   }
 }
 #aboutnic {
-  clear: left;
   padding: 4em 0;
-  overflow: hidden;
-  color: #e7e7e7;
-}
-#aboutnic  > * {
-  display: inline;
-  float: left;
-  width: 81.25%;
-  margin: 0 1.0416666666666665%;
-  *width: 81.19791666666667%;
-  *margin: 0 0.9895833333333331%;
-  margin-left: 9.374999999999998%;
-}
-@media screen and (min-width: 90em) {
-  #aboutnic  > * {
-    display: inline;
-    float: left;
-    width: 64.58333333333334%;
-    margin: 0 1.0416666666666665%;
-    *width: 64.53125000000001%;
-    *margin: 0 0.9895833333333331%;
-    margin-left: 17.708333333333332%;
-  }
-}
-#aboutnic h1 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
-  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
-  font-size: 2.5384615384615383em;
-  line-height: 1em;
-  padding-bottom: .5em;
-  text-transform: uppercase;
-}
-#aboutnic h2 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ff7b28;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
-  text-shadow: none;
-  font-size: 2.1538461538461537em;
-  line-height: 1.0746268656716418em;
-  margin-bottom: .5em;
-}
-#aboutnic h3 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #000000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(0, 0, 0, 0.2);
-  text-shadow: none;
-  font-size: 1.3076923076923077em;
-  line-height: 1.2857142857142858em;
-  margin-bottom: .5em;
-}
-#aboutnic aside h3 {
-  font-size: 1.1538461538461537em;
-  line-height: 1.3333333333333333em;
-  color: #ff7b28;
-  margin-bottom: 0;
-  margin-top: 1em;
 }
 #aboutnic hgroup {
   display: inline;
@@ -926,68 +865,7 @@ footer .copyright {
   }
 }
 #techcommunity {
-  clear: left;
   padding: 4em 0;
-  overflow: hidden;
-  color: #e7e7e7;
-}
-#techcommunity  > * {
-  display: inline;
-  float: left;
-  width: 81.25%;
-  margin: 0 1.0416666666666665%;
-  *width: 81.19791666666667%;
-  *margin: 0 0.9895833333333331%;
-  margin-left: 9.374999999999998%;
-}
-@media screen and (min-width: 90em) {
-  #techcommunity  > * {
-    display: inline;
-    float: left;
-    width: 64.58333333333334%;
-    margin: 0 1.0416666666666665%;
-    *width: 64.53125000000001%;
-    *margin: 0 0.9895833333333331%;
-    margin-left: 17.708333333333332%;
-  }
-}
-#techcommunity h1 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 255, 255, 0.2);
-  text-shadow: -3px 2px 2px rgba(0, 0, 0, 0.3), 0 0 0 transparent;
-  font-size: 2.5384615384615383em;
-  line-height: 1em;
-  padding-bottom: .5em;
-  text-transform: uppercase;
-}
-#techcommunity h2 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #ff7b28;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
-  text-shadow: none;
-  font-size: 2.1538461538461537em;
-  line-height: 1.0746268656716418em;
-  margin-bottom: .5em;
-}
-#techcommunity h3 {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
-  letter-spacing: 2px;
-  color: #000000;
-  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(0, 0, 0, 0.2);
-  text-shadow: none;
-  font-size: 1.3076923076923077em;
-  line-height: 1.2857142857142858em;
-  margin-bottom: .5em;
-}
-#techcommunity aside h3 {
-  font-size: 1.1538461538461537em;
-  line-height: 1.3333333333333333em;
-  color: #ff7b28;
-  margin-bottom: 0;
-  margin-top: 1em;
 }
 #techcommunity  > h1 {
   display: inline;
