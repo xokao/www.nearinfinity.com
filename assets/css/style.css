@@ -2088,7 +2088,17 @@ footer section.social.light .icon.twitter:before,
 footer section.contactus.light .icon.github:before,
 footer section.social.light .icon.github:before,
 footer section.contactus.light .icon.you-tube:before,
-footer section.social.light .icon.you-tube:before {
+footer section.social.light .icon.you-tube:before,
+footer section.contactus.light .icon.dribble:before,
+footer section.social.light .icon.dribble:before,
+footer section.contactus.light .icon.linked-in:before,
+footer section.social.light .icon.linked-in:before,
+footer section.contactus.light .icon.google-plus:before,
+footer section.social.light .icon.google-plus:before,
+footer section.contactus.light .icon.rss:before,
+footer section.social.light .icon.rss:before,
+footer section.contactus.light .icon.email:before,
+footer section.social.light .icon.email:before {
   background-position-y: -20px;
 }
 footer section.contactus li,
@@ -2277,7 +2287,12 @@ opacity: 0.3;
 .sharing-links.light .icon.facebook:before,
 .sharing-links.light .icon.twitter:before,
 .sharing-links.light .icon.github:before,
-.sharing-links.light .icon.you-tube:before {
+.sharing-links.light .icon.you-tube:before,
+.sharing-links.light .icon.dribble:before,
+.sharing-links.light .icon.linked-in:before,
+.sharing-links.light .icon.google-plus:before,
+.sharing-links.light .icon.rss:before,
+.sharing-links.light .icon.email:before {
   background-position-y: -20px;
 }
 .highlight {
