@@ -88,21 +88,18 @@ section.static_content {
 }
 #supergeek{
   padding-bottom: 0 !important;
-  img{
-    width:100%;
-    margin-bottom:0 !important;
-    padding-top:2em;
-    margin-right:0 !important;
+  .superhero{
+    display:none;
   }
   @media screen and (min-width: 50em){
     section{
       .column(7);
       .push(1);
     }
-    img{
+    .superhero{
       .column(4);
-      float:right;
-      height:350px;
+      position:absolute;
+      bottom:-4px;
     }
   }
 }
@@ -136,17 +133,31 @@ section.static_content {
     }
   }
 }
+#nic-u{
+  @media screen and (min-width: 50em){
+    & > p{
+      .column(10,10);
+    }
+    .headers{
+      .column(6,10);
+    }
+    .video-wrap{
+      .column(4,10);
+    }
+  }
+}
 #about-training{
   p{
     margin-bottom:0;
   }
   margin-bottom:3em;
   @media screen and (min-width: 50em){
+
     .features{
-      .column(5);
+      .column(5,10);
     }
     .video-wrap{
-      .column(5);
+      .column(5,10);
     }
   }
 }
