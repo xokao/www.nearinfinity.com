@@ -1,8 +1,8 @@
 <h1>Share this{% if type %} {{ type }}{% endif %}</h1>
 <ul class="sharing">
-  <li class="twitter"><a rel="nofollow" target="_blank" onclick="return shareLink(this, event)" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.host | cgi_escape }}{{ page.url | cgi_escape }}">Twitter</a></li>
+  <li class="icon twitter"><a rel="nofollow" target="_blank" onclick="return shareLink(this, event)" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.host | cgi_escape }}{{ page.url | cgi_escape }}">Twitter</a></li>
 
-  <li class="facebook"><a rel="nofollow" target="_blank" onclick="return shareLink(this, event)" href="http://www.facebook.com/share.php?u={{ site.host | cgi_escape }}{{ page.url | cgi_escape }}">Facebook</a></li>
+  <li class="icon facebook"><a rel="nofollow" target="_blank" onclick="return shareLink(this, event)" href="http://www.facebook.com/share.php?u={{ site.host | cgi_escape }}{{ page.url | cgi_escape }}">Facebook</a></li>
 
   {% comment %}
   optional sharing

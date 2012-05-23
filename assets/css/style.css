@@ -2000,15 +2000,11 @@ footer section.contactus li,
 footer section.social li {
   display: inline;
 }
-footer section.contactus a,
-footer section.social a,
 footer section.contactus .icon,
 footer section.social .icon {
   position: relative;
   padding-left: 25px;
 }
-footer section.contactus a:before,
-footer section.social a:before,
 footer section.contactus .icon:before,
 footer section.social .icon:before {
   opacity: 0.6;
@@ -2021,59 +2017,79 @@ footer section.social .icon:before {
   width: 20px;
   height: 20px;
 }
-footer section.contactus a:hover:before,
-footer section.social a:hover:before,
 footer section.contactus .icon:hover:before,
 footer section.social .icon:hover:before {
   opacity: 1;
 }
-footer section.contactus a.addr:before,
-footer section.social a.addr:before,
 footer section.contactus .icon.addr:before,
 footer section.social .icon.addr:before {
   background-position: -60px 0;
 }
-footer section.contactus a.phone:before,
-footer section.social a.phone:before,
 footer section.contactus .icon.phone:before,
 footer section.social .icon.phone:before {
   background-position: -40px 0;
 }
-footer section.contactus a.fax:before,
-footer section.social a.fax:before,
 footer section.contactus .icon.fax:before,
 footer section.social .icon.fax:before {
   background-position: -20px 0;
 }
-footer section.contactus a.email:before,
-footer section.social a.email:before,
 footer section.contactus .icon.email:before,
 footer section.social .icon.email:before {
   background-position: 0px 0;
 }
-footer section.contactus a.facebook:before,
-footer section.social a.facebook:before,
 footer section.contactus .icon.facebook:before,
 footer section.social .icon.facebook:before {
   background-position: -80px 0;
 }
-footer section.contactus a.twitter:before,
-footer section.social a.twitter:before,
 footer section.contactus .icon.twitter:before,
 footer section.social .icon.twitter:before {
   background-position: -100px 0;
 }
-footer section.contactus a.github:before,
-footer section.social a.github:before,
 footer section.contactus .icon.github:before,
 footer section.social .icon.github:before {
   background-position: -120px 0;
 }
-footer section.contactus a.you-tube:before,
-footer section.social a.you-tube:before,
 footer section.contactus .icon.you-tube:before,
 footer section.social .icon.you-tube:before {
   background-position: -140px 0;
+}
+footer section.contactus .icon.dribble:before,
+footer section.social .icon.dribble:before {
+  background-position: -160px 0;
+}
+footer section.contactus .icon.linked-in:before,
+footer section.social .icon.linked-in:before {
+  background-position: -180px 0;
+}
+footer section.contactus .icon.google-plus:before,
+footer section.social .icon.google-plus:before {
+  background-position: -200px 0;
+}
+footer section.contactus .icon.rss:before,
+footer section.social .icon.rss:before {
+  background-position: -220px 0;
+}
+footer section.contactus .icon.email:before,
+footer section.social .icon.email:before {
+  background-position: -240px 0;
+}
+footer section.contactus.light .icon.addr:before,
+footer section.social.light .icon.addr:before,
+footer section.contactus.light .icon.phone:before,
+footer section.social.light .icon.phone:before,
+footer section.contactus.light .icon.fax:before,
+footer section.social.light .icon.fax:before,
+footer section.contactus.light .icon.email:before,
+footer section.social.light .icon.email:before,
+footer section.contactus.light .icon.facebook:before,
+footer section.social.light .icon.facebook:before,
+footer section.contactus.light .icon.twitter:before,
+footer section.social.light .icon.twitter:before,
+footer section.contactus.light .icon.github:before,
+footer section.social.light .icon.github:before,
+footer section.contactus.light .icon.you-tube:before,
+footer section.social.light .icon.you-tube:before {
+  background-position-y: -20px;
 }
 footer section.contactus li,
 footer section.social li {
@@ -2197,12 +2213,10 @@ opacity: 0.3;
 .sharing-links li {
   display: inline;
 }
-.sharing-links a,
 .sharing-links .icon {
   position: relative;
   padding-left: 25px;
 }
-.sharing-links a:before,
 .sharing-links .icon:before {
   opacity: 0.6;
   content: '';
@@ -2214,41 +2228,57 @@ opacity: 0.3;
   width: 20px;
   height: 20px;
 }
-.sharing-links a:hover:before,
 .sharing-links .icon:hover:before {
   opacity: 1;
 }
-.sharing-links a.addr:before,
 .sharing-links .icon.addr:before {
   background-position: -60px 0;
 }
-.sharing-links a.phone:before,
 .sharing-links .icon.phone:before {
   background-position: -40px 0;
 }
-.sharing-links a.fax:before,
 .sharing-links .icon.fax:before {
   background-position: -20px 0;
 }
-.sharing-links a.email:before,
 .sharing-links .icon.email:before {
   background-position: 0px 0;
 }
-.sharing-links a.facebook:before,
 .sharing-links .icon.facebook:before {
   background-position: -80px 0;
 }
-.sharing-links a.twitter:before,
 .sharing-links .icon.twitter:before {
   background-position: -100px 0;
 }
-.sharing-links a.github:before,
 .sharing-links .icon.github:before {
   background-position: -120px 0;
 }
-.sharing-links a.you-tube:before,
 .sharing-links .icon.you-tube:before {
   background-position: -140px 0;
+}
+.sharing-links .icon.dribble:before {
+  background-position: -160px 0;
+}
+.sharing-links .icon.linked-in:before {
+  background-position: -180px 0;
+}
+.sharing-links .icon.google-plus:before {
+  background-position: -200px 0;
+}
+.sharing-links .icon.rss:before {
+  background-position: -220px 0;
+}
+.sharing-links .icon.email:before {
+  background-position: -240px 0;
+}
+.sharing-links.light .icon.addr:before,
+.sharing-links.light .icon.phone:before,
+.sharing-links.light .icon.fax:before,
+.sharing-links.light .icon.email:before,
+.sharing-links.light .icon.facebook:before,
+.sharing-links.light .icon.twitter:before,
+.sharing-links.light .icon.github:before,
+.sharing-links.light .icon.you-tube:before {
+  background-position-y: -20px;
 }
 .highlight {
   background-color: #ffffcc;
@@ -2562,6 +2592,7 @@ img.loading:hover {
   cursor: wait;
 }
 div.bio-popup {
+  z-index: 100;
   padding: 1em;
   position: absolute;
   border: 10px solid white;
@@ -2811,7 +2842,8 @@ figure.user_popup {
   transition: opacity, linear, 0.2s;
 }
 #techcommunity .sharing-links li a:before {
-  background-image: url('/assets/images/icons/glyphicon-sprite-white.png');
+  background-image: url('/assets/images/icons/glyphicon-sprite.png');
+  background-position-y: -20px;
 }
 #techcommunity .techtalks .sharing-links {
   max-width: 320px;

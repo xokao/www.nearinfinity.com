@@ -1,10 +1,10 @@
 {% if page.social %}
   <div class='widget'>
     <div class='tab'>Stay Connected</div>
-    <ul>
+    <ul class="sharing-links light">
       {% for media in page.social %}
         <li>
-          <a href="{{media[1]}}">Follow {{page.name}} on <img src="/assets/images/social/{{media[0]}}.png" class="social-logo"/></a>
+        <a class="icon {{media[0]}}" href="{{media[1]}}">{{page.name}} on twitter</a>
         </li>
       {% endfor %}
     </ul>
