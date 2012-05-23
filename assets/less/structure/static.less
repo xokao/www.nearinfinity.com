@@ -1,146 +1,56 @@
 section.static_content {
-  article > * { .pad; z-index:0;position:relative;}
-
-  article{position:relative}
-  .what_we_do_ball{display:none;}
-  @media screen and (min-width: 70em) {
-    .what_we_do_ball{
-      position:absolute;
-      right:-16%;
-      top:-20px;
-      z-index:0;
-      display:block;
-      width:auto;
-      height:350px;
-    }
-    .about{
-    width:55%;
-    }
-  }
-}
-.band{ 
-  margin:0 !important;
-  width: 100% !important;
-  padding: 4em 0;
-  & > * { .pad; } 
-  color:@impact_background;
-  h1{
-    .light_header(white);
-    .light_header(white);
-    .text-shadow(-3px 2px 2px fade(black, 30%));
-    .size(20);
-    padding-bottom:.5em;
-    text-transform: uppercase;
-  }
-
-  h2{
-      .light_header_shadowless(@nic_orange);
-      .size(15);
-      margin-bottom:.5em;
-    }
-  h3{
-      .light_header_shadowless(black);
-      .size(4);
-      margin-bottom:.5em;
-  }
-  aside{
-    h3{
-      .size(2);
-      color:@nic_orange;
-      margin-bottom:0;
-      margin-top:1em;
-    }
-  }
-  &.pad-bottom, &.pad-both{
-    margin-bottom:4em !important;
-  }
-  &.pad-top, &.pad-both{
-    margin-top: 4em !important;
-  }
-}
-#check_aval{
-  @media screen and (min-width:50em){
-    #date_check_form{
-      .column(5);
-      .push(1);
-      height:100px;
-    }
-    .results{
-      .column(5);
-    }
-  }
 }
 #travel{
   @media screen and (min-width:50em){
-    .airport{
-
-      .column(3);
-      .push(1);
-    }
+    .airport{ .column(3, 10); }
     .hotels{
-      .column(6);
-      .push(1);
+      .column(6, 10);
       ul{
         .column(3,6);
       }
     }
   }
-}
-#supergeek{
-  padding-bottom: 0 !important;
-  img{
-    width:100%;
-    margin-bottom:0 !important;
-    padding-top:2em;
-    margin-right:0 !important;
-  }
-  @media screen and (min-width: 50em){
-    section{
-      .column(7);
-      .push(1);
-    }
-    img{
-      .column(4);
-      float:right;
-      height:350px;
+  @media screen and (min-width:90em){
+    .airport{ .column(3, 8); }
+    .hotels{
+      .column(5, 8);
+      ul{
+        .column(3,5);
+      }
     }
   }
 }
+
 #about_internship{
   @media screen and (min-width: 50em){
-    .intern_desc{
-      .column(6);
-    }
-    .intern_benefits{
-      .column(5);
-      .push(1);
-    }
-    p{
-      margin-bottom:0;
-    }
+    .intern_desc{ .column(7, 10); }
+    .intern_benefits{ .column(3, 10); }
     .requirements{
-      padding-bottom:0;
-      .column(10);
+      .column(10, 10);
+      clear: left;
     }
+  }
+  @media screen and (min-width: 90em){
+    .intern_desc{ .column(5, 8); }
+    .intern_benefits{ .column(3, 8); }
   }
 }
 #intern_visit{
   @media screen and (min-width: 50em){
-    section{
-      .column(4);
+    section{ .column(4, 10); }
+    .video-wrap{
+      .column(5, 10);
       .push(1);
     }
+  }
+  @media screen and (min-width: 90em){
+    section{ .column(4, 8); }
     .video-wrap{
-      .column(5);
-      .push(1);
+      .column(4, 8);
     }
   }
 }
 #about-training{
-  p{
-    margin-bottom:0;
-  }
-  margin-bottom:3em;
   @media screen and (min-width: 50em){
     .features{
       .column(5);
@@ -192,41 +102,40 @@ section.static_content {
     }
   }
 }
-#what_we_do_details { 
-  section {
-    h2 {
-      text-align:center;
+
+#what_we_do { 
+  h2 {
+    text-align:center;
+  }
+  h2:hover{
+    &:after{
+      opacity:1;
+      .transition(opacity linear 0.2s);
     }
-    h2:hover{
-      &::after{
-        opacity:1;
-        .transition(opacity linear 0.2s);
-      }
-    }
-    h2::after{
-      content: '';
-      display: block;
-      width: 73px;
-      height:50px;
-      background-size: auto 50px;
-      border: 0;
-      margin: .5em auto 0;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity:0.5;
-    }
-    &.mobile h2::after{
-      background-image: url(../images/icons/mobile.png);
-    }
-    &.big_data h2::after{
-      background-image: url(../images/icons/big_data.png);
-    }
-    &.trusted_apps h2::after{
-      background-image: url(../images/icons/trusted_apps.png);
-    }
-    p{
-      text-align:center;
-    }
+  }
+  h2:after{
+    content: '';
+    display: block;
+    width: 73px;
+    height:50px;
+    background-size: auto 50px;
+    border: 0;
+    margin: .5em auto 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity:0.5;
+  }
+  .mobile h2:after{
+    background-image: url(../images/icons/mobile.png);
+  }
+  .big_data h2:after{
+    background-image: url(../images/icons/big_data.png);
+  }
+  .trusted_apps h2:after{
+    background-image: url(../images/icons/trusted_apps.png);
+  }
+  p{
+    text-align:center;
   }
   @media screen and (min-width: 70em) {
     section {
@@ -288,9 +197,12 @@ section.static_content {
     }
   }
 }
-#management_team{  overflow:hidden;}
-#who_we_are_team {
+#management_team {  overflow:hidden;}
 
+#who_we_are_team {
+  .team-links {
+    margin-bottom: 2em;
+  }
 
   .team_subcategory > li {
 

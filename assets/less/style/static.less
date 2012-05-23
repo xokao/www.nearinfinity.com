@@ -1,6 +1,4 @@
-p{
-  padding-bottom:1em;
-}
+
 section.static_content {
   #gradient > .vertical(@impact_background, white 300px);
 
@@ -32,16 +30,23 @@ section.static_content {
   padding-left:2em;
   padding-bottom:1em;
 }
+
+#what_we_do { 
+  .band-strip;
+  .gray-band;
+}
+
 #who_we_are {
   ul.team-links .selected {
     .banner(desaturate(@nic_orange, 20%));
   }
 }
+
 ul.triangles li{
   margin-bottom:.25em;
   text-indent:-4em;
   padding-left:4em;
-  &::before{
+  &:before{
     content:'▶';
     font-family: 'Arial Black';
     color: @nic_orange;
@@ -50,40 +55,6 @@ ul.triangles li{
   }
 }
 
-.gray-band{
-  color: @impact_background;
-  background: url('/assets/images/irongrip.png') repeat;
-  a{
-      color:white;
-      &:hover{
-        color:@nic_orange;
-      }
-  }
-}
-.black-band{
-  background: url('/assets/images/fake_brick.png') repeat;
-  a{
-      color:white;
-      &:hover{
-        color:@nic_orange;
-      }
-  }
-}
-.orange-band{
-  background: url('/assets/images/cartographer_orange.png') repeat;
-  color: @impact_background;
-  a{
-    color:@impact_background;
-  }
-}
-.top-band{
-  margin-top:-20px !important;
-  h1{
-    font-weight:bold;
-    margin-top:-0.5em;
-    .size(30);
-  }
-}
 #get_to_know_us{
   h1{
     .light_header_shadowless(@nic_orange);
@@ -96,9 +67,6 @@ ul.triangles li{
 }
 
 #check_aval{
-  #date_check_form{
-    padding-top:1em;
-  }
   h3{
     color:white;
     padding-top:.5em;
