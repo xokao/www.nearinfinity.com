@@ -244,6 +244,13 @@ table {
   color: #e7e7e7;
   background: url('/assets/images/irongrip.png') repeat;
 }
+.gray-band h3 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
+}
 .gray-band a {
   color: white;
 }
@@ -1444,6 +1451,19 @@ section.dynamic_content .video-container embed {
     margin: 0 2.5%;
     *width: 54.94791666666667%;
     *margin: 0 2.4479166666666665%;
+  }
+}
+@media screen and (min-width: 55em) {
+  #positions section {
+    width: 33%;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 2em;
+  }
+  #positions article > p {
+    clear: left;
   }
 }
 @media screen and (min-width: 50em) {
@@ -3389,6 +3409,13 @@ section.static_content article h2 {
   color: #ff7b28;
   margin-bottom: 0;
   margin-top: 1em;
+}
+#what_we_do h3 {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  color: #ff7b28;
+  text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
+  text-shadow: none;
 }
 #what_we_do a {
   color: white;
