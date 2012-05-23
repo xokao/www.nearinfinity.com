@@ -15,6 +15,21 @@ section.all_content {
   .hidden{
         display:none;
       }
+  .pagination{ 
+    text-align:center;
+    a{
+      margin:0 2px;
+      padding:5px;
+      &.selected{
+        background-color:@nic_orange;
+        border-radius:5px;
+        color:white;
+        &:hover{
+          color:black;
+        }
+      }
+    }
+  }
   .blogs {
     .blog-img{
       float:left;
