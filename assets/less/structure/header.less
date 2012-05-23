@@ -133,6 +133,10 @@ header#main {
   @media screen and (min-width: 43em) {
     article { .column(4); .push(1); }
     figure { .column(6); margin-right: 0; div { margin-left: -8em; } }
+    &.impact-item {
+      article { .column(6); .push(1); }
+      figure { .column(5); margin-right: 0; }
+    }
   }
 
   @media screen and (min-width:90em) {
@@ -151,5 +155,10 @@ header#main {
     article { .column(3); .push(2); }
     figure { .column(6); margin-right: 0; }
     .article-links { .pad(2); }
+
+    &.impact-item {
+      article { .column(6); .push(2); }
+      figure { .column(4); margin-right: 0; }
+    }
   }
 }

@@ -3,59 +3,19 @@
 {% include head-tag.html %}
 </head>
 <body>
-  <header id="main">
+  <header id="main" {% if page.impact %}class="homepage impact-item end-transition disable-animation {{ page.impact.class }}"{% endif %}>
     {% include header.html %}
+    {% if page.impact %}
+      <article class="impact-item">
+        <h1>{{ page.impact.title }}</h1>
+        <h2>{{ page.impact.text }}</h2>
+      </article>
+      <figure class="impact-item"><div style="background:{{ page.impact.background }}"></div></figure>
+    {% endif %}
   </header>
   <section {% if page.section_id %}id="{{ page.section_id }}"{% endif %} class="static_content">
-    <article>
     {{ content }}
-    <article>
   </section>
   {% include footer.html %}
-    <script>
-    $('#date_check_form').submit(function(e){
-      var pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/;
-      if(pattern.test($(this).find('input[name="date"]').val())){
-        $('.date-loading').show();
-        $('.date-check-error').hide();
-        $('.t1').hide();
-        $('.t2').hide();
-        $.ajax({
-          data: $(this).serialize(),
-          url: $(this).attr('action'),
-          dataType: 'jsonp',
-          success: function(response){
-            console.log(response);
-            if(response.error){
-              jsonDateError(response.error);
-            }else{
-              $('.date-loading').hide();
-              $('.date-check-error').hide();
-              $('.t1').show();
-              $('.t2').show();
-              $('.t1 span').removeClass('Unavailable').removeClass('Available');
-              $('.t2 span').removeClass('Unavailable').removeClass('Available');
-              $('.t1 span').addClass(response.t1).html(response.t1);
-              $('.t2 span').addClass(response.t2).html(response.t2);
-            }
-          },
-          error: function(xhr,type,error){
-            jsonDateError(error);
-          }
-        });
-      }else{
-        alert('Date must be formatted DD/MM/YYY');
-      }
-      e.preventDefault();
-      return false;
-    });
-    jsonDateError = function(error){
-      console.log(error)
-          $('.date-loading').hide();
-          $('.t1').hide();
-          $('.t2').hide();
-          $('.date-check-error').show();
-    }
-  </script>
 </body>
 </html>

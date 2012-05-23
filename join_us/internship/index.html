@@ -1,11 +1,12 @@
 ---
 layout: static
+section_id: internship
 title: Internship Program
----
-
-<section id="supergeek" class="band orange-band top-band pad-bottom">
-  <section>
-    <h1>Calling All Supergeeks!</h1>
+impact:
+  title: CALLING ALL SUPERGEEKS
+  background: url(/assets/images/supergeek.png) left bottom no-repeat
+  class: band-colors orange-band
+  text: |
     <h2>We’re looking for great problem solvers with experience in:</h2>
     <ul class='triangles'>
       <li>Ruby / Rails</li>
@@ -17,32 +18,33 @@ title: Internship Program
       <li>Python</li>
       <li>Javascript</li>
     </ul>
-  </section>
-  <div class='superhero'><img src="/assets/images/supergeek.png"/></div>
+---
+<section id="about_internship" class="band-strip gray-band">
+  <article>
+    <section class="intern_desc">
+      <h2>About the Program</h2>
+      <p>Interns at Near Infinity work in a fun and challenging team-centric environment on a variety of software design projects. As a student in our program, you can expect to learn something new every day and work on real-life problems with other students, as well as more experienced technical mentors.
+      <p>We have two internship sessions annually, so please check out our current openings.
+    </section>
+    <section class="intern_benefits">
+      <h2> Benefits</h2>
+      <ul class="triangles">
+        <li>End-of-session bonuses</li>
+        <li>On-site fitness center</li>
+        <li>Book / software allowance</li>
+        <li>Technical Mentors</li>
+        <li>Fun, team-centered atmosphere</li>
+      </ul>
+    </section>
+    <section class='requirements'>
+      <h2>Requirements</h2>
+      <p>We accept resume submissions from undergraduate and graduate students in a wide range of software engineering, computer science, and similar degree programs. Must be a U.S. Citizen.
+    </section>
+  </article>
 </section>
 
-<section id="about_internship">
-  <section class="intern_desc">
-    <h2>About the Program</h2>
-    <p>Interns at Near Infinity work in a fun and challenging team-centric environment on a variety of software design projects. As a student in our program, you can expect to learn something new every day and work on real-life problems with other students, as well as more experienced technical mentors.
-    <p>We have two internship sessions annually, so please check out our current openings.
-  </section>
-  <section class="intern_benefits">
-    <h2> Benefits</h2>
-    <ul class="triangles">
-      <li>End-of-session bonuses</li>
-      <li>On-site fitness center</li>
-      <li>Book / software allowance</li>
-      <li>Technical Mentors</li>
-      <li>Fun, team-centered atmosphere</li>
-    </ul>
-  </section>
-  <section class='requirements'>
-    <h2>Requirements</h2>
-    <p>We accept resume submissions from undergraduate and graduate students in a wide range of software engineering, computer science, and similar degree programs. Must be a U.S. Citizen.
-  </section>
-</section>
-<section id="intern_visit" class="band black-band pad-top">
+<section id="intern_visit" class="band-strip black-band">
+  <article>
   <section>
     <h2>Come visit us on your campus!</h2>
     <p>Each fall, a team from Near Infinity attends career fairs at several regional schools, including Virginia Tech, University of Virginia, Penn State University, and George Mason University, looking for students to join us as interns. Watch for the NIC booth at your school!
@@ -50,4 +52,5 @@ title: Internship Program
   <section class='video-wrap'>
     {% video_tag :youtube => utfKLLXF94U %}
   </section>
+  </article>
 </section>
