@@ -50,13 +50,27 @@ section.static_content {
     }
   }
 }
-#about-training{
+#nic-u{
   @media screen and (min-width: 50em){
-    .features{
-      .column(5);
+    & > p{
+      .column(10,10);
+    }
+    .headers{
+      .column(6,10);
     }
     .video-wrap{
-      .column(5);
+      .column(4,10);
+    }
+  }
+}
+#about-training{
+  @media screen and (min-width: 50em){
+
+    .features{
+      .column(5,10);
+    }
+    .video-wrap{
+      .column(5,10);
     }
   }
 }

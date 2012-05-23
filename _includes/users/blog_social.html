@@ -1,10 +1,12 @@
 {% if page.social %}
-  <h1>Stay Connected</h1>
-  <ul>
-    {% for media in page.social %}
-      <li>
-        Follow <a href="{{media[1]}}">{{page.name}}</a> on {{media[0]}}
-      </li>
-    {% endfor %}
-  </ul>
+  <div class='widget'>
+    <div class='tab'>Stay Connected</div>
+    <ul>
+      {% for media in page.social %}
+        <li>
+          <a href="{{media[1]}}">Follow {{page.name}} on <img src="/assets/images/social/{{media[0]}}.png" class="social-logo"/></a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endif %}

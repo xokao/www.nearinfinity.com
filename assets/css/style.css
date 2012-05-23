@@ -1529,21 +1529,47 @@ section.dynamic_content .video-container embed {
   }
 }
 @media screen and (min-width: 50em) {
+  #nic-u  > p {
+    display: inline;
+    float: left;
+    width: 97.5%;
+    margin: 0 1.25%;
+    *width: 97.44791666666667%;
+    *margin: 0 1.1979166666666667%;
+  }
+  #nic-u .headers {
+    display: inline;
+    float: left;
+    width: 57.49999999999999%;
+    margin: 0 1.25%;
+    *width: 57.44791666666666%;
+    *margin: 0 1.1979166666666667%;
+  }
+  #nic-u .video-wrap {
+    display: inline;
+    float: left;
+    width: 37.5%;
+    margin: 0 1.25%;
+    *width: 37.447916666666664%;
+    *margin: 0 1.1979166666666667%;
+  }
+}
+@media screen and (min-width: 50em) {
   #about-training .features {
     display: inline;
     float: left;
-    width: 39.58333333333333%;
-    margin: 0 1.0416666666666665%;
-    *width: 39.53124999999999%;
-    *margin: 0 0.9895833333333331%;
+    width: 47.5%;
+    margin: 0 1.25%;
+    *width: 47.447916666666664%;
+    *margin: 0 1.1979166666666667%;
   }
   #about-training .video-wrap {
     display: inline;
     float: left;
-    width: 39.58333333333333%;
-    margin: 0 1.0416666666666665%;
-    *width: 39.53124999999999%;
-    *margin: 0 0.9895833333333331%;
+    width: 47.5%;
+    margin: 0 1.25%;
+    *width: 47.447916666666664%;
+    *margin: 0 1.1979166666666667%;
   }
 }
 #history aside h2 {
@@ -3109,7 +3135,13 @@ section.dynamic_content aside img {
   float: right;
   width: 75px;
 }
-section.dynamic_content aside .join-us-ad {
+section.dynamic_content aside .social-logo {
+  width: 16px;
+  height: 16px;
+  float: none;
+  vertical-align: bottom;
+}
+section.dynamic_content aside .widget {
   border-radius: 8px;
   border-top-left-radius: 0;
   background: url(/assets/images/irongrip.png);
@@ -3120,8 +3152,10 @@ section.dynamic_content aside .join-us-ad {
   padding: 1em;
   position: relative;
   margin-top: 3em;
+  z-index: 5;
+  color: white;
 }
-section.dynamic_content aside .join-us-ad .tab {
+section.dynamic_content aside .widget .tab {
   display: inline;
   position: absolute;
   z-index: 4;
@@ -3134,15 +3168,16 @@ section.dynamic_content aside .join-us-ad .tab {
   color: #ff7b28;
   text-transform: uppercase;
 }
-section.dynamic_content aside .join-us-ad h2 {
-  position: relative;
-  z-index: 5;
+section.dynamic_content aside .widget ul {
+  margin-bottom: 0;
+}
+section.dynamic_content aside .widget ul li {
+  margin-top: 0;
+}
+section.dynamic_content aside .widget a {
   color: white;
 }
-section.dynamic_content aside .join-us-ad h2 a {
-  color: white;
-}
-section.dynamic_content aside .join-us-ad h2 a:hover {
+section.dynamic_content aside .widget a:hover {
   color: #ff7b28;
 }
 section.dynamic_content aside hgroup.blogger {
@@ -3429,9 +3464,9 @@ section.static_content article h2 {
   margin-top: 1px;
 }
 ul.triangles li {
-  margin-bottom: .25em;
-  text-indent: -4em;
-  padding-left: 4em;
+  margin-bottom: .5em;
+  text-indent: -3.3em;
+  padding-left: 3.3em;
 }
 ul.triangles li:before {
   content: '▶';

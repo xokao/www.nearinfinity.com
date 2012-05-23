@@ -87,7 +87,13 @@ section.dynamic_content {
       float: right;
       width: 75px;
     }
-    .join-us-ad{
+    .social-logo{
+      width:16px;
+      height:16px;
+      float:none;
+      vertical-align:bottom;
+    }
+    .widget{
       border-radius: 8px;
       border-top-left-radius:0;
       background: url(/assets/images/irongrip.png);
@@ -98,6 +104,8 @@ section.dynamic_content {
       padding:1em;
       position:relative;
       margin-top:3em;
+      z-index:5;
+      color:white;
       .tab{
         display:inline;
         position:absolute;
@@ -111,15 +119,16 @@ section.dynamic_content {
         color:@nic_orange;
         text-transform:uppercase;
       }
-      h2{
-        position:relative;
-        z-index:5;
+      ul{
+        margin-bottom:0;
+        li{
+        margin-top:0;
+        }
+      }
+      a{
         color:white;
-        a{
-          color:white;
-          &:hover{
+        &:hover{
           color:@nic_orange;
-          }
         }
       }
     }
