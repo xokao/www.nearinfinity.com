@@ -30,7 +30,7 @@ module Jekyll
         site.tags.each do |tag, posts|
           filtered_posts = posts.reject{ |post| !post.categories.include? type }.sort.reverse
           next if filtered_posts.count <= 0
-          total = filtered_posts.length % 15
+          total = (filtered_posts.length / 15.to_f).ceil
           first_page_posts = filtered_posts.shift(15)
           site.pages << new_tag(site, site.source, "#{TAG_PAGE_DIR}/#{type}/#{tag}", tag, first_page_posts, @tag_page_layout, type, 1, total)
           site.pages << new_tag(site, site.source, "#{TAG_PAGE_DIR}/#{type}/#{tag}/page_1", tag, first_page_posts, @tag_page_layout, type, 1, total)
