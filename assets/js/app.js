@@ -16,34 +16,44 @@ $(function() {
         setTimeout(function() { bios.remove(); }, 500);
         $('img.loading').removeClass('loading')
     }
+    var getUser = function(e) {
+        var img = e.target
+        var match = img && img.src && img.src.match(userImageRegex)
+        var user = match && match.length == 2 && match[1]
+        return user
+    }
     $(document.body).on(
         {
             'mouseover': function(e) {
-
                 var img = e.target
-                var match = img && img.src && img.src.match(userImageRegex)
-                var user = match && match.length == 2 && match[1]
+                var user = getUser(e)
 
                 clearTimeout(userPopupTimer)
                 if (user && $(img).parents('.bio-popup').length === 0) {
-                    console.log('mouseon')
                     userPopupTimer = setTimeout(function() {
                         $(img).addClass('loading')
                         var show = function(text) {
                                 var cap = $('<div class="bio-popup"/>').html(text)
                                 var image = $(img)
                                 var offset = image.offset()
-                                var bump = (75 - offset.height) / 2 + 10 // center image (10=border)
+                                var imageDimensions = { width:'75px', height:'75px' };
+                                var bump = (parseInt(imageDimensions.height,10) - offset.height) / 2 + 10 // center image (10=border)
 
-                                delete offset.height
                                 offset.width = '300px'
-                                offset.left -= +bump
-                                offset.top -= +bump
-                                
+                                offset.left -= bump
+                                offset.top -= bump
+
+                                if ((offset.left + parseInt(offset.width, 10)) > $(window).width()) {
+                                    cap.addClass('left');
+                                    offset.left -= 300 - 75 - bump / 2
+                                }
+                                delete offset.height
+
                                 removeBios()
-                                $(document.body).append(
-                                    cap.append(image.clone().attr({width:'75px',height:'75px'})).css(offset)
-                                )
+                                $('<a href="/blogs/' + user + '"></a>').append(
+                                    image.clone().attr(imageDimensions)
+                                ).appendTo(cap.css(offset))
+                                cap.appendTo(document.body)
 
                                 setTimeout(function() { cap.addClass('show_bio') }, 10)
                         };
@@ -63,10 +73,9 @@ $(function() {
                 var to = e.relatedTarget || e.toElement;
 
                 // Return if mousing to the popup image
-                if (to && $(to).parents('.bio-popup').length)
+                if (to && $(to).is('a img') && $(to).parents('.bio-popup').length)
                     return
 
-                console.log('mouseout', to)
                 clearTimeout(userPopupTimer)
                 removeBios()
             } 

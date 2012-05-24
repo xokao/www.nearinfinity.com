@@ -2,6 +2,7 @@ img.loading:hover {
   cursor: wait;
 }
 div.bio-popup {
+  cursor: pointer;
   z-index: 100;
   padding: 1em;
   position: absolute;
@@ -23,12 +24,24 @@ div.bio-popup {
   }
 
   img {
+    cursor: pointer;
     position: absolute;
     left: 0;
     top: 0;
     height: 75px;
     margin: 0; //-0.5em 0 0 -0.5em;
     padding: 0;
+  }
+
+  &.left {
+    img {
+      right: 0;
+      left: auto;
+    }
+    hgroup {
+      margin-left: 0;
+      margin-right: 75px;
+    }
   }
 
   hgroup {

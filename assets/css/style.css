@@ -2607,6 +2607,7 @@ img.loading:hover {
   cursor: wait;
 }
 div.bio-popup {
+  cursor: pointer;
   z-index: 100;
   padding: 1em;
   position: absolute;
@@ -2639,12 +2640,21 @@ div.bio-popup.show_bio {
   opacity: 1.0;
 }
 div.bio-popup img {
+  cursor: pointer;
   position: absolute;
   left: 0;
   top: 0;
   height: 75px;
   margin: 0;
   padding: 0;
+}
+div.bio-popup.left img {
+  right: 0;
+  left: auto;
+}
+div.bio-popup.left hgroup {
+  margin-left: 0;
+  margin-right: 75px;
 }
 div.bio-popup hgroup {
   margin-left: 75px;
