@@ -7,7 +7,11 @@
     {% include header.html %}
     {% if page.impact %}
       <article class="impact-item">
-        <h1>{{ page.impact.title }}</h1>
+        {%if page.impact.title-img %}
+          <img src='{{page.impact.title-img}}'/>
+        {%elsif page.impact.title %}
+          <h1>{{ page.impact.title }}</h1>
+        {% endif %}
         <h2>{{ page.impact.text }}</h2>
       </article>
       <figure class="impact-item"><div style="background:{{ page.impact.background }}"></div></figure>
