@@ -20,7 +20,16 @@ section.static_content {
     }
   }
 }
-
+#big-data-products,#mobile-products{
+  @media screen and (min-width: 55em){
+    section{
+      width:33%;
+      float: left;
+      .box-sizing;
+      padding: 0 2em;
+    }
+  }
+}
 #positions, #benefits-list {
   @media screen and (min-width: 55em){
     section {
@@ -34,7 +43,25 @@ section.static_content {
     }
   }
 }
-
+.split-band{
+  @media screen and (min-width: 50em){
+    section{
+      .column(5,10);
+    }
+  }
+}
+#mobile-more-info{
+  @media screen and (min-width: 50em){
+    section{
+      .column(7,10);
+    }
+    aside{
+      .column(3,10);
+      width:26%;
+      margin:3em 0 0;
+    }
+  }
+}
 #about_internship{
   @media screen and (min-width: 50em){
     .intern_desc{ .column(7, 10); }
