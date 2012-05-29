@@ -27,6 +27,15 @@ Prequisites
 bundle install
 ```
 
+Linux
+-----------
+
+If you are running linux, you will need to install the header files for compiling extension modules for ruby 1.9.1
+
+```
+[sudo] apt-get install ruby1.9.1-dev
+```
+
 Server
 ------
 
