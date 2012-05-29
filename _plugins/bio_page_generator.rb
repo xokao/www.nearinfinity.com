@@ -1,7 +1,7 @@
 module Jekyll
   class ShortBioPage < Page
     def initialize(site, base, dir, name, data)
-      self.data = data
+      self.data = data.clone
       self.data['layout'] = 'short_bio'
       super(site, base, dir, name)
     end
@@ -19,7 +19,7 @@ module Jekyll
         directory_parse = page.instance_variable_get('@dir').split('/')
         next if !bio_sub_directory? directory_parse
         page.data.merge!({'layout' => 'person', 'user' => directory_parse.last})
-        site.pages << ShortBioPage.new(site, site.source, '/short_bios/popup_bio/', "#{page.data['user']}.html", page.data.clone)
+        site.pages << ShortBioPage.new(site, site.source, '/short_bios/popup_bio/', "#{page.data['user']}.html", page.data)
       end
     end
 
