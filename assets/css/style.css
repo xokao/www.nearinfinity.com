@@ -1703,6 +1703,7 @@ section.dynamic_content .video-container embed {
 @media screen and (min-width: 50em) {
   #who_we_are_team .team-links {
     position: absolute;
+    left: 0;
   }
   #who_we_are_team .team_subcategory {
     padding-left: 17em;
