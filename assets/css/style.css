@@ -1765,13 +1765,6 @@ header#main nav ol li a:hover {
   text-decoration: none;
   color: #ff7b28;
 }
-header#main hr {
-  border: 1px solid #f9f9f9;
-  height: 0px;
-  margin: 0;
-  padding: 0;
-  border-bottom: 0;
-}
 header#main article {
   color: #606060;
   padding: 2em 0;
@@ -3125,8 +3118,14 @@ section.dynamic_content article pre {
 section.dynamic_content article code {
   font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
 }
+section.dynamic_content article .user-info-list {
+  margin-top: 10px;
+}
 section.dynamic_content article .user-info-list em {
   font-weight: bold;
+}
+section.dynamic_content article .user-info-list li {
+  font-size: 1.3em;
 }
 section.dynamic_content .video-container {
   -webkit-box-shadow: -2px 2px 0 rgba(255, 255, 255, 0.6), -5px 5px 0 rgba(0, 0, 0, 0.1);
