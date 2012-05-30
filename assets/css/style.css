@@ -3019,6 +3019,12 @@ figure.user_popup {
   left: 0;
   top: -8px;
 }
+.impact-link {
+  color: #FF7B28;
+}
+.impact-link:hover {
+  opacity: .8;
+}
 section.dynamic_content {
   /* Legacy browsers */
 
