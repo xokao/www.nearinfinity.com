@@ -3019,6 +3019,9 @@ figure.user_popup {
   left: 0;
   top: -8px;
 }
+.impact-text p {
+  margin-bottom: 5px;
+}
 .impact-link {
   color: #FF7B28;
 }
@@ -3599,6 +3602,18 @@ ul.triangles li:before {
 }
 .user-list-item div h4 {
   font-weight: bold;
+}
+#springboard-band span {
+  color: #FF7B28;
+}
+#springboard-band p {
+  margin-bottom: 10px;
+}
+#springboard-band a {
+  color: #FF7B28;
+}
+#springboard-band a:hover {
+  color: white;
 }
 section.all_content {
   padding-bottom: 50px;
