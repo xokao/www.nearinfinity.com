@@ -8,7 +8,7 @@ Setup Repository
 ```
 # Clone repo and blogs submodule
 git clone --recursive git@github.com:nearinfinity/www.nearinfinity.com.git
-cd nearinfinity.github.com/blogs    
+cd www.nearinfinity.com/blogs    
 git checkout master
 
 # Change the remote URL to read/write. gh-pages requires the submodule to be read-only
