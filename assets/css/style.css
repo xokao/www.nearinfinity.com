@@ -1352,6 +1352,9 @@ section.dynamic_content .video-container embed {
     padding: 0 2em;
   }
 }
+#looking-for {
+  width: 90%;
+}
 @media screen and (min-width: 55em) {
   #positions section,
   #benefits-list section {
