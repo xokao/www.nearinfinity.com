@@ -136,6 +136,26 @@ table td {
 .debug {
   background: rgba(0, 255, 0, 0.5);
 }
+.header-colored-plus h1 {
+  text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  color: #93a7ac;
+  margin-top: 0;
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: none;
+}
+.header-colored-plus h1 em {
+  color: #ffc530;
+  font-size: 1.2em;
+}
+.header-colored-plus h2 {
+  font-size: 1.7692307692307692em;
+  line-height: 1.1612903225806452em;
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  line-height: 1.3em;
+  letter-spacing: 0;
+  color: #93a7ac;
+}
 .plain-strip,
 .band-strip {
   clear: left;
@@ -1937,6 +1957,26 @@ header#main.impact-item figure.impact-item div {
   left: 0;
   opacity: 1;
 }
+header#main.impact-item.light h1 {
+  text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  color: #93a7ac;
+  margin-top: 0;
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: none;
+}
+header#main.impact-item.light h1 em {
+  color: #ffc530;
+  font-size: 1.2em;
+}
+header#main.impact-item.light h2 {
+  font-size: 1.7692307692307692em;
+  line-height: 1.1612903225806452em;
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  line-height: 1.3em;
+  letter-spacing: 0;
+  color: #93a7ac;
+}
 header#main .article-links a {
   text-decoration: none;
   color: transparent;
@@ -3346,6 +3386,29 @@ section.static_content article hgroup h2 {
   text-shadow: -1px 1px 0 rgba(255, 255, 255, 0.5), -2px 3px 0 rgba(255, 123, 40, 0.2);
   text-shadow: none;
 }
+section.static_content article.light h1,
+section.static_content article hgroup.light h1 {
+  text-shadow: 0 0 0 transparent, 0 0 0 transparent;
+  color: #93a7ac;
+  margin-top: 0;
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  text-transform: none;
+}
+section.static_content article.light h1 em,
+section.static_content article hgroup.light h1 em {
+  color: #ffc530;
+  font-size: 1.2em;
+}
+section.static_content article.light h2,
+section.static_content article hgroup.light h2 {
+  font-size: 1.7692307692307692em;
+  line-height: 1.1612903225806452em;
+  font-family: 'Lucida Grande', Arial, Helvetica, sans-serif;
+  line-height: 1.3em;
+  letter-spacing: 0;
+  color: #93a7ac;
+}
 section.static_content article h2 {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Arial, Helvetica, sans-serif;
   letter-spacing: 2px;
@@ -3842,21 +3905,3 @@ section.all_content aside ul li h2 {
 section.all_content aside ul li a.selected {
   color: #ff7b28;
 }
-/*
-.video {
-  position: relative;
-  display: inline-block;
-  &:after {
-    content: "";
-    background: url(../images/play-button.png) no-repeat;
-    display: block;
-    position: absolute;
-    width: 103px;
-    height: 103px;
-    margin-left: -51px;
-    margin-top: -51px;
-    left: 50%;
-    top: 50%;
-  }
-}
-*/

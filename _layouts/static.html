@@ -6,12 +6,8 @@
   <header id="main" {% if page.impact %}class="homepage impact-item end-transition disable-animation {{ page.impact.class }}"{% endif %}>
     {% include header.html %}
     {% if page.impact %}
-      <article class="impact-item">
-        {%if page.impact.title-img %}
-          <img src='{{page.impact.title-img}}'/>
-        {%elsif page.impact.title %}
-          <h1>{{ page.impact.title }}</h1>
-        {% endif %}
+      <article class="impact-item {{ page.impact.class }}">
+        <h1>{{ page.impact.title }}</h1>
         <h2>{{ page.impact.text }}</h2>
       </article>
       <figure class="impact-item"><div style="background:{{ page.impact.background }}"></div></figure>
