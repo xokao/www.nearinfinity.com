@@ -19,7 +19,7 @@ module Jekyll
       all_blogs = @context.registers[:site].categories['blogs']
       all_blogs_by_author = all_blogs.reject{ |post|
         !post.categories.include? author
-      }.reverse
+      }.sort{|a,b| b.date <=> a.date}
       all_blogs_by_author[0..count].map{ |post|
         "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
       }.compact.join
