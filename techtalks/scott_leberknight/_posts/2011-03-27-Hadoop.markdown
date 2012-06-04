@@ -1,5 +1,4 @@
 ---
-layout: techtalks
 title: "Hadoop"
 tags: Hadoop
 player_url: http://www.youtube.com/watch?v=EIS-CcdmLe0&feature=youtube_gdata_player

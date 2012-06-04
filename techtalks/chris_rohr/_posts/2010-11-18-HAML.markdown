@@ -1,5 +1,4 @@
 ---
-layout: techtalks
 title: "HAML"
 tags: Ruby Web
 player_url: http://www.youtube.com/watch?v=zpDiOQZm9cg&feature=youtube_gdata_player

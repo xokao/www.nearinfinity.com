@@ -3123,6 +3123,7 @@ section.dynamic_content article .user-info-list em {
   font-weight: bold;
 }
 section.dynamic_content article .user-info-list li {
+  margin-bottom: 8px;
   font-size: 1.3em;
 }
 section.dynamic_content .video-container {

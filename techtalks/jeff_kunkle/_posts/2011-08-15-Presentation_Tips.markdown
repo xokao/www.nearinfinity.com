@@ -1,5 +1,4 @@
 ---
-layout: techtalks
 title: "Presentation Tips"
 player_url: http://www.youtube.com/watch?v=8l6dmfXovto&feature=youtube_gdata_player
 unique_id: 8l6dmfXovto 

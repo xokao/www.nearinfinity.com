@@ -1,5 +1,4 @@
 ---
-layout: techtalks
 title: "Microprocessor: Arduino"
 tags: Hardware
 player_url: http://www.youtube.com/watch?v=u0Znbyr7ijk&feature=youtube_gdata_player

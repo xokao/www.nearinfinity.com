@@ -1,5 +1,4 @@
 ---
-layout: techtalks
 title: "What Makes a Good Presentation Description?"
 player_url: http://www.youtube.com/watch?v=0BpmqLFQkP4&feature=youtube_gdata_player
 unique_id: 0BpmqLFQkP4 
