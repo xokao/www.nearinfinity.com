@@ -1,5 +1,4 @@
 ---
-layout: techtalks
 title: "The Art of Searching"
 player_url: http://www.youtube.com/watch?v=yst6VQ7Lwpo&feature=youtube_gdata_player
 unique_id: yst6VQ7Lwpo 
