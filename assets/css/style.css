@@ -3257,10 +3257,10 @@ section.dynamic_content aside ul.sharing li:before {
   height: 20px;
 }
 section.dynamic_content aside ul.sharing li.twitter:before {
-  background-position: -80px 0;
+  background-position: -100px 0;
 }
 section.dynamic_content aside ul.sharing li.facebook:before {
-  background-position: -100px 0;
+  background-position: -80px 0;
 }
 section.dynamic_content aside ul li .sharing-links {
   display: none;
