@@ -3817,21 +3817,3 @@ section.all_content aside ul li h2 {
 section.all_content aside ul li a.selected {
   color: #ff7b28;
 }
-/*
-.video {
-  position: relative;
-  display: inline-block;
-  &:after {
-    content: "";
-    background: url(../images/play-button.png) no-repeat;
-    display: block;
-    position: absolute;
-    width: 103px;
-    height: 103px;
-    margin-left: -51px;
-    margin-top: -51px;
-    left: 50%;
-    top: 50%;
-  }
-}
-*/
