@@ -1204,13 +1204,8 @@ section.all_content aside {
   }
 }
 section.dynamic_content article {
-  display: inline;
-  float: left;
-  width: 81.25%;
-  margin: 0 1.0416666666666665%;
-  *width: 81.19791666666667%;
-  *margin: 0 0.9895833333333331%;
-  margin-left: 9.374999999999998%;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 section.dynamic_content aside {
   clear: left;
