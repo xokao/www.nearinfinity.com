@@ -28,6 +28,7 @@ module Jekyll
     def generate_tag_pages(site)
       ['blogs', 'techtalks', 'speaking'].each do |type|
         site.tags.each do |tag, posts|
+          tag = tag.downcase
           filtered_posts = posts.reject{ |post| !post.categories.include? type }.sort.reverse
           next if filtered_posts.count <= 0
           total = (filtered_posts.length / 15.to_f).ceil
