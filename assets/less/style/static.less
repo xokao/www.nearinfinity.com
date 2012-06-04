@@ -18,6 +18,11 @@ section.static_content {
         .size(13);
         .light_header_shadowless(@nic_orange);
       }
+
+    }
+
+    &.light, hgroup.light {
+      .header-colored-plus;
     }
     h2{
       .light_header_shadowless(@nic_orange);
@@ -25,149 +30,142 @@ section.static_content {
       margin-bottom:.5em;
     }
   }
-}
-.address{
-  padding-left:2em;
-  padding-bottom:1em;
-}
 
-#what_we_do { 
-  .band-strip;
-  .gray-band;
-}
+  .address{
+    padding-left:2em;
+    padding-bottom:1em;
+  }
 
-#who_we_are {
-  ul.team-links .selected {
-    .banner(desaturate(@nic_orange, 20%));
+  #what_we_do { 
+    .band-strip;
+    .gray-band;
   }
-}
 
-ul.triangles li{
-  margin-bottom:.5em;
-  text-indent:-3.3em;
-  padding-left:3.3em;
-  &:before{
-    content:'▶';
-    font-family: 'Arial Black';
-    color: @nic_orange;
-    margin:0 15px;
+  #who_we_are {
+    ul.team-links .selected {
+      .banner(desaturate(@nic_orange, 20%));
+    }
   }
-}
 
-#get_to_know_us{
-  h1{
-    .light_header_shadowless(@nic_orange);
+  #get_to_know_us{
+    h1{
+      .light_header_shadowless(@nic_orange);
+    }
   }
-}
-#awards{
-  h2{
-    .size(5);
+  #awards{
+    h2{
+      .size(5);
+    }
   }
-}
 
-#check_aval{
-  h3{
-    color:white;
-    padding-top:.5em;
+  #check_aval{
+    h3{
+      color:white;
+      padding-top:.5em;
+    }
+    .t1,.t2,.date-check-error,.date-loading{
+      display:none;
+    }
+    .Available{
+      color:green;
+    }
+    .Unavailable{
+      color:red;
+    }
+    .form-line{
+      padding-bottom:.5em;
+    }
+    .results{
+      margin-bottom:2em;
+    }
   }
-  .t1,.t2,.date-check-error,.date-loading{
-    display:none;
-  }
-  .Available{
-    color:green;
-  }
-  .Unavailable{
-    color:red;
-  }
-  .form-line{
-    padding-bottom:.5em;
-  }
-  .results{
-    margin-bottom:2em;
-  }
-}
 
-.widget{
-  border-radius: 8px;
-  border-top-left-radius:0;
-  background: url(/assets/images/irongrip.png);
-  border-style: 1px solid rgba(150,150,150,0.36);
-  -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.48), inset 0px 1px 3px rgba(0,0,0,0.03);
-  -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.48), inset 0px 1px 3px rgba(0,0,0,0.03);
-  box-shadow: 0px 1px 0px rgba(255,255,255,0.48), inset 0px 1px 3px rgba(0,0,0,0.03);
-  padding:1.25em;
-  position:relative;
-  margin-top:3em;
-  z-index:5;
-  color:white;
-  .tab{
-    display:inline;
-    position:absolute;
-    z-index:4;
-    top:-30px;
-    left:0;
+  .widget{
     border-radius: 8px;
-    background: #D8D8D8;
-    padding:.5em 1em 1em;
+    border-top-left-radius:0;
     background: url(/assets/images/irongrip.png);
-    color:@nic_orange;
-    text-transform:uppercase;
-  }
-  ul{
-    margin-bottom:0;
-    li{
-    margin-top:0;
-    }
-  }
-  a{
-    color:white;
-    &:hover{
-      color:@nic_orange;
-    }
-  }
-  &.light{
-    background: url(/assets/images/paper.png);
+    border-style: 1px solid rgba(150,150,150,0.36);
+    -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.48), inset 0px 1px 3px rgba(0,0,0,0.03);
+    -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.48), inset 0px 1px 3px rgba(0,0,0,0.03);
+    box-shadow: 0px 1px 0px rgba(255,255,255,0.48), inset 0px 1px 3px rgba(0,0,0,0.03);
     padding:1.25em;
-    & > *:not(div){
-      padding: 0 5px 0 5px;
-    }
+    position:relative;
+    margin-top:3em;
+    z-index:5;
+    color:white;
     .tab{
+      display:inline;
+      position:absolute;
+      z-index:4;
+      top:-30px;
+      left:0;
+      border-radius: 8px;
+      background: #D8D8D8;
+      padding:.5em 1em 1em;
+      background: url(/assets/images/irongrip.png);
+      color:@nic_orange;
+      text-transform:uppercase;
+    }
+    ul{
+      margin-bottom:0;
+      li{
+      margin-top:0;
+      }
+    }
+    a{
+      color:white;
+      &:hover{
+        color:@nic_orange;
+      }
+    }
+    &.light{
       background: url(/assets/images/paper.png);
-    }
-    color: black;
-  }
-}
-.user-list-item {
-  min-height: 75px;
-  img {
-    float: left;
-    width: 100px;
-    padding-right: 10px;
-  }
-  div {
-    display: table-cell;
-    vertical-align: middle;
-    height: 100px;
-    h4, h5 {
-      margin: 0;
-    }
-    h4 {
-      font-weight: bold;
+      padding:1.25em;
+      & > *:not(div){
+        padding: 0 5px 0 5px;
+      }
+      .tab{
+        background: url(/assets/images/paper.png);
+      }
+      color: black;
     }
   }
-}
+  .user-list-item {
+    min-height: 75px;
+    img {
+      float: left;
+      width: 100px;
+      padding-right: 10px;
+    }
+    div {
+      display: table-cell;
+      vertical-align: middle;
+      height: 100px;
+      h4, h5 {
+        margin: 0;
+      }
+      h4 {
+        font-weight: bold;
+      }
+    }
+  }
 
-#springboard-band{
-  span{
-    color: #FF7B28;
-  }
-  p{
-    margin-bottom: 10px;
-  }
-  a{
-    color: #FF7B28;
-    &:hover{
-      color: white;
+  #springboard-band{
+    span{
+      color: #FF7B28;
     }
+    p{
+      margin-bottom: 10px;
+    }
+    a{
+      color: #FF7B28;
+      &:hover{
+        color: white;
+      }
+    }
+  }
+
+  ul.triangles li{
+    .triangled-list;
   }
 }

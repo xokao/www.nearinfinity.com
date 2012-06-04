@@ -5,7 +5,7 @@ module Jekyll
       authors = site['categories'].keys.reject{|category|
         ['blogs', 'techtalks', 'news', 'speaking'].include? category
       }.sort{|a,b|a.split('_')[1] <=> b.split("_")[1]}.map{ |user|
-        "<li><a href='#{author_url(user)}' class='author-filter'><img class='tiny-portrait' src='#{user_image(user)}'/>#{user_to_name(user)}</a></li>"
+        "<li><a href='#{author_url(user)}' class='author-filter'>#{user_to_name(user)}</a></li>"
       }.compact.join
     end
 

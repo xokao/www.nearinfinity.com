@@ -64,6 +64,38 @@ namespace :assets do
     end
   end
 
+
+  desc "Sprite users"
+  task :sprite_users do
+    require 'fileutils'
+
+    dir = 'assets/images/users'
+    users = "#{dir}/*.png"
+    dest = "#{dir}/sprites/small.png"
+    width = 20
+    padding = 2
+    `montage #{users} -geometry #{width}x#{width}+#{padding}+#{padding} -tile 0x1 -background transparent #{dest}`
+
+    final = dest.gsub 'small', 'small-saturated' 
+    `convert #{dest} -modulate 100,25,100 #{final}`
+   
+    File.open("#{dir}/sprites/users.less", 'w') do |f|
+      f.puts """
+      .user_spr {
+        background: url(/#{final}) no-repeat;
+        width: #{width + padding * 2}px;
+        height: #{width + padding * 2}px;
+        margin-top: -2px;
+        float: left;
+      }
+      """
+      Dir[users].each_with_index do |user, index|
+        f.puts ".user_spr-#{File.basename(user).gsub('.png','')} { background-position-x: #{index * -(width+padding*2)}px; }"
+      end
+    end
+
+  end
+
 end
 
 

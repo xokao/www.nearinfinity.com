@@ -29,6 +29,11 @@ module Jekyll
       end
     end
 
+    def bio_link(name)
+      "/who_we_are/bios/#{name}" if Dir.exists?("/who_we_are/bios/#{name}")
+      "/blogs/#{name}"
+    end
+
   end
 
   class IncludeMarkdownTag < Liquid::Tag
