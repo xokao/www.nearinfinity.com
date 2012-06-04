@@ -31,7 +31,7 @@ module Jekyll
       all_speaking = @context.registers[:site].categories['speaking']
       all_future_speaking_by_author = all_speaking.reject{ |post|
         !post.categories.include? author
-      }.reverse
+      }.sort{|a,b| b.date <=> a.date}
       all_future_speaking_by_author[0..count].map{ |post|
         "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
       }.compact.join
@@ -43,7 +43,7 @@ module Jekyll
       all_techtalks = @context.registers[:site].categories['techtalks']
       all_techtalks_by_author = all_techtalks.reject{ |post|
         !post.categories.include? author
-      }.reverse
+      }.sort{|a,b| b.date <=> a.date}
       all_techtalks_by_author[0..count].map{ |post|
         "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
       }.compact.join
