@@ -1,3 +1,5 @@
+require 'bundler/setup'
+
 task :default => [:jekyll]
 
 task :slow_warning do
