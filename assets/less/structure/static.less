@@ -267,15 +267,20 @@ section.static_content {
     margin-bottom: 2em;
   }
 
-  .team_subcategory > li {
-
-    & > h1 {
-      .size(10);
-      color: @nic_orange;
+  .team_subcategory {
+    .box-sizing;
+    & > li {
+      & > h1 {
+        .size(10);
+        color: @nic_orange;
+      }
     }
   }
 
   @media screen and (min-width:33em) {
+    .team_subcategory {
+    }
+
     .team_subcategory  > li {
       width: 50%;
       float: left;
