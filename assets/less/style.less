@@ -9,19 +9,7 @@
 @gutter-width: 20;
 @total-width: 100%;
 
-body {
-  background: url('/assets/images/paper.png') repeat;
-  color: @light_text;
-}
-a { 
-text-decoration:none;
-font-weight:bold;
-color: darken(@darker_text,30%); 
-  &:hover{
-  color:@nic_orange;
-  text-decoration:none;
-}
-}
+@import 'style/global';
 
 @import 'structure';
 @import 'style/header';
