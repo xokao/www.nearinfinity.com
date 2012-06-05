@@ -6,18 +6,19 @@ end
 
 desc "Run jekyll and create the _site dir"
 task :jekyll => [:slow_warning] do
-  `bundle exec jekyll`
+  exec "bundle exec jekyll"
 end
 
 desc "Run the jekyll server"
 task :server => [:slow_warning] do
-  `bundle exec jekyll --server --auto`
+  exec "bundle exec jekyll --server --auto"
 end
 
 namespace :server do
   desc "Run the jekyll server, only generate 5 most recent posts"
   task :recent => [:slow_warning] do
-    `bundle exec jekyll --server --auto --limit_posts 5`
+    num = ENV['LIMIT'] || 5
+    exec "bundle exec jekyll --server --auto --limit_posts #{num}"
   end
 end
 
