@@ -3336,17 +3336,6 @@ section.dynamic_content aside ul li h2 {
   font-size: 0.8461538461538461em;
   line-height: 1.44em;
 }
-section.dynamic_content ul li {
-  margin-bottom: .5em;
-  text-indent: -3.3em;
-  padding-left: 3.3em;
-}
-section.dynamic_content ul li:before {
-  content: '▶';
-  font-family: 'Arial Black';
-  color: #ff7b28;
-  margin: 0 15px;
-}
 section.static_content {
   /* Legacy browsers */
 
