@@ -1,1 +1,1 @@
-_NEAR INFINITY_ is laser focused on software development. We serve a range of customers in the federal government as well as the commercial sector, specializing in the financial, intelligence and security industries. 
+_AT NEAR INFINITY_, we know software development. We serve a range of customers in the federal government as well as the commercial sector, specializing in the financial, intelligence and security industries.
