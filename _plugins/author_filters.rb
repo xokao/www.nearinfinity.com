@@ -14,13 +14,13 @@ module Jekyll
     end
 
     # Return a list of the COUNT most recent blogs by an author
-    def recent_blogs_list(page, count = 5)
+    def recent_blogs_list(page, count = 3)
       author = page['user'] || page['categories'][1]
       all_blogs = @context.registers[:site].categories['blogs']
       all_blogs_by_author = all_blogs.reject{ |post|
         !post.categories.include? author
       }.sort{|a,b| b.date <=> a.date}
-      all_blogs_by_author[0..count].map{ |post|
+      all_blogs_by_author[0..count-1].map{ |post|
         "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
       }.compact.join
     end
@@ -32,7 +32,7 @@ module Jekyll
       all_future_speaking_by_author = all_speaking.reject{ |post|
         !post.categories.include? author
       }.sort{|a,b| b.date <=> a.date}
-      all_future_speaking_by_author[0..count].map{ |post|
+      all_future_speaking_by_author[0..count-1].map{ |post|
         "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
       }.compact.join
     end
@@ -44,7 +44,7 @@ module Jekyll
       all_techtalks_by_author = all_techtalks.reject{ |post|
         !post.categories.include? author
       }.sort{|a,b| b.date <=> a.date}
-      all_techtalks_by_author[0..count].map{ |post|
+      all_techtalks_by_author[0..count-1].map{ |post|
         "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
       }.compact.join
     end

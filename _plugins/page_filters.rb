@@ -58,7 +58,7 @@ module Jekyll
       else
         title = "developer"
       end
-      "<div class='widget'><div class='tab'>Join Us</div>Are you a #{title} looking for a fun place to work in the DC area? Near Infinity is hiring! Check out our <a href='/join_us/open_positions'>open positions</a> or <a href='mailto:careers@nearinfinity.com'>submit your resume</a>.</div>"
+      "<div class='widget' style='margin-top: 60px;'><div class='tab'>Join Us</div>Are you a #{title} looking for a fun place to work in the DC area? Near Infinity is hiring! Check out our <a href='/join_us/open_positions'>open positions</a> or <a href='mailto:careers@nearinfinity.com'>submit your resume</a>.</div>"
     end
 
     def paginate(page)
