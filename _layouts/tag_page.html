@@ -10,7 +10,6 @@
   <section class="all_content">
     <div class="blogs">
     <header><h1>{{ page.tag_key }}</h1></header>
-    {{page | paginate_tags}}
     {% for post in page.posts %}
       <article>
         <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
