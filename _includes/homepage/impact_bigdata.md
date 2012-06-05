@@ -1,3 +1,3 @@
-NIC has more than 30 man years of experience developing, deploying, operating and evolving the government's most successful cloud-based, big data entity analytic capabilities. We've developed the open source structured data search engine, [Blur](http://blur.io), capable of querying massive amounts of data at incredible speeds. 
+NIC has years of experience developing, deploying, operating and evolving the government’s most successful cloud-based, big data entity analytic capabilities. Our engineers have developed the open source structured data search engine, Blur, capable of querying massive amounts of data at incredible speeds.
 
 <a href="/what_we_do/big_data" class="impact-link">More on Big Data</a>

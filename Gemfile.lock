@@ -9,6 +9,7 @@ GEM
     builder (3.0.0)
     classifier (1.3.3)
       fast-stemmer (>= 1.0.0)
+    colorize (0.5.8)
     commonjs (0.2.6)
     directory_watcher (1.4.1)
     faraday (0.7.6)
@@ -69,6 +70,7 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   albino
+  colorize
   jekyll
   less
   liquid
