@@ -246,4 +246,7 @@ body section.dynamic_content {
   margin-left: -60px;
 }
 
+.lt-ie9 ul.team-links .selected {
+  background-color: #DC6418;
+}
 
