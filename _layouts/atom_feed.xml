@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{page.title}}</title>
+  <link type="text/html" rel="alternate" href="{{page.link}}"/>
+  <link type="application/atom+xml" rel="self" href="{{page.link}}/atom.xml"/>
+  <id>tag:www.nearinfinity.com,2007-12-20:/blogs/7</id>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <subtitle>{{page.description}}</subtitle>
+  {% for post in page.posts %}
+    <entry>
+      <title>{{ post.title }}</title>
+      <link type="text/html" rel="alternate" href="http://www.nearinfinity.com/{{post.url}}"/>
+      <id>tag:www.nearinfinity.com,2012:{{ post.id }}</id>
+      <published>{{ post.date | date_to_xmlschema }}</published>
+      <updated>{{ post.date | date_to_xmlschema }}</updated>
+      {% capture post_excerpt %}{{post | excerpt: 15}}{%endcapture %}
+      <summary>{{post_excerpt | xml_escape}}</summary>
+      <author>
+        <name>{{post.categories[1] | xml_escape}}</name>
+      </author>
+      {% for tag in post.tags %}
+        <category term="{{tag}}"/>
+      {% endfor %}
+      <content type="html" xml:lang="en" xml:base="http://www.nearinfinity.com/blogs/">{{ post.content | xml_escape }}</content>
+    </entry>
+  {% endfor %}
+</feed>

@@ -22,8 +22,8 @@ module Jekyll
     end
 
     def excerpt(page, num_words=20)
-      if page.has_key?('exerpt')
-        page.exerpt
+      if page.has_key?('excerpt')
+        page.excerpt
       else
         page['content'].gsub(/<[^>]*>/,'').split(' ').slice(0,num_words).join(' ') + '...'
       end
