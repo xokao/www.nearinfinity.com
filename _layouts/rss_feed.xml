@@ -8,7 +8,6 @@
     <copyright>Copyright {{ site.time | date: "%Y" }}</copyright>
     <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
     <docs>http://www.rssboard.org/rss-specification</docs>
-
     {% for post in page.posts %}
       <item>
         <title>{{ post.title }}</title>
@@ -17,8 +16,11 @@
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <author>{{post.categories[1] | user_to_name}}</author>
         <description>{{ post.content | xml_escape }}</description>
+        {% for tag in post.tags %}
+          <category term="{{tag}}" label="{{tag}}"/>
+        {% endfor %}
       </item>
     {% endfor %}
-
   </channel> 
 </rss>
+

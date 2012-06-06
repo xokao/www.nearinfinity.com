@@ -47,9 +47,9 @@ module Jekyll
         filtered_posts = tag_posts.reject{ |post| !post.categories.include? 'blogs' }.sort.reverse
         site.pages << RssFeed.new(site, site.source, "/blogs/rss/#{tag}", 'index.xml', {
           'posts'  => filtered_posts,
-          'title' => "#{tag.upcase} Related Blogs - Blogs at Near Infinity",
+          'title' => "#{tag.capitalize} Related Blogs - Blogs at Near Infinity",
           'link' => "http://www.nearinfinity.com/tags/blogs/#{tag}",
-          'description' => "#{tag} Blogs"
+          'description' => "#{tag.capitalize} Blogs"
         })
       end
     end
