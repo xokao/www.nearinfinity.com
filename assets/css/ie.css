@@ -132,9 +132,6 @@
 .lt-ie9 #aboutnic #news article h2 a {
   color: white;
 }
-body #techcommunity {
-  background-image: url(/assets/graphics/textures/leather.jpg);
-}
 .lt-ie9 #techcommunity {
   padding: 0 10% 1em 10%;
 }
