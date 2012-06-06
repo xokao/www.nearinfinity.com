@@ -10,8 +10,9 @@ module Jekyll
     end
 
     def author_url(user)
-      "/who_we_are/bios/#{user}" if Dir.exists?("/who_we_are/bios/#{user}")
-      "/blogs/#{user}"
+      check_url = Dir.pwd.split('/').last == 'www.nearinfinity.com' ? "/who_we_are/bios/#{user}" : "../who_we_are/bios/#{user}"
+      return "/who_we_are/bios/#{user}" if Dir.exists?(check_url)
+      return "/blogs/#{user}"
     end
 
     # Return a list of the COUNT most recent blogs by an author
