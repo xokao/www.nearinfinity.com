@@ -7,10 +7,27 @@ module Jekyll
       tags.sort.map { |t| "<a href='/tags/#{type}/#{t.downcase}'>#{t.downcase}</a>" if t.is_a?(String) }.compact.join(', ')
     end
 
+    def blogs_tags_list(site)
+      tags_list(site, 'blogs')
+    end
+
+    def techtalks_tags_list(site)
+      tags_list(site, 'techtalks')
+    end
+
+    def speaking_tags_list(site)
+      tags_list(site, 'speaking')
+    end
+
     # Returns a list off all blog tags
-    def tags_list(site, page)
-      type =page['type'] || page['url'].split('/')[1]
-      site['tags'].map{ |tag_key, tag_value| "<li><a href='/tags/#{type}/#{tag_key.downcase}/'>#{tag_key.downcase}</a></li>" }.uniq.sort.compact.join
+    def tags_list(site, type)
+      tags = site['tags'].clone
+      tags.each do |tag_key, tag_posts|
+        tag_posts.each do |post|
+          tag_posts.delete post if post.categories[0] != type 
+        end
+      end
+      tags.map{ |tag_key, tag_value| "<li><a href='/tags/#{type}/#{tag_key.downcase}/'>#{tag_key.downcase}</a></li>" }.uniq.sort.compact.join
     end
 
     # Renders the count amount of related blogs
