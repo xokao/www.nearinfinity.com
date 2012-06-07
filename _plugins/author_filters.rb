@@ -4,12 +4,14 @@ module Jekyll
     def authors_list(site, sort, type)
       categories = site['categories'].clone
       categories.reject!{ |category_key, category_post| ['blogs', 'techtalks', 'speaking', 'news'].include? category_key }
-      categories.each do |category_key, category_posts|
-        category_posts.each do |post|
-          category_posts.delete post if post.categories[0] != type 
-        end
-        categories.delete(category_key) if category_posts.empty?
+
+      categories.reject! do |category_key, category_posts|
+        test = category_posts.select{ |post|
+          post.categories[0] == type 
+        }
+        test.empty?
       end
+
       categories.keys.sort{|a,b|a.split('_')[1] <=> b.split("_")[1]}.map{ |user|
         "<li><a href='#{author_url(user)}' class='author-filter'>#{user_to_name(user)}</a></li>"
       }.compact.join
