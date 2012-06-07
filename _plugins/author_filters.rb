@@ -5,10 +5,9 @@ module Jekyll
       categories = site['categories'].clone
       categories.reject!{ |category_key, category_post| ['blogs', 'techtalks', 'speaking', 'news'].include? category_key }
       categories.reject! do |category_key, category_posts|
-        test = category_posts.select{ |post|
+        category_posts.select{ |post|
           post.categories[0] == type 
-        }
-        test.empty?
+        }.empty?
       end
 
       categories.keys.sort{|a,b|a.split('_')[1] <=> b.split("_")[1]}.map{ |user|
