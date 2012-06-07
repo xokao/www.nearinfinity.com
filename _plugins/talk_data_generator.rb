@@ -2,7 +2,7 @@ module Jekyll
   class PagedTalk < Page
     def initialize(site, base, dir, name, data)
       self.data = data.clone
-      self.data['layout'] = 'allblogs'
+      self.data['layout'] = 'alltalks'
       self.data['type'] = 'techtalks'
       super(site, base, dir, name)
     end

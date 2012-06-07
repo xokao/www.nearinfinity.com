@@ -1,12 +1,30 @@
 module Jekyll
   module AuthorFilters
     # Returns a list of all authors
-    def authors_list(site, sort = true)
-      authors = site['categories'].keys.reject{|category|
-        ['blogs', 'techtalks', 'news', 'speaking'].include? category
-      }.sort{|a,b|a.split('_')[1] <=> b.split("_")[1]}.map{ |user|
+    def authors_list(site, sort, type)
+      categories = site['categories'].clone
+      categories.reject!{ |category_key, category_post| ['blogs', 'techtalks', 'speaking', 'news'].include? category_key }
+      categories.each do |category_key, category_posts|
+        category_posts.each do |post|
+          category_posts.delete post if post.categories[0] != type 
+        end
+        categories.delete(category_key) if category_posts.empty?
+      end
+      categories.keys.sort{|a,b|a.split('_')[1] <=> b.split("_")[1]}.map{ |user|
         "<li><a href='#{author_url(user)}' class='author-filter'>#{user_to_name(user)}</a></li>"
       }.compact.join
+    end
+    
+    def techtalks_authors_list(site, sort = true)
+      authors_list(site, sort, 'techtalks')
+    end
+    
+    def blogs_authors_list(site, sort = true)
+      authors_list(site, sort, 'blogs')
+    end
+    
+    def speaking_authors_list(site, sort = true)
+      authors_list(site, sort, 'speaking')
     end
 
     def author_url(user)
