@@ -26,6 +26,7 @@ module Jekyll
         tag_posts.each do |post|
           tag_posts.delete post if post.categories[0] != type 
         end
+        tags.delete(tag_key) if tag_posts.empty?
       end
       tags.map{ |tag_key, tag_value| "<li><a href='/tags/#{type}/#{tag_key.downcase}/'>#{tag_key.downcase}</a></li>" }.uniq.sort.compact.join
     end
