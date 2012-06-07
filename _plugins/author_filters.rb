@@ -4,7 +4,6 @@ module Jekyll
     def authors_list(site, sort, type)
       categories = site['categories'].clone
       categories.reject!{ |category_key, category_post| ['blogs', 'techtalks', 'speaking', 'news'].include? category_key }
-
       categories.reject! do |category_key, category_posts|
         test = category_posts.select{ |post|
           post.categories[0] == type 
