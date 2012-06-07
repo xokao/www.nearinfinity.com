@@ -24,8 +24,9 @@
         {% assign type = 'tech talk' %}
         {% include sharing.html %}
         {% assign type = '' %}
-
+        {{page.tags | render_job_ad}}
         {% include users/recent_blogs.html %}
+        {% include users/recent_tech_talks.html %}
       </aside>
     </section>
 
