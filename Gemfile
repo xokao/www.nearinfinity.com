@@ -5,7 +5,6 @@ gem 'liquid'
 gem 'rdiscount'
 gem 'less', :platform => :ruby
 gem 'therubyracer', :platform => :ruby
-gem 'RedCloth'
 gem 'albino'
 gem 'ruby-nuggets'
 gem 'colorize'
