@@ -6,7 +6,7 @@ module Jekyll
       categories.reject!{ |category_key, category_post| ['blogs', 'techtalks', 'speaking', 'news'].include? category_key }
       categories.each do |category_key, category_posts|
         category_posts.each do |post|
-          category_posts.delete post if post.categories[0] != type 
+          category_posts.delete post if post.categories[0] != type
         end
         categories.delete(category_key) if category_posts.empty?
       end
