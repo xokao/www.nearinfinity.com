@@ -20,7 +20,40 @@ module Jekyll
       allblogs.each do |post|
         post.data['layout'] = 'blogs'
       end
+      create_all_blogs(site, allblogs)
+      create_all_user_blogs(site, allblogs)      
+    end
 
+    private
+    def create_all_blogs(site, allblogs)
+      total = (allblogs.length / 15.to_f).ceil
+      first_page_posts = allblogs.shift(15)
+      site.pages << PagedBlog.new(site, site.source, '/blogs/', 'index.html', {
+        'posts'  => first_page_posts,
+        'current_page' => 1,
+        'num_pages' => total,
+        'title' => 'Recent Blogs'
+      })
+      site.pages << PagedBlog.new(site, site.source, '/blogs/page_1/', 'index.html', {
+        'posts'  => first_page_posts,
+        'current_page' => 1,
+        'num_pages' => total,
+        'title' => 'Recent Blogs'
+      })
+      current_page = 2
+      while allblogs.size > 0
+        site.pages << PagedBlog.new(site, site.source, "/blogs/page_#{current_page}/", 'index.html', {
+          'posts'  => allblogs.shift(15),
+          'current_page' => current_page,
+          'num_pages' => total,
+          'title' => 'Archived Blogs'
+        })
+        current_page += 1
+      end
+    end
+
+    def create_all_user_blogs(site, allblogs)
+      
       total = (allblogs.length / 15.to_f).ceil
       first_page_posts = allblogs.shift(15)
       site.pages << PagedBlog.new(site, site.source, '/blogs/', 'index.html', {
