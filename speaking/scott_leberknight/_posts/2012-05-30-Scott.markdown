@@ -1,7 +1,0 @@
----
-layout: speaking
-title: Introducing CoffeeScript
-tags: JavaScript
-event: DevIgnition
----
-about this talk
