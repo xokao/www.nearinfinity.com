@@ -1,7 +1,10 @@
 {% capture blogs %}{{ page | recent_blogs_list }}{% endcapture %}
 {% if blogs.size > 0 %}
-  <h1><a href="/blogs/{{page['user']}}/all/">Blogs by {{ page | page_to_user }}</a></h1>
+  <h1>Blogs by {{ page | page_to_user }}</h1>
   <ul>
     {{ blogs }}
   </ul>
+  <div class='more-link'>
+    <a href="/blogs/{{page['user']}}/all/">more blogs</a>
+  </div>
 {% endif %}
