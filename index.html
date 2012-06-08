@@ -5,7 +5,6 @@ impact_duration_seconds: 10
 max_news: 2
 max_blogs: 2
 max_speaking: 2
-max_techtalks: 1
 speaking_expire_days: 0
 ---
 {%capture news_markup%}{{ 'homepage/news.html' | render_recent_news:page.max_news days_expire: 90 }}{%endcapture %}
@@ -46,7 +45,7 @@ speaking_expire_days: 0
 
   <section class="techtalks">
     <h1>TECH TALKS</h1>
-    {{ page.max_techtalks | render_homepage_techtalks }}
+    {{ site | render_homepage_techtalk }}
     <a class="morelink" href="/techtalks">more tech talks</a>
   </section>
 

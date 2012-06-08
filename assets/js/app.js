@@ -101,3 +101,9 @@ $(function() {
         });
     }
 });
+
+// Picks random tech talk to show
+$(function() {
+  var talks = $('.homepage-techtalk');
+  $(talks.get(Math.floor(Math.random()*talks.length))).show();
+});
