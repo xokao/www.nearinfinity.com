@@ -24,8 +24,18 @@ module Jekyll
     end
 
     # Render the short techtalks partial for the home page
-    def render_homepage_techtalks(amount, offset=0)
-      render_homepage_posts(amount,'techtalks','homepage/techtalk.html',offset)
+    def render_homepage_techtalk(site)
+      all_talks = @context.registers[:site].categories['techtalks']
+      hiddenIds = @context.registers[:site].config['hideFromHomepage']
+      filtered_talks = all_talks.reject{ |talk| hiddenIds.include? talk.id }
+        .sort{|a,b| b.date <=> a.date}
+      selected_talk = filtered_talks.first
+      if selected_talk.nil? or selected_talk.date < (Time.now - 60*60*24*30)
+        filtered_talks.select{|talk| talk.date >= (Time.now - 60*60*24*365)}
+          .map{|talk| include_template('homepage/techtalk.html', {'post' => talk})}.compact.join
+      else
+        include_template('homepage/techtalk.html', {'post' => selected_talk})
+      end
     end
 
     # Render the short speaking partial for the home page
