@@ -9,6 +9,10 @@ module Jekyll
     def paginate_blogs(page)
       paginate(page, "/blogs/")
     end
+    
+    def paginate_user_blogs(page, base)
+      paginate(page, base)
+    end
 
     private
     def paginate(page, base_url)
