@@ -95,11 +95,9 @@ module Jekyll
           current_page += 1
         end
       end
-      
     end
     
     # Temporary reuse of code, this needs to be fixed
-    private
     def user_to_name(author)
       capitalize_all(author.gsub(/_/,' '))
     end
