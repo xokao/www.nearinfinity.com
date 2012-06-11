@@ -50,7 +50,13 @@ $(function() {
                                 delete offset.height
 
                                 removeBios()
-                                $('<a href="/blogs/' + user + '"></a>').append(
+
+                                new_bio_element = '<a href="/blogs/' + user + '"></a>'
+                                if(app_url_white_list.indexOf(user) > 0){
+                                    new_bio_element = '<a href="/who_we_are/bios/' + user + '"></a>'
+                                }
+
+                                $(new_bio_element).append(
                                     image.clone().attr(imageDimensions)
                                 ).appendTo(cap.css(offset))
                                 cap.appendTo(document.body)
