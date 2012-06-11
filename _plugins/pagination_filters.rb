@@ -15,7 +15,7 @@ module Jekyll
     end
     
     def paginate_user_blogs(page)
-      paginate(page, page.base)
+      paginate(page, page['base'])
     end
 
     private
