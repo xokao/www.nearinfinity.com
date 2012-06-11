@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+{% include head-tag.html %}
+</head>
+  <body>
+    <header id="main">
+    {% include header.html %}
+    </header>
+    <section class="all_content">
+      <div class="blogs">
+        <header>
+          <h1>{{ page.title }}</h1>
+        </header>
+      {% for post in page.posts %}
+        <article>
+          <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
+          <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
+        </article>
+      {% endfor %}
+      {{page | paginate_user_blogs}}
+      </div>
+      <aside class="links">
+        {% include users/blog_social.html %}
+        {% include users/recent_blogs.html %}
+        {% include users/future_speaking.html %}
+      </aside>
+    </section>
+    {% include footer.html %}
+  </body>
+</html>
