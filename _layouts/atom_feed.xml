@@ -10,7 +10,11 @@
     <entry>
       <title>{{ post.title }}</title>
       <link type="text/html" rel="alternate" href="http://www.nearinfinity.com/{{post.url}}"/>
-      <id>tag:www.nearinfinity.com,2012:{{ post.id }}</id>
+      {% if post.atom_id %}
+        <id>{{ post.atom_id }}</id>
+      {% else %}
+        <id>tag:www.nearinfinity.com:{{ post.id }}</id>
+      {% endif %} 
       <published>{{ post.date | date_to_xmlschema }}</published>
       <updated>{{ post.date | date_to_xmlschema }}</updated>
       {% capture post_excerpt %}{{post | excerpt: 15}}{%endcapture %}
