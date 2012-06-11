@@ -10,6 +10,10 @@
     <p><em>Areas of Interest</em> {{ page.user_info.areas_of_interest }}
   {% endif %}
 
+  {% if page.user_info.prof_areas_of_interest %}
+    <p><em>Areas of Interest</em> {{ page.user_info.prof_areas_of_interest }}
+  {% endif %}
+
   {% if page.user_info.employment_date %}
     <p><em>At Near Infinity Since</em> {{ page.user_info.employment_date }}
   {% endif %}

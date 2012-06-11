@@ -1,7 +1,12 @@
 {% if page.user_info%}
   <ul class='user-info-list'>
     <li><em>Title:</em> {{page.user_info.title}}</li>
-    <li><em>Technical Areas of Interest:</em> {{page.user_info.areas_of_interest}}</li>
+    {{ if page.user_info.areas_of_interest }}
+      <li><em>Technical Areas of Interest:</em> {{page.user_info.areas_of_interest}}</li>
+    {{ endif }}
+    {{ if page.user_info.prof_areas_of_interest }}
+      <li><em>Professional Areas of Interest:</em> {{page.user_info.prof_areas_of_interest}}</li>
+    {{ endif }}
     <li><em>Started with NIC:</em> {{page.user_info.employment_date}}</li>
     <li><em>Alma Mater:</em> {{page.user_info.alma_mater}}</li>
     {% if page.user_info.nic_sports %}
