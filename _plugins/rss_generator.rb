@@ -27,7 +27,7 @@ module Jekyll
     safe true
 
     def generate(site)
-      allblogs = site.posts.reject{|post| post.categories[0] != 'blogs' }
+      allblogs = site.posts.reject{|post| post.categories[0] != 'blogs' }.sort.reverse
       sorted_blogs = {}
 
       allblogs.each do |post|
