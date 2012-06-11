@@ -11,7 +11,7 @@ module Jekyll
       end
 
       categories.keys.sort{|a,b|a.split('_')[1] <=> b.split("_")[1]}.map{ |user|
-        "<li><a href='#{author_url(user)}' class='author-filter'>#{user_to_name(user)}</a></li>"
+        "<li><a href='#{author_content_url(user, type)}' class='author-filter'>#{user_to_name(user)}</a></li>"
       }.compact.join
     end
     
@@ -31,6 +31,10 @@ module Jekyll
       check_url = Dir.pwd.split('/').last == 'www.nearinfinity.com' ? "/who_we_are/bios/#{user}" : "../who_we_are/bios/#{user}"
       return "/who_we_are/bios/#{user}" if Dir.exists?(check_url)
       return "/blogs/#{user}"
+    end
+
+    def author_content_url(user, type)
+      "/#{type}/#{user}/all"
     end
 
     # Return a list of the COUNT most recent blogs by an author
