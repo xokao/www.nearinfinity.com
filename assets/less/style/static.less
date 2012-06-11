@@ -6,12 +6,27 @@ section.static_content {
     .gray-band;
   }
   
-  .rect-item {
-    background-color:rgba(155, 155, 155, 0.1);
-  }
-
-  .rect-item:hover {
-    background-color:rgba(155, 155, 155, 0.3);
+  #product-items {
+    section {
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      color: white;
+    }
+    a {
+      color: white;
+    }
+    section.parent {
+      background: url('/assets/images/irongrip.png') repeat;
+      /*opacity: 0.8;*/
+    }
+    section.child {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    section.child:hover {
+      /*opacity: 1;*/
+      background-color: rgba(255, 255, 255, 0);
+    }
   }
 
   em{

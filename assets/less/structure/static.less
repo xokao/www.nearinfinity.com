@@ -5,15 +5,17 @@ section.static_content {
   text-align: right;
 }
 
-.rect-item {
-  padding-top: 20px;
-  padding-left: 30px;
-  padding-right: 10px;
-  padding-bottom: 20px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  margin-bottom: 3em;
+#product-items section {
+  &.parent {
+    margin-bottom: 3em;
+  }
+  
+  &.child {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
   
   img {
     margin-top: 1.5em;
