@@ -12,8 +12,11 @@ module Jekyll
 
     #takes in page finds author and return pretty name
     def page_to_user(page)
-      author = page['user'] || page['categories'][1]
-      user_to_name author
+      user_to_name find_user(page)
+    end
+
+    def find_user(page)
+      page['user'] || page['categories'][1]
     end
 
     #returns the word at the index provided from the input string
