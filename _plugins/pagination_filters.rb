@@ -9,7 +9,15 @@ module Jekyll
     def paginate_blogs(page)
       paginate(page, "/blogs/")
     end
+
+    def paginate_talks(page)
+      paginate(page, "/techtalks/")
+    end
     
+    def paginate_speaking(page)
+      paginate(page, "/speaking/")
+    end
+
     def paginate_news(page)
       paginate(page, "/news/")
     end
