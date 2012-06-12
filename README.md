@@ -48,13 +48,17 @@ This will run a server on <http://localhost:4000> that regenerates any changes
 Syntax Highlighting
 -------------------
 
-    {% highlight <language> [linenos] %}
+    {% highlight <language> %}
     def to_s
       "#{name}"
     end
     {% endhighlight %}
 
-View list of languages
+Highlighting with Line Numbers
+
+    {% highlight <language> linenos %}
+
+View list of [languages](http://pygments.org/docs/lexers/) or use the command:
 
     > pygmentize -L
 
