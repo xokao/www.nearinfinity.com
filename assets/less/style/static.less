@@ -6,6 +6,32 @@ section.static_content {
     .gray-band;
   }
   
+  .hover-items {
+    article, section {
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      border-radius: 10px;
+      color: black;
+      
+      a {
+        color: black;
+
+        &:hover {
+          color: @nic_orange;
+        }
+      }
+    }
+    article {
+      background: url('/assets/images/paper.png') repeat;
+    }
+    section {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    section:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+  
   #product-items {
     section {
       -webkit-border-radius: 10px;
@@ -23,13 +49,11 @@ section.static_content {
     }
     section.parent {
       background: url('/assets/images/paper.png') repeat;
-      /*opacity: 0.8;*/
     }
     section.child {
       background-color: rgba(0, 0, 0, 0);
     }
     section.child:hover {
-      /*opacity: 1;*/
       background-color: rgba(0, 0, 0, 0.1);
     }
   }
