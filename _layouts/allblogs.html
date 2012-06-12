@@ -12,10 +12,16 @@
           <h1>{{ page.title }}</h1>
         </header>
       {% for post in page.posts %}
-        <article>
-          <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
-          <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
-        </article>
+        <div class='parent'>
+          <div class='child'>
+            <article>
+              <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
+              <div class="blog-info">
+                {% include post-list-item-with-tags.html %}
+              </div>
+            </article>
+          </div>
+        </div>
       {% endfor %}
       {{page | paginate_blogs}}
       </div>

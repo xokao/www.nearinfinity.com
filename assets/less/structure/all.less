@@ -5,6 +5,7 @@ section.all_content {
   aside {
     clear: left;
     .pad(2);
+    margin-top: 2em;
   }
 
   @media screen and (min-width:45em) {
@@ -27,6 +28,21 @@ section.all_content {
       clear: none;
       .column(2);
     }
+  }
+  
+  .parent, .child {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+  }
+  .parent {
+    background: url('/assets/images/paper.png') repeat;
+  }
+  .child {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .child:hover {
+    background-color: rgba(0, 0, 0, 0.1);
   }
 }
 
