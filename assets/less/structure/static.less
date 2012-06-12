@@ -1,7 +1,15 @@
 section.static_content {
 }
 
-.hover-items section {
+.hover-items {
+  @media screen and (min-width:50em) {
+    article {
+      
+    }
+  }
+  article {
+    
+  }
   @media screen and (min-width:50em) {
     width: 45%;
     float: left;
@@ -146,7 +154,7 @@ section.static_content {
     .intern_desc{ .column(7, 10); }
     .intern_benefits{ .column(3, 10); }
     .requirements{
-      .column(10, 10);
+      .column(7, 10);
       clear: left;
     }
   }
