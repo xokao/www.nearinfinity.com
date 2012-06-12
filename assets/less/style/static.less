@@ -11,25 +11,26 @@ section.static_content {
       -webkit-border-radius: 10px;
       -moz-border-radius: 10px;
       border-radius: 10px;
-      color: white;
-    }
-    a {
-      color: white;
+      color: black;
       
-      &:hover {
-        color: @nic_orange;
+      a {
+        color: black;
+
+        &:hover {
+          color: @nic_orange;
+        }
       }
     }
     section.parent {
-      background: url('/assets/images/irongrip.png') repeat;
+      background: url('/assets/images/paper.png') repeat;
       /*opacity: 0.8;*/
     }
     section.child {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(0, 0, 0, 0);
     }
     section.child:hover {
       /*opacity: 1;*/
-      background-color: rgba(255, 255, 255, 0);
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 

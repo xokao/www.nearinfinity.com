@@ -6,15 +6,28 @@ section.static_content {
 }
 
 #product-items section {
+  @media screen and (min-width:50em) {
+    width: 45%;
+    float: left;
+  }
   &.parent {
     margin-bottom: 3em;
+    margin-right: 30px;
+    height: 290px;
   }
   
   &.child {
     padding-top: 20px;
     padding-left: 30px;
-    padding-right: 10px;
+    padding-right: 28px;
     padding-bottom: 20px;
+    width: 400px;
+    height: 250px;
+  }
+  
+  a {
+    float: right;
+    margin-right: 20px;
   }
   
   img {
