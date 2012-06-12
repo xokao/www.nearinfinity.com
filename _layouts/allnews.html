@@ -12,9 +12,13 @@
           <h1>{{ page.title }}</h1>
         </header>
       {% for post in page.posts %}
-        <article>
-          <div class="blog-info">{% include news/news-list-item.html %}</div>
-        </article>
+        <div class='parent'>
+          <div class='child'>
+            <article>
+              <div class="blog-info">{% include news/news-list-item.html %}</div>
+            </article>
+          </div>
+        </div>
       {% endfor %}
       {{page | paginate_news}}
       </div>
