@@ -9,6 +9,7 @@ section.static_content {
   section {
     &.parent {
       height: 250px;
+      .column(5,10);
     }
     &.child {
       height: 210px;
@@ -20,23 +21,32 @@ section.static_content {
   }
 }
 
-#product-items section {
+#open-source-items section {
   &.parent {
-    height: 290px;
+    /*height: 270px;*/
+    .column(8,10)
   }
   &.child {
-    height: 250px;
+    /*height: 230px;*/
+  }
+}
+
+#product-items section {
+  &.parent {
+    height: 270px;
+    .column(5,10);
+  }
+  &.child {
+    height: 230px;
   }
 }
   
-#product-items section, #open-positions-items section {
+#product-items section, #open-positions-items section, #open-source-items section {
   @media screen and (min-width:50em) {
-    /*width: 45%;*/
     float: left;
   }
   &.parent {
-    margin-right: 30px;
-    .column(5,10);
+    margin-right: 10px;
     margin-bottom: 30px;
   }
   
@@ -45,10 +55,9 @@ section.static_content {
     padding-left: 30px;
     padding-right: 28px;
     padding-bottom: 20px;
-    /*width: 413px;*/
   }
   
-  a {
+  a.more-link {
     float: right;
     margin-right: 20px;
   }
