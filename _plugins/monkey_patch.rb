@@ -1,6 +1,6 @@
 module Jekyll
   module Convertible
-    def do_layouts(payload, layouts)
+    def do_layout(payload, layouts)
       info = { :filters => [Jekyll::Filters], :registers => { :site => self.site } }
 
       # render and transform content (this becomes the final content of the object)
@@ -11,7 +11,7 @@ module Jekyll
         self.content = Liquid::Template.parse(self.content).render!(payload, info)
       rescue => e
         puts "Liquid Exception: #{e.message} at #{e.backtrace}"
-        #abort("Failing Build")
+        abort("Failing Build")
       end
 
       self.transform
@@ -30,7 +30,7 @@ module Jekyll
           self.output = Liquid::Template.parse(layout.content).render!(payload, info)
         rescue => e
           puts "Liquid Exception: #{e.message} at #{e.backtrace}"
-          #abort("Failing Build")
+          abort("Failing Build")
         end
 
         if layout = layouts[layout.data["layout"]]
