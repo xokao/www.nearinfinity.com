@@ -71,44 +71,6 @@ module Jekyll
       "<div class='widget' style='margin-top: 60px;'><div class='tab'>Join Us</div>Are you a #{title} looking for a fun place to work in the DC area? Near Infinity is hiring! Check out our <a href='/join_us/open_positions'>open positions</a> or <a href='mailto:careers@nearinfinity.com'>submit your resume</a>.</div>"
     end
 
-    def paginate(page)
-      type = page['type']
-      tag = page['tag_key']
-      current_page = page['current_page']
-      num_pages = page['num_pages']
-      base_url = "/tags/#{type}/#{tag}/"
-      if num_pages > 1
-        markup = "<div class='pagination'>"
-        if current_page != 1
-          markup += "<a href='#{base_url}page_1'>|&lt;</a>"
-          markup += "<a href='#{base_url}page_#{current_page - 1}'>&lt;</a>"
-        else
-          markup += "<a href='#'>|&lt;</a><a href='#'>&lt;</a>"
-        end
-
-        low_page = [1,current_page - 3].max
-        high_page = [num_pages,current_page + 3].min
-
-        (low_page..high_page).each do |i|
-          markup +="<a href='#{base_url}page_#{i}' "
-          if current_page == i
-            markup += "class='selected'"
-          end
-          markup +=">#{i}</a>"
-        end
-        
-        if current_page != num_pages
-          markup += "<a href='#{base_url}page_#{current_page + 1}'>&gt;</a>"
-          markup += "<a href='#{base_url}page_#{num_pages}'>&gt;|</a>"
-        else
-          markup += "<a href='#'>&gt;</a><a href='#'>&gt;|</a>"
-        end
-
-        markup += '</div>'
-      else
-        ''
-      end 
-    end
     private
     # Renders the list of type posts for the home page
     def render_homepage_posts(amount, type, template,offset)
