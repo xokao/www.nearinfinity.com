@@ -10,7 +10,7 @@ module Jekyll
       begin
         self.content = Liquid::Template.parse(self.content).render!(payload, info)
       rescue => e
-        puts "Liquid Exception: #{e.message} in #{self.data.inspect}"
+        puts "Liquid Exception: #{e.message} at #{e.backtrace}"
         #abort("Failing Build")
       end
 
@@ -29,7 +29,7 @@ module Jekyll
         begin
           self.output = Liquid::Template.parse(layout.content).render!(payload, info)
         rescue => e
-          puts "Liquid Exception: #{e.message} in #{self.data.inspect}"
+          puts "Liquid Exception: #{e.message} at #{e.backtrace}"
           #abort("Failing Build")
         end
 
