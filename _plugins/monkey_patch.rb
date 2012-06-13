@@ -1,6 +1,6 @@
 module Jekyll
   module Convertible
-    def do_layout(payload, layouts)
+    def do_layouts(payload, layouts)
       info = { :filters => [Jekyll::Filters], :registers => { :site => self.site } }
 
       # render and transform content (this becomes the final content of the object)
