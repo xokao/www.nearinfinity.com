@@ -30,6 +30,36 @@ section.static_content {
     height: 230px;
   }
 }
+
+#product-items .hover-item, #product-items .hover-item a.hover-link {
+  &.parent {
+    height: 270px;
+    .column(5,10);
+  }
+  &.child {
+    height: 230px;
+  }
+}
+
+.hover-item {
+  @media screen and (min-width:50em) {
+    float: left;
+  }
+  margin-right: 10px;
+  margin-bottom: 30px;
+
+  a.hover-link {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 28px;
+    padding-bottom: 20px;
+  }
+
+  a.more-link {
+    float: right;
+    margin-right: 20px;
+  }
+}
   
 #product-items section, #open-positions-items section, #open-source-items section {
   @media screen and (min-width:50em) {

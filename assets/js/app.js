@@ -113,3 +113,9 @@ $(function() {
   var talks = $('.homepage-techtalk');
   $(talks.get(Math.floor(Math.random()*talks.length))).show();
 });
+
+$(function() {
+  $('.parent[data-url]').click(function() {
+    window.location = $(this).attr('data-url');
+  });
+});
