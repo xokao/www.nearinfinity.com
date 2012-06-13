@@ -11,7 +11,7 @@ module Jekyll
         self.content = Liquid::Template.parse(self.content).render!(payload, info)
       rescue => e
         puts "Liquid Exception: #{e.message} in #{self.data.inspect}"
-        abort("Failing Build")
+        #abort("Failing Build")
       end
 
       self.transform
@@ -30,7 +30,7 @@ module Jekyll
           self.output = Liquid::Template.parse(layout.content).render!(payload, info)
         rescue => e
           puts "Liquid Exception: #{e.message} in #{self.data.inspect}"
-          abort("Failing Build")
+          #abort("Failing Build")
         end
 
         if layout = layouts[layout.data["layout"]]
