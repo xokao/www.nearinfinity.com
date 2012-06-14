@@ -1,8 +1,5 @@
 require 'nuggets/range/quantile'
 require 'erb'
-require './tag_combiner.rb'
-
-puts Dir.pwd
 
 module Jekyll
 
@@ -32,14 +29,7 @@ module Jekyll
       ['blogs', 'techtalks', 'speaking'].each do |type|
         site.tags.each do |tag, posts|
           tag = tag.downcase
-          if tag == 'javascript'
-            puts 
-            puts type
-            puts tag
-            puts posts.inspect
-          end
           filtered_posts = posts.reject{ |post| !post.categories.include? type }.sort.reverse
-          puts filtered_posts.inspect if tag == 'javascript'
           next if filtered_posts.count <= 0
           total = (filtered_posts.length / 15.to_f).ceil
           first_page_posts = filtered_posts.shift(15)
