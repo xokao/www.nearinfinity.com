@@ -55,7 +55,7 @@ module Jekyll
     end
 
     def create_all_user_blogs(site, allblogs)
-      layout = 'userblogs'
+      layout = 'user_content'
       users_blogs = Hash.new {|h,k| h[k] = []}
       allblogs.each do |post|
         users_blogs[post.categories[1]] << post

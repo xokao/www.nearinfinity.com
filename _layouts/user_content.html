@@ -17,12 +17,20 @@
           <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
         </article>
       {% endfor %}
-      {{page | paginate_user_blogs}}
+      {{page | paginate:"all"}}
       </div>
       <aside class="links">
-        {% include users/blog_social.html %}
-        {% include users/recent_blogs.html %}
-        {% include users/recent_tech_talks.html %}
+        {% if page.type != blogs %}
+          {% include users/recent_blogs.html %}
+        {% endif %}
+
+        {% if page.type != techtalks %}
+          {% include users/recent_tech_talks.html %}
+        {% endif %}
+
+        {% if page.type != speaking %}
+          {% include users/future_speaking.html %}
+        {% endif %}
       </aside>
     </section>
     {% include footer.html %}

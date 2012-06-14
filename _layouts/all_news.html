@@ -16,7 +16,7 @@
           <div class="blog-info">{% include news/news-list-item.html %}</div>
         </article>
       {% endfor %}
-      {{page | paginate_news}}
+      {{page | paginate:"news"}}
       </div>
     </section>
     {% include footer.html %}

@@ -56,7 +56,7 @@ module Jekyll
     end
 
     def create_all_user_speaking(site, allspeaking)
-      layout = 'userspeaking'
+      layout = 'user_content'
       users_speaking = Hash.new {|h,k| h[k] = []}
       allspeaking.each do |post|
         users_speaking[post.categories[1]] << post

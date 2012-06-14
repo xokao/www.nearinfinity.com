@@ -6,14 +6,6 @@ module Jekyll
       paginate(page, "tags/#{type}/#{tag}")
     end
 
-    def paginate_news(page)
-      paginate(page, "news")
-    end
-    
-    def paginate_user_blogs(page)
-      paginate(page, page['base'])
-    end
-
     def paginate(page, base_url)
       current_page = page['current_page']
       num_pages = page['num_pages']

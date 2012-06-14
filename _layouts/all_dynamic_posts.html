@@ -14,17 +14,26 @@
       {% for post in page.posts %}
         <article>
           <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
-          <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
+          <div class="blog-info">
+            {% include post-list-item-with-tags.html %}
+          </div>
         </article>
       {% endfor %}
-      {{page | paginate_user_blogs}}
+      {{page | paginate type:page.type}}
       </div>
-      <aside class="links">
-        {% include users/blog_social.html %}
-        {% include users/recent_tech_talks.html %}
-        {% include users/future_speaking.html %}
+      <aside>
+        <h1>{{page.type | type_to_human}} BY AUTHOR</h1>
+        <ul>
+          {{site | authors_list type:page.type}}
+        </ul>
+        <h1>{{page.type | type_to_human}} BY TAG</h1>
+        <ul>
+          {{site | tags_list type:page.type}}
+        </ul>
       </aside>
     </section>
     {% include footer.html %}
   </body>
 </html>
+
+<!DOCTYPE html>

@@ -2,7 +2,7 @@ module Jekyll
   class PagedNews < Page
     def initialize(site, base, dir, name, data)
       self.data = data.clone
-      self.data['layout'] = 'allnews'
+      self.data['layout'] = 'all_news'
       self.data['type'] = 'news'
       super(site, base, dir, name)
     end
