@@ -2,8 +2,6 @@ pygments: true
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md]
 host: http://www.nearinfinity.com
 markdown: kramdown
-tag_page_layout: tag_page
-tag_page_dir: tags
 hideFromHomepage: []
 jobs_whitelist:
   Mobile: [iphone, ios, ipad, android, mobile]
