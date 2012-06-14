@@ -17,7 +17,7 @@
           <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
         </article>
       {% endfor %}
-      {{page | paginate:"all"}}
+      {{page | paginate_user:page.url}}
       </div>
       <aside class="links">
         {% if page.type != blogs %}

@@ -6,6 +6,11 @@ module Jekyll
       paginate(page, "tags/#{type}/#{tag}")
     end
 
+    def paginate_user(page, url)
+      url = url.split('/')[1..3].join('/')
+      paginate(page, url)
+    end
+
     def paginate(page, base_url)
       current_page = page['current_page']
       num_pages = page['num_pages']
