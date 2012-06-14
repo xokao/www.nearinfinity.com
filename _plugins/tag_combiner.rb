@@ -6,7 +6,7 @@ module Jekyll
       sorted_tags = {}
       site.tags.each do |tag, posts|
         sorted_tags[tag.downcase] ||= []
-        sorted_tags[tag.downcase] << posts
+        sorted_tags[tag.downcase].concat posts
         sorted_tags[tag.downcase].flatten!
       end
       site.tags = sorted_tags
