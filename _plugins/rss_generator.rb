@@ -68,6 +68,7 @@ module Jekyll
     end
 
     def create_feeds(site, base, dir, data)
+      site.pages << RssFeed.new(site, base, dir, "blogs.xml", data)
       site.pages << RssFeed.new(site, base, dir, "index.xml", data)
       site.pages << AtomFeed.new(site, base, dir, "atom.xml", data)
     end
