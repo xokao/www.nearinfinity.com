@@ -28,7 +28,7 @@ module Jekyll
     private
 
     def create_all_speaking(site, allspeaking)
-      layout = 'allspeaking'
+      layout = 'all_dynamic_posts'
       total = (allspeaking.length / 15.to_f).ceil
       first_page_posts = allspeaking.shift(15)
       site.pages << PagedSpeaking.new(site, site.source, '/speaking/', 'index.html', layout, {

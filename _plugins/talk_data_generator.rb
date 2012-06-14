@@ -28,7 +28,7 @@ module Jekyll
     private
 
     def create_all_techtalks(site, alltalks)
-      layout = 'alltalks'
+      layout = 'all_dynamic_posts'
       total = (alltalks.length / 15.to_f).ceil
       first_page_posts = alltalks.shift(15)
       site.pages << PagedTalk.new(site, site.source, '/techtalks/', 'index.html', layout, {

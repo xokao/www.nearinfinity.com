@@ -7,18 +7,6 @@ module Jekyll
       tags.sort.map { |t| "<a href='/tags/#{type}/#{t.downcase}'>#{t.downcase}</a>" if t.is_a?(String) }.compact.join(', ')
     end
 
-    def blogs_tags_list(site)
-      tags_list(site, 'blogs')
-    end
-
-    def techtalks_tags_list(site)
-      tags_list(site, 'techtalks')
-    end
-
-    def speaking_tags_list(site)
-      tags_list(site, 'speaking')
-    end
-
     # Returns a list off all blog tags
     def tags_list(site, type)
       tags = site['tags'].clone

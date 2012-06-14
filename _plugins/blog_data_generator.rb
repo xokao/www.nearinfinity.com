@@ -27,7 +27,7 @@ module Jekyll
 
     private
     def create_all_blogs(site, allblogs)
-      layout = 'allblogs'
+      layout = 'all_dynamic_posts'
       total = (allblogs.length / 15.to_f).ceil
       first_page_posts = allblogs.shift(15)
       site.pages << PagedBlog.new(site, site.source, '/blogs/', 'index.html', layout, {

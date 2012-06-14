@@ -32,6 +32,10 @@ module Jekyll
       end
     end
 
+    def type_to_human(type)
+      translate = {'blogs' => 'BLOGS', 'techtalks' => 'TECHTALKS', 'speaking' => 'SPEAKING ENGAGEMENTS'}
+      translate[type]
+    end
   end
 
   class IncludeMarkdownTag < Liquid::Tag
