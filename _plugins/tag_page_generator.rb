@@ -1,5 +1,6 @@
 require 'nuggets/range/quantile'
 require 'erb'
+require './_plugins/tag_combiner.rb'
 
 module Jekyll
 
