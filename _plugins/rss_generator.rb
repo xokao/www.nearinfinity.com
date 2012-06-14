@@ -1,3 +1,5 @@
+require 'tag_combiner'
+
 module Jekyll
   class RssFeed < Page
     def initialize(site, base, dir, name, data)
@@ -55,7 +57,6 @@ module Jekyll
 
       # Generate the Tags Feeds
       site.tags.each do |tag, tag_posts|
-        tag = tag.downcase
         filtered_posts = tag_posts.reject{ |post| !post.categories.include? 'blogs' }.sort.reverse
         create_feeds(site, site.source, "/blogs/#{tag}/rss/", {
           'posts'  => filtered_posts,
