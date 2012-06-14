@@ -1,4 +1,3 @@
-
 function shareLink(link, e) {
     window.open(link.href, 'sharewindow','toolbar=0,status=0,width=626,height=436');
     if (e.stopPropagation) e.stopPropagation();
@@ -52,7 +51,7 @@ $(function() {
                                 removeBios()
 
                                 new_bio_element = '<a href="/blogs/' + user + '"></a>'
-                                if(app_url_white_list.indexOf(user) > 0){
+                                if(app_url_white_list.indexOf(user) >= 0){
                                     new_bio_element = '<a href="/who_we_are/bios/' + user + '"></a>'
                                 }
 
