@@ -9,8 +9,23 @@
 
   <section class="dynamic_content">
     <article>
-    <header><h1>{{ page.title }}</h1></header>
+    <header>
+      <h1>{{ page.title }}</h1>
+      <h2>{{ page.date | date:'%b %d, %Y' }}</h2>
+      {% if page.location %}
+        <h2>{{ page.location }}</h2>
+      {% endif %}
+      {% if page.conference %}
+        <h2>Conference: <a href="{{ page.conference.url }}" target="_blank">{{ page.conference.name }}</a></h2>
+      {% endif %}
+      {% if page.user_group %}
+        <h2>User Group: <a href="{{ page.user_group.url }}" target="_blank">{{ page.user_group.name }}</a></h2>
+      {% endif %}
+    </header>
     {{ content }}
+    {% if page.talk_url %}
+      <p><a href="{{ page.talk_url }}" target="_blank">more info</a></p>
+    {% endif %}
     </article>
     <aside>
       {% include users/sidebar-link.html %}

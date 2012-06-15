@@ -8,6 +8,13 @@
       {{ post.categories[1] | user_to_name}}
     </span>
   </a> on {{ post.date | date:'%b %d, %Y' }}
+  {% if post.categories[0] == 'speaking' %}
+    {% if post.conference %}
+      at <a href="{{ post.conference.url }}" target="_blank">{{ post.conference.name }}</a>
+    {% else if post.user_group %}
+      at <a href="{{ post.user_group.url }}" target="_blank">{{ post.user_group.name }}</a>
+    {% endif %}
+  {% endif %}
 </h2>
 
 {% capture tag_count%}{{post.tags | size}}{%endcapture%}
