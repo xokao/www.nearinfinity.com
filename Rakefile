@@ -102,6 +102,69 @@ namespace :assets do
 end
 
 
+namespace :news do
+  desc "Create a Blank News Item (Run in the project's root directory)"
+  task :create do
+    Dir.chdir Rake.application.original_dir
+    if !Dir.exists? 'news/_posts'
+      STDOUT.puts 'The directory "news/_posts/" was not found, are you in the root directory of the project?'
+      return
+    end
+
+    # Front YAML container
+    yaml_data = {}
+
+    # File type
+    file_extension = '.markdown'
+
+    # Ask the user if .markdown is ok
+    STDOUT.puts "\nThe default post type is markdown. If you want to write the news story in markdown press enter, otherwise enter a different extension (i.e. html):"
+    new_extension = STDIN.gets.strip
+    file_extension = '.' + new_extension if new_extension.length > 1
+
+    STDOUT.puts "\nAll of the following collected data can be changed by editting the YAML at the top of the generated post."
+
+    # Query for title
+    STDOUT.puts "\nPlease enter the TITLE of the news story:"
+    raw_title = STDIN.gets.strip
+    raw_title = '"' + raw_title + '"' if raw_title.include? ':'
+    yaml_data['title'] = raw_title
+    
+    # Assign date to current time
+    yaml_data['date'] = Time.now.to_s
+    
+    # Use news layout
+    yaml_data['layout'] = 'news'
+
+    # Create full news title
+    news_date_title = ["%02d" % Time.now.year, "%02d" % Time.now.month, "%02d" % Time.now.day].join '-'
+
+    # Shorten the title to soemthing readable in the url (do not cut off mid word)
+    news_end_title = ''
+    title_words = yaml_data['title'].downcase.split(' ')
+    title_words.each_with_index do |word, index|
+      news_end_title += word
+      break if news_end_title.length >= 60
+      news_end_title += '-' if index < title_words.count - 1
+    end
+
+    # Full news title
+    full_title = news_date_title + '-' + news_end_title + file_extension
+
+    # Open the news post file and write the data to the file
+    File.open('news/_posts/' + full_title, 'w') do |news_post|  
+      news_post.puts '---'
+      yaml_data.each do |key, value|
+        news_post.puts key + ': ' + value
+      end
+      news_post.puts '---'
+      news_post.puts '(INSERT NEWS CONTENT)' 
+    end
+    
+    STDOUT.puts "\nGenerated news post #{raw_title} at news/_posts/#{full_title}"
+  end
+end
+
 
 
 #desc "Generate posts for tech talks on youtube"
