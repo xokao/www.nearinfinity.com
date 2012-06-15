@@ -136,7 +136,7 @@ namespace :news do
     # Use news layout
     yaml_data['layout'] = 'news'
 
-    # Create full news title
+    # Create date portion of title
     news_date_title = ["%02d" % Time.now.year, "%02d" % Time.now.month, "%02d" % Time.now.day].join '-'
 
     # Shorten the title to soemthing readable in the url (do not cut off mid word)
@@ -162,6 +162,73 @@ namespace :news do
     end
     
     STDOUT.puts "\nGenerated news post #{raw_title} at news/_posts/#{full_title}"
+  end
+end
+
+namespace :published_work do
+  desc "Create a Blank Published Work Post (Run in the project's root directory)"
+  task :create do
+    Dir.chdir Rake.application.original_dir
+    if !Dir.exists? 'published_works/_posts'
+      STDOUT.puts 'The directory "published_works/_posts/" was not found, are you in the root directory of the project?'
+      return
+    end
+
+    # Front YAML container
+    yaml_data = {}
+
+    # File type
+    file_extension = '.markdown'
+
+    # Ask the user if .markdown is ok
+    STDOUT.puts "\nThe default post type is markdown. If you want to write the published work post in markdown press enter, otherwise enter a different extension (i.e. html):"
+    new_extension = STDIN.gets.strip
+    file_extension = '.' + new_extension if new_extension.length > 1
+
+    STDOUT.puts "\nAll of the following collected data can be changed by editting the YAML at the top of the generated post."
+
+    # Query for title
+    STDOUT.puts "\nPlease enter the TITLE of the published work:"
+    raw_title = STDIN.gets.strip
+    raw_title = '"' + raw_title + '"' if raw_title.include? ':'
+    yaml_data['title'] = raw_title
+    
+    # Query For Tags
+    STDOUT.puts "\nPlease enter the relevant TAGS (space delimited) for the published work:"
+    yaml_data['tags'] = STDIN.gets.strip.downcase
+    
+    # Assign date to current time
+    yaml_data['date'] = Time.now.to_s
+    
+    # Use news layout
+    yaml_data['layout'] = 'news'
+
+    # Create date portion of title
+    date_title = ["%02d" % Time.now.year, "%02d" % Time.now.month, "%02d" % Time.now.day].join '-'
+
+    # Shorten the title to soemthing readable in the url (do not cut off mid word)
+    short_title = ''
+    title_words = yaml_data['title'].downcase.split(' ')
+    title_words.each_with_index do |word, index|
+      short_title += word
+      break if short_title.length >= 60
+      short_title += '-' if index < title_words.count - 1
+    end
+
+    # Full published work title
+    full_title = date_title + '-' + short_title + file_extension
+
+    # Open the published work post file and write the data to the file
+    File.open('published_works/_posts/' + full_title, 'w') do |post|  
+      post.puts '---'
+      yaml_data.each do |key, value|
+        post.puts key + ': ' + value
+      end
+      post.puts '---'
+      post.puts '(INSERT PUBLISHED WORK CONTENT)' 
+    end
+    
+    STDOUT.puts "\nGenerated published work post #{raw_title} at published_works/_posts/#{full_title}"
   end
 end
 
