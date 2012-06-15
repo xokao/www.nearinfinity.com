@@ -15,7 +15,8 @@
         <guid>http://www.nearinfinity.com{{ post.url }}</guid>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
         <author>{{post.categories[1] | user_to_name}}</author>
-        <description>{{ post | excerpt }} </description>
+        {% capture post_excerpt %}{{ post | excerpt }}{% endcapture %}
+        <description> {{ post_excerpt | xml_escape }} </description>
         {% for tag in post.tags %}
           <category term="{{tag}}" label="{{tag}}"/>
         {% endfor %}
