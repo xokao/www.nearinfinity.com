@@ -23,7 +23,6 @@ section.static_content {
     *, hgroup {  
       h1 {
         .light_header(darken(@light_text,10%));
-        font-weight:bold;
         .size(30);
         text-transform: uppercase;
       }
@@ -32,10 +31,40 @@ section.static_content {
         .light_header_shadowless(@nic_orange);
       }
     }
-  
+    
+    #trusted-apps-approach {
+      .band-colors;
+    }
+    
+    #mobile-products {
+      .band-colors;
+    }
+    
+    #big-data-products {
+      .band-colors;
+    }
+    
+    #springboard-toolset-components {
+      padding-left: 2em;
+    }
+    
+    #join-us-blurbs {
+      section {
+        h2 {
+          margin-bottom: 1em;
+        }
+      }
+    }
+
     .disclaimer {
       margin-top: 4em;
       text-align: center;
+    }
+  }
+  
+  &#open_positions {
+    h1 {
+      font-weight: bold;
     }
   }
 
@@ -136,6 +165,7 @@ section.static_content {
   #get_to_know_us{
     h1{
       .light_header_shadowless(@nic_orange);
+      margin-bottom: 0.4em;
     }
   }
   #awards{
