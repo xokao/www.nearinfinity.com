@@ -13,6 +13,18 @@ module Jekyll
     end
   end
 
+    class ExcerptRssFeed < Page
+    def initialize(site, base, dir, name, data)
+      self.data = data.clone
+      self.data['layout'] = 'excerpt_rss_feed'
+      super(site, base, dir, name)
+    end
+
+    def read_yaml(_, __)
+      # Do nothing, Allows you to make pages that dont have pages at the location they are built in
+    end
+  end
+
   class AtomFeed < Page
     def initialize(site, base, dir, name, data)
       self.data = data.clone
@@ -44,6 +56,13 @@ module Jekyll
         'description' => 'Employee Blogs'
       })
 
+      site.pages << ExcerptRssFeed.new(site, site.source, '/blogs', "blogs.xml", {
+        'posts'  => allblogs,
+        'title' => "Blog Excerpts at Near Infinity",
+        'link' => "http://www.nearinfinity.com/blogs",
+        'description' => 'Employee Blog Excerpts'
+      })
+
       # Generate the Authors Feeds
       sorted_blogs.each do |author, author_posts|
         formatted_author = author.split('_').collect{|x| x.capitalize}.join(' ')
@@ -68,7 +87,6 @@ module Jekyll
     end
 
     def create_feeds(site, base, dir, data)
-      site.pages << RssFeed.new(site, base, dir, "blogs.xml", data)
       site.pages << RssFeed.new(site, base, dir, "index.xml", data)
       site.pages << AtomFeed.new(site, base, dir, "atom.xml", data)
     end
