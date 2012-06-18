@@ -19,9 +19,11 @@ Prequisites
 * ruby 1.9 (jekyll preview)
 * python (syntax highlighter)
 
-    [sudo] gem install bundler
-    [sudo] easy_install Pygments
-    bundle
+```
+[sudo] gem install bundler
+[sudo] easy_install Pygments
+bundle
+```
 
 Unix Systems
 -----------
