@@ -71,6 +71,10 @@ title: A Great Title
 title: "A Greater Title: Part 2"  # This title needs to be surrounded in quotes
 ```
 
+Committing Changes to Blogs
+----------------
+
+Make sure you are located in the blogs directory and committing/pushing changes in the blogs project rather than the root project. You only have push privileges to the blogs directory.
 
 Syntax Highlighting
 -------------------
