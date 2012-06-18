@@ -3,9 +3,9 @@
 </h1>
 
 <h2>
-  <a href='/blogs/{{ post.categories[1]}}'>
+  <a href='/blogs/{{ post.categories[1] }}'>
     <span class='author'>
-      {{ post.categories[1] | user_to_name}}
+      {{ post.categories[1] | user_to_name }}
     </span>
   </a> on {{ post.date | date:'%b %d, %Y' }}
   {% if post.categories[0] == 'speaking' %}
@@ -17,14 +17,14 @@
   {% endif %}
 </h2>
 
-{% capture tag_count%}{{post.tags | size}}{%endcapture%}
-{%if tag_count != '0'%}
+{% capture tag_count %}{{ post.tags | size }}{% endcapture %}
+{% if tag_count != '0' %}
   <h2>
     Tags:
     <span class='tags'>
-      {{post | tags:page}}
+      {{ post | tags:page }}
     </span>
   </h2>
 {%endif%}
-<p>{{post |excerpt: 15}}</p>
+<p>{{ post | excerpt:15 }}</p>
 {% include sharing-inline.html %}

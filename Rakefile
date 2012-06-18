@@ -232,43 +232,77 @@ namespace :published_work do
   end
 end
 
-
-
-#desc "Generate posts for tech talks on youtube"
-task :generate_tech_talks do
-  require 'youtube_it'
-
-  client = YouTubeIt::Client.new(:dev_key => "AI39si4ZISyi7iYWuH8zo0ImkI-z5gne_vMnkbuFCYJiK8hhhJk3Kp7yIwqEeDelKW1UXg4EvFxHj-H1Lhap7kJSROl_kh0tIw")
-
-  search = client.videos_by(:user => 'nearinfinity')
-  search.videos.each do |video|
-    puts video.embed_html_with_width
-    print "Should I Transform: \n\t#{video.title}\n? (y/N) "
-    answer = STDIN.gets.chomp
-
-    if answer == "y"
-      date = video.published_at.strftime("%Y-%m-%d")
-      name = video.title.gsub(/\s*:\s*/, ':').gsub(/\s+/,'_')
-      filename = "#{date}-#{name}.markdown"
-      path = File.join 'techtalks', filename
-
-      File.open(path, 'w') do |f|
-        f.puts <<-EOL.gsub /^\s{8}/, ''
-        ---
-        layout: techtalks
-        title: "#{video.title}"
-        player_url: #{video.player_url}
-        unique_id: #{video.unique_id} 
-        thumbnail_320: #{video.thumbnails.find { |t| t.width == 320 }.url}
-        thumbnail_480: #{video.thumbnails.find { |t| t.width == 480 }.url}
-        thumbnails_120: 
-        #{video.thumbnails.find_all { |t| t.width == 120 }.collect { |v| "  - #{v.url}" }.join("\n")}
-        ---
-        #{video.description.gsub(/http:\/\/(www.)?nearinfinity.com\s*\n?/, "")}
-        EOL
-      end
+namespace :speaking_engagement do
+  desc "Create a blank speaking post (Run in the root directory of the project)"
+  task :create do
+    # Fail if we're not in the project's root directory
+    Dir.chdir Rake.application.original_dir
+    if !Dir.exists? 'speaking'
+      STDOUT.puts "\nPlease run this command from the root directory of the project"
+      return
     end
+    
+    # Get the speaker's name
+    STDOUT.puts "\nEnter the speaker's first name:"
+    first_name = STDIN.gets.strip
+    STDOUT.puts "\nEnter the speaker's last name:"
+    last_name = STDIN.gets.strip
+    
+    folder_name = 'speaking/' + first_name.downcase + '_' + last_name.downcase
+    
+    # Create the speaker's directory if it doesn't already exist
+    if !Dir.exists? folder_name
+      Dir.mkdir folder_name
+      Dir.mkdir folder_name + '/_posts'
+      File.open folder_name + '/_posts/.gitignore', 'w'
+    end
+    
+    Dir.chdir folder_name
+    
+    # Ask about the type of file
+    file_extension = '.markdown'
+    STDOUT.puts "\nPress enter to create a markdown file, otherwise enter a different extension (i.e. html):"
+    new_extension = STDIN.gets.strip
+    file_extension = '.' + new_extension if new_extension.length > 1
+    
+    # Get the title of the talk
+    STDOUT.puts "\nEnter the TITLE of the talk:"
+    title = STDIN.gets.strip
+    
+    # Get the date of the talk
+    STDOUT.puts "\nEnter the DATE of the talk in the format YYYY-MM-DD:"
+    date = STDIN.gets.strip.downcase    
+    
+    # Create the file name of the post
+    short_title = ''
+    title_words = title.downcase.split(' ')
+    title_words.each_with_index do |word, index|
+      short_title += word
+      break if short_title.length >= 60
+      short_title += '-' if index < title_words.count - 1
+    end
+    file_name = date + '-' + short_title + file_extension
+    
+    # Create the file with the default header
+    File.open('_posts/' + file_name, 'w') do |post|  
+      post.puts '---'
+      post.puts 'layout: speaking'
+      post.puts 'title: ' + title
+      post.puts 'date: ' + date
+      post.puts 'tags: # Space delimited'
+      post.puts 'location: # i.e. Reston, Virginia'
+      post.puts 'talk_url: # Link to additional information about the talk'
+      post.puts ''
+      post.puts '# Use either the conference or user_group attribute'
+      post.puts 'conference: '
+      post.puts '  name: # Name of the conference'
+      post.puts '  url: # Website for the conference'
+      post.puts 'user_group: '
+      post.puts '  name: # Name of the user group'
+      post.puts '  url: # Website for the user group'
+      post.puts '---'
+    end
+    
+    STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
   end
-
-  puts "Now place the output into their user folder"
 end
