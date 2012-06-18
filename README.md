@@ -5,15 +5,13 @@ NIC Website
 Setup Repository
 ----------------
 
-```
-# Clone repo and blogs submodule
-git clone --recursive git@github.com:nearinfinity/www.nearinfinity.com.git
-cd www.nearinfinity.com/blogs    
-git checkout master
-
-# Change the remote URL to read/write. gh-pages requires the submodule to be read-only
-git remote set-url origin git@github.com:nearinfinity/blogs.nearinfinity.com.git
-```
+    # Clone repo and blogs submodule
+    git clone --recursive git@github.com:nearinfinity/www.nearinfinity.com.git
+    cd www.nearinfinity.com/blogs    
+    git checkout master
+    
+    # Change the remote URL to read/write. gh-pages requires the submodule to be read-only
+    git remote set-url origin git@github.com:nearinfinity/blogs.nearinfinity.com.git
 
 Prequisites 
 -----------
@@ -21,11 +19,9 @@ Prequisites
 * ruby 1.9 (jekyll preview)
 * python (syntax highlighter)
 
-```
-[sudo] gem install bundler
-[sudo] easy_install Pygments
-bundle install
-```
+    [sudo] gem install bundler
+    [sudo] easy_install Pygments
+    bundle
 
 Unix Systems
 -----------
@@ -40,6 +36,7 @@ the header files for compiling extension modules for ruby 1.9.1.
 Server
 ------
 
+    jekyll             # builds site
     rake server        # slower, shows all posts
     rake server:recent # faster, shows recent
 
