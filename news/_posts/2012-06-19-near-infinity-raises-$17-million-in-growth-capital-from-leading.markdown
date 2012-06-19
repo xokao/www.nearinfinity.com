@@ -45,8 +45,7 @@ new markets and customers."
 As the company grows, the management team will focus on maintaining aspects
 of the company that have made it unique. “One of the best aspects about this
 investment is that NIC has an opportunity to grow without disrupting our culture,”
-said D’Agostino. “The things that NIC employees love -- our benefits, our passion
-
+said D’Agostino. “The things that NIC employees love -- our benefits, our passion 
 for technology, our focus on people -- these are the things that have allowed us to
 attract and keep the area’s best developers. We are making sure they stay intact
 moving forward.”
