@@ -56,7 +56,7 @@ media, and enterprise information technology investing. Since its formation in
 over 130 global companies in its core markets. This sector focus allows Columbia
 Capital to regularly identify disruptive emerging companies and to recognize
 and build value throughout a company's lifecycle. For more information, visit
-[www.colcap.com](www.colcap.com).
+[www.colcap.com](http://www.colcap.com).
 
 Razor's Edge is a venture capital fund based in Herndon, Virginia founded by a
 group of distinguished entrepreneurs and executives from the national security
@@ -65,4 +65,4 @@ community's strategic priorities and works tirelessly to identify and deliver
 disruptive technologies capable of advancing critical mission needs. The goal of
 Razor's Edge is to help innovative companies rapidly deliver unique capabilities
 to the government customers who need them. For more information, visit
-[www.razorsvc.com](www.razorsvc.com).
+[www.razorsvc.com](http://www.razorsvc.com).
