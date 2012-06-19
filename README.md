@@ -78,6 +78,8 @@ Committing Changes to Blogs
 
 Make sure you are located in the blogs directory and committing/pushing changes in the blogs project rather than the root project. You only have push privileges to the blogs directory.
 
+PLEASE NOTE: Any new commits are immediately pushed to the LIVE website. Make sure that your posts are formatted properly BEFORE you commit.
+
 Syntax Highlighting
 -------------------
 
