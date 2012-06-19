@@ -35,10 +35,16 @@ the header files for compiling extension modules for ruby 1.9.1.
 [sudo] apt-get install ruby1.9.1-dev
 ```
 
+Compiling The Site
+-----------------
+
+  rake jekyll # Cannot be run from the blogs directory
+
+This will manually compile the site
+
 Server
 ------
 
-    jekyll             # builds site
     rake server        # slower, shows all posts
     rake server:recent # faster, shows recent
 
