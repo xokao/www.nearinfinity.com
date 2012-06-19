@@ -61,6 +61,8 @@ rake blog:create
 ```
 A blog can be written in [Markdown](http://daringfireball.net/projects/markdown/), HTML, and [Textile](http://www.textism.com/tools/textile/). You can edit the generated front yaml to make any necessary changes.
 
+Do not remove the date that is generated in the filename
+
 Editing Your Profile
 ----------------
 
