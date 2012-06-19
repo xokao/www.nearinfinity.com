@@ -49,24 +49,17 @@ module Jekyll
         selected_user << post
       end
 
-      create_feeds(site, site.source, '/blogs/', {
+      create_blog_feeds(site, site.source, '/blogs/', {
         'posts'  => allblogs,
         'title' => "Blogs at Near Infinity",
         'link' => "http://www.nearinfinity.com/blogs",
         'description' => 'Employee Blogs'
       })
 
-      site.pages << ExcerptRssFeed.new(site, site.source, '/blogs', "blogs.xml", {
-        'posts'  => allblogs,
-        'title' => "Blog Excerpts at Near Infinity",
-        'link' => "http://www.nearinfinity.com/blogs",
-        'description' => 'Employee Blog Excerpts'
-      })
-
       # Generate the Authors Feeds
       sorted_blogs.each do |author, author_posts|
         formatted_author = author.split('_').collect{|x| x.capitalize}.join(' ')
-        create_feeds(site, site.source, "/blogs/#{author}/rss/", {
+        create_blog_feeds(site, site.source, "/blogs/#{author}/rss/", {
           'posts'  => author_posts,
           'title' => "#{formatted_author} - Blogs at Near Infinity",
           'link' => "http://www.nearinfinity.com/blogs/#{author}",
@@ -77,18 +70,47 @@ module Jekyll
       # Generate the Tags Feeds
       site.tags.each do |tag, tag_posts|
         filtered_posts = tag_posts.reject{ |post| !post.categories.include? 'blogs' }.sort.reverse
-        create_feeds(site, site.source, "/blogs/#{tag}/rss/", {
+        create_blog_feeds(site, site.source, "/blogs/#{tag}/rss/", {
           'posts'  => filtered_posts,
           'title' => "#{tag.capitalize} Related Blogs - Blogs at Near Infinity",
           'link' => "http://www.nearinfinity.com/tags/blogs/#{tag}",
           'description' => "#{tag.capitalize} Blogs"
         })
       end
+      
+      create_all_post_feeds(site)
+      
+      create_news_feeds(site)
     end
 
-    def create_feeds(site, base, dir, data)
+    def create_blog_feeds(site, base, dir, data)
       site.pages << RssFeed.new(site, base, dir, "index.xml", data)
       site.pages << AtomFeed.new(site, base, dir, "atom.xml", data)
+      site.pages << ExcerptRssFeed.new(site, base, dir, "blogs.xml", data)
+    end
+    
+    def create_all_post_feeds(site)
+      data = {
+        'posts' => site.posts.sort.reverse,
+        'title' => 'Near Infinity',
+        'link' => 'http://www.nearinfinity.com',
+        'description' => 'Near Infinity Posts'
+      }
+      site.pages << RssFeed.new(site, site.source, '/', 'index.xml', data)
+      site.pages << AtomFeed.new(site, site.source, '/', 'atom.xml', data)
+      site.pages << ExcerptRssFeed.new(site, site.source, '/', 'excerpt.xml', data)
+    end
+    
+    def create_news_feeds(site)
+      data = {
+        'posts' => site.posts.reject{|post| post.categories[0] != 'news' }.sort.reverse,
+        'title' => 'Near Infinity News',
+        'link' => 'http://www.nearinfinity.com/news',
+        'description' => 'Near Infinity News'
+      }
+      site.pages << RssFeed.new(site, site.source, '/news/', 'index.xml', data)
+      site.pages << AtomFeed.new(site, site.source, '/news/', 'atom.xml', data)
+      site.pages << ExcerptRssFeed.new(site, site.source, '/news/', 'excerpt.xml', data)
     end
   end
 end

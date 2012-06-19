@@ -19,9 +19,11 @@
       <updated>{{ post.date | date_to_xmlschema }}</updated>
       {% capture post_excerpt %}{{post | excerpt: 15}}{%endcapture %}
       <summary>{{post_excerpt | xml_escape}}</summary>
+      {% if post.categories[1] %}
       <author>
         <name>{{post.categories[1] | xml_escape}}</name>
       </author>
+      {% endif %}
       {% for tag in post.tags %}
         <category term="{{tag}}"/>
       {% endfor %}
