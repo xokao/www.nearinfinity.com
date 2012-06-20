@@ -19,7 +19,9 @@
       {{page | paginate:"news"}}
       </div>
       <aside>
-        {% include rss_subscribe.html %}
+        <ul class='sharing-links'>
+          <li class='icon rss'><a href='/news/index.xml' target='_blank'>Subscribe</a></li>
+        </ul>
       </aside>
     </section>
     {% include footer.html %}
