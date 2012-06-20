@@ -29,6 +29,12 @@
 
       </ul>
       {%endif%}
+      
+      {% if page.type == 'blogs' %}
+        <ul class='sharing-links'>
+          <li class='icon rss'><a href='/blogs/{{ page.tag_key }}/rss/index.xml' target='_blank'>Subscribe</a></li>
+        </ul>
+      {% endif %}
 
       {% if page.type != 'speaking' and speaking_content.size > 0 %}
       <h1>{{page.tag_key}} Speaking Engagements</h1>
