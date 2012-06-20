@@ -22,6 +22,7 @@
       {{page | paginate type:page.type}}
       </div>
       <aside>
+        {% include rss_subscribe.html %}
         <h1>{{page.type | type_to_human}} BY AUTHOR</h1>
         <ul>
           {{site | authors_list type:page.type}}

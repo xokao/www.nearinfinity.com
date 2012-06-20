@@ -18,6 +18,9 @@
       {% endfor %}
       {{page | paginate:"news"}}
       </div>
+      <aside>
+        {% include rss_subscribe.html %}
+      </aside>
     </section>
     {% include footer.html %}
   </body>

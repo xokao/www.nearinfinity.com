@@ -41,22 +41,39 @@ module Jekyll
     safe true
 
     def generate(site)
+      create_all_post_feeds(site)
+      create_all_blog_feeds(site)
+      create_news_feeds(site)
+      create_tech_talk_feeds(site)
+      create_speaking_engagement_feeds(site)
+      create_published_works_feeds(site)
+    end
+    
+    def create_all_post_feeds(site)
+      create_feeds(site, '/', 'excerpt.xml', {
+        'posts' => site.posts.sort.reverse,
+        'title' => 'Near Infinity',
+        'link' => 'http://www.nearinfinity.com',
+        'description' => 'Near Infinity News, Blogs, Tech Talks, Published Works and Speaking Engagements'
+      })
+    end
+    
+    def create_all_blog_feeds(site)
       allblogs = site.posts.reject{|post| post.categories[0] != 'blogs' }.sort.reverse
-      sorted_blogs = {}
-
-      allblogs.each do |post|
-        selected_user = sorted_blogs[post.categories[1]] ||= []
-        selected_user << post
-      end
-
+      
       create_feeds(site, '/blogs/', 'blogs.xml', {
         'posts'  => allblogs,
         'title' => "Blogs at Near Infinity",
         'link' => "http://www.nearinfinity.com/blogs",
         'description' => 'Employee Blogs'
       })
-
+      
       # Generate the Authors Feeds
+      sorted_blogs = Hash.new {|h,k| h[k] = []}
+      allblogs.each do |post|
+        sorted_blogs[post.categories[1]] << post
+      end
+
       sorted_blogs.each do |author, author_posts|
         formatted_author = author.split('_').collect{|x| x.capitalize}.join(' ')
         create_feeds(site, "/blogs/#{author}/rss/", 'blogs.xml', {
@@ -77,21 +94,6 @@ module Jekyll
           'description' => "#{tag.capitalize} Blogs"
         })
       end
-      
-      create_all_post_feeds(site)
-      create_news_feeds(site)
-      create_tech_talk_feeds(site)
-      create_speaking_engagement_feeds(site)
-      create_published_works_feeds(site)
-    end
-    
-    def create_all_post_feeds(site)
-      create_feeds(site, '/', 'excerpt.xml', {
-        'posts' => site.posts.sort.reverse,
-        'title' => 'Near Infinity',
-        'link' => 'http://www.nearinfinity.com',
-        'description' => 'Near Infinity News, Blogs, Tech Talks, Published Works and Speaking Engagements'
-      })
     end
     
     def create_news_feeds(site)

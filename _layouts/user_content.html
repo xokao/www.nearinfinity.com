@@ -20,15 +20,18 @@
       {{page | paginate_user:page.url}}
       </div>
       <aside class="links">
-        {% if page.type != blogs %}
+        {% if page.type == 'blogs' %}
+          {% include rss_subscribe_user_posts.html %}
+        {% endif %}
+        {% if page.type != 'blogs' %}
           {% include users/recent_blogs.html %}
         {% endif %}
 
-        {% if page.type != techtalks %}
+        {% if page.type != 'techtalks' %}
           {% include users/recent_tech_talks.html %}
         {% endif %}
 
-        {% if page.type != speaking %}
+        {% if page.type != 'speaking' %}
           {% include users/future_speaking.html %}
         {% endif %}
       </aside>
