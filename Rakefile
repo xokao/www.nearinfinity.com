@@ -306,3 +306,76 @@ namespace :speaking_engagement do
     STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
   end
 end
+
+namespace :tech_talk do
+  desc "Create a blank tech talk post (Run in the root directory of the project)"
+  task :create do
+    # Fail if we're not in the project's root directory
+    Dir.chdir Rake.application.original_dir
+    if !Dir.exists? 'techtalks'
+      STDOUT.puts "\nPlease run this command from the root directory of the project"
+      return
+    end
+    
+    # Get the presenter's name
+    STDOUT.puts "\nEnter the presenter's first name:"
+    first_name = STDIN.gets.strip
+    STDOUT.puts "\nEnter the presenter's last name:"
+    last_name = STDIN.gets.strip
+    
+    folder_name = 'techtalks/' + first_name.downcase + '_' + last_name.downcase
+    
+    # Create the presenters's directory if it doesn't already exist
+    if !Dir.exists? folder_name
+      Dir.mkdir folder_name
+      Dir.mkdir folder_name + '/_posts'
+      File.open folder_name + '/_posts/.gitignore', 'w'
+    end
+    
+    Dir.chdir folder_name
+    
+    # Ask about the type of file
+    file_extension = '.markdown'
+    STDOUT.puts "\nPress enter to create a markdown file, otherwise enter a different extension (i.e. html):"
+    new_extension = STDIN.gets.strip
+    file_extension = '.' + new_extension if new_extension.length > 1
+    
+    # Get the title of the tech talk
+    STDOUT.puts "\nEnter the TITLE of the tech talk:"
+    title = STDIN.gets.strip
+    
+    # Get the date of the tech talk
+    STDOUT.puts "\nEnter the DATE of the tech talk in the format YYYY-MM-DD:"
+    date = STDIN.gets.strip  
+    
+    # Get the tags of the tech talk
+    STDOUT.puts "\nEnter the relevant TAGS (space delimited) for the tech talk:"
+    tags = STDIN.gets.strip.downcase 
+        
+    # Get the unique id of the youtube video
+    STDOUT.puts "\nEnter the unique ID of the youtube video"
+    unique_id = STDIN.gets.strip
+    
+    # Create the file name of the post
+    short_title = ''
+    title_words = title.downcase.split(' ')
+    title_words.each_with_index do |word, index|
+      short_title += word
+      break if short_title.length >= 60
+      short_title += '-' if index < title_words.count - 1
+    end
+    file_name = date + '-' + short_title + file_extension
+    
+    # Create the file with the default header
+    File.open('_posts/' + file_name, 'w') do |post|  
+      post.puts '---'
+      post.puts 'title: ' + title
+      post.puts 'tags: ' + tags
+      post.puts 'unique_id: ' + unique_id
+      post.puts '---'
+      post.puts '(INSERT CONTENT HERE)'
+    end
+    
+    STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
+  end
+end

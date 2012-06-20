@@ -57,6 +57,10 @@ module Jekyll
       end
       "<div class='widget' style='margin-top: 60px;'><div class='tab'>Join Us</div>Are you a #{title} looking for a fun place to work in the DC area? Near Infinity is hiring! Check out our <a href='/join_us/open_positions'>open positions</a> or <a href='mailto:careers@nearinfinity.com'>submit your resume</a>.</div>"
     end
+    
+    def render_youtube_thumbnail(id)
+      "http://i.ytimg.com/vi/#{id}/mqdefault.jpg"
+    end
 
     private
     # Renders the list of type posts for the home page

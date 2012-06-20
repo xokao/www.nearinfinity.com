@@ -1,7 +1,7 @@
 <div class="homepage-techtalk">
   <figure>
     <a href="{{ post.url }}">
-      <img src="{{ post.thumbnail_320 }}"/>
+      <img src="{{ post.unique_id | render_youtube_thumbnail }}"/>
       <figcaption>{{ post.title }}</figcaption>
     </a>
   </figure>
