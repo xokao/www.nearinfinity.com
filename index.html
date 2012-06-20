@@ -31,8 +31,9 @@ speaking_expire_days: 0
 
   {% if has_news %}
   <section id="news">
-    <h1>NEWS</h1>
+    <h1><a href='/news'>NEWS</a></h1>
     {{news_markup}}
+    <a class='morelink' href='/news'>more news</a>
   </section>
   {% endif %}
 
@@ -44,13 +45,13 @@ speaking_expire_days: 0
   <h1>TECHNICAL COMMUNITY</h1>
 
   <section class="techtalks">
-    <h1>TECH TALKS</h1>
+    <h1><a href='/techtalks'>TECH TALKS</a></h1>
     {{ site | render_homepage_techtalk }}
     <a class="morelink" href="/techtalks">more tech talks</a>
   </section>
 
   <section class="blogs">
-    <h1>BLOGS</h1>
+    <h1><a href='/blogs'>BLOGS</a></h1>
     {{ page.max_blogs | render_homepage_blogs }}
 
     <a class="morelink" href="/blogs">more blogs</a>
@@ -59,7 +60,7 @@ speaking_expire_days: 0
 
   {% if has_speaking %}
   <section class="speaking">
-    <h1>SPEAKING</h1>
+    <h1><a href='/speaking'>SPEAKING</a></h1>
     {{ speaking_markup }}
     <a class="morelink" href="/speaking">more speaking engagements</a>
   </section>
