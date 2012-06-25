@@ -11,6 +11,16 @@
   }
 }
 
+header#main {
+  @media screen and (max-width: 400px) {
+    figure {
+      &.bigdata, &.mobile, &.trustedapps, &.joinus {
+        display: none;
+      }
+    }
+  }
+}
+
 #aboutnic {
   padding: 4em 0;
   hgroup {
