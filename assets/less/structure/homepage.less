@@ -12,10 +12,16 @@
 }
 
 header#main {
-  @media screen and (max-width: 400px) {
+  figure {
+    &.bigdata, &.mobile, &.trustedapps, &.joinus {
+      display: none;
+    }
+  }
+  
+  @media screen and (min-width: 400px) {
     figure {
       &.bigdata, &.mobile, &.trustedapps, &.joinus {
-        display: none;
+        display: inline;
       }
     }
   }
