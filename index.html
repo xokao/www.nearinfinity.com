@@ -53,17 +53,15 @@ speaking_expire_days: 0
   <section class="blogs">
     <h1><a href='/blogs'>BLOGS</a></h1>
     {{ page.max_blogs | render_homepage_blogs }}
-
     <a class="morelink" href="/blogs">more blogs</a>
   </section>
 
-
   {% if has_speaking %}
-  <section class="speaking">
-    <h1><a href='/speaking'>SPEAKING</a></h1>
-    {{ speaking_markup }}
-    <a class="morelink" href="/speaking">more speaking engagements</a>
-  </section>
+    <section class="speaking">
+      <h1><a href='/speaking'>SPEAKING</a></h1>
+      {{ speaking_markup }}
+      <a class="morelink" href="/speaking">more speaking engagements</a>
+    </section>
   {% else %}
     <section class="moreblogs">
       <h1>&nbsp;</h1>

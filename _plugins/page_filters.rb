@@ -33,7 +33,7 @@ module Jekyll
     # Shows the list of future speaking engagements
     def render_future_speaking(template, amount)
       all_speaking = @context.registers[:site].categories['speaking']
-      future_speaking = n_posts_from_date(all_speaking,amount,Time.new)
+      future_speaking = n_posts_from_date(all_speaking,amount,(Time.new - 60*60*24*7))
       future_speaking.map{|post| include_template(template, {'post' => post})}.compact.join
     end
 
