@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+{% include head-tag.html %}
+</head>
+  <body>
+    <header id="main">
+    {% include header.html %}
+    </header>
+    <section class="all_content">
+      <div class="blogs">
+        <header>
+          <h1>{{ page.title }}</h1>
+        </header>
+      {% for post in page.posts %}
+        <article>
+          <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
+          <div class="blog-info">
+            {% include published-work-post-list-item.html %}
+          </div>
+        </article>
+      {% endfor %}
+      {{page | paginate type:page.type}}
+      </div>
+      <aside>
+        <ul class='sharing-links'>
+          <li class='icon rss'><a href='index.xml' target='_blank'>Subscribe</a></li>
+        </ul>
+        <h1>PUBLISHED WORKS BY AUTHOR</h1>
+        <ul>
+          {{site | authors_list type:page.type}}
+        </ul>
+        {% capture tags %}{{ site | tags_list type:page.type }}{% endcapture %}
+        {% if tags != "" %}
+          <h1>PUBLISHED WORKS BY TAG</h1>
+          <ul>
+            {{ tags }}
+          </ul>
+        {% endif %}
+      </aside>
+    </section>
+    {% include footer.html %}
+  </body>
+</html>

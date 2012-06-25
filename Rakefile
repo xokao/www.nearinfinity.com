@@ -133,9 +133,6 @@ namespace :news do
     # Assign date to current time
     yaml_data['date'] = Time.now.to_s
     
-    # Use news layout
-    yaml_data['layout'] = 'news'
-
     # Create date portion of title
     news_date_title = ["%02d" % Time.now.year, "%02d" % Time.now.month, "%02d" % Time.now.day].join '-'
 
@@ -197,15 +194,10 @@ namespace :published_work do
     STDOUT.puts "\nPlease enter the relevant TAGS (space delimited) for the published work:"
     yaml_data['tags'] = STDIN.gets.strip.downcase
     
-    # Assign date to current time
-    yaml_data['date'] = Time.now.to_s
+    # Ask for date
+    STDOUT.puts "\nEnter the date of the published work in the format YYYY-MM-DD"
+    yaml_data['date'] = STDIN.gets.strip
     
-    # Use news layout
-    yaml_data['layout'] = 'news'
-
-    # Create date portion of title
-    date_title = ["%02d" % Time.now.year, "%02d" % Time.now.month, "%02d" % Time.now.day].join '-'
-
     # Shorten the title to soemthing readable in the url (do not cut off mid word)
     short_title = ''
     title_words = yaml_data['title'].downcase.split(' ')
@@ -216,7 +208,10 @@ namespace :published_work do
     end
 
     # Full published work title
-    full_title = date_title + '-' + short_title + file_extension
+    full_title = yaml_data['date'] + '-' + short_title + file_extension
+    
+    # Set permalink attribute
+    # yaml_data['permalink'] = '/published_works/'
 
     # Open the published work post file and write the data to the file
     File.open('published_works/_posts/' + full_title, 'w') do |post|  
@@ -286,7 +281,6 @@ namespace :speaking_engagement do
     # Create the file with the default header
     File.open('_posts/' + file_name, 'w') do |post|  
       post.puts '---'
-      post.puts 'layout: speaking'
       post.puts 'title: ' + title
       post.puts 'date: ' + date
       post.puts 'tags: # Space delimited'

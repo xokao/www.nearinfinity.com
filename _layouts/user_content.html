@@ -36,6 +36,10 @@
         {% if page.type != 'speaking' %}
           {% include users/future_speaking.html %}
         {% endif %}
+        
+        {% if page.type != 'published_works' %}
+          {% include users/recent_published_works.html %}
+        {% endif %}
       </aside>
     </section>
     {% include footer.html %}

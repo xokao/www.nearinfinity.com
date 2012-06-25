@@ -1,0 +1,26 @@
+<h1>
+  <a href="{{ post.url }}">{{ post.title }}</a>
+</h1>
+
+<h2>
+  <a href='/blogs/{{ post.categories[1] }}'>
+    <span class='author'>
+      {{ post.categories[1] | user_to_name }}
+    </span>
+  </a> on {{ post.date | date:'%b %d, %Y' }}
+    {% if post.published_by %}
+      by {{ post.published_by }}
+    {% endif %}
+</h2>
+
+{% capture tag_count %}{{ post.tags | size }}{% endcapture %}
+{% if tag_count != '0' %}
+  <h2>
+    Tags:
+    <span class='tags'>
+      {{ post | tags:page }}
+    </span>
+  </h2>
+{%endif%}
+<p>{{ post | excerpt:15 }}</p>
+{% include sharing-inline.html %}

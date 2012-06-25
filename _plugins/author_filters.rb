@@ -3,7 +3,7 @@ module Jekyll
     # Returns a list of all authors
     def authors_list(site, type)
       categories = site['categories'].clone
-      categories.reject!{ |category_key, category_post| ['blogs', 'techtalks', 'speaking', 'news'].include? category_key }
+      categories.reject!{ |category_key, category_post| ['blogs', 'techtalks', 'speaking', 'news', 'published_works'].include? category_key }
       categories.reject! do |category_key, category_posts|
         category_posts.select{ |post|
           post.categories[0] == type 
@@ -57,6 +57,18 @@ module Jekyll
         !post.categories.include? author
       }.sort{|a,b| b.date <=> a.date}
       all_techtalks_by_author[0..count-1].map{ |post|
+        "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
+      }.compact.join
+    end
+    
+    # Return a list of the COUNT most recent published works by an author
+    def recent_published_works_list(page, count = 3)
+      author = page['user'] || page['categories'][1]
+      all_published_works = @context.registers[:site].categories['published_works']
+      all_published_works_by_author = all_published_works.reject{ |post|
+        !post.categories.include? author
+      }.sort{|a,b| b.date <=> a.date}
+      all_published_works_by_author[0..count-1].map{ |post|
         "<li>#{include_template('post-list-item.html', {'post' => post})}</li>"
       }.compact.join
     end

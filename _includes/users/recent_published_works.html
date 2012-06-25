@@ -1,0 +1,10 @@
+{% capture published_works %}{{ page | recent_published_works_list }}{% endcapture %}
+{% if published_works.size > 0 %}
+  <h1>Published Works by {{ page | page_to_user }}</h1>
+  <ul>
+    {{ published_works }}
+  </ul>
+  <div class='more-link'>
+    <a href="/published_works/{{page['user']}}/all/">more published works</a>
+  </div>
+{% endif %}
