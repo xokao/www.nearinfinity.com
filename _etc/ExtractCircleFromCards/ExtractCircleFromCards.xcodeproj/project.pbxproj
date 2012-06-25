@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9159B12F155073BC00142C46 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9159B12E155073BC00142C46 /* Cocoa.framework */; };
+		9159B139155073BC00142C46 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9159B137155073BC00142C46 /* InfoPlist.strings */; };
+		9159B13B155073BC00142C46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9159B13A155073BC00142C46 /* main.m */; };
+		9159B13F155073BC00142C46 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9159B13D155073BC00142C46 /* Credits.rtf */; };
+		9159B142155073BC00142C46 /* NICAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9159B141155073BC00142C46 /* NICAppDelegate.m */; };
+		9159B145155073BC00142C46 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9159B143155073BC00142C46 /* MainMenu.xib */; };
+		9159B1D41550799800142C46 /* NICImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9159B1D31550799800142C46 /* NICImageView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9159B12A155073BC00142C46 /* ExtractCircleFromCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtractCircleFromCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9159B12E155073BC00142C46 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9159B131155073BC00142C46 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9159B132155073BC00142C46 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9159B133155073BC00142C46 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9159B136155073BC00142C46 /* ExtractCircleFromCards-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExtractCircleFromCards-Info.plist"; sourceTree = "<group>"; };
+		9159B138155073BC00142C46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9159B13A155073BC00142C46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9159B13C155073BC00142C46 /* ExtractCircleFromCards-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExtractCircleFromCards-Prefix.pch"; sourceTree = "<group>"; };
+		9159B13E155073BC00142C46 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9159B140155073BC00142C46 /* NICAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NICAppDelegate.h; sourceTree = "<group>"; };
+		9159B141155073BC00142C46 /* NICAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NICAppDelegate.m; sourceTree = "<group>"; };
+		9159B144155073BC00142C46 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9159B1D21550799800142C46 /* NICImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NICImageView.h; sourceTree = "<group>"; };
+		9159B1D31550799800142C46 /* NICImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NICImageView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9159B127155073BC00142C46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9159B12F155073BC00142C46 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9159B11F155073BB00142C46 = {
+			isa = PBXGroup;
+			children = (
+				9159B134155073BC00142C46 /* ExtractCircleFromCards */,
+				9159B12D155073BC00142C46 /* Frameworks */,
+				9159B12B155073BC00142C46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9159B12B155073BC00142C46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9159B12A155073BC00142C46 /* ExtractCircleFromCards.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9159B12D155073BC00142C46 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9159B12E155073BC00142C46 /* Cocoa.framework */,
+				9159B130155073BC00142C46 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9159B130155073BC00142C46 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9159B131155073BC00142C46 /* AppKit.framework */,
+				9159B132155073BC00142C46 /* CoreData.framework */,
+				9159B133155073BC00142C46 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9159B134155073BC00142C46 /* ExtractCircleFromCards */ = {
+			isa = PBXGroup;
+			children = (
+				9159B140155073BC00142C46 /* NICAppDelegate.h */,
+				9159B141155073BC00142C46 /* NICAppDelegate.m */,
+				9159B1D21550799800142C46 /* NICImageView.h */,
+				9159B1D31550799800142C46 /* NICImageView.m */,
+				9159B143155073BC00142C46 /* MainMenu.xib */,
+				9159B135155073BC00142C46 /* Supporting Files */,
+			);
+			path = ExtractCircleFromCards;
+			sourceTree = "<group>";
+		};
+		9159B135155073BC00142C46 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9159B136155073BC00142C46 /* ExtractCircleFromCards-Info.plist */,
+				9159B137155073BC00142C46 /* InfoPlist.strings */,
+				9159B13A155073BC00142C46 /* main.m */,
+				9159B13C155073BC00142C46 /* ExtractCircleFromCards-Prefix.pch */,
+				9159B13D155073BC00142C46 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9159B129155073BC00142C46 /* ExtractCircleFromCards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9159B148155073BC00142C46 /* Build configuration list for PBXNativeTarget "ExtractCircleFromCards" */;
+			buildPhases = (
+				9159B126155073BC00142C46 /* Sources */,
+				9159B127155073BC00142C46 /* Frameworks */,
+				9159B128155073BC00142C46 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExtractCircleFromCards;
+			productName = ExtractCircleFromCards;
+			productReference = 9159B12A155073BC00142C46 /* ExtractCircleFromCards.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9159B121155073BB00142C46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = NIC;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Near Infinity Corporation";
+			};
+			buildConfigurationList = 9159B124155073BB00142C46 /* Build configuration list for PBXProject "ExtractCircleFromCards" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9159B11F155073BB00142C46;
+			productRefGroup = 9159B12B155073BC00142C46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9159B129155073BC00142C46 /* ExtractCircleFromCards */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9159B128155073BC00142C46 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9159B139155073BC00142C46 /* InfoPlist.strings in Resources */,
+				9159B13F155073BC00142C46 /* Credits.rtf in Resources */,
+				9159B145155073BC00142C46 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9159B126155073BC00142C46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9159B13B155073BC00142C46 /* main.m in Sources */,
+				9159B142155073BC00142C46 /* NICAppDelegate.m in Sources */,
+				9159B1D41550799800142C46 /* NICImageView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9159B137155073BC00142C46 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9159B138155073BC00142C46 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9159B13D155073BC00142C46 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9159B13E155073BC00142C46 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9159B143155073BC00142C46 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9159B144155073BC00142C46 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9159B146155073BC00142C46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9159B147155073BC00142C46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9159B149155073BC00142C46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExtractCircleFromCards/ExtractCircleFromCards-Prefix.pch";
+				INFOPLIST_FILE = "ExtractCircleFromCards/ExtractCircleFromCards-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9159B14A155073BC00142C46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ExtractCircleFromCards/ExtractCircleFromCards-Prefix.pch";
+				INFOPLIST_FILE = "ExtractCircleFromCards/ExtractCircleFromCards-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9159B124155073BB00142C46 /* Build configuration list for PBXProject "ExtractCircleFromCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9159B146155073BC00142C46 /* Debug */,
+				9159B147155073BC00142C46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9159B148155073BC00142C46 /* Build configuration list for PBXNativeTarget "ExtractCircleFromCards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9159B149155073BC00142C46 /* Debug */,
+				9159B14A155073BC00142C46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9159B121155073BB00142C46 /* Project object */;
+}
