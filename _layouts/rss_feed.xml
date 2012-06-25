@@ -10,7 +10,7 @@
     <docs>http://www.rssboard.org/rss-specification</docs>
     {% for post in page.posts %}
       <item>
-        <title>{{ post.title }}</title>
+        <title>{{ post.title | xml_escape }}</title>
         <link>http://www.nearinfinity.com{{ post.url }}</link>
         <guid>http://www.nearinfinity.com{{ post.url }}</guid>
         <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
