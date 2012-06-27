@@ -74,15 +74,30 @@
 
         if (previousIndex < index) {
           // Move to right
-          el.className = 'homepage ' + newClass + ' ' + previousClass + '_left';
+          if ($(el).hasClass('expanded')) {
+            el.className = 'homepage expanded ' + newClass + ' ' + previousClass + '_left';
+          }
+          else {
+            el.className = 'homepage ' + newClass + ' ' + previousClass + '_left';
+          }
         } else {
           // Move to left
 
           // Start by aligning the previous to the left
-          el.className = 'homepage disable-animation ' + newClass + '_left ' + previousClass;
+          if ($(el).hasClass('expanded')) {
+            el.className = 'homepage expanded disable-animation ' + newClass + '_left ' + previousClass;
+          }
+          else {
+            el.className = 'homepage disable-animation ' + newClass + '_left ' + previousClass;
+          }
           // Kick off the new animation
           setTimeout(function() {
-            el.className = 'homepage ' + newClass + '_left ' + newClass;
+            if ($(el).hasClass('expanded')) {
+              el.className = 'homepage expanded ' + newClass + '_left ' + newClass;
+            }
+            else {
+              el.className = 'homepage ' + newClass + '_left ' + newClass;
+            }
           }, 10);
         }
       }
