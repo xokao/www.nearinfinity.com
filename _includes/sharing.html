@@ -4,11 +4,7 @@
 
   <li class="icon facebook"><a rel="nofollow" target="_blank" onclick="return shareLink(this, event)" href="http://www.facebook.com/share.php?u={{ site.host | cgi_escape }}{{ page.url | cgi_escape }}">Facebook</a></li>
 
-  {% comment %}
-  optional sharing
-  kickit
-  digg
-  reddit
-  others?
-  {% endcomment %}
+  {% if type == 'news story' %}
+    <li class="icon linked-in"><a rel="nofollow" target="_blank" onclick="return shareLink(this, event)" href="http://www.linkedin.com/shareArticle?mini=true&url={{ site.host | cgi_escape }}{{ page.url | cgi_escape }}&title={{ page.title }}&summary={{ page.content }}&source=Near%20Infinity">LinkedIn</a></li>
+  {% endif %}
 </ul>
