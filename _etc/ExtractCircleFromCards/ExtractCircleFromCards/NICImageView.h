@@ -15,7 +15,7 @@
     float magnification;
 }
 @property (strong) NSMutableArray *cards;
-@property (weak) IBOutlet NSImageView *previewView;
+@property (assign) IBOutlet NSImageView *previewView;
 
 - (IBAction)writeImage:(id)sender;
 
