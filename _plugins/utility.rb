@@ -36,6 +36,7 @@ module Jekyll
       translate = {'blogs' => 'BLOGS', 'techtalks' => 'TECHTALKS', 'speaking' => 'SPEAKING ENGAGEMENTS'}
       translate[type]
     end
+    
   end
 
   class IncludeMarkdownTag < Liquid::Tag

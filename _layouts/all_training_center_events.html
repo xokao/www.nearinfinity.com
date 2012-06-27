@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% include head-tag.html %}
+</head>
+  <body>
+    <header id="main">
+    {% include header.html %}
+    </header>
+    <section class="all_content">
+      <div class="blogs">
+        <header>
+          <h1>{{ page.title }}</h1>
+        </header>
+        {% for post in page.posts %}
+          <article class='no-author'>
+            <div class="blog-info">{% include training-center-event-post.html %}</div>
+          </article>
+        {% endfor %}
+        {{page | paginate:"training_center_events"}}
+      </div>
+      <aside>
+        <ul class='sharing-links'>
+          <li class='icon rss'><a href='/training_center_events/index.xml' target='_blank'>Subscribe</a></li>
+        </ul>
+      </aside>
+    </section>
+    {% include footer.html %}
+  </body>
+</html>

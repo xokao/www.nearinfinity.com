@@ -47,6 +47,7 @@ module Jekyll
       create_tech_talk_feeds(site)
       create_speaking_engagement_feeds(site)
       create_published_works_feeds(site)
+      create_training_center_events_feeds(site)
     end
     
     def create_all_post_feeds(site)
@@ -97,12 +98,16 @@ module Jekyll
     end
     
     def create_news_feeds(site)
-      create_feeds(site, '/news/', 'news.xml', {
+      data = {
         'posts' => site.posts.reject{|post| !post.categories.include? 'news' }.sort.reverse,
         'title' => 'Near Infinity News',
         'link' => 'http://www.nearinfinity.com/news',
-        'description' => 'Near Infinity News'
-      })
+        'description' => 'Recent news stories regarding Near Infinity'
+      }
+      create_feeds(site, '/news/', 'news.xml', data)
+      
+      # Copying xml file to url from old website
+      site.pages << ExcerptRssFeed.new(site, site.source, '/blogs/', 'news.xml', data)
     end
     
     def create_tech_talk_feeds(site)
@@ -129,6 +134,15 @@ module Jekyll
         'title' => 'Near Infinity Published Works',
         'link' => 'http://www.nearinfinity.com/published_works',
         'description' => 'Near Infinity Published Works'
+      })
+    end
+    
+    def create_training_center_events_feeds(site)
+      create_feeds(site, '/training_center_events/', 'training_center_events.xml', {
+        'posts' => site.posts.reject{|post| !post.categories.include? 'training_center_events' }.sort.reverse,
+        'title' => 'Near Infinity Training Center Events',
+        'link' => 'http://www.nearinfinity.com/training_center_events',
+        'description' => "Events held at Near Infinity's training center"
       })
     end
     
