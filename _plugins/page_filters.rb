@@ -55,7 +55,12 @@ module Jekyll
       else
         title = "developer"
       end
-      "<div class='widget' style='margin-top: 60px;'><div class='tab'>Join Us</div>Are you a #{title} looking for a fun place to work in the DC area? Near Infinity is hiring! Check out our <a href='/join_us/open_positions'>open positions</a> or <a href='mailto:careers@nearinfinity.com'>submit your resume</a>.</div>"
+      if title.strip.start_with?("a", "e", "i", "o", "u")
+        title_with_article = "an #{title}"
+      else
+        title_with_article = "a #{title}"
+      end
+      "<div class='widget' style='margin-top: 60px;'><div class='tab'>Join Us</div>Are you #{title_with_article} looking for a fun place to work in the DC area? Near Infinity is hiring! Check out our <a href='/join_us/open_positions'>open positions</a> or <a href='mailto:careers@nearinfinity.com'>submit your resume</a>.</div>"
     end
     
     def render_youtube_thumbnail(id)
