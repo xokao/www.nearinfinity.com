@@ -1,0 +1,6 @@
+---
+title: Node.js Explained
+tags: nodejs javascript ruby rails
+unique_id: L0pjVcIsU6A
+---
+<p>Rising from non-existence three short years ago, Node.js is already attracting the accolades and disdain enjoyed and endured by the Ruby and Rails community just a short time ago. It overtook Rails as the most popular Github repository last November and was selected by InfoWorld for the Technology of the Year Award in 2012. This presentation explains the basic theory and programming model central to Node's approach and will help you understand the resulting benefits and challenges it presents.</p>
