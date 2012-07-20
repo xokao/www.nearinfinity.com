@@ -9,7 +9,7 @@
 #import "NICImageView.h"
 
 @implementation NICImageView
-@synthesize previewView;
+@synthesize previewView, cards=_cards;
 
 - (id)initWithCoder:(NSCoder *)coder
 {
@@ -17,9 +17,6 @@
     if (self) {
         self.cards = [[NSMutableArray alloc] init];
         [self setEditable:YES];
-//        [self becomeFirstResponder];
-        
-        //[self loadImage:currentIndex];
         magnification = 1.0;
     }
     return self;
