@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+{% include head-tag.html %}
+</head>
+<body>
+  <header id="main">
+    {% include header.html %}
+  </header>
+
+  <section class="dynamic_content">
+    <article>
+    <header class="news_header">
+      <h1>{{ page.title }}</h1>
+      <h2>
+      {% if page.start_timestamp %}
+        {{ page.start_timestamp | date:'%b %d, %Y %I:%M%p' }}
+      {% endif %}
+      {% if page.end_timestamp %}
+        to {{ page.end_timestamp | date:'%I:%M%p' }}
+      {% endif %}
+      {% if page.held_by.name %}
+        held by <a href='{{ post.held_by.url }}'>{{ page.held_by.name }}</a>
+      {% endif %}
+      </h2>
+      {% if page.sign_up_url %}
+        <h2><a href="{{ page.sign_up_url }}" target="_blank">Sign Up</a></h2>
+      {% endif %}
+    </header>
+    {{ content }}
+    </article>
+    <aside>
+      {% include sharing.html %}
+
+      {% include users/recent_blogs.html %}
+    </aside>
+  </section>
+
+  {% include footer.html %}
+</body>
+</html>

@@ -285,15 +285,15 @@ namespace :speaking_engagement do
       post.puts 'date: ' + date
       post.puts 'tags: # Space delimited'
       post.puts 'location: # i.e. Reston, Virginia'
-      post.puts 'talk_url: # Link to additional information about the talk'
+      post.puts 'talk_url: # Link to additional information about the talk (with "http://")'
       post.puts ''
       post.puts '# Use either the conference or user_group attribute'
       post.puts 'conference: '
       post.puts '  name: # Name of the conference'
-      post.puts '  url: # Website for the conference'
+      post.puts '  url: # Website for the conference (with "http://")'
       post.puts 'user_group: '
       post.puts '  name: # Name of the user group'
-      post.puts '  url: # Website for the user group'
+      post.puts '  url: # Website for the user group (with "http://")'
       post.puts '---'
     end
     
@@ -367,9 +367,68 @@ namespace :tech_talk do
       post.puts 'tags: ' + tags
       post.puts 'unique_id: ' + unique_id
       post.puts '---'
-      post.puts '(INSERT CONTENT HERE)'
+      post.puts '(INSERT DESCRIPTION HERE)'
     end
     
     STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
+  end
+end
+
+namespace :training_center_event do
+  desc "Create a blank training center event post (Run in the root directory of the project)"
+  task :create do
+    # Fail if we're not in the project's root directory
+    Dir.chdir Rake.application.original_dir
+    if !Dir.exists? 'training_center_events'
+      STDOUT.puts "\nPlease run this command from the root directory of the project"
+      return
+    end
+    
+    Dir.chdir 'training_center_events'
+    
+    file_extension = '.markdown'
+    STDOUT.puts "\nPress enter to create a markdown file, otherwise enter a different extension (i.e. \"html\"):"
+    new_extension = STDIN.gets.strip
+    file_extension = '.' + new_extension if new_extension.length > 1
+    
+    STDOUT.puts "\nEnter the TITLE of the event:"
+    title = STDIN.gets.strip
+    
+    STDOUT.puts "\nEnter the DATE of the event in the format \"YYYY-MM-DD\""
+    date = STDIN.gets.strip  
+    
+    STDOUT.puts "\nEnter the START TIME of the event in the format \"HH:MM\" (24-hour format)"
+    start_time = STDIN.gets.strip
+    
+    STDOUT.puts "\n(Optional) Enter the END TIME of the event in the format \"HH:MM\" (24-hour format)"
+    end_time = STDIN.gets.strip
+    
+    start_timestamp = date + ' ' + start_time
+    end_timestamp = date + ' ' + end_time
+      
+    short_title = ''
+    title_words = title.downcase.split(' ')
+    title_words.each_with_index do |word, index|
+      short_title += word
+      break if short_title.length >= 60
+      short_title += '-' if index < title_words.count - 1
+    end
+    file_name = date + '-' + short_title + file_extension
+    
+    # Create the file with the default header
+    File.open('_posts/' + file_name, 'w') do |post|  
+      post.puts '---'
+      post.puts 'title: "' + title + '"'
+      post.puts 'start_timestamp: ' + start_timestamp
+      post.puts 'end_timestamp: ' + end_timestamp
+      post.puts 'held_by:  # (Optional)'
+      post.puts '  name:  # Name of the organization holding the event'
+      post.puts '  url:  # URL of the organization holding the event (including http://)'
+      post.puts 'sign_up_url:  # URL to sign up for the event (including http://)'
+      post.puts '---'
+      post.puts '(INSERT DESCRIPTION HERE)'
+    end
+    
+    STDOUT.puts 'Successfully generated blank training center event at ' + 'training_center_events/_posts/' + file_name
   end
 end

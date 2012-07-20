@@ -118,3 +118,12 @@ $(function() {
     window.location = $(this).attr('data-url');
   });
 });
+
+$('p#drop-down-link').click(function() {
+  if ($('header#main').hasClass('expanded')) {
+    $('header#main').removeClass('expanded');
+  }
+  else {
+    $('header#main').addClass('expanded');
+  }
+});

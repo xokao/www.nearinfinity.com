@@ -13,6 +13,6 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (weak) IBOutlet NSImageView *imageView;
+@property (assign) IBOutlet NSImageView *imageView;
 
 @end
