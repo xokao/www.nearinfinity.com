@@ -30,13 +30,19 @@ header#main {
 
     h1.logo {
       .hide-text;
-      background: @logo-data-url no-repeat left top;
-      height: 69px;
-      width: 260px;
+      background: url(/assets/images/logo.png) no-repeat left top;
+      height: 42px;
+      width: 229px;
+    }
+    @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
+      h1.logo {
+        background: url(/assets/images/logo@2x.png) no-repeat left top;
+        background-size: 100%;
+      }
     }
     & > a {
       position: absolute;
-      width: 252px;
+      width: 270px;
       display: block;
       height: 70px;
       z-index: 11;
@@ -49,9 +55,9 @@ header#main {
   nav {
     .transition(~"height 0.2s ease-in-out");
     
-    background: rgba(0,0,0,0.8);
     color: white;
     ol { 
+      background: rgba(0,0,0,0.8);
       text-align: right;
       li { 
         .size(4);
