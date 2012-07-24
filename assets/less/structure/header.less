@@ -38,7 +38,8 @@ header#main {
       .pad;
       margin-left:9.5%;
       position:absolute;
-      left: -2px;
+      left: 0;
+      top: 16px;
       z-index:11;
       height: 84px;
     }
@@ -66,8 +67,8 @@ header#main {
             
       ol {
         text-align: left;
-        padding: 0.6em 0;
-        margin-bottom: 0;
+        margin: 0;
+        
         
         li {
           width: 100%;
@@ -140,11 +141,11 @@ header#main {
         margin-top: 0;
         
         ol { 
-          .column(11);
-          .pull(1);
-          text-align: right;
-          padding: 0;
-          height: 33px;
+          margin: 0;
+          padding: 0 1em;
+          .box-sizing;
+          text-align: center;
+          
           
           li { 
             .size(1);
@@ -174,6 +175,7 @@ header#main {
     
     article { 
       .column(8);
+      .push(1);
     }
   }
 
@@ -190,6 +192,26 @@ header#main {
       nav { 
         top: 36px;
         .push(1);
+        padding-left: 258px;
+        ol {
+          text-align: right;
+          position: relative;
+          padding: 0 16% 0 0;
+          height: 33px;
+          margin: 0;
+
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-width: 33px 11px 0 0;
+            border-color: transparent rgba(0,0,0,0.8) transparent transparent;
+            border-style: solid;
+            left: -11px;
+          }
+        }
       }
     }
   }
@@ -250,7 +272,8 @@ header#main {
         .push(2);
         ol {
           margin:0;
-          width:78%;
+          width: 100%;
+          padding-right: 27%;
         }
       }
     }
