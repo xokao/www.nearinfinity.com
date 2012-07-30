@@ -2,22 +2,79 @@
 layout: static
 section_id: mobile
 title: Mobile
+impact_duration_seconds: 10
 ---
 <article>
   <section id="mobile-main" class="plain-strip">
     <article>
-    <section id="mobile-main-description">
       <hgroup class="light">
-      <h1>NIC<em>+</em>Mobile</h1>
-      <h2>Our mobile capabilities are focused on creating new secure communications paradigms and device-agnostic information gathering platforms</h2>
-    </hgroup>
-    <p>Near Infinity's involvement in mobile development started in 2007, with a handful of software engineers learning iPhone development before the App Store had even launched. Since then, half of Near Infinity’s engineers have become fluent in iOS and/or Android development, and we are respected as mobile experts, having presented at conferences across the country and taught university-level courses in mobile development.</p>
-    </section>
-    <section id="mobile-video" class="video-wrap">
-      <section class="video-container">
-        <iframe src="http://blip.tv/play/AYL6pDQA.html?p=1" width="430" height="272" frameborder="0" allowfullscreen></iframe>
+        <h1>NIC<em>+</em>Mobile</h1>
+        <h2>Our mobile capabilities are focused on creating new secure communications paradigms and device-agnostic information gathering platforms</h2>
+      </hgroup>
+      <section id="mobile-main-description" class="end-transition disable-animation">
+        <p class="mobile-intro">Near Infinity's involvement in mobile development started in 2007, with a handful of software engineers learning iPhone development before the App Store had even launched. Since then, half of Near Infinity’s engineers have become fluent in iOS and/or Android development, and we are respected as mobile experts, having presented at conferences across the country and taught university-level courses in mobile development.</p>
+        <p class="typing-detection">TextField that allows for authentication of user input based on the manner in which a person types, including the way the phone is held and the speed at which the text is typed. Can be implemented within an application in order to allow a more secure login method.</p>
+        <p class="swipe-lock">Lock screen used to lock a device. The lock screen takes in a pattern drawn on a grid and compares it to a previously stored pattern. The stored pattern can contain multiple gestures drawn, and must be drawn in the same order to validate the password.</p>
+        <p class="sudden-motion">Access Control to add motion based events to an application. a motion threshold is set, and an event will trigger when that threshold is passed. This could allow an application to lock down when a sudden motion is detected, for example if someone grabs your device from you.</p>
+        <p class="secure-location">Access Control to add location based events to a target area. A center location is set, and different zones of a set radius can be created around that point. Continually updates location from the GPS of the device to accurately track location in regards to the zones. Uses the most accurate location information available at all times.</p>
+        <p class="pin-code">Lock screen used to lock a device. The lock screen is similar to the Android pin code lock screen, with 9 pins on the screen that the user draws a pattern between. The pattern can be as long as the user wants it to be, and can reuse pins that have been used in the password already.</p>
+        <p class="picture-touch">Library that can be used to implement a lock screen. An image will be displayed that the user can tap a series of points. Those points can then be stored in the application as a password, and can later be compared to another set of touches to authenticate the user.</p>
+        <p class="gesture-pass">Lockscreen that captures 8 cardinal recognized gestures in sequence to store as a password. Shows path rubber banding for user feedback. Keeps track of all attempts to unlock, and has the capabilitiy to lock the application down after a particular amount of failed attempts. The passcode is stored by entering the same set of gestures twice in a row successfully.</p>
+        <p class="camera-detection">Access Control to add camera events to an application. Camera Detection monitors the front facing camera in order to detect two different events: camera flashes and facial detection. A light change threshold can be set, so if the camera detects a flash of light, the application can be locked down. The camera also keeps track of how many faces are detected in the image, so that the application could be locked down if multiple people are looking at the phone, or no one is looking at the phone.</p>
+        <div class="mobile-intro">
+        </div>
+        <div class="typing-detection transition-video">
+          {% video_tag :youtube => J45-3eVIrM4 %}
+        </div>
+        <div class="swipe-lock transition-video">
+          {% video_tag :youtube => LbNtiVqxh7o %}
+        </div>
+        <div class="swipe-lock mobile transition-video">
+          {% video_tag :youtube => aOvPitWQ3cE %}
+        </div>
+        <div class="sudden-motion transition-video">
+          {% video_tag :youtube => 8ycAePsE9Us %}
+        </div>
+        <div class="secure-location transition-video">
+          {% video_tag :youtube => byG_4lIVN5E %}
+        </div>
+        <div class="secure-location-mobile transition-video">
+          {% video_tag :youtube => QthYMR7klqE %}
+        </div>
+        <div class="pin-code transition-video">
+          {% video_tag :youtube => R-s37a6H_nw %}
+        </div>
+        <div class="picture-touch transition-video">
+          {% video_tag :youtube => 8yoRDIM5HYM %}
+        </div>
+        <div class="picture-touch-mobile transition-video">
+          {% video_tag :youtube => LrUZOgmtaZI %}
+        </div>
+        <div class="gesture-pass transition-video">
+          {% video_tag :youtube => pB29SY-RleI %}
+        </div>
+        <div class="gesture-pass-mobile transition-video">
+          {% video_tag :youtube => 1YetQ1CwmlQ %}
+        </div>
+        <div class="camera-detection transition-video">
+          {% video_tag :youtube => 2PRT0LfTymE %}
+        </div>
+        <section class="article-links">
+          <a class="mobile-intro" href="#">Intro</a>
+          <a class="typing-detection" href="#">Typing Detection</a>
+          <a class="swipe-lock" href="#">Swipe Lock</a>
+          <a class="sudden-motion" href="#">Sudden Motion</a>
+          <a class="secure-location" href="#">Secure Location</a>
+          <a class="pin-code" href="#">PIN Code</a>
+          <a class="picture-touch" href="#">Picture Touch</a>
+          <a class="gesture-pass" href="#">Gesture Pass</a>
+          <a class="camera-detection" href="#">Camera Detection</a>
+        </section>
+        <ol class="nextprev">
+          <li class="previous"><a href="#">&lt;</a></li>
+          <li class="next"><a href="#">&gt;</a></li>
+        </ol>
       </section>
-    </section>
     </article>
   </section>
   <section id="mobile-products" class="band-strip black-band">
@@ -82,3 +139,4 @@ title: Mobile
     </article>
   </section>
 </article>
+
