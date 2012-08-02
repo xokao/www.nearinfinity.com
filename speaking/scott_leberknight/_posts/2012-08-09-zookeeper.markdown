@@ -2,13 +2,13 @@
 title: ZooKeeper
 date: 2012-08-09
 tags: # Space delimited
-location: # i.e. Reston, Virginia
-talk_url: # Link to additional information about the talk (with "http://")
+location: Reston, Virginia
+talk_url: "http://www.meetup.com/dc-jug/events/76004742/"
 
 # Use either the conference or user_group attribute
 user_group: 
   name: DC/Nova Java Users Group
-  url: "http://www.meetup.com/dc-jug/events/76004742/"
+  url: "http://www.meetup.com/dc-jug/"
 ---
 Apache ZooKeeper is an open-source server which enables highly reliable distributed coordination. Because coordinating distributed systems is a Zoo!
 
