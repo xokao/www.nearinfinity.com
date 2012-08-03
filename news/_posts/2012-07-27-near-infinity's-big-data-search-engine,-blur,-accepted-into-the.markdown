@@ -1,6 +1,6 @@
 ---
 permalink: /news/2011/07/27/big-data-search-engine-blur-accepted-into-the-apache-incubator-prog.html
-title: Near Infinity's Big Data Search Engine, Blur, Accepted into the Apache Incubator Program
+title: Blur Accepted into the Apache Incubator Program
 date: 2012-07-27 10:40:55 -0400
 ---
 RESTON, VIRGINIA
