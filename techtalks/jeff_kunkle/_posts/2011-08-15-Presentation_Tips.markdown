@@ -13,3 +13,7 @@ thumbnails_120:
 Jeff Kunkle discusses his Presentation Tips.
 
 There's an endless supply of books, articles, blog posts, and videos to help you improve your presentations. Most of them focus on the organization and delivery aspects of presenting, which is obviously a critical piece. This presentations is slightly different. It focuses on some of the technical aspects surrounding your presentation, such as making sure you have the right adapter for your projector, preparing for screen-resolution shock, minimizing your external distractions, and sixteen more. These tips are easy to implement and will give your presentations an instant boost in effectiveness and professionalism.
+
+Related Blog Posts
+
+[Tech Presentation Tip 1 - Avoid Screen Resolution Shock](http://www.nearinfinity.com/blogs/jeff_kunkle/2012/07/26/tech-presentation-tip-1-avoid-screen-resolution-shock.html)
