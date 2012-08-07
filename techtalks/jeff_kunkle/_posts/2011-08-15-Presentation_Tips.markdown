@@ -17,3 +17,4 @@ There's an endless supply of books, articles, blog posts, and videos to help you
 Related Blog Posts
 
 [Tech Presentation Tip 1 - Avoid Screen Resolution Shock](http://www.nearinfinity.com/blogs/jeff_kunkle/2012/07/26/tech-presentation-tip-1-avoid-screen-resolution-shock.html)
+[Tech Presentation Tip 2 - No Apologies or Caveats](http://www.nearinfinity.com/blogs/jeff_kunkle/2012/08/06/tech-presentation-tip-2-no-apologies-or-caveats.html)
