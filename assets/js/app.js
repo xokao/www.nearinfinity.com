@@ -127,3 +127,5 @@ $('p#drop-down-link').click(function() {
     $('header#main').addClass('expanded');
   }
 });
+
+$('img[src^="http://t6.trackalyzer.com"]').css("float", "left");
