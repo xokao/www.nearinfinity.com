@@ -109,6 +109,25 @@ Embed Videos
     {% video_tag :vimeo => [video_id] %}
     {% video_tag :youtube => [unique_id] %}
 
+Escaping Liquid Syntax
+----------------------
+
+Since Liquid is run on your blog (i.e. how the {% highlight %} tag works) you have to escape any Liquid syntax you actually want to display. That is anything that looks like {% %} or {{ }}. To escape
+
+    {% include sharing.html %}
+    
+you have to say
+
+    {{ "{% include sharing.html " }}%}
+    
+and to escape
+
+    {{ content }}
+    
+you have to say
+
+    {{ "{{ content " }}}}
+
 
 If you have any questions or concerns email bmarcaur@nearinfinity.com or wbrady@nearinfinity.com
 
