@@ -10,11 +10,11 @@ module Jekyll
       begin
         self.content = Liquid::Template.parse(self.content).render!(payload, info)
       rescue => e
-        puts "Liquid Exception: #{e.message} at:"
-        e.backtrace.each do |trace|
-          puts trace
+        puts "Liquid Exception: #{e.message} in #{self.name}"
+        e.backtrace.each do |backtrace|
+          puts backtrace
         end
-        abort("Failing Build")
+        abort("Build Failed")
       end
 
       self.transform
@@ -32,11 +32,11 @@ module Jekyll
         begin
           self.output = Liquid::Template.parse(layout.content).render!(payload, info)
         rescue => e
-          puts "Liquid Exception: #{e.message} at:"
-          e.backtrace.each do |trace|
-            puts trace
+          puts "Liquid Exception: #{e.message} in #{self.data["layout"]}"
+          e.backtrace.each do |backtrace|
+            puts backtrace
           end
-          abort("Failing Build")
+          abort("Build Failed")
         end
 
         if layout = layouts[layout.data["layout"]]
