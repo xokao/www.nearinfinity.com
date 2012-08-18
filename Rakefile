@@ -101,7 +101,6 @@ namespace :assets do
 
 end
 
-
 namespace :news do
   desc "Create a Blank News Item (Run in the project's root directory)"
   task :create do
@@ -430,5 +429,17 @@ namespace :training_center_event do
     end
     
     STDOUT.puts 'Successfully generated blank training center event at ' + 'training_center_events/_posts/' + file_name
+  end
+end
+
+namespace :blog do
+  desc "Create a Blank Blog Post (Run this in your personal blog folder)"
+  task :create do
+    STDOUT.puts 'Please run this command from your personal blog folder (i.e. blogs/first_last/'
+  end
+
+  desc "Create a new user's blog folder structure (Run in the blogs folder)"
+  task :directory, :full_name do |t, args|
+    STDOUT.puts 'Please run this command from the blogs folder'
   end
 end
