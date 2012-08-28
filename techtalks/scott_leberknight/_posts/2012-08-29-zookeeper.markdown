@@ -1,6 +1,6 @@
 ---
 title: ZooKeeper
-tags: zookeeper distributed computing coordination apache
+tags: zookeeper distributed-computing coordination apache
 unique_id: 2RfBHqDWa60
 ---
 Apache ZooKeeper is an open-source server which enables highly reliable distributed coordination. Because coordinating distributed systems is a Zoo!
