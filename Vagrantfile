@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-  config.vm.define :wwww do |www|
+  config.vm.define :www do |www|
     www.vm.box = "precise32"
     www.vm.host_name = "www"
 

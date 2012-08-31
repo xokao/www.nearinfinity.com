@@ -1,5 +1,5 @@
 file { '/etc/motd' :
-  content => "\nWelcome to your Vagrant-built virtual machine!\nManaged by Puppet.\n\n",
+  content => "\nWelcome to your Vagrant-built virtual machine!\nManaged by Puppet.\n\nwww> cd /vagrant\nwww> bundle exec jekyll server\n\nlocal> open http://localhost:4000\n\n",
 }
 
 exec { 'aptitude-update' :
@@ -16,13 +16,15 @@ package { 'build-essential' :
   ensure => present,
 }
 
-package { 'ruby1.9.3' :
+package { 'ruby-1.9' :
+  name => 'ruby1.9.3',
   ensure => present,
 }
 
-package { 'ruby1.9.1-dev' :
+package { 'ruby-dev' :
+  name => 'ruby1.9.1-dev',
   ensure => present,
-  require => Package['ruby1.9.3'],
+  require => Package['ruby-1.9'],
 }
 
 package { ['libxslt-dev', 'libxml2-dev'] :
@@ -36,7 +38,7 @@ package { ['python', 'python-pip'] :
 package { 'bundler' :
   ensure   => present,
   provider => 'gem',
-  require => Package['ruby1.9.1-dev'],
+  require => Package['ruby-dev'],
 }
 
 package { 'Pygments' :
