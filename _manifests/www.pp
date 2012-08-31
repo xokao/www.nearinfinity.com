@@ -1,5 +1,5 @@
 file { '/etc/motd' :
-  content => "\nWelcome to your Vagrant-built virtual machine!\nManaged by Puppet.\n\nwww> cd /vagrant\nwww> bundle exec rake jekyll server\n\nlocal> open http://localhost:4000\n\n",
+  content => "\nWelcome to your Vagrant-built virtual machine!\nManaged by Puppet.\n\nwww> cd /vagrant\nwww> bundle exec jekyll\nwww> bundle exec jekyll --server --auto\n\nlocal> open http://localhost:4000\n\n",
 }
 
 exec { 'aptitude-update' :
@@ -60,4 +60,9 @@ package { 'git' :
 
 file { '/home/vagrant/.ssh/config' :
   content => "IdentityFile /home/vagrant/dot-ssh/id_rsa",
+}
+
+file { '/etc/localtime' :
+  ensure => 'link',
+  target => '/usr/share/zoneinfo/America/New_York',
 }
