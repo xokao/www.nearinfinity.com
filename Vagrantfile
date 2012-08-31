@@ -12,5 +12,7 @@ Vagrant::Config.run do |config|
       puppet.manifests_path = "_manifests"
       puppet.manifest_file  = "www.pp"
     end
+
+    www.vm.share_folder "dot-ssh", "/home/vagrant/dot-ssh", "~/.ssh"
   end
 end
