@@ -45,6 +45,22 @@ module Vagrant
   end
 end
 
+require 'vagrant/guest/linux'
+module Vagrant
+  module Guest
+    class Linux
+      def mount_shared_folder(name, guestpath, options)
+        real_guestpath = expanded_guest_path(guestpath)
+        @logger.debug("Shell expanded guest path: #{real_guestpath}")
+        @vm.channel.sudo("mkdir -p #{real_guestpath}")
+        options[:extra] = 'ro' if options[:readonly]
+        mount_folder(name, real_guestpath, options)
+        @vm.channel.sudo("chown `id -u #{options[:owner]}`:`id -g #{options[:group]}` #{real_guestpath}") unless options[:readonly]
+      end
+    end
+  end
+end
+
 Vagrant::Config.run do |config|
   config.vm.define :www do |www|
     www.vm.box = "precise32"
