@@ -3,7 +3,7 @@ title: "Mobile / iOS development"
 date: 2012-09-12
 location: Blacksburg, Virginia
 ---
-<span style='font-weight: bold;'>Presenters:</span> [Chris D'Agostino](/who_we_are/bios/chris_dagostino/) and [Jason Harwig](http://localhost:4000/blogs/jason_harwig/)
+<span style='font-weight: bold;'>Presenters:</span> [Chris D'Agostino](/who_we_are/bios/chris_dagostino/) and [Jason Harwig](/blogs/jason_harwig/)
 
 In the not too distant future, your smartphone may very well be your primary form of identification and authentication for everything ranging from financial transactions, voting and international travel. In order to properly determine your identity, multiple factors need to be used to authenticate you to a given application.
 
