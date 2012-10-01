@@ -3,6 +3,7 @@ exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, Vagrantfile]
 host: http://www.nearinfinity.com
 markdown: kramdown
 hideFromHomepage: []
+redirects: true
 jobs_whitelist:
   Mobile: [iphone, ios, ipad, android, mobile]
   'Big Data': [hadoop, lucene, database, orm]
