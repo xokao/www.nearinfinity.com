@@ -128,4 +128,4 @@ $('p#drop-down-link').click(function() {
   }
 });
 
-$('img[src^="http://t6.trackalyzer.com"]').css("float", "left");
+$('img[src^="http://t6.trackalyzer.com"]').css("float", "left").css("position", "absolute");
