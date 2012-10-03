@@ -16,7 +16,7 @@
     {{ content }}
 
     {% if page.images %}
-      <div class='news-images' style='text-align: center;'>
+      <div class='news-images'>
       {% for image in page.images %}
         <img src="{{ image.url }}" alt="{{ image.alt }}" />
         <p>{{ image.caption }}</p>

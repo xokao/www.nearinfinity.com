@@ -13,6 +13,9 @@
         </header>
       {% for post in page.posts %}
         <article class='no-author'>
+        {% if post.images %}
+          <img class='lead-image' src="{{ post.images[0].url }}" />
+        {% endif %}
           <div class="blog-info">{% include news/news-list-item.html %}</div>
         </article>
       {% endfor %}
