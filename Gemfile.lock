@@ -50,6 +50,7 @@ GEM
     rdiscount (1.6.8)
     rdoc (3.12)
       json (~> 1.4)
+    rmagick (2.13.1)
     ruby-nuggets (0.8.7)
     simple_oauth (0.1.8)
     syntax (1.0.0)
@@ -77,6 +78,7 @@ DEPENDENCIES
   rack
   rake
   rdiscount
+  rmagick
   ruby-nuggets
   therubyracer
   youtube_it

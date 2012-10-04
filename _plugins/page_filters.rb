@@ -67,6 +67,10 @@ module Jekyll
       "http://i.ytimg.com/vi/#{id}/mqdefault.jpg"
     end
 
+    def render_news_img_thumbnail(url)
+      url.chomp(File.extname(url)) + "_thumb" + File.extname(url)
+    end
+
     private
     # Renders the list of type posts for the home page
     def render_homepage_posts(amount, type, template,offset)

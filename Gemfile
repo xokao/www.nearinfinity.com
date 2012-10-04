@@ -9,6 +9,7 @@ gem 'albino'
 gem 'ruby-nuggets'
 gem 'colorize'
 gem 'RedCloth'
+gem 'rmagick'
 
 group :tasks do
   gem "rake"

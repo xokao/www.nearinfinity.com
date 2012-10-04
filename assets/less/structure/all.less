@@ -1,6 +1,16 @@
 section.all_content {
   .blogs {
     .pad;
+
+    article {
+      .blog-info.has-image {
+        margin-left: 0;
+      }
+      .lead-image {
+        float: none;
+      }
+    }
+      
   }
   aside {
     clear: left;
@@ -16,6 +26,15 @@ section.all_content {
     .blogs{
       .column(7);
       .push(1);
+
+      article {
+        .blog-info.has-image {
+          margin-left: 120px;
+        }
+        .lead-image {
+          float: left;
+        }
+      }
     }
     aside {
       clear: none;
