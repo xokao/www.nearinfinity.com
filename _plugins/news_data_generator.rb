@@ -1,3 +1,6 @@
+require 'rmagick'
+include Magick
+
 module Jekyll
   class PagedNews < Page
     def initialize(site, base, dir, name, data)
@@ -19,6 +22,18 @@ module Jekyll
       allnews = site.posts.reject{|post| post.categories[0] != 'news' }.sort.reverse
       allnews.each do |post|
         post.data['layout'] = 'news'
+
+        if post.data['images']
+          frontImg = post.data['images'].first
+          img = Image.read(File.dirname(__FILE__) + "/.." + frontImg['url'])
+          thumb = img.first.resize_to_fill(110, 90)
+
+          url = frontImg['url']
+          new_fname = url.chomp(File.extname(url)) + "_thumb" + File.extname(url)
+          puts "New filename: " + new_fname
+          thumb.write(File.dirname(__FILE__) + "/.." + new_fname)
+          puts "wrote thumbnail to #{new_fname}"
+        end
       end
 
       total = (allnews.length / 15.to_f).ceil

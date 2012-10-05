@@ -13,7 +13,12 @@
         </header>
       {% for post in page.posts %}
         <article class='no-author'>
+        {% if post.images %}
+          <img class='lead-image' src="{{ post.images[0].url | render_news_img_thumbnail }}" />
+          <div class="blog-info has-image">{% include news/news-list-item.html %}</div>
+        {% else %}
           <div class="blog-info">{% include news/news-list-item.html %}</div>
+        {% endif %}
         </article>
       {% endfor %}
       {{page | paginate:"news"}}
