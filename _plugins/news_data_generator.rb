@@ -1,4 +1,4 @@
-require 'rmagick'
+require 'RMagick'
 include Magick
 
 module Jekyll
