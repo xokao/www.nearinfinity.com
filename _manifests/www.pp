@@ -35,6 +35,10 @@ package { ['python', 'python-pip'] :
   ensure => present,
 }
 
+package { 'libmagickwand-dev' :
+  ensure => present,
+}
+
 package { 'bundler' :
   ensure   => present,
   provider => 'gem',
