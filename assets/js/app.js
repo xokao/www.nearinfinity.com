@@ -6,7 +6,7 @@ function shareLink(link, e) {
 }
 
 $(function() {
-    
+
     // USER POPUP
     var userImageRegex = /assets\/images\/users\/(.*)\.png/;
     var userPopupTimer;
@@ -18,7 +18,8 @@ $(function() {
     var getUser = function(e) {
         var img = e.target
         var match = img && img.src && img.src.match(userImageRegex)
-        var user = match && match.length == 2 && match[1]
+        // var user = match && match.length == 2 && match[1]
+        var user = $(img).attr('username');
         return user
     }
     $(document.body).on(
@@ -72,7 +73,7 @@ $(function() {
                             }
                         });
                     }, 250);
-                }   
+                }
             },
             'mouseout': function(e) {
                 var to = e.relatedTarget || e.toElement;
@@ -83,7 +84,7 @@ $(function() {
 
                 clearTimeout(userPopupTimer)
                 removeBios()
-            } 
+            }
         },
         'img'
     );

@@ -12,7 +12,7 @@
     <header><h1>{{ page.tag_key }}</h1></header>
     {% for post in page.posts %}
       <article>
-        <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image:site }}"/></a>
+        <a class='portrait-link' href="/blogs/{{ post.categories[1]}}">{{ site | user_image:post.categories[1], "blog-img" }}</a>
         <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
       </article>
     {% endfor %}

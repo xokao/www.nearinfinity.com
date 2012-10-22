@@ -1,4 +1,4 @@
 <article>
-  <img src="{{ post.categories[1] | user_image:site }}"/>
+  {{ site | user_image:post.categories[1] }}
   {% include speaking-list-item.html %}
 </article>

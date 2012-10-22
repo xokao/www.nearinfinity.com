@@ -1,9 +1,9 @@
 module Jekyll
   module AssetFilters
     # Returns a users image url
-    def user_image(user, site)
-      if employee_number = site['pages'].select{|page| page.name and page.name.start_with? user}.first.data['employee_number']
-        "/assets/images/users/#{employee_number}.png"
+    def user_image(site, user, class_name="")
+      if employee_number = site['pages'].select{|page| page.instance_variable_get('@dir').end_with? user}.first.data['employee_number']
+        "<img class='#{class_name}' src='/assets/images/users/#{employee_number}.png' username='#{user}' />"
       else
         puts "User image not found for #{user}"
         ""

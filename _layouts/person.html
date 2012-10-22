@@ -10,7 +10,7 @@
   <section id="person-page" class="dynamic_content">
     <article>
     <header>
-      <img src="{{ page.user | user_image:site }}"/>
+      {{ site | user_image:page.user }}
       <hgroup class="blogger">
         <h1>{{ page.name }}</h1>
       </hgroup>

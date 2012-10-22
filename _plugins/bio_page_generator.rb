@@ -13,7 +13,7 @@ module Jekyll
 
   class BioGenerator < Generator
     safe true
-    
+
     def generate(site)
       site.pages.each do |page|
         directory_parse = page.instance_variable_get('@dir').split('/')
