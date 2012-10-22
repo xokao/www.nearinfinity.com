@@ -60,7 +60,7 @@ module Jekyll
       allblogs.each do |post|
         users_blogs[post.categories[1]] << post
       end
-      
+
       users_blogs.each do |user, blogs|
         user_name = user_to_name(user)
         base = "/blogs/#{user}/all/"
@@ -96,7 +96,7 @@ module Jekyll
         end
       end
     end
-    
+
     # Temporary reuse of code, this needs to be fixed
     def user_to_name(author)
       capitalize_all(author.gsub(/_/,' '))

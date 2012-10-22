@@ -1,5 +1,5 @@
 <li class="user-list-item">
-<img src="{{ person.username | user_image }}">
+<img src="{{ person.username | user_image:site }}">
 <div>
 <h4><a href="{{ person.username | author_url }}">{{ person.name }}</a></h4>
 <h5>{{ person.title }}</h5>

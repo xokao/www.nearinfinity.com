@@ -1,5 +1,5 @@
 <a class="user-page-link" href="/blogs/{{ page.categories[1] }}">
-  <img src="/assets/images/users/{{ page.categories[1] }}.png"/>
+  <img src="{{ page.categories[1] | user_image:site }}"/>
   <hgroup class="blogger">
   <h1>{{ page.categories[1] | replace:'_',' ' | upcase }}</h1>
   </hgroup>

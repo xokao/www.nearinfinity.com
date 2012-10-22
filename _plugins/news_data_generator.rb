@@ -30,9 +30,8 @@ module Jekyll
 
           url = frontImg['url']
           new_fname = url.chomp(File.extname(url)) + "_thumb" + File.extname(url)
-          puts "New filename: " + new_fname
+
           thumb.write(File.dirname(__FILE__) + "/.." + new_fname)
-          puts "wrote thumbnail to #{new_fname}"
         end
       end
 

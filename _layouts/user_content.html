@@ -13,7 +13,7 @@
         </header>
       {% for post in page.posts %}
         <article>
-          <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
+          <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image:site }}"/></a>
           <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
         </article>
       {% endfor %}
@@ -36,7 +36,7 @@
         {% if page.type != 'speaking' %}
           {% include users/future_speaking.html %}
         {% endif %}
-        
+
         {% if page.type != 'published_works' %}
           {% include users/recent_published_works.html %}
         {% endif %}

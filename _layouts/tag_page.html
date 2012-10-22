@@ -12,7 +12,7 @@
     <header><h1>{{ page.tag_key }}</h1></header>
     {% for post in page.posts %}
       <article>
-        <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image }}"/></a>
+        <a class='portrait-link' href="/blogs/{{ post.categories[1]}}"><img class='blog-img' src="{{ post.categories[1] | user_image:site }}"/></a>
         <div class="blog-info">{% include post-list-item-with-tags.html %}</div>
       </article>
     {% endfor %}
@@ -29,7 +29,7 @@
 
       </ul>
       {%endif%}
-      
+
       {% if page.type == 'blogs' %}
         <ul class='sharing-links'>
           <li class='icon rss'><a href='/blogs/{{ page.tag_key }}/rss/index.xml' target='_blank'>Subscribe</a></li>
