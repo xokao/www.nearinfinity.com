@@ -1,8 +1,1 @@
-{
-{% for employee in page.employees %}
-  {
-    "employee_number": {{ employee['employee_number'] }},
-    "blog_name": "{{ employee['blog_name'] }}"
-  },
-{% endfor %}
-}
+{{ page.employees }}

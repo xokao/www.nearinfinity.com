@@ -1,3 +1,5 @@
+require 'json'
+
 module Jekyll
   class ShortBioPage < Page
     def initialize(site, base, dir, name, data)
@@ -40,7 +42,7 @@ module Jekyll
         "employees" => employees.map{|page| {
           'employee_number' => page.data['employee_number'],
           'blog_name' => page.data['user']
-        }}
+        }}.to_json
       }
 
       site.pages << EmployeeMapPage.new(site, site.source, '/', "employee_map.json", data)
