@@ -7,7 +7,7 @@
     <span class='author'>
       {{ post.categories[1] | user_to_name }}
     </span>
-  </a> on {{ post.date | date:'%b %d, %Y' }}
+  </a> on <time datetime="{{ post.date }}">{{ post.date | date:'%b %d, %Y' }}</time>
   {% if post.categories[0] == 'speaking' %}
     {% if post.conference %}
       at <a href="{{ post.conference.url }}" target="_blank">{{ post.conference.name }}</a>
