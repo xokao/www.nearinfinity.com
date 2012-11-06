@@ -1,0 +1,8 @@
+---
+title: Vagrant
+tags: vagrant puppet virtual
+unique_id: nHm4WpcKTLc
+---
+David Singley presents on Vagrant.
+
+Abstract: It's great when people are different but less great when those people have different development environments. No more "it works on my machine" because it can work on everyone's machine with version controlled virtual machine configurations. Vagrant (http://vagrantup.com) along with Chef or Puppet can configure a known-good environment for each developer in just a few minutes.
