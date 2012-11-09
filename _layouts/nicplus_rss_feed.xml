@@ -1,21 +1,14 @@
 <?xml version="1.0"?>
-<rss version="2.0">
-  <channel>
-    <title>{{page.title}}</title>
-    <link>{{page.link}}</link>
-    <description>{{page.description}}</description>
-    <language>en-us</language>
-    <copyright>Copyright {{ site.time | date: "%Y" }}</copyright>
-    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
-    <docs>http://www.rssboard.org/rss-specification</docs>
-    {% for post in page.posts %}
-      <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <link>http://www.nearinfinity.com{{ post.url }}</link>
-        <guid>http://www.nearinfinity.com{{ post.url }}</guid>
-        <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-      </item>
-    {% endfor %}
-  </channel> 
-</rss>
+<blogs>
+  {% for post in page.posts %}
+    <blog>
+      <title>{{ post.title | xml_escape }}</title>
+      {% if post.categories[1] %}
+      <author>{{post.categories[1]}}</author>
+      {% endif %}
+      <url>http://www.nearinfinity.com{{ post.url }}</url>
+      <date>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</date>
+    </blog>
+  {% endfor %}
+</blogs>
 
