@@ -4,8 +4,16 @@ date: 2012-11-13
 images:
   -
     url: /news/assets/node-knockout.jpg
-    alt: "Node Knockout Team"
-    caption: "Node Knockout Team"
+    alt: "Node Knockout team"
+    caption: "Node Knockout team"
+  -
+    url: /news/assets/node-knockout-2.jpg
+    alt: "Node Knockout team at work"
+    caption: "Node Knockout team at work"
+  -
+    url: /news/assets/node-knockout-3.jpg
+    alt: "Node Knockout Team - Sleeping Area"
+    caption: "Node Knockout team sleeping area"
 ---
 Two teams of developers from Near Infinity participated in the 2012
 Node.js Knockout, a two-day node.js hackathon held November 11-12. The
