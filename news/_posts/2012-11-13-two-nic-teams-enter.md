@@ -16,7 +16,7 @@ images:
     caption: "Node Knockout team sleeping area"
 ---
 Two teams of developers from Near Infinity participated in the 2012
-Node.js Knockout, a two-day node.js hackathon held November 11-12. The
+Node Knockout, a two-day node.js hackathon held November 11-12. The
 NIC teams spent 48 hours eating, sleeping and coding at the NIC
 Training Facility in Reston, Virginia, developing two open source Node
 projects, [GitHood](http://nic-team.nko3.jitsu.com/#) and [RoboNode](http://nic.nko3.jitsu.com/).
