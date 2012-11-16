@@ -31,7 +31,9 @@ if !response.success?
 end
 employees = JSON.parse(response.body)
 
-response = Faraday.get "https://nic-util01.nearinfinity.com/nic/service/employee/numbers_and_email_addresses?shared_key=" + ENV['NIC_DB_API_KEY'] + "&name=" + ENV['NIC_DB_API_NAME']
+connection = Faraday::Connection.new('https://nic-util01.nearinfinity.com',
+                                     :ssl => {:ca_file => 'nearinfinity-NIC-AD01-CA.pem'})
+response = connection.get "/nic/service/employee/numbers_and_email_addresses?shared_key=" + ENV['NIC_DB_API_KEY'] + "&name=" + ENV['NIC_DB_API_NAME']
 if !response.success?
   puts "Error retrieving employee email addresses from Dave's Employee Database"
   exit(0)
