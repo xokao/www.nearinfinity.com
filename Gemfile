@@ -16,3 +16,7 @@ group :tasks do
   gem "youtube_it"
   gem "rack"
 end
+
+# Disqus script
+gem 'disqussion', :git => "git@github.com:wbrady/disqussion.git"
+gem 'faraday'
