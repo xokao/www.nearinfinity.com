@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<blogs>
+  {% for post in page.posts %}
+    <blog>
+      <title>{{ post.title | xml_escape }}</title>
+      {% if post.categories[1] %}
+      <author>{{post.categories[1]}}</author>
+      {% endif %}
+      <url>http://www.nearinfinity.com{{ post.url }}</url>
+      <date>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</date>
+    </blog>
+  {% endfor %}
+</blogs>
+

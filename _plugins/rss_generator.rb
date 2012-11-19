@@ -13,10 +13,22 @@ module Jekyll
     end
   end
 
-    class ExcerptRssFeed < Page
+  class ExcerptRssFeed < Page
     def initialize(site, base, dir, name, data)
       self.data = data.clone
       self.data['layout'] = 'excerpt_rss_feed'
+      super(site, base, dir, name)
+    end
+
+    def read_yaml(_, __)
+      # Do nothing, Allows you to make pages that dont have pages at the location they are built in
+    end
+  end
+
+  class NicPlusRssFeed < Page
+    def initialize(site, base, dir, name, data)
+      self.data = data.clone
+      self.data['layout'] = 'nicplus_rss_feed'
       super(site, base, dir, name)
     end
 
@@ -67,6 +79,13 @@ module Jekyll
         'title' => "Blogs at Near Infinity",
         'link' => "http://www.nearinfinity.com/blogs",
         'description' => 'Employee Blogs'
+      })
+
+      site.pages << NicPlusRssFeed.new(site, site.source, '/blogs/', 'nicplus_feed.xml', {
+        'posts'  => allblogs,
+        'title' => "NIC+ Feed",
+        'link' => "http://www.nearinfinity.com/blogs",
+        'description' => 'Nic+ Feed'
       })
       
       # Generate the Authors Feeds
