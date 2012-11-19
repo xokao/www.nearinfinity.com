@@ -89,7 +89,7 @@ threads.each do |thread|
     next
   end
 
-  response = Disqussion::Client.threads.unsubscribe({
+  response = Disqussion::Client.threads.subscribe({
     :thread => thread.id,
     :email => email_address
   })
