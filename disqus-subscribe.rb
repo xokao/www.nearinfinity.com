@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'disqussion'
 require 'faraday'
 require 'json'
