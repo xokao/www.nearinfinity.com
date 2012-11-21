@@ -7,23 +7,44 @@ Setup Repository
 
     # Clone repo and blogs submodule
     git clone --recursive git@github.com:nearinfinity/www.nearinfinity.com.git
-    cd www.nearinfinity.com/blogs    
+    cd www.nearinfinity.com/blogs
     git checkout master
-    
+
     # Change the remote URL to read/write. gh-pages requires the submodule to be read-only
     git remote set-url origin git@github.com:nearinfinity/blogs.nearinfinity.com.git
 
-Prequisites 
+Vagrant
+------------
+
+    vagrant box add base http://files.vagrantup.com/precise32.box
+    vagrant init
+    vagrant up
+
+Prequisites
 -----------
 
 * ruby 1.9 (jekyll preview)
 * python (syntax highlighter)
 
 ```
-[sudo] gem install bundler
-[sudo] easy_install Pygments
-bundle
+gem install bundler
+easy_install Pygments
 ```
+
+Install imagemagick
+
+Mac
+
+    brew install imagemagick
+
+Linux
+
+    apt-get install libmagickwand-dev
+
+Install gems
+
+    bundle
+
 
 Unix Systems
 -----------
@@ -115,15 +136,15 @@ Escaping Liquid Syntax
 Since Liquid is run on your blog (i.e. how the {% highlight %} tag works) you have to escape any Liquid syntax you actually want to display. That is anything that looks like {% %} or {{ }}. To escape
 
     {% include sharing.html %}
-    
+
 you have to say
 
     {{ "{% include sharing.html " }}%}
-    
+
 and to escape
 
     {{ content }}
-    
+
 you have to say
 
     {{ "{{ content " }}}}
@@ -148,7 +169,7 @@ Technical Design Goals
     * Disqus (for comments) being the only exception
 * Browser Support
     * IE6-8 is usable
-    * A-Grade browsers: Safari, Chrome, Firefox, IE 9+ 
+    * A-Grade browsers: Safari, Chrome, Firefox, IE 9+
 * Consistent blog highlighting, video embedding
 
 
