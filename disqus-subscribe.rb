@@ -4,6 +4,14 @@ require 'disqussion'
 require 'faraday'
 require 'json'
 
+def isBlog?(link)
+  link.start_with?("http://www.nearinfinity.com/blogs/")
+end
+
+def isTechTalk?(link)
+  link.start_with?("http://www.nearinfinity.com/techtalks/")
+end
+
 # Check environment variables
 if !ENV['DISQUS_API_KEY']
   puts "Could not find DISQUS_API_KEY environment variable"
@@ -69,11 +77,16 @@ end
 
 # Filter threads and subscribe employees to the threads they own
 threads.each do |thread|
-  if !thread.link || !thread.link.start_with?("http://www.nearinfinity.com/blogs/")
+  if !thread.link || (!isBlog?(thread.link) && !isTechTalk?(thread.link))
     next
   end
 
-  right = thread.link[34..thread.link.length-1]
+  if isBlog?(thread.link)
+    right = thread.link[34..thread.link.length-1]
+  else
+    right = thread.link[38..thread.link.length-1]
+  end
+
   blog_name = right[0..right.index('/')-1]
   employee = employees.select{|employee| employee['blog_name'] == blog_name}.first
   if !employee
