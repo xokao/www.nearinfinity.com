@@ -98,7 +98,7 @@ threads.each do |thread|
   email_address = email_addresses[employee_number.to_s]
 
   if !email_address
-    puts "Could not find email address for employee " + employee_number
+    puts "Could not find email address for employee " + employee_number.to_s
     next
   end
 
