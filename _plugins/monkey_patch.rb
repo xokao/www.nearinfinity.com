@@ -10,7 +10,7 @@ module Jekyll
       begin
         self.content = Liquid::Template.parse(self.content).render!(payload, info)
       rescue => e
-        puts "Liquid Exception: #{e.message} in #{self.name}"
+        puts "Liquid Exception: #{e.message} in #{self}"
         e.backtrace.each do |backtrace|
           puts backtrace
         end
@@ -241,7 +241,7 @@ module Jekyll
 
       do_layout(payload, layouts)
     end
-    
+
     # Obtain destination path.
     #   +dest+ is the String path to the destination dir
     #
