@@ -3,11 +3,7 @@
     <div class='tab'>Stay Connected</div>
     <ul class="sharing-links light">
       {% for media in page.social %}
-        {% if media[0] == "google-plus" %}
-          <li><a class="icon {{media[0]}}" rel="me" href="{{media[1]}}">{{page.name}}</a></li>
-        {% else %}
-          <li><a class="icon {{media[0]}}" href="{{media[1]}}">{{page.name}}</a></li>
-        {% endif %}
+        {{ media | social_link }}
       {% endfor %}
     </ul>
   </div>
