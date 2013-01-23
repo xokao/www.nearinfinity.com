@@ -90,6 +90,10 @@ module Jekyll
 
       "<li><a class='icon #{media[0]}' rel='#{rel}' href='#{media[1]}'>#{socialMap[media[0]]}</a></li>"
     end
+
+    def by_name(folder)
+      folder.split("_").map{|x| x.capitalize }.join(" ")
+    end
   end
 end
 

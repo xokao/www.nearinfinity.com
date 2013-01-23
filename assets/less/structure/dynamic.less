@@ -12,6 +12,10 @@ section.dynamic_content {
     padding-top: 2em;
     padding-bottom: 2em;
     .pad;
+
+    h2.author-name {
+      display: block;
+    }
   }
   aside {
     clear: left;
@@ -25,8 +29,8 @@ section.dynamic_content {
     height: 0;
     overflow: hidden;
   }
-  .video-container iframe,  
-  .video-container object,  
+  .video-container iframe,
+  .video-container object,
   .video-container embed {
     position: absolute;
     top: 0;
@@ -43,6 +47,10 @@ section.dynamic_content {
     article {
       .column(7);
       .push(1);
+
+      h2.author-name {
+        display: none;
+      }
     }
     aside {
       clear: none;
