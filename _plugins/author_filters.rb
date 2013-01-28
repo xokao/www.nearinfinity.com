@@ -10,6 +10,8 @@ module Jekyll
         }.empty?
       end
 
+      categories.reject!{ |category_key, category_post| is_inactive?(category_key, site) }
+
       categories.keys.sort{|a,b|a.split('_')[1] <=> b.split("_")[1]}.map{ |user|
         "<li><a href='#{author_content_url(user, type)}' class='author-filter'>#{user_to_name(user)}</a></li>"
       }.compact.join
@@ -93,6 +95,27 @@ module Jekyll
 
     def by_name(folder)
       folder.split("_").map{|x| x.capitalize }.join(" ")
+    end
+
+    private
+    def is_inactive?(user, site)
+      employee_pages = site['pages'].select do |page|
+        directory_parse = page.instance_variable_get('@dir').split('/')
+        bio_sub_directory?(directory_parse) && directory_parse.last == user
+      end
+      employee_page = employee_pages.first
+
+      return false if !employee_page
+
+      return true if employee_page.data['inactive']
+
+      false
+    end
+
+    def bio_sub_directory?(dir_parse)
+      return true if dir_parse.include? 'blogs' and dir_parse.length > 2
+      return true if dir_parse.include? 'who_we_are' and dir_parse.include? 'bios'
+      return false
     end
   end
 end
