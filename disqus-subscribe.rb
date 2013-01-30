@@ -50,68 +50,72 @@ if !response.success?
 end
 email_addresses = JSON.parse(response.body)
 
-Disqussion.configure do |config|
-  config.api_key = ENV['DISQUS_API_KEY']
-  config.api_secret = ENV['DISQUS_API_SECRET']
-end
+begin
+  Disqussion.configure do |config|
+    config.api_key = ENV['DISQUS_API_KEY']
+    config.api_secret = ENV['DISQUS_API_SECRET']
+  end
 
-# Get all threads from Disqus
-response = Disqussion::Client.threads.list({
-  :forum => "nearinfinity",
-  :limit => 100,
-  :order => "asc"
-}).response
-
-threads = []
-
-while response.length > 1 do
-  threads.concat(response[1..response.length-1])
-
+  # Get all threads from Disqus
   response = Disqussion::Client.threads.list({
     :forum => "nearinfinity",
     :limit => 100,
-    :order => "asc",
-    :since => response.last.created_at
+    :order => "asc"
   }).response
+
+  threads = []
+
+  while response.length > 1 do
+    threads.concat(response[1..response.length-1])
+
+    response = Disqussion::Client.threads.list({
+      :forum => "nearinfinity",
+      :limit => 100,
+      :order => "asc",
+      :since => response.last.created_at
+    }).response
+  end
+
+  # Filter threads and subscribe employees to the threads they own
+  threads.each do |thread|
+    if !thread.link || (!isBlog?(thread.link) && !isTechTalk?(thread.link))
+      next
+    end
+
+    if isBlog?(thread.link)
+      right = thread.link[34..thread.link.length-1]
+    else
+      right = thread.link[38..thread.link.length-1]
+    end
+
+    blog_name = right[0..right.index('/')-1]
+    employee = employees.select{|employee| employee['blog_name'] == blog_name}.first
+    if !employee
+      puts "Could not find employee " + blog_name
+      next
+    end
+
+    employee_number = employee['employee_number']
+    email_address = email_addresses[employee_number.to_s]
+
+    if !email_address
+      puts "Could not find email address for employee " + employee_number.to_s
+      next
+    end
+
+    response = Disqussion::Client.threads.subscribe({
+      :thread => thread.id,
+      :email => email_address
+    })
+    if response.code != 0
+      puts "Error subscribing " + email_address + " to " + thread.link
+      next
+    end
+
+    puts "Subscribed " + email_address + " to " + thread.link
+  end
+
+  puts "Done subscribing employees to their blogs on Disqus"
+rescue Exception => e
+  puts "An error occurred checking Disqus #{e.message}"
 end
-
-# Filter threads and subscribe employees to the threads they own
-threads.each do |thread|
-  if !thread.link || (!isBlog?(thread.link) && !isTechTalk?(thread.link))
-    next
-  end
-
-  if isBlog?(thread.link)
-    right = thread.link[34..thread.link.length-1]
-  else
-    right = thread.link[38..thread.link.length-1]
-  end
-
-  blog_name = right[0..right.index('/')-1]
-  employee = employees.select{|employee| employee['blog_name'] == blog_name}.first
-  if !employee
-    puts "Could not find employee " + blog_name
-    next
-  end
-
-  employee_number = employee['employee_number']
-  email_address = email_addresses[employee_number.to_s]
-
-  if !email_address
-    puts "Could not find email address for employee " + employee_number
-    next
-  end
-
-  response = Disqussion::Client.threads.subscribe({
-    :thread => thread.id,
-    :email => email_address
-  })
-  if response.code != 0
-    puts "Error subscribing " + email_address + " to " + thread.link
-    next
-  end
-
-  puts "Subscribed " + email_address + " to " + thread.link
-end
-
-puts "Done subscribing employees to their blogs on Disqus"

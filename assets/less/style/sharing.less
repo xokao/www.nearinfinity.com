@@ -9,12 +9,11 @@ opacity: 0.3;
 
 
 .sharing-links {
-  .plain-anchor; 
-  li { display: inline; }
-  .icon { 
+  .plain-anchor;
+  .icon {
     @sprite-dim: 16px + (2px * 2); //padding
-    position: relative; 
-    padding-left: 25px; 
+    position: relative;
+    padding-left: 25px;
     padding-top: .2em;
     &:before {
       opacity: 0.6;
@@ -45,10 +44,10 @@ opacity: 0.3;
     &.google-plus:before { background-position: (@sprite-dim*-10px) 0; }
     &.rss:before { background-position: (@sprite-dim*-11px) 0; }
     &.email:before { background-position: (@sprite-dim*-12px) 0; }
-  } 
+  }
 
   &.light .icon {
-    &.addr:before, 
+    &.addr:before,
     &.phone:before,
     &.fax:before,
     &.email:before,
@@ -61,7 +60,7 @@ opacity: 0.3;
     &.google-plus:before,
     &.rss:before,
     &.email:before {
-      background-position-y: -20px; 
+      background-position-y: -20px;
     }
   }
 }

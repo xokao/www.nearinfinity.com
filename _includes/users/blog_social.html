@@ -3,9 +3,7 @@
     <div class='tab'>Stay Connected</div>
     <ul class="sharing-links light">
       {% for media in page.social %}
-        <li>
-        <a class="icon {{media[0]}}" href="{{media[1]}}">{{page.name}} on twitter</a>
-        </li>
+        {{ media | social_link }}
       {% endfor %}
     </ul>
   </div>

@@ -1,7 +1,7 @@
 pygments: true
 exclude: [Rakefile, Gemfile, Gemfile.lock, README.md, Vagrantfile]
 host: http://www.nearinfinity.com
-markdown: kramdown
+markdown: rdiscount
 hideFromHomepage: []
 redirects: true
 jobs_whitelist:
