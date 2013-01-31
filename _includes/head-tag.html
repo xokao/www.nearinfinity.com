@@ -10,7 +10,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
   <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" />
   <link href="/assets/css/style.css" rel="stylesheet" type="text/css"></link>
-	
+{% if rss_feed %}
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{ rss_feed }}">
+{% endif %}
 	<title>{{ page.title }}</title>
   {% comment %}
 
@@ -22,7 +24,7 @@
 
   {% endcomment %}
 
-<script type="text/javascript" language="javascript">llactid=22203</script> 
+<script type="text/javascript" language="javascript">llactid=22203</script>
 <script type="text/javascript" language="javascript" src="http://t6.trackalyzer.com/trackalyze.js"></script>
 
   <script>

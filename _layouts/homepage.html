@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+{% assign rss_feed = '/index.xml' %}
 {% include head-tag.html %}
 </head>
 <body>
@@ -50,7 +51,7 @@
   {% include footer.html %}
   <script>
     (function() {
-      var classes = [ 'bigdata', 'mobile', 'trustedapps', 'joinus' ], 
+      var classes = [ 'bigdata', 'mobile', 'trustedapps', 'joinus' ],
           index = 0;
 
       $('#main article').on('webkitTransitionEnd', function() {
