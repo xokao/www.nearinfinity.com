@@ -38,6 +38,8 @@ module Jekyll
         site.pages << ShortBioPage.new(site, site.source, '/short_bios/popup_bio/', "#{page.data['user']}.html", page.data)
       end
 
+      employees.select!{|employee| !employee.data['inactive'] }
+
       data = {
         "employees" => employees.map{|page| {
           'employee_number' => page.data['employee_number'],
