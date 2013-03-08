@@ -9,7 +9,7 @@
   {% for post in page.posts %}
     <entry>
       <title>{{ post.title | xml_escape }}</title>
-      <link type="text/html" rel="alternate" href="http://www.nearinfinity.com/{{post.url}}"/>
+      <link type="text/html" rel="alternate" href="http://www.nearinfinity.com{{post.url}}"/>
       {% if post.atom_id %}
         <id>{{ post.atom_id }}</id>
       {% else %}
