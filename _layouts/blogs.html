@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
   {% include head-tag.html %}
-    <title>{{ page.title }} - {{ page.categories[1] | replace:'_',' ' }}</title>
+    <link href="../../../rss/index.xml" rel="alternate" type="application/rss+xml" title="{{ page.categories[1] | by_name }}" />
   </head>
   <body>
     <header id="main">

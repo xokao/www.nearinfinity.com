@@ -5,6 +5,7 @@
 <!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+  <!-- layout:{{ page.layout }} -->
   <!--[if lt IE 9]> <base href="{{ site.host }}" /> <![endif]-->
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
@@ -13,7 +14,16 @@
 {% if rss_feed %}
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="{{ rss_feed }}">
 {% endif %}
-	<title>{{ page.title }}</title>
+
+  {% if page.title != null %}
+    <title>{{ page.title }}</title>
+  {% elsif page.name != null %}
+    <title>{{ page.name }}</title>
+  {% elsif page.tag_key != null %}
+    <title>{{ page.tag_key }}</title>
+  {% endif %}
+  
+  
   {% comment %}
 
   IE SCRIPTS ONLY!!!
