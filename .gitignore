@@ -8,3 +8,5 @@ _cache/
 xcuserdata/
 .vagrant
 *.csv
+blogs_export.json
+employees.txt

@@ -467,48 +467,39 @@ namespace :blog do
     STDOUT.puts 'Please run this command from the blogs folder'
   end
 
-  desc "Export blogs to csv"
+  desc "Export blogs to file"
   task :export do
-    begin
-      employees = get_employees
-    rescue Exception => e
-      return abort(e.message)
-    end
+    short_names = get_short_names
 
-    blogs = []
-    header = ['short name', 'path', 'filename', 'atom id', 'permalink',
-      'title', 'date', 'tags', 'body']
-    blogs << header
+    blogs = {}
 
     Dir.entries('blogs/').each do |folder|
       next if !skip_file?(folder)
 
-      short_name = employees[folder]
+      entries = Dir.entries('blogs/' + folder)
+      profile = entries.find{|entry| entry.start_with?('index') }
+      next if !profile
+
+      profile_data = {}
+      File.open("blogs/#{folder}/#{profile}", 'r') do |f|
+        profile_data = process_yaml_file(f)
+      end
+      employee_number = profile_data['employee_number']
+      short_name = short_names[employee_number.to_s]
+      blogs[short_name] = profile_data
+      blogs[short_name]['profile_extension'] = profile[profile.index('.')..-1]
+      blogs[short_name]['blogs'] = []
 
       Dir.foreach('blogs/' + folder + '/_posts/') do |filename|
         next if !skip_file?(filename)
 
-        file = File.new('blogs/' + folder + '/_posts/' + filename, 'r')
-        front = ''
-        body = ''
-
-        seen_dashes = 0
-        while (line = file.gets)
-          if (line.start_with?('---') && seen_dashes < 2)
-            seen_dashes = seen_dashes + 1
-          elsif (seen_dashes == 1)
-            front += line
-          else
-            body += line
-          end
+        file_data = {}
+        File.open('blogs/' + folder + '/_posts/' + filename, 'r') do |f|
+          file_data = process_yaml_file(f)
         end
 
-        file.close
-
-        hash = YAML.parse(front).to_ruby
-
-        if hash['date']
-          date_str = hash['date'].strftime("%Y/%m/%d")
+        if file_data['date']
+          date_str = file_data['date'].strftime("%Y/%m/%d")
         elsif filename.start_with?('_')
           date_str = filename[1..10].gsub('-', '/')
         else
@@ -523,26 +514,18 @@ namespace :blog do
         real_filename = real_filename[0..real_filename.index('.')] + 'html'
 
         path = "/blogs/#{folder}/#{date_str}/#{real_filename}"
+        file_data['path'] = path
+        file_data['filename'] = filename
 
-        blogs << [
-          short_name,
-          path,
-          filename,
-          hash['atom_id'],
-          hash['permalink'],
-          hash['title'],
-          hash['date'],
-          hash['tags'],
-          body
-        ]
+        blogs[short_name]['blogs'] << file_data
       end
     end
 
-    CSV.open('blogs_export.csv', 'wb', col_sep: '`~`', quote_char: '"', row_sep: '`&`') do |row|
-      blogs.each {|blog| row << blog }
+    File.open('blogs_export.json', 'w') do |f|
+      f.write(blogs.to_json)
     end
 
-    puts "Exported #{blogs.size} blogs to blogs_export.csv"
+    puts "Exported blogs to blogs_export.json"
   end
 end
 
@@ -550,23 +533,33 @@ def skip_file?(name)
   !name.start_with?('.') && !name.start_with?('Rakefile') && !name.start_with?('README')
 end
 
-def get_employees
-  response = Faraday.get "http://www.nearinfinity.com/employee_map.json"
-  raise "Error retrieving employee map from NIC website" if !response.success?
-  employees = JSON.parse(response.body)
-
-  connection = Faraday::Connection.new('https://nic-util01.nearinfinity.com',
-                                     :ssl => {:ca_file => 'nearinfinity-NIC-AD01-CA.pem'})
-  response = connection.get "/nic/service/employee/numbers_and_email_addresses?shared_key=" + ENV['NIC_DB_API_KEY'] + "&name=" + ENV['NIC_DB_API_NAME']
-  raise "Error retrieving employee email addresses from Dave's Employee Database" if !response.success?
-  email_addresses = JSON.parse(response.body)
-
-  map = {}
-  employees.each do |employee|
-    email = email_addresses[employee['employee_number'].to_s]
-    next unless email
-    short_name = email[0..email.index('@nearinfinity.com')-1]
-    map[employee['blog_name']] = short_name
+def get_short_names
+  short_names = {}
+  File.open('employees.txt', 'r') do |f|
+    while (line = f.gets)
+      parts = line.split(' ')
+      short_names[parts[0]] = parts[1]
+    end
   end
-  map
+  short_names
+end
+
+def process_yaml_file(file)
+  front = ''
+  body = ''
+
+  seen_dashes = 0
+  while (line = file.gets)
+    if (line.start_with?('---') && seen_dashes < 2)
+      seen_dashes = seen_dashes + 1
+    elsif (seen_dashes == 1)
+      front += line
+    else
+      body += line
+    end
+  end
+
+  hash = YAML.parse(front).to_ruby
+  hash['body'] = body
+  hash
 end
