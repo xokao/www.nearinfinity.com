@@ -1,4 +1,8 @@
 require 'bundler/setup'
+require 'yaml'
+require 'csv'
+require 'faraday'
+require 'json'
 
 task :default => [:jekyll]
 
@@ -79,9 +83,9 @@ namespace :assets do
     padding = 2
     `montage #{users} -geometry #{width}x#{width}+#{padding}+#{padding} -tile 0x1 -background transparent #{dest}`
 
-    final = dest.gsub 'small', 'small-saturated' 
+    final = dest.gsub 'small', 'small-saturated'
     `convert #{dest} -modulate 100,25,100 #{final}`
-   
+
     File.open("#{dir}/sprites/users.less", 'w') do |f|
       f.puts """
       .user_spr {
@@ -128,10 +132,10 @@ namespace :news do
     raw_title = STDIN.gets.strip
     raw_title = '"' + raw_title + '"' if raw_title.include? ':'
     yaml_data['title'] = raw_title
-    
+
     # Assign date to current time
     yaml_data['date'] = Time.now.to_s
-    
+
     # Create date portion of title
     news_date_title = ["%02d" % Time.now.year, "%02d" % Time.now.month, "%02d" % Time.now.day].join '-'
 
@@ -148,16 +152,21 @@ namespace :news do
     full_title = news_date_title + '-' + news_end_title + file_extension
 
     # Open the news post file and write the data to the file
-    File.open('news/_posts/' + full_title, 'w') do |news_post|  
+    File.open('news/_posts/' + full_title, 'w') do |news_post|
       news_post.puts '---'
       yaml_data.each do |key, value|
         news_post.puts key + ': ' + value
       end
       news_post.puts '---'
-      news_post.puts '(INSERT NEWS CONTENT)' 
+      news_post.puts '(INSERT NEWS CONTENT)'
     end
-    
+
     STDOUT.puts "\nGenerated news post #{raw_title} at news/_posts/#{full_title}"
+  end
+
+  desc "Export news to csv"
+  task :export do
+    puts "Not implemented"
   end
 end
 
@@ -188,15 +197,15 @@ namespace :published_work do
     raw_title = STDIN.gets.strip
     raw_title = '"' + raw_title + '"' if raw_title.include? ':'
     yaml_data['title'] = raw_title
-    
+
     # Query For Tags
     STDOUT.puts "\nPlease enter the relevant TAGS (space delimited) for the published work:"
     yaml_data['tags'] = STDIN.gets.strip.downcase
-    
+
     # Ask for date
     STDOUT.puts "\nEnter the date of the published work in the format YYYY-MM-DD"
     yaml_data['date'] = STDIN.gets.strip
-    
+
     # Shorten the title to soemthing readable in the url (do not cut off mid word)
     short_title = ''
     title_words = yaml_data['title'].downcase.split(' ')
@@ -208,21 +217,26 @@ namespace :published_work do
 
     # Full published work title
     full_title = yaml_data['date'] + '-' + short_title + file_extension
-    
+
     # Set permalink attribute
     # yaml_data['permalink'] = '/published_works/'
 
     # Open the published work post file and write the data to the file
-    File.open('published_works/_posts/' + full_title, 'w') do |post|  
+    File.open('published_works/_posts/' + full_title, 'w') do |post|
       post.puts '---'
       yaml_data.each do |key, value|
         post.puts key + ': ' + value
       end
       post.puts '---'
-      post.puts '(INSERT PUBLISHED WORK CONTENT)' 
+      post.puts '(INSERT PUBLISHED WORK CONTENT)'
     end
-    
+
     STDOUT.puts "\nGenerated published work post #{raw_title} at published_works/_posts/#{full_title}"
+  end
+
+  desc "Export published works to csv"
+  task :export do
+    puts "Not implemented!"
   end
 end
 
@@ -235,38 +249,38 @@ namespace :speaking_engagement do
       STDOUT.puts "\nPlease run this command from the root directory of the project"
       return
     end
-    
+
     # Get the speaker's name
     STDOUT.puts "\nEnter the speaker's first name:"
     first_name = STDIN.gets.strip
     STDOUT.puts "\nEnter the speaker's last name:"
     last_name = STDIN.gets.strip
-    
+
     folder_name = 'speaking/' + first_name.downcase + '_' + last_name.downcase
-    
+
     # Create the speaker's directory if it doesn't already exist
     if !Dir.exists? folder_name
       Dir.mkdir folder_name
       Dir.mkdir folder_name + '/_posts'
       File.open folder_name + '/_posts/.gitignore', 'w'
     end
-    
+
     Dir.chdir folder_name
-    
+
     # Ask about the type of file
     file_extension = '.markdown'
     STDOUT.puts "\nPress enter to create a markdown file, otherwise enter a different extension (i.e. html):"
     new_extension = STDIN.gets.strip
     file_extension = '.' + new_extension if new_extension.length > 1
-    
+
     # Get the title of the talk
     STDOUT.puts "\nEnter the TITLE of the talk:"
     title = STDIN.gets.strip
-    
+
     # Get the date of the talk
     STDOUT.puts "\nEnter the DATE of the talk in the format YYYY-MM-DD:"
-    date = STDIN.gets.strip.downcase    
-    
+    date = STDIN.gets.strip.downcase
+
     # Create the file name of the post
     short_title = ''
     title_words = title.downcase.split(' ')
@@ -276,9 +290,9 @@ namespace :speaking_engagement do
       short_title += '-' if index < title_words.count - 1
     end
     file_name = date + '-' + short_title + file_extension
-    
+
     # Create the file with the default header
-    File.open('_posts/' + file_name, 'w') do |post|  
+    File.open('_posts/' + file_name, 'w') do |post|
       post.puts '---'
       post.puts 'title: ' + title
       post.puts 'date: ' + date
@@ -295,8 +309,13 @@ namespace :speaking_engagement do
       post.puts '  url: # Website for the user group (with "http://")'
       post.puts '---'
     end
-    
+
     STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
+  end
+
+  desc "Export speaking engagements to csv"
+  task :export do
+    puts "Not implemented!"
   end
 end
 
@@ -309,46 +328,46 @@ namespace :tech_talk do
       STDOUT.puts "\nPlease run this command from the root directory of the project"
       return
     end
-    
+
     # Get the presenter's name
     STDOUT.puts "\nEnter the presenter's first name:"
     first_name = STDIN.gets.strip
     STDOUT.puts "\nEnter the presenter's last name:"
     last_name = STDIN.gets.strip
-    
+
     folder_name = 'techtalks/' + first_name.downcase + '_' + last_name.downcase
-    
+
     # Create the presenters's directory if it doesn't already exist
     if !Dir.exists? folder_name
       Dir.mkdir folder_name
       Dir.mkdir folder_name + '/_posts'
       File.open folder_name + '/_posts/.gitignore', 'w'
     end
-    
+
     Dir.chdir folder_name
-    
+
     # Ask about the type of file
     file_extension = '.markdown'
     STDOUT.puts "\nPress enter to create a markdown file, otherwise enter a different extension (i.e. html):"
     new_extension = STDIN.gets.strip
     file_extension = '.' + new_extension if new_extension.length > 1
-    
+
     # Get the title of the tech talk
     STDOUT.puts "\nEnter the TITLE of the tech talk:"
     title = STDIN.gets.strip
-    
+
     # Get the date of the tech talk
     STDOUT.puts "\nEnter the DATE of the tech talk in the format YYYY-MM-DD:"
-    date = STDIN.gets.strip  
-    
+    date = STDIN.gets.strip
+
     # Get the tags of the tech talk
     STDOUT.puts "\nEnter the relevant TAGS (space delimited) for the tech talk:"
-    tags = STDIN.gets.strip.downcase 
-        
+    tags = STDIN.gets.strip.downcase
+
     # Get the unique id of the youtube video
     STDOUT.puts "\nEnter the unique ID of the youtube video"
     unique_id = STDIN.gets.strip
-    
+
     # Create the file name of the post
     short_title = ''
     title_words = title.downcase.split(' ')
@@ -358,9 +377,9 @@ namespace :tech_talk do
       short_title += '-' if index < title_words.count - 1
     end
     file_name = date + '-' + short_title + file_extension
-    
+
     # Create the file with the default header
-    File.open('_posts/' + file_name, 'w') do |post|  
+    File.open('_posts/' + file_name, 'w') do |post|
       post.puts '---'
       post.puts 'title: ' + title
       post.puts 'tags: ' + tags
@@ -368,8 +387,13 @@ namespace :tech_talk do
       post.puts '---'
       post.puts '(INSERT DESCRIPTION HERE)'
     end
-    
+
     STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
+  end
+
+  desc "Export techtalks to csv"
+  task :export do
+    puts "Not implemented!"
   end
 end
 
@@ -382,29 +406,29 @@ namespace :training_center_event do
       STDOUT.puts "\nPlease run this command from the root directory of the project"
       return
     end
-    
+
     Dir.chdir 'training_center_events'
-    
+
     file_extension = '.markdown'
     STDOUT.puts "\nPress enter to create a markdown file, otherwise enter a different extension (i.e. \"html\"):"
     new_extension = STDIN.gets.strip
     file_extension = '.' + new_extension if new_extension.length > 1
-    
+
     STDOUT.puts "\nEnter the TITLE of the event:"
     title = STDIN.gets.strip
-    
+
     STDOUT.puts "\nEnter the DATE of the event in the format \"YYYY-MM-DD\""
-    date = STDIN.gets.strip  
-    
+    date = STDIN.gets.strip
+
     STDOUT.puts "\nEnter the START TIME of the event in the format \"HH:MM\" (24-hour format)"
     start_time = STDIN.gets.strip
-    
+
     STDOUT.puts "\n(Optional) Enter the END TIME of the event in the format \"HH:MM\" (24-hour format)"
     end_time = STDIN.gets.strip
-    
+
     start_timestamp = date + ' ' + start_time
     end_timestamp = date + ' ' + end_time
-      
+
     short_title = ''
     title_words = title.downcase.split(' ')
     title_words.each_with_index do |word, index|
@@ -413,9 +437,9 @@ namespace :training_center_event do
       short_title += '-' if index < title_words.count - 1
     end
     file_name = date + '-' + short_title + file_extension
-    
+
     # Create the file with the default header
-    File.open('_posts/' + file_name, 'w') do |post|  
+    File.open('_posts/' + file_name, 'w') do |post|
       post.puts '---'
       post.puts 'title: "' + title + '"'
       post.puts 'start_timestamp: ' + start_timestamp
@@ -427,7 +451,7 @@ namespace :training_center_event do
       post.puts '---'
       post.puts '(INSERT DESCRIPTION HERE)'
     end
-    
+
     STDOUT.puts 'Successfully generated blank training center event at ' + 'training_center_events/_posts/' + file_name
   end
 end
@@ -442,4 +466,107 @@ namespace :blog do
   task :directory, :full_name do |t, args|
     STDOUT.puts 'Please run this command from the blogs folder'
   end
+
+  desc "Export blogs to csv"
+  task :export do
+    begin
+      employees = get_employees
+    rescue Exception => e
+      return abort(e.message)
+    end
+
+    blogs = []
+    header = ['short name', 'path', 'filename', 'atom id', 'permalink',
+      'title', 'date', 'tags', 'body']
+    blogs << header
+
+    Dir.entries('blogs/').each do |folder|
+      next if !skip_file?(folder)
+
+      short_name = employees[folder]
+
+      Dir.foreach('blogs/' + folder + '/_posts/') do |filename|
+        next if !skip_file?(filename)
+
+        file = File.new('blogs/' + folder + '/_posts/' + filename, 'r')
+        front = ''
+        body = ''
+
+        seen_dashes = 0
+        while (line = file.gets)
+          if (line.start_with?('---') && seen_dashes < 2)
+            seen_dashes = seen_dashes + 1
+          elsif (seen_dashes == 1)
+            front += line
+          else
+            body += line
+          end
+        end
+
+        file.close
+
+        hash = YAML.parse(front).to_ruby
+
+        if hash['date']
+          date_str = hash['date'].strftime("%Y/%m/%d")
+        elsif filename.start_with?('_')
+          date_str = filename[1..10].gsub('-', '/')
+        else
+          date_str = filename[0..9].gsub('-', '/')
+        end
+
+        if (filename.start_with?('_'))
+          real_filename = filename[12..-1]
+        else
+          real_filename = filename[11..-1]
+        end
+        real_filename = real_filename[0..real_filename.index('.')] + 'html'
+
+        path = "/blogs/#{folder}/#{date_str}/#{real_filename}"
+
+        blogs << [
+          short_name,
+          path,
+          filename,
+          hash['atom_id'],
+          hash['permalink'],
+          hash['title'],
+          hash['date'],
+          hash['tags'],
+          body
+        ]
+      end
+    end
+
+    CSV.open('blogs_export.csv', 'wb', col_sep: '`~`', quote_char: '"', row_sep: '`&`') do |row|
+      blogs.each {|blog| row << blog }
+    end
+
+    puts "Exported #{blogs.size} blogs to blogs_export.csv"
+  end
+end
+
+def skip_file?(name)
+  !name.start_with?('.') && !name.start_with?('Rakefile') && !name.start_with?('README')
+end
+
+def get_employees
+  response = Faraday.get "http://www.nearinfinity.com/employee_map.json"
+  raise "Error retrieving employee map from NIC website" if !response.success?
+  employees = JSON.parse(response.body)
+
+  connection = Faraday::Connection.new('https://nic-util01.nearinfinity.com',
+                                     :ssl => {:ca_file => 'nearinfinity-NIC-AD01-CA.pem'})
+  response = connection.get "/nic/service/employee/numbers_and_email_addresses?shared_key=" + ENV['NIC_DB_API_KEY'] + "&name=" + ENV['NIC_DB_API_NAME']
+  raise "Error retrieving employee email addresses from Dave's Employee Database" if !response.success?
+  email_addresses = JSON.parse(response.body)
+
+  map = {}
+  employees.each do |employee|
+    email = email_addresses[employee['employee_number'].to_s]
+    next unless email
+    short_name = email[0..email.index('@nearinfinity.com')-1]
+    map[employee['blog_name']] = short_name
+  end
+  map
 end
