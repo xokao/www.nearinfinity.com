@@ -474,7 +474,7 @@ namespace :blog do
     blogs = {}
 
     Dir.entries('blogs/').each do |folder|
-      next if !skip_file?(folder)
+      next if skip_file?(folder)
 
       entries = Dir.entries('blogs/' + folder)
       profile = entries.find{|entry| entry.start_with?('index') }
@@ -490,13 +490,24 @@ namespace :blog do
       blogs[short_name]['profile_extension'] = profile[profile.index('.')..-1]
       blogs[short_name]['blogs'] = []
 
+      assets = all_assets(folder)
+
       Dir.foreach('blogs/' + folder + '/_posts/') do |filename|
-        next if !skip_file?(filename)
+        next if skip_file?(filename)
 
         file_data = {}
         File.open('blogs/' + folder + '/_posts/' + filename, 'r') do |f|
           file_data = process_yaml_file(f)
         end
+
+        file_data['assets'] = []
+        assets.each do |asset|
+          if file_data['body'].include?(asset[:filename])
+            asset[:blogs] ||= [filename]
+            file_data['assets'] << asset[:filename]
+          end
+        end
+        puts file_data['assets'].inspect
 
         if file_data['date']
           date_str = file_data['date'].strftime("%Y/%m/%d")
@@ -530,7 +541,7 @@ namespace :blog do
 end
 
 def skip_file?(name)
-  !name.start_with?('.') && !name.start_with?('Rakefile') && !name.start_with?('README')
+  name.start_with?('.') || name.start_with?('Rakefile') || name.start_with?('README')
 end
 
 def get_short_names
@@ -562,4 +573,26 @@ def process_yaml_file(file)
   hash = YAML.parse(front).to_ruby
   hash['body'] = body
   hash
+end
+
+def all_assets(user)
+  assets_path = "blogs/#{user}/assets"
+  return [] if !File.exists?(assets_path)
+  inspect_sub_dir(assets_path)
+end
+
+def inspect_sub_dir(path)
+  assets = []
+  Dir.foreach(path) do |asset|
+    next if skip_file?(asset)
+
+    asset_path = path + '/' + asset
+    if File.directory?(asset_path)
+      assets.concat(inspect_sub_dir(asset_path))
+    else
+      # FileUtils.cp(asset_path, '/tmp/assets')
+      assets << { filename: asset_path.split('/').last }
+    end
+  end
+  assets
 end
