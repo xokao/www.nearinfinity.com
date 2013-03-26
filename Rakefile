@@ -507,7 +507,6 @@ namespace :blog do
             file_data['assets'] << asset[:filename]
           end
         end
-        puts file_data['assets'].inspect
 
         if file_data['date']
           date_str = file_data['date'].strftime("%Y/%m/%d")

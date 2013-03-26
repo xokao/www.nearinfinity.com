@@ -12,7 +12,7 @@ gem 'RedCloth', '4.2.9'
 gem 'rmagick', '2.13.1'
 
 group :tasks do
-  gem "rake", '10.0.2'
+  gem "rake"
   gem "youtube_it", '1.4.3'
   gem "rack", '1.4.1'
 end
