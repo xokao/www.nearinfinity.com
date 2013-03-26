@@ -164,9 +164,29 @@ namespace :news do
     STDOUT.puts "\nGenerated news post #{raw_title} at news/_posts/#{full_title}"
   end
 
-  desc "Export news to csv"
+  desc "Export news to json file"
   task :export do
-    puts "Not implemented"
+    news = []
+    Dir.entries('news/_posts').each do |file_name|
+      next if skip_file?(file_name)
+
+      file_data = {}
+      File.open("news/_posts/#{file_name}", 'r') do |f|
+        file_data = process_yaml_file(f)
+      end
+
+      path_date = path_date_for(file_data, file_name)
+      path_file_name = path_file_name_for(file_name)
+      file_data['path'] = "/news/#{path_date}/#{path_file_name}"
+
+      file_data['filename'] = file_name
+
+      news << file_data
+    end
+
+    File.open('news_export.json', 'w') {|f| f.write(news.to_json) }
+
+    puts "Exported #{news.size} news stories to news_export.json"
   end
 end
 
@@ -236,7 +256,7 @@ namespace :published_work do
 
   desc "Export published works to csv"
   task :export do
-    puts "Not implemented!"
+    puts "Published works export not implemented!"
   end
 end
 
@@ -315,7 +335,7 @@ namespace :speaking_engagement do
 
   desc "Export speaking engagements to csv"
   task :export do
-    puts "Not implemented!"
+    puts "Speaking engagements export not implemented!"
   end
 end
 
@@ -393,7 +413,7 @@ namespace :tech_talk do
 
   desc "Export techtalks to csv"
   task :export do
-    puts "Not implemented!"
+    puts "Tech talks export not implemented!"
   end
 end
 
@@ -467,7 +487,7 @@ namespace :blog do
     STDOUT.puts 'Please run this command from the blogs folder'
   end
 
-  desc "Export blogs to file"
+  desc "Export blogs to json file"
   task :export do
     short_names = get_short_names
 
@@ -508,20 +528,8 @@ namespace :blog do
           end
         end
 
-        if file_data['date']
-          date_str = file_data['date'].strftime("%Y/%m/%d")
-        elsif filename.start_with?('_')
-          date_str = filename[1..10].gsub('-', '/')
-        else
-          date_str = filename[0..9].gsub('-', '/')
-        end
-
-        if (filename.start_with?('_'))
-          real_filename = filename[12..-1]
-        else
-          real_filename = filename[11..-1]
-        end
-        real_filename = real_filename[0..real_filename.index('.')] + 'html'
+        date_str = path_date_for(file_data, filename)
+        real_filename = path_file_name_for(filename)
 
         path = "/blogs/#{folder}/#{date_str}/#{real_filename}"
         file_data['path'] = path
@@ -536,6 +544,17 @@ namespace :blog do
     end
 
     puts "Exported blogs to blogs_export.json"
+  end
+end
+
+namespace :export do
+  desc "Export everything"
+  task :all do
+    Rake::Task['blog:export'].invoke
+    Rake::Task['news:export'].invoke
+    Rake::Task['published_work:export'].invoke
+    Rake::Task['speaking_engagement:export'].invoke
+    Rake::Task['tech_talk:export'].invoke
   end
 end
 
@@ -594,4 +613,24 @@ def inspect_sub_dir(path)
     end
   end
   assets
+end
+
+def path_date_for(file_data, file_name)
+  if file_data['date']
+    file_data['date'].strftime("%Y/%m/%d")
+  elsif file_name.start_with?('_')
+    file_name[1..10].gsub('-', '/')
+  else
+    file_name[0..9].gsub('-', '/')
+  end
+end
+
+def path_file_name_for(file_name)
+  if (file_name.start_with?('_'))
+    path_file_name = file_name[12..-1]
+  else
+    path_file_name = file_name[11..-1]
+  end
+
+  path_file_name[0..path_file_name.index('.')] + 'html'
 end

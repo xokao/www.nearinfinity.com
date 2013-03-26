@@ -10,4 +10,4 @@ xcuserdata/
 *.csv
 blogs_export.json
 employees.txt
-exported_assets/
+exported_*_assets/
