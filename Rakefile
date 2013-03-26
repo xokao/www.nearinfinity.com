@@ -254,9 +254,34 @@ namespace :published_work do
     STDOUT.puts "\nGenerated published work post #{raw_title} at published_works/_posts/#{full_title}"
   end
 
-  desc "Export published works to csv"
+  desc "Export published works to json file"
   task :export do
-    puts "Published works export not implemented!"
+    published_works = {}
+    count = 0
+
+    Dir.entries('published_works/').each do |folder|
+      next if skip_file?(folder)
+
+      published_works[folder] = []
+
+      Dir.entries("published_works/#{folder}/_posts/").each do |file_name|
+        next if skip_file?(file_name)
+        count = count + 1
+
+        file_data = {}
+        File.open("published_works/#{folder}/_posts/#{file_name}", 'r') {|f| file_data = process_yaml_file(f) }
+
+        path_date = path_date_for(file_data, file_name)
+        path_file_name = path_file_name_for(file_name)
+        file_data['path'] = "/published_works/#{folder}/#{path_date}/#{path_file_name}.html"
+        file_data['filename'] = file_name
+        published_works[folder] << file_data
+      end
+    end
+
+    File.open('published_works_export.json', 'w') {|f| f.write(published_works.to_json) }
+
+    puts "Exported #{count} published works to published_works_export.json"
   end
 end
 
@@ -333,9 +358,34 @@ namespace :speaking_engagement do
     STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
   end
 
-  desc "Export speaking engagements to csv"
+  desc "Export speaking engagements to json file"
   task :export do
-    puts "Speaking engagements export not implemented!"
+    speaking_engagements = {}
+    count = 0
+
+    Dir.entries('speaking/').each do |folder|
+      next if skip_file?(folder)
+
+      speaking_engagements[folder] = []
+
+      Dir.entries("speaking/#{folder}/_posts/").each do |file_name|
+        next if skip_file?(file_name)
+        count = count + 1
+
+        file_data = {}
+        File.open("speaking/#{folder}/_posts/#{file_name}", 'r') {|f| file_data = process_yaml_file(f) }
+
+        path_date = path_date_for(file_data, file_name)
+        path_file_name = path_file_name_for(file_name)
+        file_data['path'] = "/speaking/#{folder}/#{path_date}/#{path_file_name}.html"
+        file_data['filename'] = file_name
+        speaking_engagements[folder] << file_data
+      end
+    end
+
+    File.open('speaking_engagements_export.json', 'w') {|f| f.write(speaking_engagements.to_json) }
+
+    puts "Exported #{count} speaking engagements to speaking_engagements_export.json"
   end
 end
 
@@ -411,9 +461,34 @@ namespace :tech_talk do
     STDOUT.puts 'Successfully generated blank post at ' + folder_name + '/_posts/' + file_name
   end
 
-  desc "Export techtalks to csv"
+  desc "Export tech talks to json file"
   task :export do
-    puts "Tech talks export not implemented!"
+    tech_talks = {}
+    count = 0
+
+    Dir.entries('techtalks/').each do |folder|
+      next if skip_file?(folder)
+
+      tech_talks[folder] = []
+
+      Dir.entries("techtalks/#{folder}/_posts/").each do |file_name|
+        next if skip_file?(file_name)
+        count = count + 1
+
+        file_data = {}
+        File.open("techtalks/#{folder}/_posts/#{file_name}", 'r') {|f| file_data = process_yaml_file(f) }
+
+        path_date = path_date_for(file_data, file_name)
+        path_file_name = path_file_name_for(file_name)
+        file_data['path'] = "/techtalks/#{folder}/#{path_date}/#{path_file_name}.html"
+        file_data['filename'] = file_name
+        tech_talks[folder] << file_data
+      end
+    end
+
+    File.open('tech_talks_export.json', 'w') {|f| f.write(tech_talks.to_json) }
+
+    puts "Exported #{count} tech talks to tech_talks_export.json"
   end
 end
 
