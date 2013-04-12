@@ -9,6 +9,9 @@ section.dynamic_content {
         .size(20);
       }
     }
+    strong {
+      font-weight: bold;
+    }
     header {
       h1 {
         .light_header(darken(@light_text,10%));
@@ -37,7 +40,7 @@ section.dynamic_content {
         min-height: 75px;
         padding: 0 10px;
         .box-sizing;
-        h1 { 
+        h1 {
           text-transform: uppercase;
           margin-bottom: 0;
           display: table-cell;
@@ -65,8 +68,8 @@ section.dynamic_content {
       h3 { .size(3); }
       h4 { .size(2); }
       h5 { .size(1); }
-      img { 
-        max-width:100%; 
+      img {
+        max-width:100%;
         text-align: center;
         margin: auto;
         display: block;
@@ -94,7 +97,7 @@ section.dynamic_content {
     .fancy-shadow;
     margin-bottom: 2em;
   }
-  
+
   aside {
     margin-bottom: 2em;
     a.user-page-link {
@@ -102,7 +105,7 @@ section.dynamic_content {
     }
     position:relative;
     z-index:2;
-    
+
     img {
       float: right;
       width: 75px;
@@ -165,7 +168,7 @@ section.dynamic_content {
       min-height: 50px;
       padding: 0 10px;
       .box-sizing;
-      h1 { 
+      h1 {
         text-transform: uppercase;
         color: @nic_orange;
         margin-bottom: 0;
@@ -183,13 +186,13 @@ section.dynamic_content {
 
     ul.sharing {
       @sprite-dim: 16px + (2px * 2);
-      li { 
+      li {
         margin: 3px 0;
-        position: relative; 
-        .plain-anchor; 
-        a { 
-          padding-left: 25px; 
-        } 
+        position: relative;
+        .plain-anchor;
+        a {
+          padding-left: 25px;
+        }
         &:before {
           opacity: 0.6;
           content: '';
@@ -230,23 +233,23 @@ section.dynamic_content {
   }
 }
 
-#person-page > article > header { 
+#person-page > article > header {
   font-size: 80%;
-  
+
   img {
     right: 0.5em;
   }
 }
-#person-page .user-info-list { 
+#person-page .user-info-list {
   font-size: 90%;
   line-height: 1.7em;
   position: relative;
   margin-top:2em;
-  
-  li { 
+
+  li {
     padding-left: 30%;
     margin-left:0.5em;
-    
+
     em {
       left: 0;
       width:30%;
