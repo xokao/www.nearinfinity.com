@@ -26,7 +26,7 @@ module Jekyll
         if post.data['images']
           frontImg = post.data['images'].first
           img = Image.read(File.dirname(__FILE__) + "/.." + frontImg['url'])
-          thumb = img.first.resize_to_fill(110, 90)
+          thumb = img.first.resize_to_fit(110, 90)
 
           url = frontImg['url']
           new_fname = url.chomp(File.extname(url)) + "_thumb" + File.extname(url)
