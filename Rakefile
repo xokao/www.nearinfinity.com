@@ -259,10 +259,16 @@ namespace :published_work do
     published_works = {}
     count = 0
 
+    short_names = get_short_names
+
     Dir.entries('published_works/').each do |folder|
       next if skip_file?(folder)
 
-      published_works[folder] = []
+      next if !(profile_data = profile_data_for_blog_name(folder))
+      employee_number = profile_data['employee_number']
+      short_name = short_names[employee_number.to_s]
+
+      published_works[short_name] = []
 
       Dir.entries("published_works/#{folder}/_posts/").each do |file_name|
         next if skip_file?(file_name)
@@ -275,7 +281,7 @@ namespace :published_work do
         path_file_name = path_file_name_for(file_name)
         file_data['path'] = "/published_works/#{folder}/#{path_date}/#{path_file_name}.html"
         file_data['filename'] = file_name
-        published_works[folder] << file_data
+        published_works[short_name] << file_data
       end
     end
 
@@ -363,10 +369,16 @@ namespace :speaking_engagement do
     speaking_engagements = {}
     count = 0
 
+    short_names = get_short_names
+
     Dir.entries('speaking/').each do |folder|
       next if skip_file?(folder)
 
-      speaking_engagements[folder] = []
+      next if !(profile_data = profile_data_for_blog_name(folder))
+      employee_number = profile_data['employee_number']
+      short_name = short_names[employee_number.to_s]
+
+      speaking_engagements[short_name] = []
 
       Dir.entries("speaking/#{folder}/_posts/").each do |file_name|
         next if skip_file?(file_name)
@@ -379,7 +391,7 @@ namespace :speaking_engagement do
         path_file_name = path_file_name_for(file_name)
         file_data['path'] = "/speaking/#{folder}/#{path_date}/#{path_file_name}.html"
         file_data['filename'] = file_name
-        speaking_engagements[folder] << file_data
+        speaking_engagements[short_name] << file_data
       end
     end
 
@@ -466,10 +478,16 @@ namespace :tech_talk do
     tech_talks = {}
     count = 0
 
+    short_names = get_short_names
+
     Dir.entries('techtalks/').each do |folder|
       next if skip_file?(folder)
 
-      tech_talks[folder] = []
+      next if !(profile_data = profile_data_for_blog_name(folder))
+      employee_number = profile_data['employee_number']
+      short_name = short_names[employee_number.to_s]
+
+      tech_talks[short_name] = []
 
       Dir.entries("techtalks/#{folder}/_posts/").each do |file_name|
         next if skip_file?(file_name)
@@ -482,7 +500,7 @@ namespace :tech_talk do
         path_file_name = path_file_name_for(file_name)
         file_data['path'] = "/techtalks/#{folder}/#{path_date}/#{path_file_name}.html"
         file_data['filename'] = file_name
-        tech_talks[folder] << file_data
+        tech_talks[short_name] << file_data
       end
     end
 
@@ -571,18 +589,13 @@ namespace :blog do
     Dir.entries('blogs/').each do |folder|
       next if skip_file?(folder)
 
-      entries = Dir.entries('blogs/' + folder)
-      profile = entries.find{|entry| entry.start_with?('index') }
-      next if !profile
+      next if !(profile_data = profile_data_for_blog_name(folder))
 
-      profile_data = {}
-      File.open("blogs/#{folder}/#{profile}", 'r') do |f|
-        profile_data = process_yaml_file(f)
-      end
       employee_number = profile_data['employee_number']
       short_name = short_names[employee_number.to_s]
       blogs[short_name] = profile_data
-      blogs[short_name]['profile_extension'] = profile[profile.index('.')..-1]
+      profile_filename = profile_data['profile_filename']
+      blogs[short_name]['profile_extension'] = profile_filename[profile_filename.index('.')..-1]
       blogs[short_name]['blogs'] = []
 
       assets = all_assets(folder)
@@ -708,4 +721,21 @@ def path_file_name_for(file_name)
   end
 
   path_file_name[0..path_file_name.index('.')] + 'html'
+end
+
+def profile_data_for_blog_name(blog_name)
+  entries = Dir.entries("blogs/#{blog_name}")
+  profile = entries.find{|entry| entry.start_with?('index') }
+  return nil if !profile
+
+  profile_data = {}
+  File.open("blogs/#{blog_name}/#{profile}", 'r') do |f|
+    profile_data = process_yaml_file(f)
+  end
+  profile_data['profile_filename'] = profile
+  profile_data
+end
+
+def employee_number_for_blog_name(blog_name)
+  profile_data = profile_data_for_blog_name(blog_name)
 end
