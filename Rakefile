@@ -618,6 +618,7 @@ namespace :blog do
 
         date_str = path_date_for(file_data, filename)
         real_filename = path_file_name_for(filename)
+        p real_filename
 
         path = "/blogs/#{folder}/#{date_str}/#{real_filename}"
         file_data['path'] = path
@@ -720,7 +721,7 @@ def path_file_name_for(file_name)
     path_file_name = file_name[11..-1]
   end
 
-  path_file_name[0..path_file_name.index('.')] + 'html'
+  path_file_name[0..path_file_name.rindex('.')] + 'html'
 end
 
 def profile_data_for_blog_name(blog_name)
