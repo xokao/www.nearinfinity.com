@@ -618,7 +618,6 @@ namespace :blog do
 
         date_str = path_date_for(file_data, filename)
         real_filename = path_file_name_for(filename)
-        p real_filename
 
         path = "/blogs/#{folder}/#{date_str}/#{real_filename}"
         file_data['path'] = path
