@@ -6,6 +6,7 @@ location: San Francisco, California
 conference:
   name: HBaseCon
   url: "http://www.hbasecon.com/"
+tags: hbase
 ---
 Honeycomb is an exciting new open-source storage engine plugin for MySQL that
 enables MySQL to store and query tables directly in HBase.  Honeycomb brings
